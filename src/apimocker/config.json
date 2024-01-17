@@ -1,0 +1,19 @@
+{
+  "mockDirectory": "src/apimocker/",
+  "quiet": false,
+  "port": "7878",
+  "latency": 50,
+  "logRequestHeaders": false,
+  "webServices": {
+    "auth": {
+      "mockFile": "users.json",
+      "latency": 20,
+      "verbs": ["post"]
+    },
+    "verify": {
+      "mockFile": "verify.json",
+      "latency": 20,
+      "verbs": ["post"]
+    }
+  }
+}

@@ -1,11 +1,14 @@
-import './App.css';
+import "./App.css";
 import { Outlet } from "react-router-dom";
+import { AuthProvider } from "./context/auth.context";
 
 function App() {
   return (
-    <div data-testid="app-component">
-      <Outlet />
-    </div >
+    <AuthProvider>
+      <div data-testid="app-component">
+        <Outlet />
+      </div>
+    </AuthProvider>
   );
 }
 
