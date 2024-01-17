@@ -2,6 +2,8 @@
 
 Front side of Ma-seance
 
+![Coverage](./coverage/badges.svg)
+
 ## How to run ?
 
 In the project directory, you can run:
