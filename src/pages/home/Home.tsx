@@ -3,7 +3,6 @@ import { useAuthContext } from "../../context/auth.context";
 
 export const homeLoader = async () => {
   const currentUser = localStorage.getItem("user");
-  console.log(currentUser);
   if (!currentUser) {
     return redirect("/login");
   }

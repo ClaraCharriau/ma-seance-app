@@ -3,12 +3,10 @@ import axios from "axios";
 
 const user_auth_path = "http://localhost:7878/auth";
 const user_verify_path = "http://localhost:7878/verify";
+const user_sign_in_path = "http://localhost:7878/sign-in";
 
-export const loginUser = async (
-  email: string,
-  password: string
-): Promise<User> => {
-  return axios
+export const loginUser = async (email: string, password: string): Promise<User> => {
+  return await axios
     .post(user_auth_path, {
       email: email,
       password: password,
@@ -23,17 +21,39 @@ export const loginUser = async (
     });
 };
 
-export const checkAccountExists = async (email: string) => {
+export const checkAccountExists = async (email: string): Promise<boolean> => {
   return await axios
     .post(user_verify_path, {
       email: email,
     })
     .then(function (response) {
-      console.log("user-verify-client-response POST user :", response.data);
-      return response.data;
+      console.log("user-verify-client-response POST verify :", response.data);
+      if (response.data as { exists: boolean; }
+      ) {
+        return response.data.exists;
+      }
+      console.error("Could not parse api /verify response");
+      throw new Error();
     })
     .catch(function (error: Error) {
       console.error("Error: could not verify if user exists" + error.message);
+      throw error;
+    });
+};
+
+export const signIn = async (pseudo: string, email: string, password: string): Promise<User> => {
+  return await axios
+    .post(user_sign_in_path, {
+      pseudo: pseudo,
+      email: email,
+      password: password,
+    })
+    .then(function (response) {
+      console.log("user-sign-in-client-response POST user :", response.data);
+      return response.data;
+    })
+    .catch(function (error: Error) {
+      console.error("Error: could not sign in user" + error.message);
       throw error;
     });
 };

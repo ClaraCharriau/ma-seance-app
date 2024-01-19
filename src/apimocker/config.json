@@ -1,5 +1,5 @@
 {
-  "mockDirectory": "src/apimocker/",
+  "mockDirectory": "src/apimocker/mocks",
   "quiet": false,
   "port": "7878",
   "latency": 50,
@@ -11,7 +11,18 @@
       "verbs": ["post"]
     },
     "verify": {
-      "mockFile": "verify.json",
+      "verbs": ["post"],
+      "latency": 20,
+      "switch": ["email"],
+      "responses": {
+        "post": {"httpStatus": 200, "mockFile": "verify-false.json"}
+      },
+      "switchResponses": {
+        "emailtest%40mail.com": {"httpStatus": 200, "mockFile": "verify-true.json"}
+      }
+    },
+    "sign-in": {
+      "mockFile": "users.json",
       "latency": 20,
       "verbs": ["post"]
     }

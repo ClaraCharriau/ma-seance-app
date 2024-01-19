@@ -1,4 +1,4 @@
-import { checkAccountExists, loginUser } from "../client/auth.client";
+import { checkAccountExists, loginUser, signIn } from "../client/auth.client";
 import { useAuthContext } from "../context/auth.context";
 
 export const useAuth = () => {
@@ -15,7 +15,9 @@ export const useAuth = () => {
   };
 
   // create user
-  const createUserAccount = (): void => {};
+  const createUserAccount = async (pseudo: string, email: string, password: string) => {
+    await signIn(pseudo, email, password);
+  };
 
   // remove user from auth context
   const logout = () => {
