@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../hooks/useAuth";
+import style from "../../../pages/login/Login.module.css";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -52,37 +53,27 @@ const LoginForm = () => {
   };
 
   return (
-    <section>
-      <div className={"inputContainer"}>
-        <label>Adresse e-mail</label>
-        <input
-          value={email}
-          placeholder="Votre email"
-          onChange={(ev) => setEmail(ev.target.value)}
-          className={"inputBox"}
-        />
-        <label className="errorLabel">{emailError}</label>
+    <>
+      <div className={style.inputContainer}>
+        <label className={style.inputLabel}>Adresse e-mail</label>
+        <input value={email} onChange={(ev) => setEmail(ev.target.value)} />
+        <label className={style.error}>{emailError}</label>
       </div>
-      <div className={"inputContainer"}>
-        <label>Mot de passe</label>
+
+      <div className={style.inputContainer}>
+        <label className={style.inputLabel}>Mot de passe</label>
         <input
           value={password}
-          placeholder="Votre mot de passe"
           onChange={(ev) => setPassword(ev.target.value)}
-          className={"inputBox"}
         />
-        <label className="errorLabel">{passwordError}</label>
+        <label className={style.error}>{passwordError}</label>
+        <label className={style.error}>{verifyError}</label>
       </div>
-      <div className={"inputContainer"}>
-        <input
-          className={"inputButton"}
-          type="submit"
-          onClick={login}
-          value={"Log in"}
-        />
-      </div>
-      <label className="errorLabel">{verifyError}</label>
-    </section>
+
+      <button className={style.orangeBtn} onClick={login}>
+        Connexion
+      </button>
+    </>
   );
 };
 

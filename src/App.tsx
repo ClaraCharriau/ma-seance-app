@@ -4,10 +4,8 @@ import { AuthProvider } from "./context/auth.context";
 
 function App() {
   return (
-    <AuthProvider>
-      <div data-testid="app-component">
+    <AuthProvider >
         <Outlet />
-      </div>
     </AuthProvider>
   );
 }

@@ -19,32 +19,63 @@ const Login = () => {
   };
 
   return (
-    <main>
+    <>
       {formType === "initial" && (
-        <div>
-          <h1>maSéance</h1>
-          <p>Organisez votre agenda cinéma</p>
-          <button onClick={setLoginForm}>Se connecter</button>
-          <button onClick={setAccountCreation}>Créer un compte</button>
-        </div>
+        <main className={style.loginMain}>
+          <div className={style.loginLayout}>
+            <div>
+              <h1 className={style.headerTitle}>maSéance</h1>
+              <p className={style.headline}>Organisez votre agenda cinéma</p>
+            </div>
+            <section className={style.loginFormSection}>
+              <button onClick={setLoginForm} className={style.orangeBtn}>
+                Se connecter
+              </button>
+              <button
+                onClick={setAccountCreation}
+                className={style.transparentBtn}
+              >
+                Créer un compte
+              </button>
+            </section>
+          </div>
+        </main>
       )}
 
       {formType === "login" && (
-        <>
-          <h1>maSéance</h1>
-          <p>Organisez votre agenda cinéma</p>
-          <LoginForm />
-          <button onClick={showInitialButtons}>Retour</button>
-        </>
+        <main className={style.loginMain}>
+          <div className={style.loginLayout}>
+            <div>
+              <h1 className={style.headerTitle}>maSéance</h1>
+              <p className={style.headline}>Organisez votre agenda cinéma</p>
+            </div>
+            <section className={style.loginFormSection}>
+              <LoginForm />
+              <button
+                className={style.transparentBtn}
+                onClick={showInitialButtons}
+              >
+                Retour
+              </button>
+            </section>
+          </div>
+        </main>
       )}
 
       {formType === "accountCreation" && (
-        <>
-          <AccountCreation onSignUpClick={setLoginForm} />
-          <button onClick={showInitialButtons}>Retour</button>
-        </>
+        <main className={style.loginMain}>
+          <section className={style.loginFormSection}>
+            <AccountCreation onSignUpClick={setLoginForm} />
+            <button
+              className={style.transparentBtn}
+              onClick={showInitialButtons}
+            >
+              Retour
+            </button>
+          </section>
+        </main>
       )}
-    </main>
+    </>
   );
 };
 

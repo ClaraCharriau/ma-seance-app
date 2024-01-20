@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../../../hooks/useAuth";
+import style from "../../../pages/login/Login.module.css";
 
 interface AccountCreationProps {
   onSignUpClick: () => void;
@@ -57,6 +58,11 @@ const AccountCreation = (props: AccountCreationProps) => {
       return false;
     }
 
+    if (passwordBis !== password) {
+      setPasswordError("Les mots de passe doivent être identiques.");
+      return false;
+    }
+
     if (password.length < 7) {
       setPasswordError("Le mot de passe doit contenir au moins 8 caractères");
       return false;
@@ -66,67 +72,47 @@ const AccountCreation = (props: AccountCreationProps) => {
   };
 
   return (
-    <section>
-      <h2>Créer un compte</h2>
+    <>
+      <h1 className={style.creationTitle}>Créer un compte</h1>
 
       {/* Pseudo */}
-      <div className={"inputContainer"}>
-        <label>Pseudo</label>
-        <input
-          value={pseudo}
-          placeholder="Votre pseudo"
-          onChange={(ev) => setPseudo(ev.target.value)}
-          className={"inputBox"}
-        />
-        <label className="errorLabel">{pseudoError}</label>
+      <div className={style.inputContainer}>
+        <label className={style.inputLabel}>Pseudo *</label>
+        <input value={pseudo} onChange={(ev) => setPseudo(ev.target.value)} />
+        <label className={style.error}>{pseudoError}</label>
       </div>
 
       {/* E-mail adress */}
-      <div className={"inputContainer"}>
-        <label>Adresse e-mail</label>
-        <input
-          value={email}
-          placeholder="Votre email"
-          onChange={(ev) => setEmail(ev.target.value)}
-          className={"inputBox"}
-        />
-        <label className="errorLabel">{emailError}</label>
+      <div className={style.inputContainer}>
+        <label className={style.inputLabel}>Adresse e-mail *</label>
+        <input value={email} onChange={(ev) => setEmail(ev.target.value)} />
+        <label className={style.error}>{emailError}</label>
       </div>
 
       {/* Password */}
-      <div className={"inputContainer"}>
-        <label>Mot de passe</label>
+      <div className={style.inputContainer}>
+        <label className={style.inputLabel}>Mot de passe *</label>
         <input
           value={password}
-          placeholder="Votre mot de passe"
           onChange={(ev) => setPassword(ev.target.value)}
-          className={"inputBox"}
         />
-        <label className="errorLabel">{passwordError}</label>
+        <label className={style.error}>{passwordError}</label>
       </div>
 
       {/* Password verification */}
-      <div className={"inputContainer"}>
-        <label>Mot de passe</label>
+      <div className={style.inputContainer}>
+        <label className={style.inputLabel}>Confirmez le mot de passe *</label>
         <input
           value={passwordBis}
-          placeholder="Votre mot de passe"
           onChange={(ev) => setPasswordBis(ev.target.value)}
-          className={"inputBox"}
         />
+        <label className={style.error}>{verifyError}</label>
       </div>
 
-      <div className={"inputContainer"}>
-        <input
-          className={"inputButton"}
-          type="button"
-          onClick={createAccount}
-          value={"create account"}
-        />
-      </div>
-      <label className="errorLabel">{verifyError}</label>
-      <button onClick={createAccount} type="submit">S'inscrire</button>
-    </section>
+      <button className={style.orangeBtn} onClick={createAccount}>
+        S'inscrire
+      </button>
+    </>
   );
 };
 
