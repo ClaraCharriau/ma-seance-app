@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.2.18",
     "apimocker": "^1.1.5",
     "axios": "^1.6.5",
+    "axios-mock-adapter": "1.22.0",
     "coverage-badges-cli": "^1.2.5",
     "jest": "^27.5.1",
     "react": "^18.2.0",
@@ -24,13 +25,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start apimocker --config src/apimocker/config.json",
+    "start": "react-scripts start & npm run apimocker",
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
     "coverage": "jest --coverage",
     "make-badges": "coverage-badges",
-    "apimocker": "apimocker --config src/apimocker/config.json"
+    "apimocker": "apimocker --config apimocker/config.json"
   },
   "eslintConfig": {
     "extends": [
@@ -40,19 +41,35 @@
   },
   "jest": {
     "clearMocks": true,
+    "collectCoverage": true,
     "coverageDirectory": "coverage",
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupTests.ts"
     ],
     "collectCoverageFrom": [
-      "<rootDir>/packages/**/*.{tsx,ts}",
+      "**/app_modules/**",
+      "**/src/**",
       "!**/*.{js,d.ts}"
     ],
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "test-config",
+      "interfaces",
+      "jestGlobalMocks.ts",
+      ".module.ts",
+      "<rootDir>/src/app/main.ts",
+      ".json"
+  ],
     "coverageReporters": [
-      "lcov",
-      "json-summary"
-    ]
+      "json-summary",
+      "json",
+      "html"
+    ],
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "babel": {
     "presets": [

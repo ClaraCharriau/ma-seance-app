@@ -11,12 +11,12 @@ export const loginUser = async (email: string, password: string): Promise<User> 
       email: email,
       password: password,
     })
-    .then(function (response) {
+    .then(response => {
       console.log("user-auth-client-response POST user :", response.data);
       return response.data;
     })
-    .catch(function (error: Error) {
-      console.error("Error: could not log user" + error.message);
+    .catch(error => {
+      console.error("Error: could not log user : " + error.message);
       throw error;
     });
 };
@@ -28,12 +28,10 @@ export const checkAccountExists = async (email: string): Promise<boolean> => {
     })
     .then(function (response) {
       console.log("user-verify-client-response POST verify :", response.data);
-      if (response.data as { exists: boolean; }
-      ) {
+      if (response.data && typeof response.data.exists === 'boolean') {
         return response.data.exists;
       }
-      console.error("Could not parse api /verify response");
-      throw new Error();
+      throw Error("Could not parse api /verify response. ");
     })
     .catch(function (error: Error) {
       console.error("Error: could not verify if user exists" + error.message);

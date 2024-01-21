@@ -1,5 +1,5 @@
 {
-  "mockDirectory": "src/apimocker/mocks",
+  "mockDirectory": "src/mocks",
   "quiet": false,
   "port": "7878",
   "latency": 50,

@@ -63,6 +63,7 @@ const LoginForm = () => {
       <div className={style.inputContainer}>
         <label className={style.inputLabel}>Mot de passe</label>
         <input
+          type="password"
           value={password}
           onChange={(ev) => setPassword(ev.target.value)}
         />

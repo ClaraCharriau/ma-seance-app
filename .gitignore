@@ -8,6 +8,17 @@
 # production
 /build
 
+# test
+/coverage/src
+/coverage/base.css
+/coverage/block-navigation.js
+/coverage/favicon.png
+/coverage/prettify.css
+/coverage/prettify.js
+/coverage/index.html
+/coverage/sort-arrow-sprite.png
+/coverage/sorter.js
+
 # misc
 .DS_Store
 .env.local
