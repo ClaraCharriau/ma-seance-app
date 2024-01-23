@@ -1,7 +1,5 @@
 const Currently = () => {
-  return (
-    <div>Currently</div>
-  )
-}
+    return <div>Currently</div>;
+};
 
-export default Currently
+export default Currently;

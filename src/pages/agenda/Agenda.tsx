@@ -1,7 +1,5 @@
 const Agenda = () => {
-  return (
-    <div>Agenda</div>
-  )
-}
+    return <div>Agenda</div>;
+};
 
-export default Agenda
+export default Agenda;

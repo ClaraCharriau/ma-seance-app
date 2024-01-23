@@ -1,7 +1,5 @@
 const Theater = () => {
-  return (
-    <div>Theater</div>
-  )
-}
+    return <div>Theater</div>;
+};
 
-export default Theater
+export default Theater;

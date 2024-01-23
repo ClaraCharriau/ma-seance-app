@@ -1,7 +1,5 @@
-describe("Login page tests", () => {
+describe('Login page tests', () => {
+    it('should display title', async () => {});
+});
 
-    it("should display title", async () => {});
-  
-  });
-  
-  export {}
+export {};
