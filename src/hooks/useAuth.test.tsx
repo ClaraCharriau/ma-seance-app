@@ -80,5 +80,13 @@ describe('useAuth hook tests', () => {
             password: 'password'
         });
     });
+
+    it('should log out user', async () => {
+        // Given
+
+        // When
+
+        // Then
+    });
 });
 export {};

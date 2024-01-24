@@ -6,7 +6,7 @@
   "logRequestHeaders": false,
   "webServices": {
     "auth": {
-      "mockFile": "users.json",
+      "mockFile": "auth/users.json",
       "latency": 20,
       "verbs": ["post"]
     },
@@ -15,14 +15,14 @@
       "latency": 20,
       "switch": ["email"],
       "responses": {
-        "post": {"httpStatus": 200, "mockFile": "verify-false.json"}
+        "post": {"httpStatus": 200, "mockFile": "auth/verify-false.json"}
       },
       "switchResponses": {
-        "emailtest%40mail.com": {"httpStatus": 200, "mockFile": "verify-true.json"}
+        "emailtest%40mail.com": {"httpStatus": 200, "mockFile": "auth/verify-true.json"}
       }
     },
     "sign-in": {
-      "mockFile": "users.json",
+      "mockFile": "auth/users.json",
       "latency": 20,
       "verbs": ["post"]
     }

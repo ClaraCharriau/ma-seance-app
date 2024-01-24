@@ -26,25 +26,29 @@ describe('useLocalStorage hook tests', () => {
     });
 
     it('should get item from localStorage and update state', () => {
+        // Given
         const { result } = renderHook(() => useLocalStorage());
 
-        //global.localStorage.getItem.mockReturnValueOnce('testValue');
-
+        // When
         act(() => {
             result.current.getItem('testKey');
         });
 
+        // Then
         expect(mockGetItem).toHaveBeenCalledWith('testKey');
         expect(result.current.value).toBe('testValue');
     });
 
     it('should remove item from localStorage and update state', () => {
+        // Given
         const { result } = renderHook(() => useLocalStorage());
 
+        // When
         act(() => {
             result.current.removeItem('testKey');
         });
 
+        // Then
         expect(mockRemoveItem).toHaveBeenCalledWith('testKey');
         expect(result.current.value).toBeNull();
     });

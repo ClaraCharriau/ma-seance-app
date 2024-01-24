@@ -78,21 +78,21 @@ const AccountCreation = (props: AccountCreationProps) => {
             {/* Pseudo */}
             <div className={style.inputContainer}>
                 <label className={style.inputLabel}>Pseudo *</label>
-                <input type="text" value={pseudo} onChange={ev => setPseudo(ev.target.value)} />
+                <input type="text" value={pseudo} onChange={event => setPseudo(event.target.value)} />
                 <label className={style.error}>{pseudoError}</label>
             </div>
 
             {/* E-mail adress */}
             <div className={style.inputContainer}>
                 <label className={style.inputLabel}>Adresse e-mail *</label>
-                <input type="mail" value={email} onChange={ev => setEmail(ev.target.value)} />
+                <input type="mail" value={email} onChange={event => setEmail(event.target.value)} />
                 <label className={style.error}>{emailError}</label>
             </div>
 
             {/* Password */}
             <div className={style.inputContainer}>
                 <label className={style.inputLabel}>Mot de passe *</label>
-                <input type="password" value={password} onChange={ev => setPassword(ev.target.value)} />
+                <input type="password" value={password} onChange={event => setPassword(event.target.value)} />
                 <label className={style.error}>{passwordError}</label>
             </div>
 

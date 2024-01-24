@@ -16,6 +16,7 @@
 /coverage/index.html
 /coverage/sort-arrow-sprite.png
 /coverage/sorter.js
+/coverage/lcov-report
 
 # misc
 .DS_Store

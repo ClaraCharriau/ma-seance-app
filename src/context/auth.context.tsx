@@ -25,7 +25,10 @@ interface AuthProviderProps {
 export const AuthProvider = (props: AuthProviderProps) => {
     const { children } = props;
     const { setItem, removeItem } = useLocalStorage();
-    const [user, setUser] = useState<User | null>(null);
+    const [user, setUser] = useState<User | null>(() => {
+        const storedUser = localStorage.getItem('user');
+        return storedUser ? JSON.parse(storedUser) : null;
+    });
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');

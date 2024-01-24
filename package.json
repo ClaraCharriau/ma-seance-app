@@ -3,7 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+        "@babel/plugin-transform-private-property-in-object": "7.23.4",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
@@ -41,7 +42,7 @@
         "eject": "react-scripts eject",
         "coverage": "jest --coverage",
         "make-badges": "coverage-badges",
-        "apimocker": "apimocker --config apimocker/config.json",
+        "apimocker": "apimocker --config src/mocks/apimocker.config.json",
         "lint": "eslint  --fix src/**/*.ts",
         "lint:fix": "prettier src/**/*.ts --write. --config ./.prettierrc"
     },
@@ -122,7 +123,8 @@
         "coverageReporters": [
             "json-summary",
             "json",
-            "html"
+            "html",
+            "lcov"
         ],
         "moduleNameMapper": {
             "^axios$": "axios/dist/node/axios.cjs",

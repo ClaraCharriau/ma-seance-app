@@ -26,14 +26,14 @@ export const checkAccountExists = async (email: string): Promise<boolean> => {
         .post(user_verify_path, {
             email: email
         })
-        .then(function (response) {
+        .then(response => {
             console.log('user-verify-client-response POST verify :', response.data);
             if (response.data && typeof response.data.exists === 'boolean') {
                 return response.data.exists;
             }
             throw Error('Could not parse api /verify response. ');
         })
-        .catch(function (error: Error) {
+        .catch(error => {
             console.error('Error: could not verify if user exists' + error.message);
             throw error;
         });
@@ -46,11 +46,11 @@ export const signIn = async (pseudo: string, email: string, password: string): P
             email: email,
             password: password
         })
-        .then(function (response) {
+        .then(response => {
             console.log('user-sign-in-client-response POST user :', response.data);
             return response.data;
         })
-        .catch(function (error: Error) {
+        .catch(error => {
             console.error('Error: could not sign in user' + error.message);
             throw error;
         });
