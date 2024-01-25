@@ -30,5 +30,4 @@ jobs:
     - run: npm test
 
     - name: Create Coverage Badges
-      uses: jaywcjlove/coverage-badges-cli@v1.2.5
-            
+      uses: jaywcjlove/coverage-badges-cli@v1.2.5      
