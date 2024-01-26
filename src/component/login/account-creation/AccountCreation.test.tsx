@@ -1,8 +1,7 @@
-import { render } from "@testing-library/react";
-import AccountCreation from "./AccountCreation";
+import { render } from '@testing-library/react';
+import AccountCreation from './AccountCreation';
 
 describe('AccountCreation component tests', () => {
-
     it('should create account', async () => {});
 
     it('should set error when account creation did not work', async () => {});
