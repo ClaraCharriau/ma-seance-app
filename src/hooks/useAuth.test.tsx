@@ -83,9 +83,7 @@ describe('useAuth hook tests', () => {
 
     it('should log out user', async () => {
         // Given
-
         // When
-
         // Then
     });
 });

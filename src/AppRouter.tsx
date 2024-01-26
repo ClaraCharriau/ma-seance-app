@@ -54,6 +54,10 @@ const AppRouter = () => {
                 {
                     path: '/theater',
                     element: <Theater />
+                },
+                {
+                    path: '/wishlist',
+                    element: <>Wishlist</>
                 }
             ]
         }

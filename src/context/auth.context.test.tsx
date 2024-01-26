@@ -1,5 +1,5 @@
 import { AuthProvider, useAuthContext } from './auth.context';
-import { render, renderHook, waitFor } from '@testing-library/react';
+import { render, renderHook } from '@testing-library/react';
 
 const { result } = renderHook(useAuthContext);
 
@@ -35,16 +35,16 @@ describe('Authentication context tests', () => {
 
         // When
         render(
-          <AuthProvider>
-              <MockChildComponent />
-          </AuthProvider>
-      );
+            <AuthProvider>
+                <MockChildComponent />
+            </AuthProvider>
+        );
 
-      // Then
-      // await waitFor(() => {
-      //     const user = result.current.currentUser;
-      //     expect(user).toEqual(mockUser);
-      // });
+        // Then
+        // await waitFor(() => {
+        //     const user = result.current.currentUser;
+        //     expect(user).toEqual(mockUser);
+        // });
     });
 
     it('should unset user', async () => {
