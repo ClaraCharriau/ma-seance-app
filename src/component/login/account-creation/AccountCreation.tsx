@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useAuth } from '../../../hooks/useAuth';
 import style from '../../../pages/login/Login.module.css';
 
@@ -18,6 +18,11 @@ const AccountCreation = (props: AccountCreationProps) => {
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [verifyError, setVerifyError] = useState('');
+
+    const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        createAccount();
+    };
 
     const createAccount = async () => {
         const userExists = await checkUserExists(email);
@@ -72,41 +77,77 @@ const AccountCreation = (props: AccountCreationProps) => {
     };
 
     return (
-        <>
+        <form className={style.loginForm} onSubmit={event => submitHandler(event)}>
             <h1 className={style.creationTitle}>Créer un compte</h1>
 
             {/* Pseudo */}
             <div className={style.inputContainer}>
-                <label className={style.inputLabel}>Pseudo *</label>
-                <input type="text" value={pseudo} onChange={event => setPseudo(event.target.value)} />
+                <label htmlFor="pseudo" className={style.inputLabel}>
+                    Pseudo *
+                </label>
+                <input
+                    type="text"
+                    id="pseudo"
+                    name="pseudo"
+                    value={pseudo}
+                    onChange={event => setPseudo(event.target.value)}
+                    required
+                />
                 <label className={style.error}>{pseudoError}</label>
             </div>
 
             {/* E-mail adress */}
             <div className={style.inputContainer}>
-                <label className={style.inputLabel}>Adresse e-mail *</label>
-                <input type="mail" value={email} onChange={event => setEmail(event.target.value)} />
+                <label htmlFor="email" className={style.inputLabel}>
+                    Adresse e-mail *
+                </label>
+                <input
+                    type="mail"
+                    id="email"
+                    name="email"
+                    value={email}
+                    onChange={event => setEmail(event.target.value)}
+                    required
+                />
                 <label className={style.error}>{emailError}</label>
             </div>
 
             {/* Password */}
             <div className={style.inputContainer}>
-                <label className={style.inputLabel}>Mot de passe *</label>
-                <input type="password" value={password} onChange={event => setPassword(event.target.value)} />
+                <label htmlFor="password" className={style.inputLabel}>
+                    Mot de passe *
+                </label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={password}
+                    onChange={event => setPassword(event.target.value)}
+                    required
+                />
                 <label className={style.error}>{passwordError}</label>
             </div>
 
             {/* Password verification */}
             <div className={style.inputContainer}>
-                <label className={style.inputLabel}>Confirmez le mot de passe *</label>
-                <input type="password" value={passwordBis} onChange={ev => setPasswordBis(ev.target.value)} />
+                <label htmlFor="passwordBis" className={style.inputLabel}>
+                    Confirmez le mot de passe *
+                </label>
+                <input
+                    type="password"
+                    id="passwordBis"
+                    name="passwordBis"
+                    value={passwordBis}
+                    onChange={ev => setPasswordBis(ev.target.value)}
+                    required
+                />
                 <label className={style.error}>{verifyError}</label>
             </div>
 
-            <button className={style.orangeBtn} onClick={createAccount}>
+            <button type="submit" className={style.orangeBtn} onClick={createAccount}>
                 S'inscrire
             </button>
-        </>
+        </form>
     );
 };
 
