@@ -1,12 +1,10 @@
 import { render } from '@testing-library/react';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { act } from 'react-dom/test-utils';
 
-test('renders App without crashing', () => {
-    render(
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    );
+it('renders App without crashing', () => {
+    act(() => {
+        render(<App />);
+    })
     expect(true).toBeTruthy();
 });
