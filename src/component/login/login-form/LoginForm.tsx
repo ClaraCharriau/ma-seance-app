@@ -58,14 +58,31 @@ const LoginForm = () => {
     return (
         <form className={style.loginForm} onSubmit={event => submitHandler(event)}>
             <div className={style.inputContainer}>
-                <label className={style.inputLabel}>Adresse e-mail</label>
-                <input value={email} onChange={event => setEmail(event.target.value)} required />
+                <label htmlFor="email" className={style.inputLabel}>
+                    Adresse e-mail
+                </label>
+                <input
+                    name="email"
+                    id="email"
+                    value={email}
+                    onChange={event => setEmail(event.target.value)}
+                    required
+                />
                 <label className={style.error}>{emailError}</label>
             </div>
 
             <div className={style.inputContainer}>
-                <label className={style.inputLabel}>Mot de passe</label>
-                <input type="password" value={password} onChange={event => setPassword(event.target.value)} required />
+                <label htmlFor="password" className={style.inputLabel}>
+                    Mot de passe
+                </label>
+                <input
+                    name="password"
+                    id="password"
+                    type="password"
+                    value={password}
+                    onChange={event => setPassword(event.target.value)}
+                    required
+                />
                 <label className={style.error}>{passwordError}</label>
                 <label className={style.error}>{verifyError}</label>
             </div>
