@@ -91,6 +91,7 @@ const AccountCreation = (props: AccountCreationProps) => {
                     name="pseudo"
                     value={pseudo}
                     onChange={event => setPseudo(event.target.value)}
+                    className={pseudoError ? style.errorInput : ''}
                     required
                 />
                 <label className={style.error}>{pseudoError}</label>
@@ -107,6 +108,7 @@ const AccountCreation = (props: AccountCreationProps) => {
                     name="email"
                     value={email}
                     onChange={event => setEmail(event.target.value)}
+                    className={emailError && style.errorInput}
                     required
                 />
                 <label className={style.error}>{emailError}</label>
@@ -123,6 +125,7 @@ const AccountCreation = (props: AccountCreationProps) => {
                     name="password"
                     value={password}
                     onChange={event => setPassword(event.target.value)}
+                    className={passwordError && style.errorInput}
                     required
                 />
                 <label className={style.error}>{passwordError}</label>
@@ -139,6 +142,7 @@ const AccountCreation = (props: AccountCreationProps) => {
                     name="passwordBis"
                     value={passwordBis}
                     onChange={ev => setPasswordBis(ev.target.value)}
+                    className={passwordError && style.errorInput}
                     required
                 />
                 <label className={style.error}>{verifyError}</label>

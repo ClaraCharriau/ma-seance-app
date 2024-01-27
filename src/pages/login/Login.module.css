@@ -91,6 +91,10 @@
   color: var(--red);
 }
 
+.inputContainer .errorInput {
+  border: 1px solid var(--red);
+}
+
 @media (max-width: 390px) {
   .loginMain {
     justify-content: end;
