@@ -87,7 +87,7 @@ const LoginForm = () => {
                 <label className={style.error}>{verifyError}</label>
             </div>
 
-            <button className={style.orangeBtn} onSubmit={login} onClick={login}>
+            <button className={style.orangeBtn} onClick={login}>
                 Connexion
             </button>
         </form>
