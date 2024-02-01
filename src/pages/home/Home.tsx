@@ -1,13 +1,4 @@
-import { redirect } from 'react-router-dom';
 import { useAuthContext } from '../../context/auth.context';
-
-export const homeLoader = async () => {
-    const currentUser = localStorage.getItem('user');
-    if (!currentUser) {
-        return redirect('/login');
-    }
-    return null;
-};
 
 const Home = () => {
     const { currentUser } = useAuthContext();

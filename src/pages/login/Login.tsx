@@ -2,9 +2,11 @@ import { useState } from 'react';
 import style from './Login.module.css';
 import LoginForm from '../../component/login/login-form/LoginForm';
 import AccountCreation from '../../component/login/account-creation/AccountCreation';
+import { Navigate } from 'react-router-dom';
 
 const Login = () => {
     const [formType, setFormType] = useState('initial');
+    const currentUser = localStorage.getItem('user');
 
     const setLoginForm = () => {
         setFormType('login');
@@ -18,6 +20,7 @@ const Login = () => {
         setFormType('initial');
     };
 
+    if (currentUser) return <Navigate replace to="/" />;
     return (
         <>
             {formType === 'initial' && (
