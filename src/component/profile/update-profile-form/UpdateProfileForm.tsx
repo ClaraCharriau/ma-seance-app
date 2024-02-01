@@ -11,14 +11,16 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
     const { user } = props;
     const { pseudo, email } = user;
 
-    const { checkUserExists } = useAuth();
+    const { checkUserExists, updateUserAccount, logUser } = useAuth();
 
     const [newPseudo, setNewPseudo] = useState(pseudo);
     const [newEmail, setNewEmail] = useState(email);
+    const [currentPassword, setCurrentPassword] = useState('');
 
     const [pseudoError, setPseudoError] = useState('');
     const [emailError, setEmailError] = useState('');
     const [verifyError, setVerifyError] = useState('');
+    const [currentPasswordError, setCurrentPasswordError] = useState('');
 
     const submitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -29,9 +31,9 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
         setVerifyError('');
         const userExists = await checkUserExists(newEmail);
         if (!userExists) {
-            if (isFormValid()) {
+            if (await isFormValid()) {
                 console.log('ok, maj du profile');
-                // appel vers user pour PATCH
+                updateUserAccount(pseudo, email, currentPassword);
             } else {
                 return;
             }
@@ -40,9 +42,24 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
         }
     };
 
-    const isFormValid = (): boolean => {
+    const isCurrentPasswordValid = async (): Promise<boolean> => {
+        return !!(await logUser(email, currentPassword));
+    };
+
+    const isFormValid = async (): Promise<boolean> => {
         setPseudoError('');
         setEmailError('');
+        setCurrentPasswordError('');
+
+        if ('' === currentPassword) {
+            setCurrentPasswordError('Entrez votre mot de passe actuel');
+            return false;
+        }
+
+        if (!(await isCurrentPasswordValid())) {
+            setCurrentPasswordError('Votre mot de passe actuel est erroné');
+            return false;
+        }
 
         if ('' === newPseudo) {
             setPseudoError('Choisissez un pseudo.');
@@ -103,6 +120,22 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
                 />
                 <label className={style.error}>{emailError}</label>
                 <label className={style.error}>{verifyError}</label>
+            </div>
+
+            <div className={style.inputContainer}>
+                <label htmlFor="oldPassword" className={style.inputLabel}>
+                    Votre mot de passe *
+                </label>
+                <input
+                    type="password"
+                    id="oldPassword"
+                    name="oldPassword"
+                    value={currentPassword}
+                    onChange={event => setCurrentPassword(event.target.value)}
+                    className={currentPasswordError && style.errorInput}
+                    required
+                />
+                <label className={style.error}>{currentPasswordError}</label>
             </div>
 
             <button className={style.orangeBtn} onClick={updateProfile}>

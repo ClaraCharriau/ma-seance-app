@@ -2,23 +2,30 @@ import style from './Profile.module.css';
 import UpdateProfileForm from '../../component/profile/update-profile-form/UpdateProfileForm';
 import UpdatePasswordForm from '../../component/profile/update-password-form/UpdatePasswordForm';
 import { useAuthContext } from '../../context/auth.context';
-import { redirect, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 const Profile = () => {
     const { currentUser, clearCurrentUser } = useAuthContext();
+    const { deleteUserAccount } = useAuth();
     const navigate = useNavigate();
 
     const logOut = (): void => {
         clearCurrentUser();
-        console.log('utilisateur deconnecté');
         navigate('/login');
     };
 
-    const deleteAccount = (): Response => {
+    const handleOnClick = async (): Promise<void> => {
+        if (currentUser) {
+            await deleteAccount(currentUser.id);
+        }
+    };
+
+    const deleteAccount = async (id: number): Promise<void> => {
         console.log('Suppression du compte');
-        // appel vers user pour delete
+        await deleteUserAccount(id);
         clearCurrentUser();
-        return redirect('/login');
+        navigate('/login');
     };
 
     return (
@@ -40,7 +47,7 @@ const Profile = () => {
                 {currentUser && <UpdatePasswordForm user={currentUser} />}
             </section>
 
-            <button className={style.deleteBtn} onClick={deleteAccount}>
+            <button className={style.deleteBtn} onClick={handleOnClick}>
                 Supprimer mon compte
             </button>
             <p>⚠️ Attention, la suppression de votre compte est irréversible.</p>

@@ -35,11 +35,6 @@ a {
 }
 
 /* COMMON */
-#root {
-  display: flex;
-  flex-direction: column;
-}
-
 body {
   background-color: var(--secondary);
   color: var(--almost-white);
@@ -47,6 +42,8 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   margin: 0 70px;
   flex: 1;
 }

@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import style from '../../../pages/profile/Profile.module.css';
 import { User } from '../../../models/User';
+import { useAuth } from '../../../hooks/useAuth';
 
 interface UpdatePasswordFormProps {
     user: User;
@@ -8,7 +9,8 @@ interface UpdatePasswordFormProps {
 
 const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
     const { user } = props;
-    const { password } = user;
+    const { pseudo, email } = user;
+    const { logUser, updateUserAccount } = useAuth();
 
     const [newPassword, setNewPassword] = useState('');
     const [currentPassword, setCurrentPassword] = useState('');
@@ -21,16 +23,18 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
         updatePassword();
     };
 
-    const updatePassword = () => {
-        console.log('test du formulaire');
-        if (isFormValid()) {
-            console.log('changement de password');
-            // appel vers user pour PATCH
-            return;
+    const updatePassword = async (): Promise<void> => {
+        if (await isFormValid()) {
+            console.log('update user password');
+            updateUserAccount(pseudo, email, newPassword);
         }
     };
 
-    const isFormValid = (): boolean => {
+    const isCurrentPasswordValid = async (): Promise<boolean> => {
+        return !!(await logUser(email, currentPassword));
+    };
+
+    const isFormValid = async (): Promise<boolean> => {
         setPasswordError('');
         setCurrentPasswordError('');
 
@@ -39,7 +43,7 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
             return false;
         }
 
-        if (password !== currentPassword) {
+        if (!(await isCurrentPasswordValid())) {
             setCurrentPasswordError('Votre mot de passe actuel est erroné');
             return false;
         }
@@ -120,7 +124,7 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
                 />
             </div>
 
-            <button type="submit" className={style.orangeBtn} onClick={updatePassword}>
+            <button type="submit" className={style.orangeBtn} onClick={() => updatePassword()}>
                 Changer de mot de passe
             </button>
         </form>

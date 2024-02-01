@@ -1,6 +1,6 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { checkAccountExists, loginUser, signIn } from './auth.client';
+import { checkAccountExists, deleteAccount, loginUser, signIn, updateAccount } from './auth.client';
 import mockUser from '../mocks/auth/users.json';
 import mockVerify from '../mocks/auth/verify-true.json';
 
@@ -127,6 +127,68 @@ describe('AuthClient tests', () => {
             // Then
             expect(e.message).toBe('Request failed with status code 500');
             expect(response).toEqual({});
+        }
+    });
+
+    it('should update user', async () => {
+        // Given
+        const pseudo = 'Jane';
+        const email = 'test@mail.com';
+        const password = 'password';
+        axiosMock.onPatch('http://localhost:7878/sign-in').reply(200, mockUser);
+
+        // When
+        const response = await updateAccount(pseudo, email, password);
+
+        // Then
+        expect(response).toEqual({
+            id: 1,
+            pseudo: 'Jane',
+            email: 'test@mail.com'
+        });
+    });
+
+    it('should fail to update user', async () => {
+        // Given
+        const pseudo = 'Jane';
+        const email = 'test@mail.com';
+        const password = 'password';
+        axiosMock.onPatch('http://localhost:7878/sign-in').reply(500);
+        let response = {};
+
+        // When
+        try {
+            response = await updateAccount(pseudo, email, password);
+        } catch (e: any) {
+            // Then
+            expect(e.message).toBe('Request failed with status code 500');
+            expect(response).toEqual({});
+        }
+    });
+
+    it('should delete user', async () => {
+        // Given
+        const id = 1;
+        axiosMock.onDelete('http://localhost:7878/sign-out/1').reply(200);
+
+        // When
+        const response = await deleteAccount(id);
+
+        // Then
+        expect(response.status).toEqual(200);
+    });
+
+    it('should fail to delete user', async () => {
+        // Given
+        const id = 1;
+        axiosMock.onDelete('http://localhost:7878/sign-out/1').reply(500);
+
+        // When
+        try {
+            await deleteAccount(id);
+        } catch (e: any) {
+            // Then
+            expect(e.message).toBe('Request failed with status code 500');
         }
     });
 });

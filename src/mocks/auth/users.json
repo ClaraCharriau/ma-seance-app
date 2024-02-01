@@ -1,6 +1,5 @@
 {
   "id": 1,
   "pseudo": "Jane",
-  "email": "test@mail.com",
-  "password": "test"
+  "email": "test@mail.com"
 }

@@ -86,5 +86,17 @@ describe('useAuth hook tests', () => {
         // When
         // Then
     });
+
+    it('should update user', async () => {
+        // Given
+        // When
+        // Then
+    });
+
+    it('should delete user', async () => {
+        // Given
+        // When
+        // Then
+    });
 });
 export {};

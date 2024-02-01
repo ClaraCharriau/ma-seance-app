@@ -1,6 +1,3 @@
-import { render } from '@testing-library/react';
-import AccountCreation from './AccountCreation';
-
 describe('AccountCreation component tests', () => {
     it('should create account', async () => {});
 
