@@ -19,12 +19,12 @@ const AccountCreation = (props: AccountCreationProps) => {
     const [passwordError, setPasswordError] = useState('');
     const [verifyError, setVerifyError] = useState('');
 
-    const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+    const submitHandler = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         createAccount();
     };
 
-    const createAccount = async () => {
+    const createAccount = async (): Promise<void> => {
         const userExists = await checkUserExists(email);
         if (!userExists) {
             if (isFormValid()) {
@@ -45,6 +45,11 @@ const AccountCreation = (props: AccountCreationProps) => {
 
         if ('' === pseudo) {
             setPseudoError('Choisissez un pseudo.');
+            return false;
+        }
+
+        if (pseudo.length < 4) {
+            setPseudoError('Votre pseudo doit contenir plus de 4 caractères.');
             return false;
         }
 

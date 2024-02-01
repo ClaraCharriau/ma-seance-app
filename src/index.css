@@ -35,12 +35,6 @@ a {
 }
 
 /* COMMON */
-#root {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
 body {
   background-color: var(--secondary);
   color: var(--almost-white);
@@ -48,6 +42,8 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   margin: 0 70px;
   flex: 1;
 }
@@ -67,6 +63,13 @@ h1 {
   font-weight: 400;
   color: var(--primary);
   font-size: 50px;
+}
+
+h2 {
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  color: var(--primary);
+  font-size: 30px;
 }
 
 input {

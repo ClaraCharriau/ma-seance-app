@@ -3,8 +3,15 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    margin: 0 70px;
+    padding: 0 70px;
     height: 90px;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: rgb(2, 31, 56, 0.5);
+    backdrop-filter: blur(200px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Permet l'effet blur sur Safari */
 }
 
 .headerTitle {
@@ -44,7 +51,7 @@ header {
 
 @media (max-width: 800px) {
     header {
-        margin: 0 20px;
+        padding: 0 20px;
     }
 
     .headerTitleLink {
@@ -54,11 +61,12 @@ header {
 
 @media (max-width: 400px) {
     header {
-        margin: 0 20px;
+        padding: 0 20px;
         justify-content: flex-start;
     }
 
-    .wishlistBtn, .agendaBtn {
+    .wishlistBtn,
+    .agendaBtn {
         display: none;
     }
 

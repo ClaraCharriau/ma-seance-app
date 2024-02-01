@@ -1,4 +1,4 @@
-import { checkAccountExists, loginUser, signIn } from '../client/auth.client';
+import { checkAccountExists, deleteAccount, loginUser, signIn, updateAccount } from '../client/auth.client';
 import { useAuthContext } from '../context/auth.context';
 
 export const useAuth = () => {
@@ -14,15 +14,21 @@ export const useAuth = () => {
         return await checkAccountExists(email);
     };
 
-    // create user
     const createUserAccount = async (pseudo: string, email: string, password: string) => {
         await signIn(pseudo, email, password);
     };
 
-    // remove user from auth context
+    const updateUserAccount = async (pseudo: string, email: string, password: string) => {
+        await updateAccount(pseudo, email, password);
+    };
+
+    const deleteUserAccount = async (id: number) => {
+        await deleteAccount(id);
+    };
+
     const logout = () => {
         clearCurrentUser();
     };
 
-    return { logUser, checkUserExists, createUserAccount, logout };
+    return { logUser, checkUserExists, createUserAccount, logout, deleteUserAccount, updateUserAccount };
 };
