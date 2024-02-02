@@ -1,6 +1,6 @@
-import { render } from "@testing-library/react";
+import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import UpdateProfileForm from "../update-profile-form/UpdateProfileForm";
+import UpdateProfileForm from '../update-profile-form/UpdateProfileForm';
 
 describe('UpdateProfileForm component tests', () => {
     it('should render profile update form', () => {
@@ -9,7 +9,7 @@ describe('UpdateProfileForm component tests', () => {
             id: 1,
             pseudo: 'Jane',
             email: 'test@gmail.com'
-        }
+        };
 
         // When
         const { getByText, getByLabelText } = render(
@@ -17,7 +17,7 @@ describe('UpdateProfileForm component tests', () => {
                 <UpdateProfileForm user={mockUser} />
             </Router>
         );
-    
+
         // Then
         expect(getByText('Modifier vos informations de profil')).toBeInTheDocument();
         expect(getByLabelText('Pseudo *')).toBeInTheDocument();

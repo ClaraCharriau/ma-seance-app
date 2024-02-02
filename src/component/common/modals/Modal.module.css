@@ -1,0 +1,54 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(2, 31, 56, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.confirmationModal {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary-variant);
+    border-radius: 6px;
+    padding: 20px;
+    width: 80vw;
+    max-width: 400px;
+}
+
+.rowWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.confirmationText {
+    width: 80%;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rightButton,
+.leftButton {
+    width: 47%;
+    color: var(--secondary);
+    font-weight: 400;
+}
+
+.leftButton {
+    background-color: var(--valid);
+}
+
+.rightButton {
+    background-color: var(--red);
+}
