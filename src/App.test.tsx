@@ -5,6 +5,6 @@ import { act } from 'react-dom/test-utils';
 it('renders App without crashing', () => {
     act(() => {
         render(<App />);
-    })
+    });
     expect(true).toBeTruthy();
 });

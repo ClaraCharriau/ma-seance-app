@@ -1,6 +1,6 @@
-import { render } from "@testing-library/react";
+import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import UpdatePasswordForm from "./UpdatePasswordForm";
+import UpdatePasswordForm from './UpdatePasswordForm';
 
 describe('UpdateProfileForm component tests', () => {
     it('should render profile update form', () => {
@@ -9,7 +9,7 @@ describe('UpdateProfileForm component tests', () => {
             id: 1,
             pseudo: 'Jane',
             email: 'test@mail.com'
-        }
+        };
 
         // When
         const { getByText, getByLabelText } = render(
@@ -17,7 +17,7 @@ describe('UpdateProfileForm component tests', () => {
                 <UpdatePasswordForm user={mockUser} />
             </Router>
         );
-    
+
         // Then
         expect(getByText('Modifier votre mot de passe')).toBeInTheDocument();
         expect(getByLabelText('Ancien mot de passe *')).toBeInTheDocument();

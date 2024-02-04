@@ -7,11 +7,10 @@ header {
     height: 90px;
     position: sticky;
     top: 0;
-    z-index: 3;
     background-color: rgb(2, 31, 56, 0.5);
     backdrop-filter: blur(200px);
     -webkit-backdrop-filter: blur(10px);
-    /* Permet l'effet blur sur Safari */
+    /* Blur effect on safari */
 }
 
 .headerTitle {

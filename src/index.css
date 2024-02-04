@@ -53,9 +53,15 @@ button {
   border-radius: 6px;
   font-weight: 600;
   letter-spacing: 2.08px;
-  cursor: pointer;
   height: 55px;
   text-align: center;
+  transition: all 0.2;
+}
+
+button:hover {
+  opacity: 80%;
+  cursor: pointer;
+  transition: all 0.2;
 }
 
 h1 {
