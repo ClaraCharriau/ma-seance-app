@@ -7,7 +7,9 @@ import mockVerify from '../mocks/auth/verify-false.json';
 
 describe('useAuth hook tests', () => {
     let axiosMock: MockAdapter;
-    const axiosSpy = jest.spyOn(axios, 'post');
+    const axiosPostSpy = jest.spyOn(axios, 'post');
+    const axiosPatchSpy = jest.spyOn(axios, 'patch');
+    const axiosDeleteSpy = jest.spyOn(axios, 'delete');
 
     beforeEach(() => {
         axiosMock = new MockAdapter(axios);
@@ -39,7 +41,7 @@ describe('useAuth hook tests', () => {
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
-        expect(axiosSpy).toHaveBeenCalledWith('http://localhost:7878/auth', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('http://localhost:7878/auth', {
             email: 'test@mail.com',
             password: 'password'
         });
@@ -57,7 +59,7 @@ describe('useAuth hook tests', () => {
         // Then
         const response = await existsPromise;
         expect(response).toBeFalsy();
-        expect(axiosSpy).toHaveBeenCalledWith('http://localhost:7878/verify', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('http://localhost:7878/verify', {
             email: 'test@mail.com'
         });
     });
@@ -74,7 +76,7 @@ describe('useAuth hook tests', () => {
         result.current.createUserAccount(pseudo, email, password);
 
         // Then
-        expect(axiosSpy).toHaveBeenCalledWith('http://localhost:7878/sign-in', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('http://localhost:7878/sign-in', {
             pseudo: 'Jane',
             email: 'test@mail.com',
             password: 'password'
@@ -89,14 +91,34 @@ describe('useAuth hook tests', () => {
 
     it('should update user', async () => {
         // Given
+        const { result } = renderHook(useAuth);
+        const pseudo = 'Jane';
+        const password = 'password';
+        const email = 'test@mail.com';
+        axiosMock.onPatch().reply(200, mockUser);
+
         // When
+        result.current.updateUserAccount(pseudo, email, password);
+
         // Then
+        expect(axiosPatchSpy).toHaveBeenCalledWith('http://localhost:7878/sign-in', {
+            pseudo: 'Jane',
+            email: 'test@mail.com',
+            password: 'password'
+        });
     });
 
     it('should delete user', async () => {
-        // Given
-        // When
-        // Then
+         // Given
+         const { result } = renderHook(useAuth);
+         const id = 1;
+         axiosMock.onDelete().reply(200);
+ 
+         // When
+         result.current.deleteUserAccount(id);
+ 
+         // Then
+         expect(axiosDeleteSpy).toHaveBeenCalledWith('http://localhost:7878/sign-out/1');
     });
 });
 export {};

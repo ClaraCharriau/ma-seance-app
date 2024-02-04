@@ -1,5 +1,22 @@
+import { render } from '@testing-library/react';
+import LoginForm from './LoginForm';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 describe('LoginForm component tests', () => {
-    it('should render LoginForm component', async () => {});
+    it('should render login form component', () => {
+        // Given
+        // When
+        const { getByText, getByLabelText } = render(
+            <Router>
+                <LoginForm />
+            </Router>
+        );
+
+        // Then
+        expect(getByLabelText('Adresse e-mail')).toBeInTheDocument();
+        expect(getByLabelText('Mot de passe')).toBeInTheDocument();
+        expect(getByText('Connexion')).toBeInTheDocument();
+    });
 
     it('should login existing user', async () => {});
 
