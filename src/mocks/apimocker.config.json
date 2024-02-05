@@ -30,6 +30,12 @@
             "httpStatus": 200,
             "latency": 20,
             "verbs": ["delete"]
+        },
+        "users/1/fav-theaters": {
+            "httpStatus": 200,
+            "latency": 20,
+            "verbs": ["get"],
+            "mockFile": "theaters/theaters.json"
         }
     }
 }

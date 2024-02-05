@@ -1,10 +1,12 @@
 import { User } from '../models/User';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
+import { handleDeleteResponse, handleError, handleResponse } from './client.utils';
 
-const user_auth_path = 'http://localhost:7878/auth';
-const user_verify_path = 'http://localhost:7878/verify';
-const user_sign_in_path = 'http://localhost:7878/sign-in';
-const user_sign_out_path = 'http://localhost:7878/sign-out';
+const host = 'http://localhost:7878';
+const user_auth_path = host + '/auth';
+const user_verify_path = host + '/verify';
+const user_sign_in_path = host + '/sign-in';
+const user_sign_out_path = host + '/sign-out';
 
 export const loginUser = async (email: string, password: string): Promise<User> => {
     return await axios
@@ -12,14 +14,8 @@ export const loginUser = async (email: string, password: string): Promise<User> 
             email: email,
             password: password
         })
-        .then(response => {
-            console.log('user-auth-client-response POST user :', response.data);
-            return response.data;
-        })
-        .catch(error => {
-            console.error('Error: could not log user : ' + error.message);
-            throw error;
-        });
+        .then(response => handleResponse(response))
+        .catch(error => handleError(error, 'POST /auth'));
 };
 
 export const checkAccountExists = async (email: string): Promise<boolean> => {
@@ -34,10 +30,7 @@ export const checkAccountExists = async (email: string): Promise<boolean> => {
             }
             throw Error('Could not parse api /verify response. ');
         })
-        .catch(error => {
-            console.error('Error: could not verify if user exists' + error.message);
-            throw error;
-        });
+        .catch(error => handleError(error, 'POST /verify'));
 };
 
 export const signIn = async (pseudo: string, email: string, password: string): Promise<User> => {
@@ -47,14 +40,8 @@ export const signIn = async (pseudo: string, email: string, password: string): P
             email: email,
             password: password
         })
-        .then(response => {
-            console.log('user-sign-in-client-response POST user :', response.data);
-            return response.data;
-        })
-        .catch(error => {
-            console.error('Error: could not sign in user' + error.message);
-            throw error;
-        });
+        .then(response => handleResponse(response))
+        .catch(error => handleError(error, 'POST /sign-in'));
 };
 
 export const updateAccount = async (pseudo: string, email: string, password: string): Promise<User> => {
@@ -64,25 +51,13 @@ export const updateAccount = async (pseudo: string, email: string, password: str
             email: email,
             password: password
         })
-        .then(response => {
-            console.log('user-sign-in-client-response PATCH user :', response.data);
-            return response.data;
-        })
-        .catch(error => {
-            console.error('Error: could not update user' + error.message);
-            throw error;
-        });
+        .then(response => handleResponse(response))
+        .catch(error => handleError(error, 'PATCH /sign-in'));
 };
 
-export const deleteAccount = async (id: number) => {
+export const deleteAccount = async (id: number): Promise<AxiosResponse<any, any>> => {
     return await axios
         .delete(user_sign_out_path + '/' + id)
-        .then(response => {
-            console.log('user-auth-client-response DELETE user :', response);
-            return response;
-        })
-        .catch(error => {
-            console.error('Error: could DELETE user' + error.message);
-            throw error;
-        });
+        .then(response => handleDeleteResponse(response))
+        .catch(error => handleError(error, 'DELETE /sign-out'));
 };
