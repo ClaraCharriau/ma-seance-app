@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fav Theater Carousel Component renders Fav Theater Carousel component 1`] = `
+<div>
+  <div
+    class="carousel carousel"
+  >
+    <div
+      aria-label="slider"
+      aria-live="polite"
+      class="horizontalSlider___281Ls carousel__slider carousel__slider--horizontal slider"
+      role="listbox"
+      tabindex="0"
+    >
+      <div
+        class="carousel__slider-tray-wrapper carousel__slider-tray-wrap--horizontal"
+      >
+        <div
+          class="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
+          style="width: 150%; transform: translateX(0%) translateX(0px); flex-direction: row;"
+        >
+          <div
+            aria-label="slide"
+            aria-selected="true"
+            class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
+            role="option"
+            style="width: 33.333333333333336%; padding-bottom: 30.303030303030305%;"
+            tabindex="0"
+          >
+            <div
+              class="slideInner___2mfX9 carousel__inner-slide"
+            >
+              <a
+                class="card"
+                href="/theaters/1"
+              >
+                <img
+                  alt="photo de Le Grand Rex"
+                  class="theaterCardImg"
+                  src="/assets/img/theaters.jpg"
+                />
+                <p
+                  class="theaterName"
+                >
+                  Le Grand Rex
+                </p>
+              </a>
+            </div>
+          </div>
+          <div
+            aria-label="slide"
+            aria-selected="false"
+            class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--hidden slide"
+            role="option"
+            style="width: 33.333333333333336%; padding-bottom: 30.303030303030305%;"
+            tabindex="-1"
+          >
+            <div
+              class="slideInner___2mfX9 carousel__inner-slide"
+            >
+              <a
+                class="card"
+                href="/theaters/2"
+              >
+                <img
+                  alt="photo de Pathé Levallois"
+                  class="theaterCardImg"
+                  src="/assets/img/theaters.jpg"
+                />
+                <p
+                  class="theaterName"
+                >
+                  Pathé Levallois
+                </p>
+              </a>
+            </div>
+          </div>
+          <div
+            aria-label="slide"
+            aria-selected="false"
+            class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--hidden slide"
+            role="option"
+            style="width: 33.333333333333336%; padding-bottom: 30.303030303030305%;"
+            tabindex="-1"
+          >
+            <div
+              class="slideInner___2mfX9 carousel__inner-slide"
+            >
+              <a
+                class="card"
+                href="/theaters/3"
+              >
+                <img
+                  alt="photo de Super cinoche"
+                  class="theaterCardImg"
+                  src="/assets/img/theaters.jpg"
+                />
+                <p
+                  class="theaterName"
+                >
+                  Super cinoche
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

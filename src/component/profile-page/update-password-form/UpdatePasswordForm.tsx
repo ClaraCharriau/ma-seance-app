@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import style from '../../../pages/profile/Profile.module.css';
+import style from '../Profile.module.css';
 import { User } from '../../../models/User';
 import { useAuth } from '../../../hooks/useAuth';
 

@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { useAuth } from '../../../hooks/useAuth';
-import style from '../../../pages/login/Login.module.css';
+import style from '../Login.module.css';
 
 interface AccountCreationProps {
     onSignUpClick: () => void;

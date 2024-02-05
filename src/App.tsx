@@ -1,6 +1,6 @@
 import './App.css';
 import { AuthProvider } from './context/auth.context';
-import AppRouter from './rooter/AppRouter';
+import AppRouter from './router/AppRouter';
 
 function App() {
     return (

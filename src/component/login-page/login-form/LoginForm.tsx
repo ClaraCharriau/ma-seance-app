@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../hooks/useAuth';
-import style from '../../../pages/login/Login.module.css';
+import style from '../Login.module.css';
 
 const LoginForm = () => {
     const navigate = useNavigate();

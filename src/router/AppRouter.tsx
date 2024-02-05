@@ -6,13 +6,14 @@ import Movie from '../pages/movie/Movie';
 import Profile from '../component/profile-page/Profile';
 import Screening from '../pages/screening/Screening';
 import Search from '../pages/search/Search';
-import Theater from '../pages/theater/Theater';
+import TheaterDetails from '../component/theater-details-page/TheaterDetails';
 import Error from '../component/error-page/Error';
 import Login from '../component/login-page/Login';
 import Header from '../component/common/header/Header';
 import Footer from '../component/common/footer/Footer';
+import FavTheaters from '../component/fav-theaters-page/FavTheaterPage';
 
-const appLoader = async () => {
+export const appLoader = async () => {
     const currentUser = localStorage.getItem('user');
     if (!currentUser) {
         return redirect('/login');
@@ -20,7 +21,7 @@ const appLoader = async () => {
     return null;
 };
 
-const AppLayout = () => {
+export const AppLayout = () => {
     return (
         <>
             <Header />
@@ -70,8 +71,12 @@ const AppRouter = () => {
                     element: <Search />
                 },
                 {
-                    path: '/theater',
-                    element: <Theater />
+                    path: '/theaters/:id',
+                    element: <TheaterDetails />
+                },
+                {
+                    path: '/fav-theaters',
+                    element: <FavTheaters />
                 },
                 {
                     path: '/wishlist',

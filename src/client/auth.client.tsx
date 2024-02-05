@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { User } from '../models/User';
 import axios, { AxiosResponse } from 'axios';
 import { handleDeleteResponse, handleError, handleResponse } from './client.utils';
