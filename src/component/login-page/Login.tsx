@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import style from './Login.module.css';
-import LoginForm from '../../component/login/login-form/LoginForm';
-import AccountCreation from '../../component/login/account-creation/AccountCreation';
+import LoginForm from './login-form/LoginForm';
+import AccountCreation from './account-creation/AccountCreation';
 import { Navigate } from 'react-router-dom';
 
 const Login = () => {

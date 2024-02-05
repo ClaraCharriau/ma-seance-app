@@ -1,14 +1,14 @@
 import { Outlet, RouterProvider, createBrowserRouter, redirect } from 'react-router-dom';
-import Home from '../pages/home/Home';
+import Home from '../component/home-page/Home';
 import Currently from '../pages/currently/Currently';
 import Agenda from '../pages/agenda/Agenda';
 import Movie from '../pages/movie/Movie';
-import Profile from '../pages/profile/Profile';
+import Profile from '../component/profile-page/Profile';
 import Screening from '../pages/screening/Screening';
 import Search from '../pages/search/Search';
 import Theater from '../pages/theater/Theater';
-import Error from '../pages/error/Error';
-import Login from '../pages/login/Login';
+import Error from '../component/error-page/Error';
+import Login from '../component/login-page/Login';
 import Header from '../component/common/header/Header';
 import Footer from '../component/common/footer/Footer';
 

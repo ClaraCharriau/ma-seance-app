@@ -1,10 +1,10 @@
 import style from './Profile.module.css';
-import UpdateProfileForm from '../../component/profile/update-profile-form/UpdateProfileForm';
-import UpdatePasswordForm from '../../component/profile/update-password-form/UpdatePasswordForm';
+import UpdateProfileForm from './update-profile-form/UpdateProfileForm';
+import UpdatePasswordForm from './update-password-form/UpdatePasswordForm';
 import { useAuthContext } from '../../context/auth.context';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import ConfirmationModal from '../../component/common/modals/confirmation-modal/ConfirmationModal';
+import ConfirmationModal from '../common/modals/confirmation-modal/ConfirmationModal';
 import { useState } from 'react';
 
 const Profile = () => {

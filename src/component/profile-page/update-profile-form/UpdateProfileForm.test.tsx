@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import UpdateProfileForm from '../update-profile-form/UpdateProfileForm';
+import UpdateProfileForm from './UpdateProfileForm';
 
 describe('UpdateProfileForm component tests', () => {
     it('should render profile update form', () => {
