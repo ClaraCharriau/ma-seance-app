@@ -1,11 +1,6 @@
 import { Outlet, RouterProvider, createBrowserRouter, redirect } from 'react-router-dom';
 import Home from '../component/home-page/Home';
-import Currently from '../pages/currently/Currently';
-import Agenda from '../pages/agenda/Agenda';
-import Movie from '../pages/movie/Movie';
 import Profile from '../component/profile-page/Profile';
-import Screening from '../pages/screening/Screening';
-import Search from '../pages/search/Search';
 import TheaterDetails from '../component/theater-details-page/TheaterDetails';
 import Error from '../component/error-page/Error';
 import Login from '../component/login-page/Login';
@@ -48,15 +43,15 @@ const AppRouter = () => {
                 },
                 {
                     path: '/currently',
-                    element: <Currently />
+                    element: <>Currently</>
                 },
                 {
                     path: '/agenda',
-                    element: <Agenda />
+                    element: <>Agenda</>
                 },
                 {
                     path: '/movie',
-                    element: <Movie />
+                    element: <>Movie</>
                 },
                 {
                     path: '/profile',
@@ -64,11 +59,11 @@ const AppRouter = () => {
                 },
                 {
                     path: '/screening',
-                    element: <Screening />
+                    element: <>Screening</>
                 },
                 {
                     path: '/search',
-                    element: <Search />
+                    element: <>Search</>
                 },
                 {
                     path: '/theaters/:id',

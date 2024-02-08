@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 import SeeDetailsBtn from './SeeDetailsBtn';
-import { BrowserRouter, useNavigate } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),

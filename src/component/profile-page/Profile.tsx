@@ -24,12 +24,8 @@ const Profile = () => {
     };
 
     const deleteAccount = async (id: number): Promise<void> => {
-        if (currentUser) {
-            await deleteUserAccount(id);
-            clearCurrentUser();
-            navigate('/login');
-        }
-        console.log('Suppression du compte');
+        await deleteUserAccount(id);
+        logOut();
     };
 
     return (

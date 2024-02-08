@@ -28,17 +28,8 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
     };
 
     const updateProfile = async () => {
-        setVerifyError('');
-        const userExists = await checkUserExists(newEmail);
-        if (!userExists) {
-            if (await isFormValid()) {
-                console.log('ok, maj du profile');
-                updateUserAccount(pseudo, email, currentPassword);
-            } else {
-                return;
-            }
-        } else {
-            setVerifyError('Un compte existe déjà avec cette adresse email.');
+        if (await isFormValid()) {
+            updateUserAccount(pseudo, email, currentPassword);
         }
     };
 
@@ -46,20 +37,15 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
         return !!(await logUser(email, currentPassword));
     };
 
+    const isAlreadyExistingEmail = async (): Promise<boolean> => {
+        return await checkUserExists(newEmail);
+    };
+
     const isFormValid = async (): Promise<boolean> => {
         setPseudoError('');
         setEmailError('');
         setCurrentPasswordError('');
-
-        if ('' === currentPassword) {
-            setCurrentPasswordError('Entrez votre mot de passe actuel');
-            return false;
-        }
-
-        if (!(await isCurrentPasswordValid())) {
-            setCurrentPasswordError('Votre mot de passe actuel est erroné');
-            return false;
-        }
+        setVerifyError('');
 
         if ('' === newPseudo) {
             setPseudoError('Choisissez un pseudo.');
@@ -78,6 +64,21 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
 
         if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
             setEmailError("Merci d'entrer une adresse email valide.");
+            return false;
+        }
+
+        if ('' === currentPassword) {
+            setCurrentPasswordError('Entrez votre mot de passe actuel');
+            return false;
+        }
+
+        if (!(await isCurrentPasswordValid())) {
+            setCurrentPasswordError('Votre mot de passe actuel est erroné');
+            return false;
+        }
+
+        if (await isAlreadyExistingEmail()) {
+            setVerifyError('Un compte existe déjà avec cette adresse email.');
             return false;
         }
 

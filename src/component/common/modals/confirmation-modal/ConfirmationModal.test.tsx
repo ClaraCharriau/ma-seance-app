@@ -4,7 +4,7 @@ import ConfirmationModal from './ConfirmationModal';
 describe('Confirmation modal component tests', () => {
     it('should render confirmation modal', () => {
         // Given
-        const textExample: string = 'Souhaitez-vous confirmer la suppression ?';
+        const textExample = 'Souhaitez-vous confirmer la suppression ?';
         const mockLeftBtnCallback = () => {
             console.log('click on left btn');
         };

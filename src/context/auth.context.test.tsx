@@ -1,5 +1,6 @@
+import { act } from 'react-dom/test-utils';
 import { AuthProvider, useAuthContext } from './auth.context';
-import { render, renderHook } from '@testing-library/react';
+import { render, renderHook, waitFor } from '@testing-library/react';
 
 const { result } = renderHook(useAuthContext);
 
@@ -22,6 +23,8 @@ describe('Authentication context tests', () => {
         // Then
         const user = result.current.currentUser;
         expect(user).toBeNull();
+        const localUser = localStorage.getItem('user');
+        expect(localUser).toBeNull();
     });
 
     it('should set user if user exists in localStorage', async () => {
@@ -41,10 +44,12 @@ describe('Authentication context tests', () => {
         );
 
         // Then
-        // await waitFor(() => {
-        //     const user = result.current.currentUser;
-        //     expect(user).toEqual(mockUser);
-        // });
+        waitFor(() => {
+            const user = result.current.currentUser;
+            expect(user).toEqual(mockUser);
+            const localUser = localStorage.getItem('user');
+            expect(localUser).toEqual(mockUser);
+        });
     });
 
     it('should unset user', async () => {
@@ -55,14 +60,50 @@ describe('Authentication context tests', () => {
             email: 'test@mail.com'
         };
         localStorage.setItem('user', JSON.stringify(mockUser));
-        // ++ on a un user dans provider
+        render(
+            <AuthProvider>
+                <MockChildComponent />
+            </AuthProvider>
+        );
 
         // When
-        result.current.clearCurrentUser();
+        act(() => {
+            result.current.clearCurrentUser();
+        });
 
         // Then
-        const user = result.current.currentUser;
-        expect(user).toBeNull();
+        waitFor(() => {
+            expect(result.current.currentUser).toBeNull();
+            const localUser = localStorage.getItem('user');
+            expect(localUser).toBeNull();
+        });
+    });
+
+    it('should set user', async () => {
+        // Given
+        const mockUser = {
+            id: 1,
+            pseudo: 'Jane',
+            email: 'test@mail.com'
+        };
+        localStorage.removeItem('user');
+        render(
+            <AuthProvider>
+                <MockChildComponent />
+            </AuthProvider>
+        );
+
+        // When
+        act(() => {
+            result.current.setCurrentUser(mockUser);
+        });
+
+        // Then
+        waitFor(() => {
+            expect(result.current.currentUser).toEqual(mockUser);
+            const localUser = localStorage.getItem('user');
+            expect(localUser).toEqual(mockUser);
+        });
     });
 });
 export {};

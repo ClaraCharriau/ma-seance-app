@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
-import FavTheaters from "./FavTheaterPage";
+import { render } from '@testing-library/react';
+import FavTheaters from './FavTheaterPage';
 
 describe('Favorite theaters Component', () => {
     it('renders favorite theaters component', () => {

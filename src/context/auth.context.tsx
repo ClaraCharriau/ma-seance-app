@@ -24,17 +24,18 @@ interface AuthProviderProps {
 
 export const AuthProvider = (props: AuthProviderProps) => {
     const { children } = props;
-    const { setItem, removeItem } = useLocalStorage();
+    const { setItem, removeItem, getItem } = useLocalStorage();
     const [user, setUser] = useState<User | null>(() => {
-        const storedUser = localStorage.getItem('user');
+        const storedUser = getItem('user');
         return storedUser ? JSON.parse(storedUser) : null;
     });
 
     useEffect(() => {
-        const storedUser = localStorage.getItem('user');
+        const storedUser = getItem('user');
         if (storedUser) {
             setUser(JSON.parse(storedUser));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const setCurrentUser = (user: User | null) => {
