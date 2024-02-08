@@ -125,9 +125,9 @@
             ".module.ts",
             "<rootDir>/src/app/main.ts",
             ".json",
-            ".*__snapshots__/.*",
             "index.tsx",
-            "reportWebVitals.ts"
+            "reportWebVitals.ts",
+            ".*__snapshots__/.*"
         ],
         "coverageReporters": [
             "json-summary",
