@@ -39,6 +39,7 @@ body {
   background-color: var(--secondary);
   color: var(--almost-white);
   font-family: "Work Sans", sans-serif;
+  letter-spacing: 1.82px;
 }
 
 main {
@@ -69,6 +70,7 @@ h1 {
   font-weight: 400;
   color: var(--primary);
   font-size: 50px;
+  letter-spacing: 1px;
 }
 
 h2 {

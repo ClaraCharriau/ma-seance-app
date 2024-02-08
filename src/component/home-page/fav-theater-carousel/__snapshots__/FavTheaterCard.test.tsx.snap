@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fav Theater Card Component renders Fav Theater Card component 1`] = `
+<div>
+  <a
+    class="card"
+    href="/theaters/1"
+  >
+    <img
+      alt="photo de Le Grand Rex"
+      class="theaterCardImg"
+      src="/assets/img/theaters.jpg"
+    />
+    <p
+      class="theaterName"
+    >
+      Le Grand Rex
+    </p>
+  </a>
+</div>
+`;

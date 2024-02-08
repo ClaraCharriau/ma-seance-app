@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorite theaters Component renders favorite theaters component 1`] = `
+<div>
+  <div>
+    FavTheaters
+  </div>
+</div>
+`;

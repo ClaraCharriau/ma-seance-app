@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "name": "C2L Saint-Germain",
+    "address": "25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye",
+    "imgPath": "/c2l-saint-germain"
+  },
+  {
+    "id": 2,
+    "name": "C2L Poissy",
+    "address": "112 Rue du Général de Gaulle 78300 Poissy",
+    "imgPath": "/c2l-poissy"
+  },
+  {
+    "id": 3,
+    "name": "UGC Ciné Cité La Défense",
+    "address": "Le Dôme - Centre commercial Westfield - Les 4 Temps 92092 Puteaux",
+    "imgPath": "/ugc-defense-puteaux"
+  },
+  {
+    "id": 4,
+    "name": "Les 5 Caumartin",
+    "address": "101, rue Saint-Lazare 75009 Paris 9e arrondissement",
+    "imgPath": "/5-caumartin-paris"
+  },
+  {
+    "id": 5,
+    "name": "UGC Ciné Cité Les Halles",
+    "address": "7 Place de la Rotonde 75001 Paris",
+    "imgPath": "/ugc-les-halles-paris"
+  },
+  {
+    "id": 6,
+    "name": "UGC Normandie",
+    "address": "116 bis Av. des Champs-Élysées 75008 Paris",
+    "imgPath": "/ugc-normandie-paris"
+  },
+  {
+    "id": 7,
+    "name": "Publicis Cinémas",
+    "address": "129, av. des Champs-Elysées 75008 Paris 8e arrondissement",
+    "imgPath": "/publicis-paris"
+  },
+  {
+    "id": 8,
+    "name": "Elysées Lincoln",
+    "address": "14 Rue Lincoln 75008 Paris",
+    "imgPath": "/lincoln-paris"
+  },
+  {
+    "id": 9,
+    "name": "Les 3 Luxembourg",
+    "address": "67 Rue Monsieur le Prince, 75006 Paris",
+    "imgPath": "/3-luxembourg-paris"
+  },
+  {
+    "id": 10,
+    "name": "La Filmothèque du Quartier Latin",
+    "address": "9 Rue Champollion, 75005 Paris",
+    "imgPath": "/filmotheque-paris"
+  },
+  {
+    "id": 11,
+    "name": "Le Champo - Espace Jacques Tati",
+    "address": "51, rue des Ecoles 75005 Paris",
+    "imgPath": "/champo-paris"
+  },
+  {
+    "id": 12,
+    "name": "Reflet Médicis",
+    "address": "3 Rue Champollion, 75005 Paris",
+    "imgPath": "/reflet-medicis-paris"
+  },
+  {
+    "id": 13,
+    "name": "Écoles Cinéma Club",
+    "address": "23, rue des Ecoles 75005 Paris",
+    "imgPath": "/ecole-cinema-paris"
+  },
+  {
+    "id": 14,
+    "name": "Le Grand Action",
+    "address": "5 Rue des Écoles, 75005 Paris",
+    "imgPath": "/grand-action-paris"
+  },
+  {
+    "id": 15,
+    "name": "MK2 Bibliothèque",
+    "address": "128-162 avenue de France 75013 Paris",
+    "imgPath": "/mk2-bibliotheque-paris"
+  },
+  {
+    "id": 16,
+    "name": "Pathé Angers",
+    "address": "1, avenue des Droits de l'Homme 49000 Angers",
+    "imgPath": "/pathe-angers"
+  },
+  {
+    "id": 17,
+    "name": "Les 400 Coups",
+    "address": "12, rue jeanne Moreau 49000 Angers",
+    "imgPath": "/400-coups-angers"
+  },
+  {
+    "id": 18,
+    "name": "UGC Ciné Cité Strasbourg Etoile",
+    "address": "25, avenue du Rhin 67100 Strasbourg",
+    "imgPath": "/ugc-etoile-strasbourg"
+  },
+  {
+    "id": 19,
+    "name": "Mégarex",
+    "address": "route du Rhin-za du taubenhof 67500 Haguenau",
+    "imgPath": "/megarex-haguenau"
+  },
+  {
+    "id": 20,
+    "name": "Le Cosmos",
+    "address": "3, rue des Francs-Bourgeois 67000 Strasbourg",
+    "imgPath": "/cosmos-strasbourg"
+  },
+  {
+    "id": 21,
+    "name": "Star Saint-Exupery",
+    "address": "18, rue du 22-Novembre 67000 Strasbourg",
+    "imgPath": "/star-st-ex-strasbourg"
+  },
+  {
+    "id": 22,
+    "name": "Star",
+    "address": "27, rue du Jeu des enfants 67000 Strasbourg",
+    "imgPath": "/star-strasbourg"
+  },
+  {
+    "id": 23,
+    "name": "Cinéma Vox",
+    "address": "17, rue des Francs-Bourgeois 67000 Strasbourg",
+    "imgPath": "/vox-strasbourg"
+  }
+]
