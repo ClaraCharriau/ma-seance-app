@@ -64,6 +64,7 @@
         "rules": {
             "react/react-in-jsx-scope": "off",
             "react/jsx-uses-react": "off",
+            "react/no-unescaped-entities": "off",
             "react/jsx-filename-extension": [
                 1,
                 {
@@ -90,7 +91,7 @@
                     "usePrettierrc": true
                 }
             ],
-            "react/no-unescaped-entities": "off",
+            "@typescript-eslint/no-var-requires": "off",
             "@typescript-eslint/no-implicit-any-catch": [
                 "error",
                 {
@@ -123,7 +124,10 @@
             "jestGlobalMocks.ts",
             ".module.ts",
             "<rootDir>/src/app/main.ts",
-            ".json"
+            ".json",
+            ".*__snapshots__/.*",
+            "index.tsx",
+            "reportWebVitals.ts"
         ],
         "coverageReporters": [
             "json-summary",

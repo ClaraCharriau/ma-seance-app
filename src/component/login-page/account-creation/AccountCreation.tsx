@@ -34,7 +34,7 @@ const AccountCreation = (props: AccountCreationProps) => {
                 setVerifyError("Une erreur s'est produite.");
             }
         } else {
-            setVerifyError('Un compte existe déjà à cette adresse email.');
+            setVerifyError('Un compte existe déjà avec cette adresse email.');
         }
     };
 

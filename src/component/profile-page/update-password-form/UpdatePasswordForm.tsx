@@ -25,7 +25,6 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
 
     const updatePassword = async (): Promise<void> => {
         if (await isFormValid()) {
-            console.log('update user password');
             updateUserAccount(pseudo, email, newPassword);
         }
     };
@@ -59,7 +58,7 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
         }
 
         if (passwordBis !== newPassword) {
-            setPasswordError('Les mots de passe doivent être identiques.');
+            setPasswordError('Les mots de passe doivent être identiques');
             return false;
         }
 

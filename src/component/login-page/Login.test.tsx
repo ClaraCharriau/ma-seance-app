@@ -5,6 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 describe('Login page tests', () => {
     it('should renders Login form with buttons', () => {
         // Given
+        localStorage.removeItem('user');
+
+        // When
         const { getByText } = render(
             <Router>
                 <Login />
@@ -14,6 +17,21 @@ describe('Login page tests', () => {
         // Then
         expect(getByText('Se connecter')).toBeInTheDocument();
         expect(getByText('Créer un compte')).toBeInTheDocument();
+    });
+
+    it('should redirect to homepage', () => {
+        const currentUser = 'someUser';
+        localStorage.setItem('user', currentUser);
+
+        render(
+            <Router>
+                <Login />
+            </Router>
+        );
+
+        expect(window.location.pathname).toEqual('/');
+        expect(window.location.pathname).not.toEqual('/login');
+        localStorage.removeItem('user');
     });
 
     it('should switches to login form when "Se connecter" button is clicked', () => {

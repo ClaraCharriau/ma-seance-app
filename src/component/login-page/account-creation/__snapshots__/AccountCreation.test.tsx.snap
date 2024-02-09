@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountCreation component tests should render account creation component 1`] = `
+<body>
+  <div>
+    <form
+      class="loginForm"
+    >
+      <h1
+        class="creationTitle"
+      >
+        Créer un compte
+      </h1>
+      <div
+        class="inputContainer"
+      >
+        <label
+          class="inputLabel"
+          for="pseudo"
+        >
+          Pseudo *
+        </label>
+        <input
+          class=""
+          id="pseudo"
+          name="pseudo"
+          required=""
+          type="text"
+          value=""
+        />
+        <label
+          class="error"
+        />
+      </div>
+      <div
+        class="inputContainer"
+      >
+        <label
+          class="inputLabel"
+          for="email"
+        >
+          Adresse e-mail *
+        </label>
+        <input
+          class=""
+          id="email"
+          name="email"
+          required=""
+          type="mail"
+          value=""
+        />
+        <label
+          class="error"
+        />
+      </div>
+      <div
+        class="inputContainer"
+      >
+        <label
+          class="inputLabel"
+          for="password"
+        >
+          Mot de passe *
+        </label>
+        <input
+          class=""
+          id="password"
+          name="password"
+          required=""
+          type="password"
+          value=""
+        />
+        <label
+          class="error"
+        />
+      </div>
+      <div
+        class="inputContainer"
+      >
+        <label
+          class="inputLabel"
+          for="passwordBis"
+        >
+          Confirmez le mot de passe *
+        </label>
+        <input
+          class=""
+          id="passwordBis"
+          name="passwordBis"
+          required=""
+          type="password"
+          value=""
+        />
+        <label
+          class="error"
+        />
+      </div>
+      <button
+        class="orangeBtn"
+        type="submit"
+      >
+        S'inscrire
+      </button>
+    </form>
+  </div>
+</body>
+`;
