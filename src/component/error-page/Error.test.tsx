@@ -18,15 +18,14 @@ describe('Error page Component', () => {
 
         const mockError = {
             status: 404,
-            statusText: 'Not Found',
-            data: 'La page demandée est introuvable'
+            statusText: 'Not Found'
         };
         useRouteError.mockReturnValue(mockError);
 
         const { getByText } = render(<ErrorPage />);
 
+        expect(getByText(`Not Found`)).toBeInTheDocument();
         expect(getByText(`Une erreur 404 est survenue`)).toBeInTheDocument();
-        expect(getByText(`Not Found - La page demandée est introuvable`)).toBeInTheDocument();
         expect(useRouteError).toHaveBeenCalled();
         expect(isRouteErrorResponse).toHaveBeenCalled();
     });

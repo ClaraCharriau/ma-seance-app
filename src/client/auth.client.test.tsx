@@ -44,7 +44,7 @@ describe('AuthClient tests', () => {
             response = await loginUser(email, password);
         } catch (e: any) {
             // Then
-            expect(e.message).toBe('Request failed with status code 500');
+            expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
     });
@@ -90,7 +90,7 @@ describe('AuthClient tests', () => {
             response = await checkAccountExists(email);
         } catch (e: any) {
             // Then
-            expect(e.message).toBe('Request failed with status code 500');
+            expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
     });
@@ -126,7 +126,7 @@ describe('AuthClient tests', () => {
             response = await signIn(pseudo, email, password);
         } catch (e: any) {
             // Then
-            expect(e.message).toBe('Request failed with status code 500');
+            expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
     });
@@ -162,7 +162,7 @@ describe('AuthClient tests', () => {
             response = await updateAccount(pseudo, email, password);
         } catch (e: any) {
             // Then
-            expect(e.message).toBe('Request failed with status code 500');
+            expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
     });
@@ -189,7 +189,7 @@ describe('AuthClient tests', () => {
             await deleteAccount(id);
         } catch (e: any) {
             // Then
-            expect(e.message).toBe('Request failed with status code 500');
+            expect(e.status).toBe(500);
         }
     });
 });

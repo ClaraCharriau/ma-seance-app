@@ -29,7 +29,12 @@
     position: absolute;
     bottom: 0;
     padding: 10px;
+    text-align: start;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
     width: 90%;
+    min-height: 20%;
     color: var(--white);
     font-size: clamp(10px, 3vw, 14px);
     border-radius: 6px 6px 0 0;
@@ -41,6 +46,6 @@
 
 @media (max-width: 400px) {
     .theaterName {
-        padding: 5px
+        padding: 5px;
     }
 }
