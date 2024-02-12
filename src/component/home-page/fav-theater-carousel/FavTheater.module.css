@@ -1,10 +1,25 @@
 .carousel {
     position: relative;
     width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
 }
 
 .slider {
     overflow-x: scroll !important;
+    width: 100%;
+}
+
+.buttonWrapper {
+    display: flex;
+    gap: 1vw;
+}
+
+.buttonBack {
+}
+
+.buttonNext {
 }
 
 .card {
@@ -47,5 +62,9 @@
 @media (max-width: 400px) {
     .theaterName {
         padding: 5px;
+    }
+    .buttonBack,
+    .buttonNext {
+        display: none;
     }
 }
