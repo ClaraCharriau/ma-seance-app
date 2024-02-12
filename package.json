@@ -91,6 +91,7 @@
                     "usePrettierrc": true
                 }
             ],
+            "@typescript-eslint/no-explicit-any": "off",
             "@typescript-eslint/no-var-requires": "off",
             "@typescript-eslint/no-implicit-any-catch": [
                 "error",
@@ -125,9 +126,9 @@
             ".module.ts",
             "<rootDir>/src/app/main.ts",
             ".json",
-            ".*__snapshots__/.*",
             "index.tsx",
-            "reportWebVitals.ts"
+            "reportWebVitals.ts",
+            ".*__snapshots__/.*"
         ],
         "coverageReporters": [
             "json-summary",

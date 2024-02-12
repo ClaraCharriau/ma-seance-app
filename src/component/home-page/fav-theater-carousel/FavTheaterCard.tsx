@@ -14,13 +14,15 @@ const FavTheaterCard = (props: FavTheaterCardProps) => {
     const IMG_SUFFIX = '.jpg';
 
     return (
-        <NavLink to={`/theaters/${theater.id}`} className={style.card}>
+        <NavLink to={`/theaters/${theater.id}`} state={{ id: theater.id }} className={style.card}>
             <img
                 className={style.theaterCardImg}
                 src={IMG_PATH + theater.imgPath + IMG_SUFFIX}
                 alt={'photo de ' + theater.name}
             />
-            <p className={style.theaterName}>{theater.name}</p>
+            <div className={style.theaterName}>
+                <p>{theater.name}</p>
+            </div>
         </NavLink>
     );
 };

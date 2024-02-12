@@ -1,15 +1,23 @@
-import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+import { ErrorResponse, isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
-const ErrorPage = () => {
-    const error = useRouteError();
+interface ErrorPageProps {
+    error?: ErrorResponse | unknown;
+}
+
+const ErrorPage = (props: ErrorPageProps) => {
+    let { error } = props;
+    const routeError = useRouteError();
+
+    if (!error) {
+        error = routeError;
+    }
+
     if (isRouteErrorResponse(error)) {
         return (
-            <div>
-                <h1>Une erreur {error.status} est survenue</h1>
-                <p>
-                    {error.statusText} - {error.data}
-                </p>
-            </div>
+            <main>
+                <h1>{error.statusText}</h1>
+                <p>Une erreur {error.status} est survenue</p>
+            </main>
         );
     } else {
         return <p>Oups ! Une erreur s'est produite</p>;

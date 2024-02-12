@@ -11,11 +11,13 @@ exports[`Fav Theater Card Component renders Fav Theater Card component 1`] = `
       class="theaterCardImg"
       src="/assets/img/theaters.jpg"
     />
-    <p
+    <div
       class="theaterName"
     >
-      Le Grand Rex
-    </p>
+      <p>
+        Le Grand Rex
+      </p>
+    </div>
   </a>
 </div>
 `;

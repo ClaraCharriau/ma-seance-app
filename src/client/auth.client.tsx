@@ -1,13 +1,12 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import { User } from '../models/User';
 import axios, { AxiosResponse } from 'axios';
-import { handleDeleteResponse, handleError, handleResponse } from './client.utils';
+import { HOST, handleDeleteResponse, handleError, handleResponse } from './client.utils';
 
-const host = 'http://localhost:7878';
-const user_auth_path = host + '/auth';
-const user_verify_path = host + '/verify';
-const user_sign_in_path = host + '/sign-in';
-const user_sign_out_path = host + '/sign-out';
+const user_auth_path = HOST + '/auth';
+const user_verify_path = HOST + '/verify';
+const user_sign_in_path = HOST + '/sign-in';
+const user_sign_out_path = HOST + '/sign-out';
 
 export const loginUser = async (email: string, password: string): Promise<User> => {
     return await axios
@@ -16,7 +15,7 @@ export const loginUser = async (email: string, password: string): Promise<User> 
             password: password
         })
         .then(response => handleResponse(response))
-        .catch(error => handleError(error, 'POST /auth'));
+        .catch(error => handleError(error));
 };
 
 export const checkAccountExists = async (email: string): Promise<boolean> => {
@@ -31,7 +30,7 @@ export const checkAccountExists = async (email: string): Promise<boolean> => {
             }
             throw Error('Could not parse api /verify response. ');
         })
-        .catch(error => handleError(error, 'POST /verify'));
+        .catch(error => handleError(error));
 };
 
 export const signIn = async (pseudo: string, email: string, password: string): Promise<User> => {
@@ -42,7 +41,7 @@ export const signIn = async (pseudo: string, email: string, password: string): P
             password: password
         })
         .then(response => handleResponse(response))
-        .catch(error => handleError(error, 'POST /sign-in'));
+        .catch(error => handleError(error));
 };
 
 export const updateAccount = async (pseudo: string, email: string, password: string): Promise<User> => {
@@ -53,12 +52,12 @@ export const updateAccount = async (pseudo: string, email: string, password: str
             password: password
         })
         .then(response => handleResponse(response))
-        .catch(error => handleError(error, 'PATCH /sign-in'));
+        .catch(error => handleError(error));
 };
 
 export const deleteAccount = async (id: number): Promise<AxiosResponse<any, any>> => {
     return await axios
         .delete(user_sign_out_path + '/' + id)
         .then(response => handleDeleteResponse(response))
-        .catch(error => handleError(error, 'DELETE /sign-out'));
+        .catch(error => handleError(error));
 };

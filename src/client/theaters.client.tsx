@@ -1,12 +1,12 @@
-import { Theater } from '../models/Theater';
 import axios from 'axios';
 import { HOST, handleError, handleResponse } from './client.utils';
+import { Theater } from '../models/Theater';
 
-const users_path = HOST + '/users';
+const theaters_path = HOST + '/theaters';
 
-export const getUserFavTheaters = async (id: number): Promise<Theater[]> => {
+export const getTheaterById = async (id: number): Promise<Theater> => {
     return await axios
-        .get(users_path + '/' + id + '/fav-theaters')
+        .get(theaters_path + '/' + id)
         .then(response => handleResponse(response))
         .catch(error => handleError(error));
 };

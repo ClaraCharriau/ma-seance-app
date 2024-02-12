@@ -1,30 +1,13 @@
-import { Outlet, RouterProvider, createBrowserRouter, redirect } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from '../component/home-page/Home';
 import Profile from '../component/profile-page/Profile';
 import TheaterDetails from '../component/theater-details-page/TheaterDetails';
 import Error from '../component/error-page/Error';
 import Login from '../component/login-page/Login';
-import Header from '../component/common/header/Header';
-import Footer from '../component/common/footer/Footer';
 import FavTheaters from '../component/fav-theaters-page/FavTheaterPage';
-
-export const appLoader = async () => {
-    const currentUser = localStorage.getItem('user');
-    if (!currentUser) {
-        return redirect('/login');
-    }
-    return null;
-};
-
-export const AppLayout = () => {
-    return (
-        <>
-            <Header />
-            <Outlet />
-            <Footer />
-        </>
-    );
-};
+import { appLoader } from './loaders/AppLoader';
+import { theaterLoader } from './loaders/TheaterLoader';
+import AppLayout from './AppLayout';
 
 const AppRouter = () => {
     const router = createBrowserRouter([
@@ -67,7 +50,9 @@ const AppRouter = () => {
                 },
                 {
                     path: '/theaters/:id',
-                    element: <TheaterDetails />
+                    loader: theaterLoader,
+                    element: <TheaterDetails />,
+                    errorElement: <Error />
                 },
                 {
                     path: '/fav-theaters',

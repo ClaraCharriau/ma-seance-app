@@ -36,6 +36,11 @@
             "latency": 20,
             "verbs": ["get"],
             "mockFile": "theaters/theaters.json"
+        },
+        "theaters/:id": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "theaters/theaters-1.json"
         }
     }
 }

@@ -2,8 +2,27 @@
 
 exports[`Theater Details Component renders theater details component 1`] = `
 <div>
-  <div>
-    TheaterDetails
+  <div
+    class="backgroundWrapper"
+  >
+    <img
+      alt="photo de UGC Normandie"
+      class="theaterBackground"
+      src="/assets/img/theaters/ugc-normandie-paris.jpg"
+    />
+    <div
+      class="fading"
+    />
   </div>
+  <main
+    class="theaterDetailsMain"
+  >
+    <h2>
+      UGC Normandie
+    </h2>
+    <p>
+      116 bis Av. des Champs-Élysées 75008 Paris
+    </p>
+  </main>
 </div>
 `;

@@ -1,7 +1,15 @@
 import { AxiosResponse } from 'axios';
 
-export const handleError = (error: Error, customMessage?: string) => {
-    console.error(`Error: ${customMessage}`, error.message);
+export const HOST = 'http://localhost:7878';
+
+export const handleError = (error: any) => {
+    if (error.response) {
+        throw new Response(error.response.data, {
+            status: error.response.status,
+            statusText: error.response.statusText
+        });
+    }
+    console.error(error.message);
     throw error;
 };
 
