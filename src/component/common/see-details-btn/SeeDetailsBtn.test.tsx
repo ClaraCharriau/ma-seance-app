@@ -11,7 +11,7 @@ describe('See Details button Component', () => {
     it('should render see details button component', () => {
         const component = render(
             <BrowserRouter>
-                <SeeDetailsBtn text="See details" navigatePath="/fav-theaters" />
+                <SeeDetailsBtn text="See details" navigatePath="/fav-theaters" showIcon={false} />
             </BrowserRouter>
         );
 
@@ -27,7 +27,7 @@ describe('See Details button Component', () => {
 
         const { getByText } = render(
             <BrowserRouter>
-                <SeeDetailsBtn text={text} navigatePath={navigatePath} />
+                <SeeDetailsBtn text={text} navigatePath={navigatePath} showIcon={true} />
             </BrowserRouter>
         );
 
