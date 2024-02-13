@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import ErrorPage from './Error';
+import { BrowserRouter } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
@@ -22,7 +23,11 @@ describe('Error page Component', () => {
         };
         useRouteError.mockReturnValue(mockError);
 
-        const { getByText } = render(<ErrorPage />);
+        const { getByText } = render(
+            <BrowserRouter>
+                <ErrorPage />
+            </BrowserRouter>
+        );
 
         expect(getByText(`Not Found`)).toBeInTheDocument();
         expect(getByText(`Une erreur 404 est survenue`)).toBeInTheDocument();
@@ -30,7 +35,7 @@ describe('Error page Component', () => {
         expect(isRouteErrorResponse).toHaveBeenCalled();
     });
 
-    it('should render 404 error page', () => {
+    it('should render error page', () => {
         const useRouteError = jest
             .spyOn(require('react-router-dom'), 'useRouteError')
             .mockImplementation(() => jest.fn());
@@ -40,7 +45,11 @@ describe('Error page Component', () => {
                 return false;
             });
 
-        const { getByText } = render(<ErrorPage />);
+        const { getByText } = render(
+            <BrowserRouter>
+                <ErrorPage />
+            </BrowserRouter>
+        );
 
         expect(getByText(`Oups ! Une erreur s'est produite`)).toBeInTheDocument();
         expect(useRouteError).toHaveBeenCalled();
