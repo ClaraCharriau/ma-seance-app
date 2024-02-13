@@ -1,0 +1,28 @@
+.mainError {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+}
+
+.backButton {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 2.08px;
+    height: 55px;
+    width: 30vw;
+    min-width: 100px;
+    border: 1px solid var(--almost-white);
+    background-color: var(--secondary);
+}
+
+.backButton:hover {
+    opacity: 80%;
+    cursor: pointer;
+    transition: all 0.2;
+}
