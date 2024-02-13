@@ -1,5 +1,5 @@
 import { ActionFunctionArgs } from 'react-router-dom';
-import { getTheaterById } from '../../client/theaters.client';
+import { getTheaterById } from '../../client/theaters/theaters.client';
 
 export const theaterLoader = async (args: ActionFunctionArgs) => {
     const { params } = args;

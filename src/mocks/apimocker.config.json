@@ -46,6 +46,11 @@
             "httpStatus": 200,
             "verbs": ["get"],
             "mockFile": "theaters/theaters-1.json"
+        },
+        "movies/currently": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "movies/current-movies.json"
         }
     }
 }

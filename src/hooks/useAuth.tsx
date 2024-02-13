@@ -1,4 +1,4 @@
-import { checkAccountExists, deleteAccount, loginUser, signIn, updateAccount } from '../client/auth.client';
+import { checkAccountExists, deleteAccount, loginUser, signIn, updateAccount } from '../client/auth/auth.client';
 import { useAuthContext } from '../context/auth.context';
 
 export const useAuth = () => {

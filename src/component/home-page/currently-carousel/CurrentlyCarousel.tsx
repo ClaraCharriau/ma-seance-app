@@ -1,24 +1,16 @@
-import { useEffect, useState } from 'react';
-import { getUserFavTheaters } from '../../../client/users/user.client';
-import { Theater } from '../../../models/Theater';
-import { User } from '../../../models/User';
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
+import { useEffect, useState } from 'react';
+import { Movie } from '../../../models/Movie';
+import style from './CurrentlyCarousel.module.css';
 import { useMediaQuery } from 'react-responsive';
-import FavTheaterCard from './FavTheaterCard';
-import style from './FavTheater.module.css';
+import { getCurrentlyMovies } from '../../../client/movies/movies.client';
+import CurrentlyCard from './CurrentlyCard';
 
-interface FavTheaterCarouselProps {
-    currentUser: User;
-}
-
-const FavTheaterCarousel = (props: FavTheaterCarouselProps) => {
-    const { currentUser } = props;
-    const [favTheaters, setFavTheaters] = useState<Theater[]>([]);
+const CurrentlyCarousel = () => {
+    const [currentMovies, setCurrentMovies] = useState<Movie[]>([]);
 
     useEffect(() => {
-        getUserFavTheaters(currentUser.id).then(theaters => {
-            setFavTheaters(theaters);
-        });
+        getCurrentlyMovies().then(movies => setCurrentMovies(movies));
         // eslint-disable-next-line
     }, []);
 
@@ -29,21 +21,21 @@ const FavTheaterCarousel = (props: FavTheaterCarouselProps) => {
         query: '(min-device-width: 1524px)'
     });
     const isTablet = useMediaQuery({ query: '(min-device-width: 300px)' });
-    const slideCount = isWideDesktop ? 5 : isDesktop ? 4 : isTablet ? 3 : 2;
+    const slideCount = isWideDesktop ? 6 : isDesktop ? 5 : isTablet ? 4 : 3;
 
     return (
         <CarouselProvider
             visibleSlides={slideCount}
-            totalSlides={favTheaters.length}
+            totalSlides={currentMovies.length}
             step={1}
-            naturalSlideWidth={110}
-            naturalSlideHeight={100}
+            naturalSlideWidth={90}
+            naturalSlideHeight={120}
             className={style.carousel}
         >
             <Slider className={style.slider}>
-                {favTheaters.map(theater => (
-                    <Slide index={theater.id} key={theater.id} className={style.slide}>
-                        <FavTheaterCard theater={theater} key={theater.id} />
+                {currentMovies.map((movie, index) => (
+                    <Slide index={index} key={index} className={style.slide}>
+                        <CurrentlyCard movie={movie} />
                     </Slide>
                 ))}
             </Slider>
@@ -91,4 +83,4 @@ const FavTheaterCarousel = (props: FavTheaterCarouselProps) => {
     );
 };
 
-export default FavTheaterCarousel;
+export default CurrentlyCarousel;

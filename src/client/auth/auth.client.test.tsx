@@ -2,8 +2,8 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { checkAccountExists, deleteAccount, loginUser, signIn, updateAccount } from './auth.client';
-import mockUser from '../mocks/auth/users.json';
-import mockVerify from '../mocks/auth/verify-true.json';
+import mockUser from '../../mocks/auth/users.json';
+import mockVerify from '../../mocks/auth/verify-true.json';
 
 describe('AuthClient tests', () => {
     let axiosMock: MockAdapter;

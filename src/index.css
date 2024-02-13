@@ -45,7 +45,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  margin: 0 70px;
+  margin: 100px 70px 0;
   flex: 1;
   min-height: 100vh;
 }
@@ -95,6 +95,6 @@ input::placeholder {
 
 @media (max-width: 800px) {
   main {
-    margin: 0 15px;
+    margin: 100px 15px 0;
   }
 }

@@ -1,7 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { Theater } from '../models/Theater';
+import { Theater } from '../../models/Theater';
 import { getUserFavTheaters, updateUserFavTheaters } from './user.client';
 
 describe('User client tests', () => {

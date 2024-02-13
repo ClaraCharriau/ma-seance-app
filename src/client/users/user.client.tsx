@@ -1,6 +1,6 @@
-import { Theater } from '../models/Theater';
+import { Theater } from '../../models/Theater';
 import axios from 'axios';
-import { HOST, handleError, handleResponse } from './client.utils';
+import { HOST, handleError, handleResponse } from '../client.utils';
 
 const users_path = HOST + '/users';
 

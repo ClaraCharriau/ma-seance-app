@@ -1,9 +1,9 @@
 import { render, waitFor } from '@testing-library/react';
 import FavTheaterCarousel from './FavTheaterCarousel';
-import { getUserFavTheaters } from '../../../client/user.client';
+import { getUserFavTheaters } from '../../../client/users/user.client';
 import { BrowserRouter } from 'react-router-dom';
 
-jest.mock('../../../client/user.client', () => ({
+jest.mock('../../../client/users/user.client', () => ({
     getUserFavTheaters: jest.fn()
 }));
 const mockGetUserFavTheaters = getUserFavTheaters as jest.MockedFunction<typeof getUserFavTheaters>;

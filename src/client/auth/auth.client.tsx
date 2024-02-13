@@ -1,7 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-import { User } from '../models/User';
+import { User } from '../../models/User';
 import axios, { AxiosResponse } from 'axios';
-import { HOST, handleDeleteResponse, handleError, handleResponse } from './client.utils';
+import { HOST, handleDeleteResponse, handleError, handleResponse } from '../client.utils';
 
 const user_auth_path = HOST + '/auth';
 const user_verify_path = HOST + '/verify';

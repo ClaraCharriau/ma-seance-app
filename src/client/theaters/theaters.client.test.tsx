@@ -1,12 +1,12 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { Theater } from '../models/Theater';
+import { Theater } from '../../models/Theater';
 import { getTheaterById } from './theaters.client';
 
-describe('Theater client tests', () => {
+describe('Theaters client tests', () => {
     let axiosMock: MockAdapter;
-    const mockTheater: Theater[] = [
+    const mockTheaters: Theater[] = [
         {
             id: 1,
             name: 'C2L Saint-Germain',
@@ -24,7 +24,8 @@ describe('Theater client tests', () => {
 
     it('should get theater successfully', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/theaters/1').reply(200, mockTheater);
+        axiosMock.onGet('http://localhost:7878/theaters/1').reply(200, mockTheaters);
+        const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
         const response = await getTheaterById(1);
@@ -38,11 +39,13 @@ describe('Theater client tests', () => {
                 imgPath: '/c2l-saint-germain'
             }
         ]);
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1');
     });
 
     it('should fail to get user fav theater', async () => {
         // Given
         axiosMock.onGet('http://localhost:7878/theaters/1').reply(500, {});
+        const axiosGet = jest.spyOn(require('axios'), 'get');
         let response = {};
 
         // When
@@ -53,6 +56,7 @@ describe('Theater client tests', () => {
             expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1');
     });
 });
 
