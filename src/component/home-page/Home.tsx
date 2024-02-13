@@ -33,7 +33,7 @@ const Home = () => {
                                     Cinémas favoris
                                 </h2>
                             </NavLink>
-                            <SeeDetailsBtn text="Voir plus" navigatePath="/fav-theaters" showIcon={false} />
+                            <SeeDetailsBtn text="Voir plus >" navigatePath="/fav-theaters" showIcon={false} />
                         </div>
                         <FavTheaterCarousel currentUser={currentUser} />
                     </section>
@@ -62,7 +62,7 @@ const Home = () => {
                                     Sorties de la semaine
                                 </h2>
                             </NavLink>
-                            <SeeDetailsBtn text="Voir plus" navigatePath="/currently" showIcon={false} />
+                            <SeeDetailsBtn text="Voir plus >" navigatePath="/currently" showIcon={false} />
                         </div>
                         <CurrentlyCarousel />
                     </section>

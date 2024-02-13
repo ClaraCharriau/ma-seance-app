@@ -6,20 +6,27 @@ exports[`Currently showing movie carousel component tests renders movie Carousel
     class="carousel carousel"
   >
     <div
-      aria-label="slider"
-      aria-live="polite"
-      class="horizontalSlider___281Ls carousel__slider carousel__slider--horizontal slider"
-      role="listbox"
-      tabindex="0"
+      class="sliderWrapper"
     >
       <div
-        class="carousel__slider-tray-wrapper carousel__slider-tray-wrap--horizontal"
+        aria-label="slider"
+        aria-live="polite"
+        class="horizontalSlider___281Ls carousel__slider carousel__slider--horizontal slider"
+        role="listbox"
+        tabindex="0"
       >
         <div
-          class="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
-          style="width: 0%; transform: translateX(NaN%) translateX(0px); flex-direction: row;"
-        />
+          class="carousel__slider-tray-wrapper carousel__slider-tray-wrap--horizontal"
+        >
+          <div
+            class="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
+            style="width: 0%; transform: translateX(NaN%) translateX(0px); flex-direction: row;"
+          />
+        </div>
       </div>
+      <div
+        class="carouselShadow"
+      />
     </div>
     <div
       class="buttonWrapper"

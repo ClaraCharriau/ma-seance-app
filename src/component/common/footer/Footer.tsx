@@ -4,6 +4,9 @@ import style from './Footer.module.css';
 const Footer = () => {
     return (
         <footer>
+            <Link className={style.logo} to="/">
+                maSéance
+            </Link>
             <Link className={style.footerBtn} to="/">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                     <path
