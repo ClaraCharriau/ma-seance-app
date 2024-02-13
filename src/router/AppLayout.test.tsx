@@ -6,7 +6,8 @@ jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useNavigation: () => {
         return { state: 'loading' };
-    }
+    },
+    ScrollRestoration: jest.fn()
 }));
 
 describe('App layout component tests', () => {

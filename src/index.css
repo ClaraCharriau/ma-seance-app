@@ -47,6 +47,7 @@ main {
   flex-direction: column;
   margin: 0 70px;
   flex: 1;
+  min-height: 100vh;
 }
 
 button {

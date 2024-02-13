@@ -7,6 +7,7 @@ header {
     height: 90px;
     position: sticky;
     top: 0;
+    z-index: 3;
     background-color: rgb(2, 31, 56, 0.5);
     backdrop-filter: blur(200px);
     -webkit-backdrop-filter: blur(10px);
@@ -48,6 +49,20 @@ header {
     color: var(--primary-variant);
 }
 
+.wishlistBtn:hover,
+.agendaBtn:hover,
+.profileBtn:hover,
+.headerTitleLogo:hover,
+.headerTitle {
+    opacity: 80%;
+    cursor: pointer;
+    transition: all 0.2;
+}
+
+.headerTitleLogo {
+    display: none;
+}
+
 @media (max-width: 800px) {
     header {
         padding: 0 20px;
@@ -56,16 +71,27 @@ header {
     .headerTitleLink {
         display: none;
     }
+
+    .headerTitleLogo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .svgLogo {
+        height: 50px;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     header {
         padding: 0 20px;
         justify-content: flex-start;
     }
 
     .wishlistBtn,
-    .agendaBtn {
+    .agendaBtn,
+    .headerTitleLogo {
         display: none;
     }
 

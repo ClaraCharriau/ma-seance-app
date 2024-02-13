@@ -1,4 +1,4 @@
-import { Outlet, useNavigation } from 'react-router-dom';
+import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom';
 import Header from '../component/common/header/Header';
 import Footer from '../component/common/footer/Footer';
 import Spinner from '../component/common/spinner/Spinner';
@@ -13,6 +13,7 @@ const AppLayout = () => {
                 {navigation.state === 'loading' ? <Spinner /> : <Outlet />}
             </div>
             <Footer />
+            <ScrollRestoration />
         </>
     );
 };
