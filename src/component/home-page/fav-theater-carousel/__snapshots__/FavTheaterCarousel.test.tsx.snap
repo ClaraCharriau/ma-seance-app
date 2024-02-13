@@ -6,111 +6,118 @@ exports[`Fav Theater Carousel Component renders Fav Theater Carousel component 1
     class="carousel carousel"
   >
     <div
-      aria-label="slider"
-      aria-live="polite"
-      class="horizontalSlider___281Ls carousel__slider carousel__slider--horizontal slider"
-      role="listbox"
-      tabindex="0"
+      class="sliderWrapper"
     >
       <div
-        class="carousel__slider-tray-wrapper carousel__slider-tray-wrap--horizontal"
+        aria-label="slider"
+        aria-live="polite"
+        class="horizontalSlider___281Ls carousel__slider carousel__slider--horizontal slider"
+        role="listbox"
+        tabindex="0"
       >
         <div
-          class="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
-          style="width: 150%; transform: translateX(0%) translateX(0px); flex-direction: row;"
+          class="carousel__slider-tray-wrapper carousel__slider-tray-wrap--horizontal"
         >
           <div
-            aria-label="slide"
-            aria-selected="true"
-            class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
-            role="option"
-            style="width: 33.333333333333336%; padding-bottom: 30.303030303030305%;"
-            tabindex="0"
+            class="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
+            style="width: 150%; transform: translateX(0%) translateX(0px); flex-direction: row;"
           >
             <div
-              class="slideInner___2mfX9 carousel__inner-slide"
+              aria-label="slide"
+              aria-selected="true"
+              class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
+              role="option"
+              style="width: 33.333333333333336%; padding-bottom: 30.303030303030305%;"
+              tabindex="0"
             >
-              <a
-                class="card"
-                href="/theaters/1"
+              <div
+                class="slideInner___2mfX9 carousel__inner-slide"
               >
-                <img
-                  alt="photo de Le Grand Rex"
-                  class="theaterCardImg"
-                  src="/assets/img/theaters.jpg"
-                />
-                <div
-                  class="theaterName"
+                <a
+                  class="card"
+                  href="/theaters/1"
                 >
-                  <p>
-                    Le Grand Rex
-                  </p>
-                </div>
-              </a>
+                  <img
+                    alt="photo de Le Grand Rex"
+                    class="theaterCardImg"
+                    src="/assets/img/theaters.jpg"
+                  />
+                  <div
+                    class="theaterName"
+                  >
+                    <p>
+                      Le Grand Rex
+                    </p>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-          <div
-            aria-label="slide"
-            aria-selected="false"
-            class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--hidden slide"
-            role="option"
-            style="width: 33.333333333333336%; padding-bottom: 30.303030303030305%;"
-            tabindex="-1"
-          >
             <div
-              class="slideInner___2mfX9 carousel__inner-slide"
+              aria-label="slide"
+              aria-selected="false"
+              class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--hidden slide"
+              role="option"
+              style="width: 33.333333333333336%; padding-bottom: 30.303030303030305%;"
+              tabindex="-1"
             >
-              <a
-                class="card"
-                href="/theaters/2"
+              <div
+                class="slideInner___2mfX9 carousel__inner-slide"
               >
-                <img
-                  alt="photo de Pathé Levallois"
-                  class="theaterCardImg"
-                  src="/assets/img/theaters.jpg"
-                />
-                <div
-                  class="theaterName"
+                <a
+                  class="card"
+                  href="/theaters/2"
                 >
-                  <p>
-                    Pathé Levallois
-                  </p>
-                </div>
-              </a>
+                  <img
+                    alt="photo de Pathé Levallois"
+                    class="theaterCardImg"
+                    src="/assets/img/theaters.jpg"
+                  />
+                  <div
+                    class="theaterName"
+                  >
+                    <p>
+                      Pathé Levallois
+                    </p>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-          <div
-            aria-label="slide"
-            aria-selected="false"
-            class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--hidden slide"
-            role="option"
-            style="width: 33.333333333333336%; padding-bottom: 30.303030303030305%;"
-            tabindex="-1"
-          >
             <div
-              class="slideInner___2mfX9 carousel__inner-slide"
+              aria-label="slide"
+              aria-selected="false"
+              class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--hidden slide"
+              role="option"
+              style="width: 33.333333333333336%; padding-bottom: 30.303030303030305%;"
+              tabindex="-1"
             >
-              <a
-                class="card"
-                href="/theaters/3"
+              <div
+                class="slideInner___2mfX9 carousel__inner-slide"
               >
-                <img
-                  alt="photo de Super cinoche"
-                  class="theaterCardImg"
-                  src="/assets/img/theaters.jpg"
-                />
-                <div
-                  class="theaterName"
+                <a
+                  class="card"
+                  href="/theaters/3"
                 >
-                  <p>
-                    Super cinoche
-                  </p>
-                </div>
-              </a>
+                  <img
+                    alt="photo de Super cinoche"
+                    class="theaterCardImg"
+                    src="/assets/img/theaters.jpg"
+                  />
+                  <div
+                    class="theaterName"
+                  >
+                    <p>
+                      Super cinoche
+                    </p>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div
+        class="carouselShadow"
+      />
     </div>
     <div
       class="buttonWrapper"

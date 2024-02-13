@@ -40,13 +40,17 @@ const FavTheaterCarousel = (props: FavTheaterCarouselProps) => {
             naturalSlideHeight={100}
             className={style.carousel}
         >
-            <Slider className={style.slider}>
-                {favTheaters.map(theater => (
-                    <Slide index={theater.id} key={theater.id} className={style.slide}>
-                        <FavTheaterCard theater={theater} key={theater.id} />
-                    </Slide>
-                ))}
-            </Slider>
+            <div className={style.sliderWrapper}>
+                <Slider className={style.slider}>
+                    {favTheaters.map(theater => (
+                        <Slide index={theater.id} key={theater.id} className={style.slide}>
+                            <FavTheaterCard theater={theater} key={theater.id} />
+                        </Slide>
+                    ))}
+                </Slider>
+                <div className={style.carouselShadow}></div>
+            </div>
+
             <div className={style.buttonWrapper}>
                 <ButtonBack className={style.buttonBack}>
                     <svg width="24" height="24" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">

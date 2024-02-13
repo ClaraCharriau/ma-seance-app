@@ -190,6 +190,12 @@ exports[`App layout component tests should render app layout component 1`] = `
   />
   <footer>
     <a
+      class="logo"
+      href="/"
+    >
+      maSéance
+    </a>
+    <a
       class="footerBtn"
       href="/"
     >
@@ -529,6 +535,12 @@ exports[`App layout component tests should render spinner 1`] = `
     />
   </div>
   <footer>
+    <a
+      class="logo"
+      href="/"
+    >
+      maSéance
+    </a>
     <a
       class="footerBtn"
       href="/"

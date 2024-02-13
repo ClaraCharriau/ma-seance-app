@@ -12,6 +12,20 @@
     width: 100%;
 }
 
+.sliderWrapper {
+    width: 100%;
+    position: relative;
+}
+
+.carouselShadow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 13%;
+    height: 100%;
+    background: linear-gradient(to left, var(--secondary-variant), transparent);
+}
+
 .buttonWrapper {
     display: flex;
     gap: 1vw;

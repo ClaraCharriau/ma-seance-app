@@ -1,17 +1,19 @@
 footer {
-    display: none;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    font-family: 'Yeseva One', serif;
+    font-weight: 400;
+    color: var(--primary);
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 40px 0;
 }
 
 .footerBtn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 38px;
-    gap: 5px;
-    color: var(--primary-variant);
-    font-size: 9px;
-    text-transform: lowercase;
+    display: none;
 }
 
 @media (max-width: 450px) {
@@ -23,5 +25,21 @@ footer {
         justify-content: space-around;
         background-color: var(--secondary);
         padding: 10px 0px;
+    }
+
+    .footerBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 38px;
+        gap: 5px;
+        color: var(--primary-variant);
+        font-size: 9px;
+        text-transform: lowercase;
+    }
+
+    .logo {
+        display: none;
     }
 }
