@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { Theater } from '../models/Theater';
-import { getUserFavTheaters } from '../client/user.client';
+import { getUserFavTheaters } from '../client/users/user.client';
 import { useAuthContext } from './auth.context';
 
 /* eslint-disable */

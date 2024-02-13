@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import style from './FavoriteButton.module.css';
 import { useFavoriteContext } from '../../../context/favorite.context';
 import { useAuthContext } from '../../../context/auth.context';
-import { updateUserFavTheaters } from '../../../client/user.client';
+import { updateUserFavTheaters } from '../../../client/users/user.client';
 
 interface FavoriteButtonProps {
     itemId: number;

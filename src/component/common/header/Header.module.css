@@ -5,11 +5,12 @@ header {
     gap: 15px;
     padding: 0 70px;
     height: 90px;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 90vw;
     z-index: 3;
     background-color: rgb(2, 31, 56, 0.5);
-    backdrop-filter: blur(200px);
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(10px);
     /* Blur effect on safari */
 }
@@ -66,6 +67,7 @@ header {
 @media (max-width: 800px) {
     header {
         padding: 0 20px;
+        width: 95%;
     }
 
     .headerTitleLink {
@@ -87,6 +89,7 @@ header {
     header {
         padding: 0 20px;
         justify-content: flex-start;
+        width: 90%;
     }
 
     .wishlistBtn,

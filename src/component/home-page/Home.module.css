@@ -5,6 +5,14 @@
 
 .leftColumn {
     width: 60vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.rightColumn {
+    position: fixed;
+    right: 0;
 }
 
 .homeSectionTitle {
@@ -22,6 +30,17 @@
     justify-content: space-between;
 }
 
+.homeLeftSection {
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.homeLeftSectionBg {
+    background-color: var(--secondary-variant);
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
 @media (max-width: 800px) {
     .homePageMain {
         flex-direction: column;
@@ -30,5 +49,8 @@
 
     .leftColumn {
         width: 100%;
+    }
+    .rightColumn {
+        position: relative;
     }
 }

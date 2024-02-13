@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { HOST, handleError, handleResponse } from './client.utils';
-import { Theater } from '../models/Theater';
+import { HOST, handleError, handleResponse } from '../client.utils';
+import { Theater } from '../../models/Theater';
 
 const theaters_path = HOST + '/theaters';
 
