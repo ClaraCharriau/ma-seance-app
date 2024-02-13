@@ -4,9 +4,9 @@ import { Theater } from '../models/Theater';
 
 const theaters_path = HOST + '/theaters';
 
-export const getTheaterById = async (id: number): Promise<Theater> => {
+export const getTheaterById = async (theaterId: number): Promise<Theater> => {
     return await axios
-        .get(theaters_path + '/' + id)
+        .get(theaters_path + '/' + theaterId)
         .then(response => handleResponse(response))
         .catch(error => handleError(error));
 };

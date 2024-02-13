@@ -22,3 +22,8 @@
 .theaterDetailsMain {
     margin-top: 20px;
 }
+
+.theaterDetailsHeader {
+    display: flex;
+    justify-content: space-between;
+}

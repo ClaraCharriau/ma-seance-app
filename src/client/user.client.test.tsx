@@ -2,7 +2,7 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { Theater } from '../models/Theater';
-import { getUserFavTheaters } from './user.client';
+import { getUserFavTheaters, updateUserFavTheaters } from './user.client';
 
 describe('User client tests', () => {
     let axiosMock: MockAdapter;
@@ -28,14 +28,16 @@ describe('User client tests', () => {
         axiosMock.reset();
     });
 
-    it('should get user fav theater successfully', async () => {
+    it('should get user favorite theaters successfully', async () => {
         // Given
         axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(200, mockTheaterList);
+        const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
         const response = await getUserFavTheaters(1);
 
         // Then
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-theaters');
         expect(response).toEqual([
             {
                 id: 1,
@@ -52,10 +54,11 @@ describe('User client tests', () => {
         ]);
     });
 
-    it('should fail to get user fav theater', async () => {
+    it('should fail to get user favorite theaters', async () => {
         // Given
         axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(500, {});
         let response = {};
+        const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
         try {
@@ -65,6 +68,34 @@ describe('User client tests', () => {
             expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-theaters');
+    });
+
+    it('should update user favorite theaters successfully', async () => {
+        // Given
+        axiosMock.onPatch('http://localhost:7878/users/2/fav-theaters').reply(200);
+        const axiosPatch = jest.spyOn(require('axios'), 'patch');
+
+        // When
+        await updateUserFavTheaters(2, 3);
+
+        // Then
+        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-theaters', 3);
+    });
+
+    it('should fail to update user favorite theaters', async () => {
+        // Given
+        axiosMock.onPatch('http://localhost:7878/users/2/fav-theaters').reply(500);
+        const axiosPatch = jest.spyOn(require('axios'), 'patch');
+
+        // When
+        try {
+            await updateUserFavTheaters(2, 2);
+        } catch (e: any) {
+            // Then
+            expect(e.status).toBe(500);
+        }
+        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-theaters', 2);
     });
 });
 

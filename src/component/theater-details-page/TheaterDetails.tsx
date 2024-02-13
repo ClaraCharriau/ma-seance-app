@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import { Theater } from '../../models/Theater';
 import style from './TheaterDetails.module.css';
-
+import FavoriteButton from '../common/favorite-button/FavoriteButton';
 const TheaterDetails = () => {
     const theater = useLoaderData() as Theater;
 
@@ -20,8 +20,13 @@ const TheaterDetails = () => {
             </div>
 
             <main className={style.theaterDetailsMain}>
-                <h2>{theater.name}</h2>
-                <p>{theater.address}</p>
+                <div className={style.theaterDetailsHeader}>
+                    <div>
+                        <h2>{theater.name}</h2>
+                        <p>{theater.address}</p>
+                    </div>
+                    <FavoriteButton itemId={theater.id} itemType="theater" />
+                </div>
             </main>
         </>
     );

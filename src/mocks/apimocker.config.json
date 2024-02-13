@@ -31,11 +31,16 @@
             "latency": 20,
             "verbs": ["delete"]
         },
-        "users/1/fav-theaters": {
+        "users/:id/fav-theaters": {
             "httpStatus": 200,
             "latency": 20,
+            "verbs": ["get", "patch"],
+            "mockFile": "theaters/fav-theaters.json"
+        },
+        "theaters/10": {
+            "httpStatus": 200,
             "verbs": ["get"],
-            "mockFile": "theaters/theaters.json"
+            "mockFile": "theaters/theaters-10.json"
         },
         "theaters/:id": {
             "httpStatus": 200,
