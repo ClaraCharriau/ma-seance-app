@@ -3,7 +3,7 @@ import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import { Theater } from '../../models/Theater';
 
-describe('Theater client tests', () => {
+describe('Theater loader tests', () => {
     let axiosMock: MockAdapter;
     const mockTheater: Theater[] = [
         {
@@ -20,7 +20,30 @@ describe('Theater client tests', () => {
     afterEach(() => {
         axiosMock.reset();
     });
-    it('should get theater successfully', async () => {
+    it('should load theater successfully', async () => {
+        // Given
+        axiosMock.onGet('http://localhost:7878/theaters/1').reply(200, mockTheater);
+        const args: any = {
+            params: {
+                id: '1'
+            }
+        };
+
+        // When
+        const response = await theaterLoader(args);
+
+        // Then
+        expect(response).toEqual([
+            {
+                id: 1,
+                name: 'C2L Saint-Germain',
+                address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
+                imgPath: '/c2l-saint-germain'
+            }
+        ]);
+    });
+
+    it('should fail to load theater', async () => {
         // Given
         axiosMock.onGet('http://localhost:7878/theaters/1').reply(200, mockTheater);
         const args: any = {

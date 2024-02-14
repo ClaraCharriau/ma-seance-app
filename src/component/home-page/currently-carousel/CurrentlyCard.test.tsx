@@ -11,10 +11,12 @@ describe('Currently showing movie card component tests', () => {
             releaseDate: '2024-01-17',
             duration: 90,
             resume: "Après s'être noyée pour échapper à son mari violent, le cerveau de Bella Baxter est remplacé par celui de son enfant à naître.",
-            trailerLink: '',
+            trailerLink: 'https://www.youtube.com/watch?v=ZGwOzkF6HjI&t=1s',
             posterLink: '/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg',
-            directorId: 'a72cde7f-3a10-4c59-8b76-6d3e08e7146d',
-            castId: '84d13282-2bc5-40b0-9e16-2a5366fc2323'
+            photoLink: '/bQS43HSLZzMjZkcHJz4fGc7fNdz.jpg',
+            directors: ['Yorgos Lanthimos'],
+            cast: ['Emma Stone', 'Mark Ruffalo', 'Willem Dafoe'],
+            genres: ['Science-Fiction', 'Romance', 'Comédie']
         };
 
         const component = render(

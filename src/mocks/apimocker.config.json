@@ -51,6 +51,11 @@
             "httpStatus": 200,
             "verbs": ["get"],
             "mockFile": "movies/current-movies.json"
+        },
+        "movies/:id": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "movies/movie-1.json"
         }
     }
 }

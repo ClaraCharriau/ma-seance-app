@@ -6,6 +6,8 @@ export interface Movie {
     resume: string;
     trailerLink: string;
     posterLink: string;
-    directorId: string;
-    castId: string;
+    photoLink: string;
+    directors: string[];
+    cast: string[];
+    genres: string[];
 }
