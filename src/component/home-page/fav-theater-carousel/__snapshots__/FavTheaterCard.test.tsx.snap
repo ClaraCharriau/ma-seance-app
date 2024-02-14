@@ -7,15 +7,15 @@ exports[`Fav Theater Card Component renders Fav Theater Card component 1`] = `
     href="/theaters/1"
   >
     <img
-      alt="photo de Le Grand Rex"
+      alt="photo de UGC Normandie"
       class="theaterCardImg"
-      src="/assets/img/theaters.jpg"
+      src="/assets/img/theaters/ugc-normandie-paris.jpg"
     />
     <div
       class="theaterName"
     >
       <p>
-        Le Grand Rex
+        UGC Normandie
       </p>
     </div>
   </a>

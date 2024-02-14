@@ -1,18 +1,10 @@
 import { theaterLoader } from './TheaterLoader';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
-import { Theater } from '../../models/Theater';
+import mockTheater from '../../mocks/theaters/theaters-1.json';
 
 describe('Theater loader tests', () => {
     let axiosMock: MockAdapter;
-    const mockTheater: Theater[] = [
-        {
-            id: 1,
-            name: 'C2L Saint-Germain',
-            address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
-            imgPath: '/c2l-saint-germain'
-        }
-    ];
 
     beforeEach(() => {
         axiosMock = new MockAdapter(axios);
@@ -33,14 +25,7 @@ describe('Theater loader tests', () => {
         const response = await theaterLoader(args);
 
         // Then
-        expect(response).toEqual([
-            {
-                id: 1,
-                name: 'C2L Saint-Germain',
-                address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
-                imgPath: '/c2l-saint-germain'
-            }
-        ]);
+        expect(response).toEqual(mockTheater);
     });
 
     it('should fail to load theater', async () => {
@@ -56,14 +41,7 @@ describe('Theater loader tests', () => {
         const response = await theaterLoader(args);
 
         // Then
-        expect(response).toEqual([
-            {
-                id: 1,
-                name: 'C2L Saint-Germain',
-                address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
-                imgPath: '/c2l-saint-germain'
-            }
-        ]);
+        expect(response).toEqual(mockTheater);
     });
 });
 

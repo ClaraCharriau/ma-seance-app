@@ -42,8 +42,8 @@ const FavTheaterCarousel = (props: FavTheaterCarouselProps) => {
         >
             <div className={style.sliderWrapper}>
                 <Slider className={style.slider}>
-                    {favTheaters.map(theater => (
-                        <Slide index={theater.id} key={theater.id} className={style.slide}>
+                    {favTheaters.map((theater, index) => (
+                        <Slide index={index} key={theater.id} className={style.slide}>
                             <FavTheaterCard theater={theater} key={theater.id} />
                         </Slide>
                     ))}

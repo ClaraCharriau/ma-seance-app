@@ -1,15 +1,18 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { Theater } from '../models/Theater';
-import { getUserFavTheaters } from '../client/users/user.client';
+import { getUserFavMovies, getUserFavTheaters } from '../client/users/user.client';
 import { useAuthContext } from './auth.context';
+import { Movie } from '../models/Movie';
 
 /* eslint-disable */
 interface IFavoriteContext {
     favoriteTheaters: Theater[] | [];
+    favoriteMovies: Movie[] | [];
 }
 
 const defaultContext: IFavoriteContext = {
-    favoriteTheaters: []
+    favoriteTheaters: [],
+    favoriteMovies: []
 };
 /* eslint-enable */
 
@@ -23,20 +26,23 @@ export const FavoriteProvider = (props: FavoriteProviderProps) => {
     const { children } = props;
     const { currentUser } = useAuthContext();
     const [theaters, setTheaters] = useState<Theater[]>([]);
+    const [movies, setMovies] = useState<Movie[]>([]);
 
     useEffect(() => {
-        const getFavTheaters = async () => {
+        const getFavorites = async () => {
             if (currentUser) {
-                const response = await getUserFavTheaters(currentUser.id);
-                setTheaters(response);
+                await Promise.allSettled([
+                    getUserFavTheaters(currentUser.id).then(response => setTheaters(response)),
+                    getUserFavMovies(currentUser.id).then(response => setMovies(response))
+                ]);
             }
         };
-
-        getFavTheaters();
+        getFavorites();
     }, [currentUser]);
 
     const favoriteContext: IFavoriteContext = {
-        favoriteTheaters: theaters
+        favoriteTheaters: theaters,
+        favoriteMovies: movies
     };
 
     return <FavoriteContext.Provider value={favoriteContext}>{children}</FavoriteContext.Provider>;

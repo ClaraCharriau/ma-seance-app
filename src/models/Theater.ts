@@ -1,5 +1,5 @@
 export interface Theater {
-    id: number;
+    id: string;
     name: string;
     address: string;
     imgPath: string;
