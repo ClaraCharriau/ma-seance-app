@@ -8,6 +8,8 @@ import FavTheaters from '../component/fav-theaters-page/FavTheaterPage';
 import { appLoader } from './loaders/AppLoader';
 import { theaterLoader } from './loaders/TheaterLoader';
 import AppLayout from './AppLayout';
+import MovieDetails from '../component/movie-details-page/MovieDetails';
+import { movieLoader } from './loaders/MovieLoader';
 
 const AppRouter = () => {
     const router = createBrowserRouter([
@@ -33,8 +35,10 @@ const AppRouter = () => {
                     element: <>Agenda</>
                 },
                 {
-                    path: '/movie',
-                    element: <>Movie</>
+                    path: '/movies/:id',
+                    loader: movieLoader,
+                    element: <MovieDetails />,
+                    errorElement: <Error />
                 },
                 {
                     path: '/profile',

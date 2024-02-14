@@ -10,3 +10,10 @@ export const getCurrentlyMovies = async (): Promise<Movie[]> => {
         .then(response => handleResponse(response))
         .catch(error => handleError(error));
 };
+
+export const getMovieById = async (movieId: string): Promise<Movie> => {
+    return await axios
+        .get(movies_path + '/' + movieId)
+        .then(response => handleResponse(response))
+        .catch(error => handleError(error));
+};

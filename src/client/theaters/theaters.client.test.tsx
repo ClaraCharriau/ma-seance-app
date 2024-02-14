@@ -42,7 +42,7 @@ describe('Theaters client tests', () => {
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1');
     });
 
-    it('should fail to get user fav theater', async () => {
+    it('should fail to get theater', async () => {
         // Given
         axiosMock.onGet('http://localhost:7878/theaters/1').reply(500, {});
         const axiosGet = jest.spyOn(require('axios'), 'get');
