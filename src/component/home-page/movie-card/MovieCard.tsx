@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import { Movie } from '../../../models/Movie';
-import style from './CurrentlyCarousel.module.css';
+import style from './MovieCard.module.css';
 
-interface CurrentlyCardProps {
+interface MovieCardProps {
     movie: Movie;
 }
 
-const CurrentlyCard = (props: CurrentlyCardProps) => {
+const MovieCard = (props: MovieCardProps) => {
     const { movie } = props;
-    const TMDB_PATH = 'https://image.tmdb.org/t/p/w500';
+    const TMDB_PATH = 'https://image.tmdb.org/t/p/w1280';
 
     return (
         <NavLink to={`/movies/${movie.id}`} state={{ id: movie.id }} className={style.card}>
@@ -21,4 +21,4 @@ const CurrentlyCard = (props: CurrentlyCardProps) => {
     );
 };
 
-export default CurrentlyCard;
+export default MovieCard;

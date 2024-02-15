@@ -4,7 +4,7 @@ import { Movie } from '../../../models/Movie';
 import style from './CurrentlyCarousel.module.css';
 import { useMediaQuery } from 'react-responsive';
 import { getCurrentlyMovies } from '../../../client/movies/movies.client';
-import CurrentlyCard from './CurrentlyCard';
+import MovieCard from '../movie-card/MovieCard';
 
 const CurrentlyCarousel = () => {
     const [currentMovies, setCurrentMovies] = useState<Movie[]>([]);
@@ -36,7 +36,7 @@ const CurrentlyCarousel = () => {
                 <Slider className={style.slider}>
                     {currentMovies.map((movie, index) => (
                         <Slide index={index} key={index} className={style.slide}>
-                            <CurrentlyCard movie={movie} />
+                            <MovieCard movie={movie} />
                         </Slide>
                     ))}
                 </Slider>

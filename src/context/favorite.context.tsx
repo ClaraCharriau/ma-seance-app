@@ -33,7 +33,7 @@ export const FavoriteProvider = (props: FavoriteProviderProps) => {
             if (currentUser) {
                 await Promise.allSettled([
                     getUserFavTheaters(currentUser.id).then(response => setTheaters(response)),
-                    getUserFavMovies(currentUser.id).then(response => setMovies(response))
+                    getUserFavMovies(currentUser.id).then(response => setMovies(response.records))
                 ]);
             }
         };

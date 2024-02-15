@@ -8,7 +8,6 @@
 }
 
 .slider {
-    overflow-x: scroll !important;
     width: 100%;
 }
 
@@ -23,17 +22,11 @@
     right: 0;
     width: 13%;
     height: 100%;
-    background: linear-gradient(to left, var(--secondary-variant), transparent);
-}
-
-.buttonWrapper {
-    display: flex;
-    gap: 1vw;
+    background: linear-gradient(to left, var(--secondary), transparent);
 }
 
 @media (max-width: 400px) {
-    .buttonBack,
-    .buttonNext {
-        display: none;
+    .slider {
+        overflow-x: scroll !important;
     }
 }

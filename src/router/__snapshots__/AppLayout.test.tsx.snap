@@ -88,8 +88,8 @@ exports[`App layout component tests should render app layout component 1`] = `
       class="headerButtons"
     >
       <a
-        class="wishlistBtn"
-        href="/wishlist"
+        class="watchlistBtn"
+        href="/watchlist"
       >
         <svg
           fill="none"
@@ -103,7 +103,7 @@ exports[`App layout component tests should render app layout component 1`] = `
             stroke="#FFF1A7"
           />
         </svg>
-        wishlist
+        watchlist
       </a>
       <a
         class="agendaBtn"
@@ -304,7 +304,7 @@ exports[`App layout component tests should render app layout component 1`] = `
     </a>
     <a
       class="footerBtn"
-      href="/wishlist"
+      href="/watchlist"
     >
       <svg
         fill="none"
@@ -318,7 +318,7 @@ exports[`App layout component tests should render app layout component 1`] = `
           stroke="#FFF1A7"
         />
       </svg>
-      wishlist
+      watchlist
     </a>
     <a
       class="footerBtn"
@@ -430,8 +430,8 @@ exports[`App layout component tests should render spinner 1`] = `
       class="headerButtons"
     >
       <a
-        class="wishlistBtn"
-        href="/wishlist"
+        class="watchlistBtn"
+        href="/watchlist"
       >
         <svg
           fill="none"
@@ -445,7 +445,7 @@ exports[`App layout component tests should render spinner 1`] = `
             stroke="#FFF1A7"
           />
         </svg>
-        wishlist
+        watchlist
       </a>
       <a
         class="agendaBtn"
@@ -650,7 +650,7 @@ exports[`App layout component tests should render spinner 1`] = `
     </a>
     <a
       class="footerBtn"
-      href="/wishlist"
+      href="/watchlist"
     >
       <svg
         fill="none"
@@ -664,7 +664,7 @@ exports[`App layout component tests should render spinner 1`] = `
           stroke="#FFF1A7"
         />
       </svg>
-      wishlist
+      watchlist
     </a>
     <a
       class="footerBtn"

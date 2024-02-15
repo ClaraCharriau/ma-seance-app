@@ -1,7 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import CurrentlyCard from './CurrentlyCard';
+import MovieCard from './MovieCard';
 
 describe('Currently showing movie card component tests', () => {
     it('renders Movie Card component', () => {
@@ -21,7 +21,7 @@ describe('Currently showing movie card component tests', () => {
 
         const component = render(
             <BrowserRouter>
-                <CurrentlyCard movie={mockMovie} />
+                <MovieCard movie={mockMovie} />
             </BrowserRouter>
         );
 

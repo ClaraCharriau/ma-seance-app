@@ -14,7 +14,7 @@ describe('Footer component tests', () => {
         // Then
         expect(getByText('accueil')).toBeInTheDocument();
         expect(getByText('recherche')).toBeInTheDocument();
-        expect(getByText('wishlist')).toBeInTheDocument();
+        expect(getByText('watchlist')).toBeInTheDocument();
         expect(getByText('agenda')).toBeInTheDocument();
         expect(getByText('compte')).toBeInTheDocument();
     });
