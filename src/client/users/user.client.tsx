@@ -1,6 +1,7 @@
 import { Theater } from '../../models/Theater';
 import axios from 'axios';
 import { HOST, handleError, handleResponse } from '../client.utils';
+import { Movie } from '../../models/Movie';
 
 const users_path = HOST + '/users';
 
@@ -11,9 +12,23 @@ export const getUserFavTheaters = async (userId: number): Promise<Theater[]> => 
         .catch(error => handleError(error));
 };
 
-export const updateUserFavTheaters = async (userId: number, theaterId: number): Promise<void> => {
+export const updateUserFavTheaters = async (userId: number, theaterId: string): Promise<void> => {
     return await axios
         .patch(users_path + '/' + userId + '/fav-theaters', theaterId)
+        .then(response => handleResponse(response))
+        .catch(error => handleError(error));
+};
+
+export const getUserFavMovies = async (userId: number): Promise<Movie[]> => {
+    return await axios
+        .get(users_path + '/' + userId + '/fav-movies')
+        .then(response => handleResponse(response))
+        .catch(error => handleError(error));
+};
+
+export const updateUserFavMovies = async (userId: number, movieId: string): Promise<void> => {
+    return await axios
+        .patch(users_path + '/' + userId + '/fav-movies', movieId)
         .then(response => handleResponse(response))
         .catch(error => handleError(error));
 };

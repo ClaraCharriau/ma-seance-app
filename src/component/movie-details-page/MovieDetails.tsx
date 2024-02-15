@@ -30,7 +30,7 @@ const MovieDetails = () => {
 
             <main className={style.movieDetailsMain}>
                 <section className={style.movieInformations}>
-                    <FavoriteButton itemId={1} itemType={'movie'} />
+                    <FavoriteButton itemId={movie.id} itemType={'movie'} />
                     <img
                         src={TMDB_PATH + movie.posterLink}
                         alt={'affiche de ' + movie.title}

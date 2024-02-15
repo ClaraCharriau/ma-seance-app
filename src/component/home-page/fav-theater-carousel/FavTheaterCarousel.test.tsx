@@ -17,19 +17,19 @@ describe('Fav Theater Carousel Component', () => {
         };
         const mockFavTheaters = [
             {
-                id: 1,
+                id: '1',
                 name: 'Le Grand Rex',
                 address: '',
                 imgPath: ''
             },
             {
-                id: 2,
+                id: '2',
                 name: 'Pathé Levallois',
                 address: '',
                 imgPath: ''
             },
             {
-                id: 3,
+                id: '3',
                 name: 'Super cinoche',
                 address: '',
                 imgPath: ''

@@ -98,7 +98,7 @@ exports[`Favorite button component tests should render favorite button with thea
       data-testid="button"
     >
       <svg
-        class="heartfilled"
+        class="heart"
         viewBox="0 0 33 28"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -112,7 +112,7 @@ exports[`Favorite button component tests should render favorite button with thea
         Ce 
         cinéma
          
-        est
+        n’est pas
          dans vos favoris
       </p>
     </button>

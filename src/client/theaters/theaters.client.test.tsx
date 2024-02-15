@@ -8,7 +8,7 @@ describe('Theaters client tests', () => {
     let axiosMock: MockAdapter;
     const mockTheaters: Theater[] = [
         {
-            id: 1,
+            id: '1',
             name: 'C2L Saint-Germain',
             address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
             imgPath: '/c2l-saint-germain'
@@ -33,7 +33,7 @@ describe('Theaters client tests', () => {
         // Then
         expect(response).toEqual([
             {
-                id: 1,
+                id: '1',
                 name: 'C2L Saint-Germain',
                 address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
                 imgPath: '/c2l-saint-germain'

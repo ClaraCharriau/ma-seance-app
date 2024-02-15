@@ -2,40 +2,56 @@ import { useEffect, useState } from 'react';
 import style from './FavoriteButton.module.css';
 import { useFavoriteContext } from '../../../context/favorite.context';
 import { useAuthContext } from '../../../context/auth.context';
-import { updateUserFavTheaters } from '../../../client/users/user.client';
+import { updateUserFavMovies, updateUserFavTheaters } from '../../../client/users/user.client';
+import { Movie } from '../../../models/Movie';
+import { Theater } from '../../../models/Theater';
 
 interface FavoriteButtonProps {
-    itemId: number;
+    itemId: string;
     itemType: 'theater' | 'movie';
 }
 
 const FavoriteButton = (props: FavoriteButtonProps) => {
     const { itemId, itemType } = props;
     const { currentUser } = useAuthContext();
-    const { favoriteTheaters } = useFavoriteContext();
+    const { favoriteTheaters, favoriteMovies } = useFavoriteContext();
 
     const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
     useEffect(() => {
-        checkFavorite(itemId) ? setIsFavorite(true) : setIsFavorite(false);
+        checkForFavorite();
         // eslint-disable-next-line
-    }, [itemId]);
+    }, []);
 
-    const checkFavorite = (id: number): boolean => {
-        return favoriteTheaters.some(theater => theater.id === id);
+    const setFavoriteValue = (favorites: Movie[] | Theater[]): void => {
+        const value = favorites.some(item => item.id === itemId);
+        setIsFavorite(value);
+    };
+
+    const checkForFavorite = () => {
+        if (itemType === 'movie') {
+            setFavoriteValue(favoriteMovies);
+        } else if (itemType === 'theater') {
+            setFavoriteValue(favoriteTheaters);
+        }
     };
 
     const toggleFavorite = async () => {
-        currentUser && (await updateUserFavTheaters(itemId, currentUser.id));
-        isFavorite ? setIsFavorite(false) : setIsFavorite(true);
+        if (itemType === 'movie') {
+            currentUser && (await updateUserFavMovies(currentUser.id, itemId));
+            setFavoriteValue(favoriteMovies);
+        } else if (itemType === 'theater') {
+            currentUser && (await updateUserFavTheaters(currentUser.id, itemId));
+            setFavoriteValue(favoriteTheaters);
+        }
     };
 
     return (
         <button
-            className={style.favoriteButtonWrapper}
-            onClick={() => {
-                toggleFavorite();
+            onClick={async () => {
+                await toggleFavorite();
             }}
+            className={style.favoriteButtonWrapper}
             data-testid="button"
         >
             <svg

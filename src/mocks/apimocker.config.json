@@ -37,6 +37,12 @@
             "verbs": ["get", "patch"],
             "mockFile": "theaters/fav-theaters.json"
         },
+        "users/:id/fav-movies": {
+            "httpStatus": 200,
+            "latency": 20,
+            "verbs": ["get", "patch"],
+            "mockFile": "movies/fav-movies.json"
+        },
         "theaters/10": {
             "httpStatus": 200,
             "verbs": ["get"],
