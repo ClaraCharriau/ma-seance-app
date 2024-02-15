@@ -23,6 +23,7 @@ exports[`Movie Details Component renders movie details component 1`] = `
       <button
         class="favoriteButtonWrapper"
         data-testid="button"
+        id="favorite-button"
       >
         <svg
           class="heart"
@@ -40,7 +41,9 @@ exports[`Movie Details Component renders movie details component 1`] = `
           film
            
           n’est pas
-           dans vos favoris
+           dans
+           
+          votre watchlist
         </p>
       </button>
       <img
