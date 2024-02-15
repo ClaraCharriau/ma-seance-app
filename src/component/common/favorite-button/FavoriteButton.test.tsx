@@ -96,7 +96,7 @@ describe('Favorite button component tests', () => {
         // Given
         const movieId = '3d8f1342-15f1-44b1-a48f-4581d654b94a';
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
-            favoriteMovies: mockMovies
+            favoriteMovies: mockMovies.records
         });
 
         // When
@@ -110,7 +110,7 @@ describe('Favorite button component tests', () => {
     it('shows correct text for movie not in watchlist', () => {
         // Given
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
-            favoriteMovies: mockMovies
+            favoriteMovies: mockMovies.records
         });
 
         // When
@@ -125,7 +125,7 @@ describe('Favorite button component tests', () => {
         // Given
         const updateUserFavMovies = jest.spyOn(require('../../../client/users/user.client'), 'updateUserFavMovies');
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
-            favoriteMovies: mockMovies
+            favoriteMovies: mockMovies.records
         });
         axiosMock.onGet('http://localhost:7878/users/1/fav-movies').replyOnce(200, mockMovies);
         axiosMock.onGet('http://localhost:7878/users/1/fav-movies').reply(200, [

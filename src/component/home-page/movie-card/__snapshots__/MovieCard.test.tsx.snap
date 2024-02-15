@@ -10,7 +10,7 @@ exports[`Currently showing movie card component tests renders Movie Card compone
       <img
         alt="Affiche du film Pauvres créatures"
         class="movieCardImg"
-        src="https://image.tmdb.org/t/p/w500/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+        src="https://image.tmdb.org/t/p/w1280/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
       />
     </a>
   </div>

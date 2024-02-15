@@ -63,8 +63,8 @@ const AppRouter = () => {
                     element: <FavTheaters />
                 },
                 {
-                    path: '/wishlist',
-                    element: <>Wishlist</>
+                    path: '/watchlist',
+                    element: <>Watchlist</>
                 }
             ]
         }

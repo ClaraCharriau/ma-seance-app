@@ -14,7 +14,7 @@ describe('Header component tests', () => {
         // Then
         expect(getByText('maSéance')).toBeInTheDocument();
         expect(getByPlaceholderText('Rechercher un cinéma, un film...')).toBeInTheDocument();
-        expect(getByText('wishlist')).toBeInTheDocument();
+        expect(getByText('watchlist')).toBeInTheDocument();
         expect(getByText('agenda')).toBeInTheDocument();
         expect(getByText('compte')).toBeInTheDocument();
     });

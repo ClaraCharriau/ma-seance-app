@@ -25,7 +25,7 @@ header {
     margin-right: 70px;
 }
 
-.wishlistBtn,
+.watchlistBtn,
 .agendaBtn,
 .profileBtn {
     font-size: 9px;
@@ -41,7 +41,7 @@ header {
     width: 55px;
 }
 
-.wishlistBtn,
+.watchlistBtn,
 .agendaBtn {
     border-radius: 6px;
     background: var(--secondary-variant);
@@ -51,7 +51,7 @@ header {
     color: var(--primary-variant);
 }
 
-.wishlistBtn:hover,
+.watchlistBtn:hover,
 .agendaBtn:hover,
 .profileBtn:hover,
 .headerTitleLogo:hover,
@@ -94,7 +94,7 @@ header {
         gap: 5px
     }
 
-    .wishlistBtn,
+    .watchlistBtn,
     .agendaBtn,
     .headerTitleLogo {
         display: none;
