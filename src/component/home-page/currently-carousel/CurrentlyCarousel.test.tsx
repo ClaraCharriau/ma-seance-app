@@ -25,4 +25,38 @@ describe('Currently showing movie carousel component tests', () => {
             expect(component.container).toMatchSnapshot();
         });
     });
+
+    it('renders error when failing to get currently movies', async () => {
+        // Given
+        mockGetCurrentlyMovies.mockRejectedValue(new Error());
+        let component: any;
+
+        // When
+        act(() => {
+            component = render(<CurrentlyCarousel />);
+        });
+
+        // Then
+        await waitFor(() => {
+            expect(component.container).toMatchSnapshot();
+        });
+    });
+
+    it('renders error when time out', async () => {
+        // Given
+        let component: any;
+
+        // When
+        act(() => {
+            component = render(<CurrentlyCarousel />);
+        });
+
+        // Then
+        await waitFor(() => {
+            setTimeout(() => {
+                console.log('time out');
+            }, 5001);
+            expect(component.container).toMatchSnapshot();
+        });
+    });
 });

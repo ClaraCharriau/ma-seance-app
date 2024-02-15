@@ -33,13 +33,13 @@
         },
         "users/:id/fav-theaters": {
             "httpStatus": 200,
-            "latency": 20,
+            "latency": 500,
             "verbs": ["get", "patch"],
             "mockFile": "theaters/fav-theaters.json"
         },
         "users/:id/fav-movies": {
             "httpStatus": 200,
-            "latency": 20,
+            "latency": 500,
             "verbs": ["get", "patch"],
             "mockFile": "movies/fav-movies.json"
         },
@@ -55,6 +55,7 @@
         },
         "movies/currently": {
             "httpStatus": 200,
+            "latency": 400,
             "verbs": ["get"],
             "mockFile": "movies/current-movies.json"
         },

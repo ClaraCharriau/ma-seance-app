@@ -5,6 +5,7 @@
     align-items: center;
     gap: 1vw;
     margin-bottom: 10px;
+    min-height: 200px;
 }
 
 .slider {

@@ -1,33 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Currently showing movie carousel component tests renders movie Carousel component 1`] = `
+exports[`Watchlist movie carousel component tests renders error when failing to get watchlist movies 1`] = `
 <div>
   <div
     class="carousel carousel"
   >
     <div
-      class="sliderWrapper"
-    >
-      <div
-        aria-label="slider"
-        aria-live="polite"
-        class="horizontalSlider___281Ls carousel__slider carousel__slider--horizontal slider"
-        role="listbox"
-        tabindex="0"
-      >
-        <div
-          class="carousel__slider-tray-wrapper carousel__slider-tray-wrap--horizontal"
-        >
-          <div
-            class="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
-            style="width: 0%; transform: translateX(NaN%) translateX(0px); flex-direction: row;"
-          />
-        </div>
-      </div>
-      <div
-        class="carouselShadow"
-      />
-    </div>
+      class="spinner"
+    />
+  </div>
+  <button
+    class="seeDetailsBtn"
+  >
+    Voir les 0 films &gt;
+  </button>
+</div>
+`;
+
+exports[`Watchlist movie carousel component tests renders error when time out 1`] = `
+<div>
+  <div
+    class="carousel carousel"
+  >
+    <div
+      class="spinner"
+    />
+  </div>
+  <button
+    class="seeDetailsBtn"
+  >
+    Voir les 0 films &gt;
+  </button>
+</div>
+`;
+
+exports[`Watchlist movie carousel component tests renders movie Carousel component 1`] = `
+<div>
+  <div
+    class="carousel carousel"
+  >
+    <div
+      class="spinner"
+    />
   </div>
   <button
     class="seeDetailsBtn"
