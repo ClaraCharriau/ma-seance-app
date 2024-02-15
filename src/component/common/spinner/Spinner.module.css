@@ -12,10 +12,12 @@
         var(--c) 0 50%;
     background-size: 13.4px 13.4px;
     background-repeat: no-repeat;
-    animation: spinner-kh173p 1s infinite;
+    animation: spinning 1s infinite;
+    border-radius: 5px;
+    border: 2px var(--secondary) solid;
 }
 
-@keyframes spinner-kh173p {
+@keyframes spinning {
     to {
         transform: rotate(0.5turn);
     }

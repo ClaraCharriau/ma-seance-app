@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Empty home section component renders Empty home section component for movie 1`] = `
+<div>
+  <div
+    class="emptySection"
+  >
+    <p>
+      Vous n'avez pas encore de films dans votre watchlist
+    </p>
+    <button
+      class="button"
+    >
+      Rechercher un 
+      film
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Empty home section component renders Empty home section component for theater 1`] = `
+<div>
+  <div
+    class="emptySection"
+  >
+    <p>
+      Vous n'avez pas encore de cinémas favoris
+    </p>
+    <button
+      class="button"
+    >
+      Rechercher un 
+      cinéma
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Empty home section component should redirect on click 1`] = `
+<div>
+  <div
+    class="emptySection"
+  >
+    <p>
+      Vous n'avez pas encore de films dans votre watchlist
+    </p>
+    <button
+      class="button"
+    >
+      Rechercher un 
+      film
+    </button>
+  </div>
+</div>
+`;
