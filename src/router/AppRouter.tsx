@@ -10,6 +10,7 @@ import { theaterLoader } from './loaders/TheaterLoader';
 import AppLayout from './AppLayout';
 import MovieDetails from '../component/movie-details-page/MovieDetails';
 import { movieLoader } from './loaders/MovieLoader';
+import Currently from '../component/currently-page/Currently';
 
 const AppRouter = () => {
     const router = createBrowserRouter([
@@ -28,7 +29,7 @@ const AppRouter = () => {
                 },
                 {
                     path: '/currently',
-                    element: <>Currently</>
+                    element: <Currently />
                 },
                 {
                     path: '/agenda',

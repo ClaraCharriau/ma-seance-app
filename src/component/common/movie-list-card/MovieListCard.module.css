@@ -1,0 +1,42 @@
+.movieCard {
+    display: flex;
+    width: 45%;
+    gap: 20px;
+}
+
+.movieCardImg {
+    height: 20vh;
+}
+
+.movieTitle,
+.movieDateDuration,
+.movieDirector,
+.movieCast {
+    font-size: clamp(10px, 3vw, 16px)
+}
+
+.movieTitle {
+    color: var(--primary-variant);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.movieDateDuration,
+.movieDirector,
+.movieCast {
+    font-weight: 300;
+}
+
+.movieDateDuration {
+    margin-bottom: 10px;
+}
+
+.movieCast {
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .movieCard {
+        width: 100%;
+    }
+}

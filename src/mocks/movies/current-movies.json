@@ -3,14 +3,14 @@
         "id": "d171796e-93af-4d51-8b39-8d38b354d3c8",
         "title": "The Beekeeper",
         "releaseDate": "2024-01-11",
-        "duration": 90,
-        "resume": "La quête brutale de vengeance d’un homme prend des proportions démesurées alors que son passé d’agent secret d’une puissante organisation clandestine connue sous le nom des Apiculteurs est révélé.",
+        "duration": 105,
+        "resume": "Ancien agent secret d'une organisation clandestine appelée Beekeepers, Adam Clay est désormais apiculteur. Il habite sur le terrain d'Eloise Parker. Cette dernière est victime d'une escroquerie par hameçonnage et perd près de 2 millions de dollars appartenant à l'organisation caritative qu'elle dirige. Dévastée, elle finit par se suicider. Adam va alors reprendre son ancien job pour venger sa voisine. Une agent du FBI, Verona Parker, qui n'est autre que la fille d'Eloise, va le traquer.",
         "trailerLink": "",
         "posterLink": "/oJWHzabe1QxgomK4gaEDhITvxcM.jpg",
         "photoLink": "",
-        "directors": [""],
-        "cast": [""],
-        "genres": [""]
+        "directors": ["David Ayer"],
+        "cast": ["Jason statham", "Josh Husherton", "Amber Sienna"],
+        "genres": ["Action", "Thriller"]
     },
     {
         "id": "3d8f1342-15f1-44b1-a48f-4581d654b94a",
@@ -34,9 +34,9 @@
         "trailerLink": "",
         "posterLink": "/uVAk2YliqInQfH4B4vzZ75rwcNB.jpg",
         "photoLink": "",
-        "directors": [""],
-        "cast": [""],
-        "genres": [""]
+        "directors": ["Matthew Vaughn"],
+        "cast": ["Henry Cavill", "Sam Rockwell", "Dua Lipa"],
+        "genres": ["Action", "Comédie"]
     },
     {
         "id": "51e755d5-ec43-4e77-a2e6-f4f82a0e8ec5",
@@ -47,9 +47,9 @@
         "trailerLink": "",
         "posterLink": "/1njKOrYQPQKAAX0Wt3PFptX4ULG.jpg",
         "photoLink": "",
-        "directors": [""],
-        "cast": [""],
-        "genres": [""]
+        "directors": ["Bryce McGuire"],
+        "cast": ["Wyatt Russell", "Kerry Condon", "Gavin Warren"],
+        "genres": ["Horreur"]
     },
     {
         "id": "b88f9510-d302-47d5-9d6b-8b13740f541d",
@@ -60,9 +60,9 @@
         "trailerLink": "",
         "posterLink": "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
         "photoLink": "",
-        "directors": [""],
-        "cast": [""],
-        "genres": [""]
+        "directors": ["S. J. Clarkson"],
+        "cast": ["Dakota Johnson", "Sydney Sweeney", "Isabela Merced"],
+        "genres": ["Action", "Science-Fiction"]
     },
     {
         "id": "e301d3db-6aaf-47b6-a003-6a1bb0a3f029",
@@ -73,9 +73,9 @@
         "trailerLink": "",
         "posterLink": "/fKkWAjAwNXHHtxnpufRUbgFpmxr.jpg",
         "photoLink": "",
-        "directors": [""],
-        "cast": [""],
-        "genres": [""]
+        "directors": ["Blitz Bazawule"],
+        "cast": ["Fantasia Barrino", "araji P. Henson"],
+        "genres": ["Musical", "Drame"]
     },
     {
         "id": "b1d0de57-b205-4927-a13e-85e9405f5d8f",
@@ -86,9 +86,9 @@
         "trailerLink": "",
         "posterLink": "/fVuPnZAEsF4ssCvUuQxISKzdDTt.jpg",
         "photoLink": "",
-        "directors": [""],
-        "cast": [""],
-        "genres": [""]
+        "directors": ["Samantha Jayne", "Arturo Perez Jr"],
+        "cast": ["Angourie Rice", "Reneé Rapp"],
+        "genres": ["Comédie", "Musical"]
     },
     {
         "id": "03a20bb3-b24b-4d76-af62-0b0fe4d03b91",
@@ -99,8 +99,8 @@
         "trailerLink": "",
         "posterLink": "/iN6WZnetgrf2gnS4bMdCDZLDkar.jpg",
         "photoLink": "",
-        "directors": [""],
-        "cast": [""],
-        "genres": [""]
+        "directors": ["Reinaldo Marcus Green"],
+        "cast": ["Kingsley Ben-Adir", "Lashana Lynch", "Michael Gandolfini"],
+        "genres": ["Musical", "Drame"]
     }
 ]
