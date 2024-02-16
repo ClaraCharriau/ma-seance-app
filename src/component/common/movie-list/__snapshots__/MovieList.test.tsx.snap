@@ -1,0 +1,300 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie list component test should render component with a list of movies 1`] = `
+<body>
+  <div>
+    <section
+      class="movieList"
+    >
+      <a
+        class="movieCard"
+        href="/movies/d171796e-93af-4d51-8b39-8d38b354d3c8"
+      >
+        <img
+          alt="affiche du film The Beekeeper"
+          class="movieCardImg"
+          src="https://image.tmdb.org/t/p/w1280/oJWHzabe1QxgomK4gaEDhITvxcM.jpg"
+        />
+        <div>
+          <p
+            class="movieTitle"
+          >
+            The Beekeeper
+          </p>
+          <p
+            class="movieDateDuration"
+          >
+            11 janvier 2024
+             - 
+            1h45
+          </p>
+          <p
+            class="movieDirector"
+          >
+            Réalisé par 
+            David Ayer
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Jason statham, Josh Husherton, Amber Sienna
+          </p>
+        </div>
+      </a>
+      <a
+        class="movieCard"
+        href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a"
+      >
+        <img
+          alt="affiche du film Pauvres créatures"
+          class="movieCardImg"
+          src="https://image.tmdb.org/t/p/w1280/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+        />
+        <div>
+          <p
+            class="movieTitle"
+          >
+            Pauvres créatures
+          </p>
+          <p
+            class="movieDateDuration"
+          >
+            17 janvier 2024
+             - 
+            1h30
+          </p>
+          <p
+            class="movieDirector"
+          >
+            Réalisé par 
+            Yorgos Lanthimos
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Emma Stone, Mark Ruffalo, Willem Dafoe
+          </p>
+        </div>
+      </a>
+      <a
+        class="movieCard"
+        href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785"
+      >
+        <img
+          alt="affiche du film Argylle"
+          class="movieCardImg"
+          src="https://image.tmdb.org/t/p/w1280/uVAk2YliqInQfH4B4vzZ75rwcNB.jpg"
+        />
+        <div>
+          <p
+            class="movieTitle"
+          >
+            Argylle
+          </p>
+          <p
+            class="movieDateDuration"
+          >
+            31 janvier 2024
+             - 
+            1h30
+          </p>
+          <p
+            class="movieDirector"
+          >
+            Réalisé par 
+            Matthew Vaughn
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Henry Cavill, Sam Rockwell, Dua Lipa
+          </p>
+        </div>
+      </a>
+      <a
+        class="movieCard"
+        href="/movies/51e755d5-ec43-4e77-a2e6-f4f82a0e8ec5"
+      >
+        <img
+          alt="affiche du film Night Swim"
+          class="movieCardImg"
+          src="https://image.tmdb.org/t/p/w1280/1njKOrYQPQKAAX0Wt3PFptX4ULG.jpg"
+        />
+        <div>
+          <p
+            class="movieTitle"
+          >
+            Night Swim
+          </p>
+          <p
+            class="movieDateDuration"
+          >
+            3 janvier 2024
+             - 
+            1h30
+          </p>
+          <p
+            class="movieDirector"
+          >
+            Réalisé par 
+            Bryce McGuire
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Wyatt Russell, Kerry Condon, Gavin Warren
+          </p>
+        </div>
+      </a>
+      <a
+        class="movieCard"
+        href="/movies/b88f9510-d302-47d5-9d6b-8b13740f541d"
+      >
+        <img
+          alt="affiche du film Madame Web"
+          class="movieCardImg"
+          src="https://image.tmdb.org/t/p/w1280/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg"
+        />
+        <div>
+          <p
+            class="movieTitle"
+          >
+            Madame Web
+          </p>
+          <p
+            class="movieDateDuration"
+          >
+            14 février 2024
+             - 
+            1h30
+          </p>
+          <p
+            class="movieDirector"
+          >
+            Réalisé par 
+            S. J. Clarkson
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Dakota Johnson, Sydney Sweeney, Isabela Merced
+          </p>
+        </div>
+      </a>
+      <a
+        class="movieCard"
+        href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029"
+      >
+        <img
+          alt="affiche du film La Couleur Pourpre"
+          class="movieCardImg"
+          src="https://image.tmdb.org/t/p/w1280/fKkWAjAwNXHHtxnpufRUbgFpmxr.jpg"
+        />
+        <div>
+          <p
+            class="movieTitle"
+          >
+            La Couleur Pourpre
+          </p>
+          <p
+            class="movieDateDuration"
+          >
+            24 janvier 2024
+             - 
+            1h30
+          </p>
+          <p
+            class="movieDirector"
+          >
+            Réalisé par 
+            Blitz Bazawule
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Fantasia Barrino & araji P. Henson
+          </p>
+        </div>
+      </a>
+      <a
+        class="movieCard"
+        href="/movies/b1d0de57-b205-4927-a13e-85e9405f5d8f"
+      >
+        <img
+          alt="affiche du film Mean Girls - Lolita Malgré Moi"
+          class="movieCardImg"
+          src="https://image.tmdb.org/t/p/w1280/fVuPnZAEsF4ssCvUuQxISKzdDTt.jpg"
+        />
+        <div>
+          <p
+            class="movieTitle"
+          >
+            Mean Girls - Lolita Malgré Moi
+          </p>
+          <p
+            class="movieDateDuration"
+          >
+            10 janvier 2024
+             - 
+            1h30
+          </p>
+          <p
+            class="movieDirector"
+          >
+            Réalisé par 
+            Samantha Jayne & Arturo Perez Jr
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Angourie Rice & Reneé Rapp
+          </p>
+        </div>
+      </a>
+      <a
+        class="movieCard"
+        href="/movies/03a20bb3-b24b-4d76-af62-0b0fe4d03b91"
+      >
+        <img
+          alt="affiche du film Bob Marley : One Love"
+          class="movieCardImg"
+          src="https://image.tmdb.org/t/p/w1280/iN6WZnetgrf2gnS4bMdCDZLDkar.jpg"
+        />
+        <div>
+          <p
+            class="movieTitle"
+          >
+            Bob Marley : One Love
+          </p>
+          <p
+            class="movieDateDuration"
+          >
+            14 février 2024
+             - 
+            1h30
+          </p>
+          <p
+            class="movieDirector"
+          >
+            Réalisé par 
+            Reinaldo Marcus Green
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Kingsley Ben-Adir, Lashana Lynch, Michael Gandolfini
+          </p>
+        </div>
+      </a>
+    </section>
+  </div>
+</body>
+`;

@@ -1,0 +1,12 @@
+.movieList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vw;
+    margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .movieList {
+        gap: 5vw;
+    }
+}

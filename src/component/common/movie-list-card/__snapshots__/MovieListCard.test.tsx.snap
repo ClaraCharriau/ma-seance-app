@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie list card component test should render component a card 1`] = `
+<body>
+  <div>
+    <a
+      class="movieCard"
+      href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a"
+    >
+      <img
+        alt="affiche du film Pauvres créatures"
+        class="movieCardImg"
+        src="https://image.tmdb.org/t/p/w1280/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+      />
+      <div>
+        <p
+          class="movieTitle"
+        >
+          Pauvres créatures
+        </p>
+        <p
+          class="movieDateDuration"
+        >
+          17 janvier 2024
+           - 
+          1h30
+        </p>
+        <p
+          class="movieDirector"
+        >
+          Réalisé par 
+          Yorgos Lanthimos
+        </p>
+        <p
+          class="movieCast"
+        >
+          Avec 
+          Emma Stone, Mark Ruffalo, Willem Dafoe
+        </p>
+      </div>
+    </a>
+  </div>
+</body>
+`;
