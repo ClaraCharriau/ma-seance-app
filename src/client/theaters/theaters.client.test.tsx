@@ -2,7 +2,8 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { Theater } from '../../models/Theater';
-import { getTheaterById } from './theaters.client';
+import { getTheaterById, getTheaterMoviesByTheaterId } from './theaters.client';
+import mockMovies from '../../mocks/theaters/theater-movies.json';
 
 describe('Theaters client tests', () => {
     let axiosMock: MockAdapter;
@@ -57,6 +58,36 @@ describe('Theaters client tests', () => {
             expect(response).toEqual({});
         }
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1');
+    });
+
+    it('should get theater movies successfully', async () => {
+        // Given
+        axiosMock.onGet('http://localhost:7878/theaters/1/movies').reply(200, mockMovies);
+        const axiosGet = jest.spyOn(require('axios'), 'get');
+
+        // When
+        const response = await getTheaterMoviesByTheaterId('1');
+
+        // Then
+        expect(response).toEqual(mockMovies);
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1/movies');
+    });
+
+    it('should fail to get theater movies', async () => {
+        // Given
+        axiosMock.onGet('http://localhost:7878/theaters/1/movies').reply(500);
+        const axiosGet = jest.spyOn(require('axios'), 'get');
+        let response = {};
+
+        // When
+        try {
+            response = await getTheaterMoviesByTheaterId('1');
+        } catch (e: any) {
+            // Then
+            expect(e.status).toBe(500);
+            expect(response).toEqual({});
+        }
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1/movies');
     });
 });
 
