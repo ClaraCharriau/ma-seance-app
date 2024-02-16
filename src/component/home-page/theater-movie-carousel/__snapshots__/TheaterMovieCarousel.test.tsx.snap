@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Theater movie carousel component tests should fail to render component 1`] = `
+<body>
+  <div>
+    <div
+      class="carousel carousel"
+    >
+      <div
+        class="spinner"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Theater movie carousel component tests should render component 1`] = `
+<body>
+  <div>
+    <div
+      class="carousel carousel"
+    >
+      <div
+        class="spinner"
+      />
+    </div>
+  </div>
+</body>
+`;

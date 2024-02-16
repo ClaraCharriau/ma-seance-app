@@ -5,9 +5,12 @@ import CurrentlyCarousel from './currently-carousel/CurrentlyCarousel';
 import FavTheaterCarousel from './fav-theater-carousel/FavTheaterCarousel';
 import style from './Home.module.css';
 import WatchlistCarousel from './watchlist-carousel/WatchlistCarousel';
+import { useFavoriteContext } from '../../context/favorite.context';
+import TheaterMovieCarousel from './theater-movie-carousel/TheaterMovieCarousel';
 
 const Home = () => {
     const { currentUser } = useAuthContext();
+    const { favoriteTheaters = [] } = useFavoriteContext();
 
     return (
         currentUser && (
@@ -38,7 +41,6 @@ const Home = () => {
                         </div>
                         <FavTheaterCarousel currentUser={currentUser} />
                     </section>
-
                     {/* CURRENTLY SHOWING MOVIES */}
                     <section className={style.homeLeftSectionBg}>
                         <div className={style.sectionTitleWrapper}>
@@ -67,6 +69,38 @@ const Home = () => {
                         </div>
                         <CurrentlyCarousel />
                     </section>
+
+                    {/* MOVIES BY THEATERS */}
+                    {favoriteTheaters.length > 0 &&
+                        favoriteTheaters.map((theater, index) => (
+                            <section className={style.homeLeftSection} key={index}>
+                                <div className={style.sectionTitleWrapper}>
+                                    <NavLink to={'/theaters/' + theater.id}>
+                                        <h2 className={style.homeSectionTitle}>
+                                            <svg
+                                                width="18"
+                                                height="12"
+                                                viewBox="0 0 18 12"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M17.8496 0.348053C17.8496 0.297104 17.8384 0.246776 17.8168 0.200623C17.7953 0.15447 17.7638 0.113619 17.7247 0.0809537C17.6856 0.0482887 17.6398 0.024607 17.5905 0.0115813C17.5413 -0.00144444 17.4898 -0.00349651 17.4396 0.00557005L16.671 0.144456C14.1147 0.605675 11.5224 0.837972 8.92481 0.838585C6.32722 0.837964 3.73487 0.605663 1.17856 0.144443L0.409936 0.00555678C0.359801 -0.00351169 0.308286 -0.00146085 0.25903 0.0115644C0.209774 0.0245895 0.163979 0.0482715 0.12488 0.0809371C0.0857808 0.113603 0.0543311 0.154455 0.0327527 0.200609C0.0111743 0.246763 -6.51236e-06 0.297091 3.42992e-09 0.34804V11.652C-7.14939e-06 11.7029 0.0111733 11.7532 0.0327514 11.7994C0.0543295 11.8455 0.0857789 11.8864 0.124878 11.9191C0.163977 11.9517 0.209773 11.9754 0.259029 11.9884C0.308285 12.0015 0.3598 12.0035 0.409936 11.9944L1.17856 11.8556C6.30126 10.93 11.5484 10.93 16.6711 11.8556L17.4397 11.9944C17.4898 12.0035 17.5413 12.0015 17.5906 11.9884C17.6398 11.9754 17.6856 11.9517 17.7247 11.9191C17.7638 11.8864 17.7953 11.8455 17.8169 11.7994C17.8385 11.7532 17.8496 11.7029 17.8496 11.652L17.8496 0.348053ZM16.5009 1.54376V10.4562C11.4869 9.59496 6.36273 9.59496 1.3487 10.4562V1.54374C6.36273 2.40508 11.4869 2.4051 16.5009 1.54376Z"
+                                                    fill="#FFF1A7"
+                                                />
+                                            </svg>
+                                            {theater.name}
+                                        </h2>
+                                    </NavLink>
+                                    <SeeDetailsBtn
+                                        text="Voir plus >"
+                                        navigatePath={'/theaters/' + theater.id}
+                                        showIcon={false}
+                                    />
+                                </div>
+                                <TheaterMovieCarousel theaterId={theater.id} />
+                            </section>
+                        ))}
                 </div>
                 <div className={style.rightColumn}>
                     {/* AGENDA */}

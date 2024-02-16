@@ -53,6 +53,11 @@
             "verbs": ["get"],
             "mockFile": "theaters/theaters-1.json"
         },
+        "theaters/:id/movies": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "theaters/theater-movies.json"
+        },
         "movies/currently": {
             "httpStatus": 200,
             "latency": 400,
