@@ -27,7 +27,7 @@
             "verbs": ["post", "patch"]
         },
         "sign-out/1": {
-            "httpStatus": 200,
+            "httpStatus": 204,
             "latency": 20,
             "verbs": ["delete"]
         },
@@ -67,7 +67,15 @@
         "movies/:id": {
             "httpStatus": 200,
             "verbs": ["get"],
-            "mockFile": "movies/movie-1.json"
+            "mockFile": "movies/movie-1.json",
+            "switchResponses": {
+                "idb88f9510-d302-47d5-9d6b-8b13740f541d": { "httpStatus": 200, "mockFile": "movies/movie-2.json" }
+            }
+        },
+        "screenings": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "screenings/movies-screenings-by-theater-id-and-day.json"
         }
     }
 }
