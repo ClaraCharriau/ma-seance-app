@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { Movie } from '../../../models/Movie';
 import style from './MovieListCard.module.css';
 import useDurationFormat from '../../../hooks/useDurationFormat';
-import useDateFormat from '../../../hooks/useDateFormat';
+import useDateDMYFormat from '../../../hooks/dates/useDateDMYFormat';
 import useStringListFormat from '../../../hooks/useStringListFormat';
 
 interface MovieListCardProps {
@@ -11,10 +11,10 @@ interface MovieListCardProps {
 
 const MovieListCard = (props: MovieListCardProps) => {
     const { movie } = props;
-    const TMDB_PATH = 'https://image.tmdb.org/t/p/w1280';
+    const TMDB_PATH = 'https://image.tmdb.org/t/p/w500';
 
     const formattedDuration = useDurationFormat(movie.duration);
-    const formattedReleaseDate = useDateFormat(movie.releaseDate);
+    const formattedReleaseDate = useDateDMYFormat(movie.releaseDate);
     const directors = useStringListFormat(movie.directors);
     const cast = useStringListFormat(movie.cast);
 

@@ -4,7 +4,7 @@ import style from './MovieDetails.module.css';
 import useDurationFormat from '../../hooks/useDurationFormat';
 import FavoriteButton from '../common/favorite-button/FavoriteButton';
 import useStringListFormat from '../../hooks/useStringListFormat';
-import useDateFormat from '../../hooks/useDateFormat';
+import useDateDMYFormat from '../../hooks/dates/useDateDMYFormat';
 
 const MovieDetails = () => {
     const movie = useLoaderData() as Movie;
@@ -12,7 +12,7 @@ const MovieDetails = () => {
     const TMDB_PATH = 'https://image.tmdb.org/t/p/w500';
 
     const formattedDuration = useDurationFormat(movie.duration);
-    const formattedReleaseDate = useDateFormat(movie.releaseDate);
+    const formattedReleaseDate = useDateDMYFormat(movie.releaseDate);
     const directors = useStringListFormat(movie.directors);
     const cast = useStringListFormat(movie.cast);
     const genres = useStringListFormat(movie.genres);

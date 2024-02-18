@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import useDateFormat from './useDateFormat';
+import useDateDMYFormat from './useDateDMYFormat';
 
 describe('Use date format hook tests', () => {
     it('should convert 2024-11-12 to 1h01', () => {
@@ -7,7 +7,7 @@ describe('Use date format hook tests', () => {
         const date = '2024-11-12';
 
         // When
-        const { result } = renderHook(() => useDateFormat(date));
+        const { result } = renderHook(() => useDateDMYFormat(date));
 
         // Then
         expect(result.current).toBe('12 novembre 2024');
