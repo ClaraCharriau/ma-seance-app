@@ -1,0 +1,46 @@
+.plannerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    background-color: var(--secondary-variant);
+    border-radius: 6px;
+    padding: 0 10px;
+}
+
+.dayButton {
+    max-width: 130px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.dayOfWeek,
+.month {
+    text-transform: none;
+    font-weight: 300;
+}
+
+.dayOfWeek {
+    font-size: 14px;
+}
+
+.dayNumber {
+    font-size: 18px;
+}
+
+.month {
+    font-size: 10px;
+}
+
+@media (max-width: 500px) {
+    .dayOfWeek,
+    .month {
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 3ch;
+    }
+}
