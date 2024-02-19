@@ -13,7 +13,7 @@ exports[`Movie list component test should render component with a list of movies
         <img
           alt="affiche du film The Beekeeper"
           class="movieCardImg"
-          src="https://image.tmdb.org/t/p/w1280/oJWHzabe1QxgomK4gaEDhITvxcM.jpg"
+          src="https://image.tmdb.org/t/p/w500/oJWHzabe1QxgomK4gaEDhITvxcM.jpg"
         />
         <div>
           <p
@@ -49,7 +49,7 @@ exports[`Movie list component test should render component with a list of movies
         <img
           alt="affiche du film Pauvres créatures"
           class="movieCardImg"
-          src="https://image.tmdb.org/t/p/w1280/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+          src="https://image.tmdb.org/t/p/w500/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
         />
         <div>
           <p
@@ -85,7 +85,7 @@ exports[`Movie list component test should render component with a list of movies
         <img
           alt="affiche du film Argylle"
           class="movieCardImg"
-          src="https://image.tmdb.org/t/p/w1280/uVAk2YliqInQfH4B4vzZ75rwcNB.jpg"
+          src="https://image.tmdb.org/t/p/w500/uVAk2YliqInQfH4B4vzZ75rwcNB.jpg"
         />
         <div>
           <p
@@ -121,7 +121,7 @@ exports[`Movie list component test should render component with a list of movies
         <img
           alt="affiche du film Night Swim"
           class="movieCardImg"
-          src="https://image.tmdb.org/t/p/w1280/1njKOrYQPQKAAX0Wt3PFptX4ULG.jpg"
+          src="https://image.tmdb.org/t/p/w500/1njKOrYQPQKAAX0Wt3PFptX4ULG.jpg"
         />
         <div>
           <p
@@ -157,7 +157,7 @@ exports[`Movie list component test should render component with a list of movies
         <img
           alt="affiche du film Madame Web"
           class="movieCardImg"
-          src="https://image.tmdb.org/t/p/w1280/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg"
+          src="https://image.tmdb.org/t/p/w500/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg"
         />
         <div>
           <p
@@ -193,7 +193,7 @@ exports[`Movie list component test should render component with a list of movies
         <img
           alt="affiche du film La Couleur Pourpre"
           class="movieCardImg"
-          src="https://image.tmdb.org/t/p/w1280/fKkWAjAwNXHHtxnpufRUbgFpmxr.jpg"
+          src="https://image.tmdb.org/t/p/w500/fKkWAjAwNXHHtxnpufRUbgFpmxr.jpg"
         />
         <div>
           <p
@@ -229,7 +229,7 @@ exports[`Movie list component test should render component with a list of movies
         <img
           alt="affiche du film Mean Girls - Lolita Malgré Moi"
           class="movieCardImg"
-          src="https://image.tmdb.org/t/p/w1280/fVuPnZAEsF4ssCvUuQxISKzdDTt.jpg"
+          src="https://image.tmdb.org/t/p/w500/fVuPnZAEsF4ssCvUuQxISKzdDTt.jpg"
         />
         <div>
           <p
@@ -265,7 +265,7 @@ exports[`Movie list component test should render component with a list of movies
         <img
           alt="affiche du film Bob Marley : One Love"
           class="movieCardImg"
-          src="https://image.tmdb.org/t/p/w1280/iN6WZnetgrf2gnS4bMdCDZLDkar.jpg"
+          src="https://image.tmdb.org/t/p/w500/iN6WZnetgrf2gnS4bMdCDZLDkar.jpg"
         />
         <div>
           <p

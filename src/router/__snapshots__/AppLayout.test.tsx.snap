@@ -185,9 +185,6 @@ exports[`App layout component tests should render app layout component 1`] = `
       </a>
     </div>
   </header>
-  <div
-    class=""
-  />
   <footer>
     <a
       class="logo"
@@ -527,13 +524,6 @@ exports[`App layout component tests should render spinner 1`] = `
       </a>
     </div>
   </header>
-  <div
-    class="loading"
-  >
-    <div
-      class="spinner"
-    />
-  </div>
   <footer>
     <a
       class="logo"
