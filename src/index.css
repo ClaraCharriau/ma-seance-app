@@ -10,6 +10,7 @@
 :root {
   --primary: #fff1a7;
   --primary-variant: #fab32d;
+  --primary-variant-fade: rgba(250, 178, 45, 0.2);
   --secondary: #021f38;
   --secondary-variant: #1b3043;
   --red: #eb6a5d;

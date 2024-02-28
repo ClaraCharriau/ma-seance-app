@@ -4,7 +4,7 @@ import { HOST, handleError, handleResponse } from '../client.utils';
 
 const screenings_path = HOST + '/screenings';
 
-export const getMovieScreeningsByTheaterAndDay = async (theaterId: string, day: Date): Promise<MovieScreenings[]> => {
+export const getMovieScreeningsByTheaterAndDay = async (theaterId: string, day: string): Promise<MovieScreenings[]> => {
     const params = {
         theaterId,
         day
