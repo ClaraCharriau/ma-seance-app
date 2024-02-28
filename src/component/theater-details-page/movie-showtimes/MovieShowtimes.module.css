@@ -1,0 +1,28 @@
+.showtimesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.movieShowtimesWrapper {
+    display: flex;
+}
+
+.timeSlotColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.timeSlotTitle {
+    color: var(--primary);
+}
+
+.timeSlotWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 40vw;
+}

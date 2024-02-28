@@ -10,7 +10,7 @@ exports[`Movie list card component test should render component a card 1`] = `
       <img
         alt="affiche du film Pauvres créatures"
         class="movieCardImg"
-        src="https://image.tmdb.org/t/p/w1280/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+        src="https://image.tmdb.org/t/p/w500/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
       />
       <div>
         <p

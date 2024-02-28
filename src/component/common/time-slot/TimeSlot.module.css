@@ -1,0 +1,15 @@
+.timeSlot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-variant);
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 300;
+    height: auto;
+}
+
+.timeSlot:hover {
+    cursor: pointer;
+}

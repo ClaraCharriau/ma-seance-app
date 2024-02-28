@@ -1,4 +1,4 @@
-const useDateFormat = (date: string) => {
+const useDateDMYFormat = (date: string) => {
     const formatDate = (date: string) => {
         const [year, month, day] = date.split('-');
         const monthNames = [
@@ -21,4 +21,4 @@ const useDateFormat = (date: string) => {
     return formatDate(date);
 };
 
-export default useDateFormat;
+export default useDateDMYFormat;

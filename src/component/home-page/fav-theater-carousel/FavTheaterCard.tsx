@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Theater } from '../../../models/Theater';
 import style from '../fav-theater-carousel/FavTheater.module.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -14,7 +14,7 @@ const FavTheaterCard = (props: FavTheaterCardProps) => {
     const IMG_SUFFIX = '.jpg';
 
     return (
-        <NavLink to={`/theaters/${theater.id}`} state={{ id: theater.id }} className={style.card}>
+        <Link to={`/theaters/${theater.id}`} state={{ id: theater.id }} className={style.card}>
             <img
                 className={style.theaterCardImg}
                 src={IMG_PATH + theater.imgPath + IMG_SUFFIX}
@@ -23,7 +23,7 @@ const FavTheaterCard = (props: FavTheaterCardProps) => {
             <div className={style.theaterName}>
                 <p>{theater.name}</p>
             </div>
-        </NavLink>
+        </Link>
     );
 };
 

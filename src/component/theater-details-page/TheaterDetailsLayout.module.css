@@ -27,3 +27,16 @@
     display: flex;
     justify-content: space-between;
 }
+
+.theaterNameAddress {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.plannerTitle {
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 2vh;
+}

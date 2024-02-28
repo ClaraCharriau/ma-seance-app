@@ -1,8 +1,11 @@
-import { ActionFunctionArgs } from 'react-router-dom';
+import { ActionFunctionArgs, defer } from 'react-router-dom';
 import { getTheaterById } from '../../client/theaters/theaters.client';
 
 export const theaterLoader = async (args: ActionFunctionArgs) => {
     const { params } = args;
-    const { id } = params;
-    return await getTheaterById(Number(id));
+    const { theaterId } = params;
+
+    const theaterPromise = getTheaterById(Number(theaterId));
+
+    return defer({ theater: theaterPromise });
 };
