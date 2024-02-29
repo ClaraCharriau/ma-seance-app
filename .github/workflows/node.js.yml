@@ -37,7 +37,7 @@ jobs:
     - name: Create coverage badge
       uses: jaywcjlove/coverage-badges-cli@v1.2.5
       with:
-        input: coverage/coverage-final.json
+        source: coverage/coverage-final.json
         output: coverage/badges.svg
 
     
