@@ -34,5 +34,3 @@ jobs:
       
           - name: Create coverage badges
             run: npm run make-badges:ci
-
-    
