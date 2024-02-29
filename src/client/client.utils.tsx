@@ -1,5 +1,6 @@
 import { AxiosResponse } from 'axios';
 import { Movie } from '../models/Movie';
+import config from '../config/config.helper';
 
 export interface PaginatedMovieResponse {
     _metadata: {
@@ -11,7 +12,7 @@ export interface PaginatedMovieResponse {
     records: Movie[];
 }
 
-export const HOST = 'http://localhost:7878';
+export const HOST = config.services.prefix;
 
 export const handleError = (error: any) => {
     if (error.response) {
