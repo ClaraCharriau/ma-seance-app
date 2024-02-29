@@ -4,6 +4,7 @@ import style from './MovieListCard.module.css';
 import useDurationFormat from '../../../hooks/useDurationFormat';
 import useDateDMYFormat from '../../../hooks/dates/useDateDMYFormat';
 import useStringListFormat from '../../../hooks/useStringListFormat';
+import config from '../../../config/config.helper';
 
 interface MovieListCardProps {
     movie: Movie;
@@ -11,8 +12,7 @@ interface MovieListCardProps {
 
 const MovieListCard = (props: MovieListCardProps) => {
     const { movie } = props;
-    const TMDB_PATH = 'https://image.tmdb.org/t/p/w500';
-
+    const TMDB_PATH = config.tmdbImgPath.medium;
     const formattedDuration = useDurationFormat(movie.duration);
     const formattedReleaseDate = useDateDMYFormat(movie.releaseDate);
     const directors = useStringListFormat(movie.directors);

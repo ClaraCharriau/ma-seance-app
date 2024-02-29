@@ -5,12 +5,11 @@ import useDurationFormat from '../../hooks/useDurationFormat';
 import FavoriteButton from '../common/favorite-button/FavoriteButton';
 import useStringListFormat from '../../hooks/useStringListFormat';
 import useDateDMYFormat from '../../hooks/dates/useDateDMYFormat';
+import config from '../../config/config.helper';
 
 const MovieDetails = () => {
     const movie = useLoaderData() as Movie;
-
-    const TMDB_PATH = 'https://image.tmdb.org/t/p/w500';
-
+    const TMDB_PATH = config.tmdbImgPath.large;
     const formattedDuration = useDurationFormat(movie.duration);
     const formattedReleaseDate = useDateDMYFormat(movie.releaseDate);
     const directors = useStringListFormat(movie.directors);

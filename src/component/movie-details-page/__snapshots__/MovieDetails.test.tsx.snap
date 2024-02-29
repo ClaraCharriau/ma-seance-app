@@ -8,7 +8,7 @@ exports[`Movie Details Component renders movie details component 1`] = `
     <img
       alt="photo de Pauvres créatures"
       class="movieBackground"
-      src="https://image.tmdb.org/t/p/w500/bQS43HSLZzMjZkcHJz4fGc7fNdz.jpg"
+      src="https://image.tmdb.org/t/p/w1280/bQS43HSLZzMjZkcHJz4fGc7fNdz.jpg"
     />
     <div
       class="fading"
@@ -49,7 +49,7 @@ exports[`Movie Details Component renders movie details component 1`] = `
       <img
         alt="affiche de Pauvres créatures"
         class="moviePoster"
-        src="https://image.tmdb.org/t/p/w500/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+        src="https://image.tmdb.org/t/p/w1280/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
       />
       <div
         class="movieInfos"

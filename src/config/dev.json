@@ -1,0 +1,9 @@
+{
+    "services" : {
+        "prefix": "http://localhost:7878"
+    },
+    "tmdbImgPath" : {
+        "medium": "https://image.tmdb.org/t/p/w500",
+        "large": "https://image.tmdb.org/t/p/w1280"
+    }
+}
