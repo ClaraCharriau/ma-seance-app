@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { Movie } from '../../../models/Movie';
 import style from './MovieCard.module.css';
+import config from '../../../config/config.helper';
 
 interface MovieCardProps {
     movie: Movie;
@@ -8,7 +9,7 @@ interface MovieCardProps {
 
 const MovieCard = (props: MovieCardProps) => {
     const { movie } = props;
-    const TMDB_PATH = 'https://image.tmdb.org/t/p/w1280';
+    const TMDB_PATH = config.tmdbImgPath.large;
 
     return (
         <NavLink to={`/movies/${movie.id}`} state={{ id: movie.id }} className={style.card}>
