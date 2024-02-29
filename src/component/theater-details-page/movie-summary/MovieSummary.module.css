@@ -1,5 +1,9 @@
 .movieSummaryWrapper {
     display: flex;
-    flex-direction: column;
+    gap: 4vw;
     width: 70vw;
+}
+
+.movieSummaryWrapper img {
+    width: 20%;
 }
