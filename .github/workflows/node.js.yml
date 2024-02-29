@@ -1,7 +1,4 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
+name: GitHub Actions - node CI
 
 on:
   push:
@@ -38,6 +35,9 @@ jobs:
         path: coverage
 
     - name: Create coverage badge
-      run: npm run make-badges
+      uses: jaywcjlove/coverage-badges-cli@v1.2.5
+      with:
+        input: coverage/coverage-final.json
+        output: coverage/badges.svg
 
     
