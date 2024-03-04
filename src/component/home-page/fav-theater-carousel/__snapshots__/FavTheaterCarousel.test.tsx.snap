@@ -35,7 +35,7 @@ exports[`Fav Theater Carousel Component renders Fav Theater Carousel component 1
               >
                 <a
                   class="card"
-                  href="/theaters/1"
+                  href="/theaters/1/day-1"
                 >
                   <img
                     alt="photo de Le Grand Rex"
@@ -65,7 +65,7 @@ exports[`Fav Theater Carousel Component renders Fav Theater Carousel component 1
               >
                 <a
                   class="card"
-                  href="/theaters/2"
+                  href="/theaters/2/day-1"
                 >
                   <img
                     alt="photo de Pathé Levallois"
@@ -95,7 +95,7 @@ exports[`Fav Theater Carousel Component renders Fav Theater Carousel component 1
               >
                 <a
                   class="card"
-                  href="/theaters/3"
+                  href="/theaters/3/day-1"
                 >
                   <img
                     alt="photo de Super cinoche"

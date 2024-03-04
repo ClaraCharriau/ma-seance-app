@@ -1,11 +1,9 @@
 import { ActionFunctionArgs } from 'react-router-dom';
 import { getMovieScreeningsByTheaterAndDay as getMovieScreeningsByTheaterIdAndDay } from '../../client/screenings/screenings.client';
-import { formatISO } from 'date-fns';
 
 export const movieScreeningsLoader = async (args: ActionFunctionArgs) => {
     const { params } = args;
-    let { theaterId } = params;
-    const { date } = params;
+    let { theaterId, day } = params;
 
     // Theater id
     if (theaterId === undefined) {
@@ -13,10 +11,12 @@ export const movieScreeningsLoader = async (args: ActionFunctionArgs) => {
         // api call will throw error anyway
     }
 
-    // Selected date
-    let day = formatISO(new Date(), { representation: 'date' });
-    if (date !== undefined) {
-        day = formatISO(new Date(date), { representation: 'date' });
+    // Selected day
+    if (day === undefined) {
+        day = '1';
     }
+    // remove "day"
+    day = day.split('-')[1];
+
     return await getMovieScreeningsByTheaterIdAndDay(theaterId, day);
 };
