@@ -78,7 +78,13 @@
         "screenings": {
             "httpStatus": 200,
             "verbs": ["get"],
-            "mockFile": "screenings/movies-screenings-by-theater-id-and-day.json"
+            "mockFile": "screenings/movies-screenings-by-theater-id-and-day-1.json",
+            "switch": ["day"],
+            "switchResponses": {
+                "day1": { "httpStatus": 200, "mockFile": "screenings/movies-screenings-by-theater-id-and-day-1.json"},
+                "day2": { "httpStatus": 200, "mockFile": "screenings/movies-screenings-by-theater-id-and-day-2.json"},
+                "day3": { "httpStatus": 200, "mockFile": "screenings/movies-screenings-by-theater-id-and-day-3.json"}
+            }
         }
     }
 }

@@ -61,7 +61,7 @@ const AppRouter = () => {
                     element: <TheaterDetailsLayout />,
                     children: [
                         {
-                            path: '/theaters/:theaterId/:date?',
+                            path: '/theaters/:theaterId/:day?',
                             loader: movieScreeningsLoader,
                             element: <MovieShowtimes />
                         }

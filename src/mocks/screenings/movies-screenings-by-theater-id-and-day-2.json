@@ -1,0 +1,59 @@
+[
+    {
+        "movie": {
+            "id": "b88f9510-d302-47d5-9d6b-8b13740f541d",
+            "title": "Madame Web",
+            "releaseDate": "2024-02-14",
+            "duration": 90,
+            "resume": "Cassandra Web est une ambulancière de Manhattan qui serait capable de voir dans le futur. Forcée de faire face à des révélations sur son passé, elle noue une relation avec trois jeunes femmes destinées à un avenir hors du commun... si toutefois elles parviennent à survivre à un présent mortel.",
+            "trailerLink": "",
+            "posterLink": "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
+            "photoLink": "",
+            "directors": ["S. J. Clarkson"],
+            "cast": ["Dakota Johnson", "Sydney Sweeney", "Isabela Merced"],
+            "genres": ["Action", "Science-Fiction"]
+        },
+        "schedule": [
+            "2024-02-17T11:45:00",
+            "2024-02-17T14:15:00",
+            "2024-02-17T10:15:00",
+            "2024-02-17T15:30:00",
+            "2024-02-17T16:45:00",
+            "2024-02-17T17:35:00",
+            "2024-02-17T19:15:00",
+            "2024-02-17T21:45:00"
+        ]
+    },
+    {
+        "movie": {
+            "id": "3d8f1342-15f1-44b1-a48f-4581d654b94a",
+            "title": "Anatomie d'une chute",
+            "releaseDate": "2023-08-13",
+            "duration": 80,
+            "resume": "Alors qu'une femme est suspectée du meurtre de son mari, son fils aveugle est placé face à un dilemme moral en tant qu'unique témoin.",
+            "trailerLink": "null",
+            "posterLink": "/vwpB79T0KGxqZSx0wormGC58OZB.jpg",
+            "photoLink": "/fGe1ej335XbqN1j9teoDpofpbLX.jpg",
+            "directors": ["Justine Triet"],
+            "cast": ["Sandra Hüller", "Swann Arlaud", "Samuel Theis"],
+            "genres": ["Drame", "Mystère", "Crime"]
+        },
+        "schedule": ["2024-02-17T11:45:00", "2024-02-17T19:15:00", "2024-02-17T21:45:00"]
+    },
+    {
+        "movie": {
+            "id": "cff01b1b-a943-4bcf-a396-afd80417150a",
+            "title": "Dune",
+            "releaseDate": "2024-01-31",
+            "duration": 166,
+            "resume": "Paul Atréides se rallie à Chani et aux Fremen tout en préparant sa revanche contre ceux qui ont détruit sa famille. Alors qu'il doit faire un choix entre l'amour de sa vie et le destin de la galaxie, il devra néanmoins tout faire pour empêcher un terrible futur que lui seul peut prédire.",
+            "trailerLink": "",
+            "posterLink": "/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg",
+            "photoLink": "",
+            "directors": ["Denis Villeneuve"],
+            "cast": ["Timothée Chalamet, Zendaya, Rebecca Ferguson"],
+            "genres": ["Drame", "Science-Fiction"]
+        },
+        "schedule": ["2024-02-17T11:45:00", "2024-02-17T14:15:00", "2024-02-17T16:45:00"]
+    }
+]

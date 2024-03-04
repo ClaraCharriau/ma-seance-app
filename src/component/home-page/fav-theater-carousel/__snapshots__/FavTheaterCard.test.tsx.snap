@@ -4,7 +4,7 @@ exports[`Fav Theater Card Component renders Fav Theater Card component 1`] = `
 <div>
   <a
     class="card"
-    href="/theaters/6"
+    href="/theaters/6/day-1"
   >
     <img
       alt="photo de UGC Normandie"

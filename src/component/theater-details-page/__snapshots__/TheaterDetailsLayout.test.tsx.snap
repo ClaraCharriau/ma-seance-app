@@ -71,7 +71,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
         >
           <a
             class="dayButton"
-            href="/theaters/undefined/2020-01-01"
+            href="/theaters/undefined/day-1"
           >
             <span
               class="dayOfWeek"
@@ -91,7 +91,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           </a>
           <a
             class="dayButton"
-            href="/theaters/undefined/2020-01-02"
+            href="/theaters/undefined/day-2"
           >
             <span
               class="dayOfWeek"
@@ -111,7 +111,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           </a>
           <a
             class="dayButton"
-            href="/theaters/undefined/2020-01-03"
+            href="/theaters/undefined/day-3"
           >
             <span
               class="dayOfWeek"
@@ -131,7 +131,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           </a>
           <a
             class="dayButton"
-            href="/theaters/undefined/2020-01-04"
+            href="/theaters/undefined/day-4"
           >
             <span
               class="dayOfWeek"
@@ -151,7 +151,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           </a>
           <a
             class="dayButton"
-            href="/theaters/undefined/2020-01-05"
+            href="/theaters/undefined/day-5"
           >
             <span
               class="dayOfWeek"
@@ -171,7 +171,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           </a>
           <a
             class="dayButton"
-            href="/theaters/undefined/2020-01-06"
+            href="/theaters/undefined/day-6"
           >
             <span
               class="dayOfWeek"
@@ -191,7 +191,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           </a>
           <a
             class="dayButton"
-            href="/theaters/undefined/2020-01-07"
+            href="/theaters/undefined/day-7"
           >
             <span
               class="dayOfWeek"
