@@ -1,0 +1,12 @@
+.showtimesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    margin: 40px 0;
+}
+
+@media (max-width: 500px) {
+    .showtimesSection {
+        gap: 40px;
+    }
+}

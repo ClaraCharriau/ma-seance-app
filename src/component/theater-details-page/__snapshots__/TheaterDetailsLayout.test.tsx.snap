@@ -209,6 +209,46 @@ exports[`Theater Details Component renders theater details component 1`] = `
               janvier
             </span>
           </a>
+          <a
+            class="dayButton"
+            href="/theaters/undefined/day-8"
+          >
+            <span
+              class="dayOfWeek"
+            >
+              mercredi
+            </span>
+            <span
+              class="dayNumber"
+            >
+              08
+            </span>
+            <span
+              class="month"
+            >
+              janvier
+            </span>
+          </a>
+          <a
+            class="dayButton"
+            href="/theaters/undefined/day-9"
+          >
+            <span
+              class="dayOfWeek"
+            >
+              jeudi
+            </span>
+            <span
+              class="dayNumber"
+            >
+              09
+            </span>
+            <span
+              class="month"
+            >
+              janvier
+            </span>
+          </a>
         </nav>
         <div
           class="shadow"

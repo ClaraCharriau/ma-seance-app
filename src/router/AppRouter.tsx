@@ -12,7 +12,7 @@ import MovieDetails from '../component/movie-details-page/MovieDetails';
 import { movieLoader } from './loaders/MovieLoader';
 import Currently from '../component/currently-page/Currently';
 import Spinner from '../component/common/spinner/Spinner';
-import MovieShowtimes from '../component/theater-details-page/movie-showtimes/MovieShowtimes';
+import MoviesScreeningsList from '../component/theater-details-page/movies-screenings-list/MoviesScreeningsList';
 import { movieScreeningsLoader } from './loaders/MovieScreeningsLoader';
 
 const AppRouter = () => {
@@ -63,7 +63,7 @@ const AppRouter = () => {
                         {
                             path: '/theaters/:theaterId/:day?',
                             loader: movieScreeningsLoader,
-                            element: <MovieShowtimes />
+                            element: <MoviesScreeningsList />
                         }
                     ]
                 },

@@ -202,3 +202,39 @@ exports[`Fav Theater Carousel Component renders Fav Theater Carousel component 1
   </div>
 </div>
 `;
+
+exports[`Fav Theater Carousel Component renders Fav Theater Carousel component when an error happened 1`] = `
+<div>
+  <div
+    class="carousel carousel"
+  >
+    <div
+      class="error"
+    >
+      Une erreur s'est produite lors du chargement des cinémas. Veuillez réessayer.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Fav Theater Carousel Component renders Fav Theater Carousel component when user has no favorite theaters 1`] = `
+<div>
+  <div
+    class="carousel carousel"
+  >
+    <div
+      class="emptySection"
+    >
+      <p>
+        Vous n'avez pas encore de cinémas favoris
+      </p>
+      <button
+        class="button"
+      >
+        Rechercher un 
+        cinéma
+      </button>
+    </div>
+  </div>
+</div>
+`;

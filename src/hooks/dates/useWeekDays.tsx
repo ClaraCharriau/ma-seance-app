@@ -11,7 +11,7 @@ const useWeekDays = (): IDay[] => {
     const today = new Date();
     const weekDays: IDay[] = [];
 
-    for (let i = 0; i <= 6; i++) {
+    for (let i = 0; i <= 8; i++) {
         const nextDay: Date = new Date();
         nextDay.setDate(today.getDate() + i);
         const formattedDate = format(nextDay, 'eeee dd MMMM', { locale: fr });

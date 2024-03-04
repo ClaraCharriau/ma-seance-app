@@ -3,6 +3,7 @@ import { getCurrentlyMovies } from '../../../client/movies/movies.client';
 import CurrentlyCarousel from './CurrentlyCarousel';
 import { act } from 'react-dom/test-utils';
 import mockMovies from '../../../mocks/movies/current-movies.json';
+import { BrowserRouter } from 'react-router-dom';
 
 jest.mock('../../../client/movies/movies.client', () => ({
     getCurrentlyMovies: jest.fn()
@@ -17,13 +18,18 @@ describe('Currently showing movie carousel component tests', () => {
 
         // When
         act(() => {
-            component = render(<CurrentlyCarousel />);
+            component = render(
+                <BrowserRouter>
+                    <CurrentlyCarousel />
+                </BrowserRouter>
+            );
         });
 
         // Then
         await waitFor(() => {
-            expect(component.container).toMatchSnapshot();
+            expect(component.getByAltText("Affiche du film The Beekeeper")).toBeInTheDocument();
         });
+        expect(component.baseElement).toMatchSnapshot();
     });
 
     it('renders error when failing to get currently movies', async () => {
@@ -38,6 +44,7 @@ describe('Currently showing movie carousel component tests', () => {
 
         // Then
         await waitFor(() => {
+            expect(component.getByText("Une erreur s'est produite lors du chargement des films.")).toBeInTheDocument();
             expect(component.container).toMatchSnapshot();
         });
     });
@@ -56,6 +63,7 @@ describe('Currently showing movie carousel component tests', () => {
             setTimeout(() => {
                 console.log('time out');
             }, 5001);
+            expect(component.getByText("Une erreur s'est produite lors du chargement des films.")).toBeInTheDocument();
             expect(component.container).toMatchSnapshot();
         });
     });

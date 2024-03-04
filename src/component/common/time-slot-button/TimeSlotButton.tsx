@@ -1,10 +1,10 @@
-import style from './TimeSlot.module.css';
+import style from './TimeSlotButton.module.css';
 
-interface TimeSlotProps {
+interface TimeSlotButtonProps {
     time: string;
 }
 
-const TimeSlot = (props: TimeSlotProps) => {
+const TimeSlotButton = (props: TimeSlotButtonProps) => {
     const { time } = props;
 
     const partieDate = time.split('T')[1]; // Sépare la partie du temps après le "T"
@@ -14,4 +14,4 @@ const TimeSlot = (props: TimeSlotProps) => {
     return <button className={style.timeSlot}>{heureFormattee}</button>;
 };
 
-export default TimeSlot;
+export default TimeSlotButton;

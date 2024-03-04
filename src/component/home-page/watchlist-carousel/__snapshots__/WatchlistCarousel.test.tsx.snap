@@ -6,8 +6,10 @@ exports[`Watchlist movie carousel component tests renders error when failing to 
     class="carousel carousel"
   >
     <div
-      class="spinner"
-    />
+      class="error"
+    >
+      Une erreur s'est produite lors du chargement des films.
+    </div>
   </div>
   <button
     class="seeDetailsBtn"
@@ -23,8 +25,10 @@ exports[`Watchlist movie carousel component tests renders error when time out 1`
     class="carousel carousel"
   >
     <div
-      class="spinner"
-    />
+      class="error"
+    >
+      Une erreur s'est produite lors du chargement des films.
+    </div>
   </div>
   <button
     class="seeDetailsBtn"
@@ -35,18 +39,110 @@ exports[`Watchlist movie carousel component tests renders error when time out 1`
 `;
 
 exports[`Watchlist movie carousel component tests renders movie Carousel component 1`] = `
-<div>
-  <div
-    class="carousel carousel"
-  >
+<body>
+  <div>
     <div
-      class="spinner"
-    />
+      class="carousel carousel"
+    >
+      <div
+        class="sliderWrapper"
+      >
+        <div
+          aria-label="slider"
+          aria-live="polite"
+          class="horizontalSlider___281Ls carousel__slider carousel__slider--horizontal slider"
+          role="listbox"
+          tabindex="0"
+        >
+          <div
+            class="carousel__slider-tray-wrapper carousel__slider-tray-wrap--horizontal"
+          >
+            <div
+              class="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
+              style="width: 75%; transform: translateX(0%) translateX(0px); flex-direction: row;"
+            >
+              <div
+                aria-label="slide"
+                aria-selected="true"
+                class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
+                role="option"
+                style="width: 33.333333333333336%; padding-bottom: 44.44444444444444%;"
+                tabindex="0"
+              >
+                <div
+                  class="slideInner___2mfX9 carousel__inner-slide"
+                >
+                  <a
+                    class="card"
+                    href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a"
+                  >
+                    <img
+                      alt="Affiche du film Pauvres créatures"
+                      class="movieCardImg"
+                      src="https://image.tmdb.org/t/p/w1280/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-label="slide"
+                aria-selected="true"
+                class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
+                role="option"
+                style="width: 33.333333333333336%; padding-bottom: 44.44444444444444%;"
+                tabindex="0"
+              >
+                <div
+                  class="slideInner___2mfX9 carousel__inner-slide"
+                >
+                  <a
+                    class="card"
+                    href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785"
+                  >
+                    <img
+                      alt="Affiche du film Argylle"
+                      class="movieCardImg"
+                      src="https://image.tmdb.org/t/p/w1280/uVAk2YliqInQfH4B4vzZ75rwcNB.jpg"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-label="slide"
+                aria-selected="true"
+                class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
+                role="option"
+                style="width: 33.333333333333336%; padding-bottom: 44.44444444444444%;"
+                tabindex="0"
+              >
+                <div
+                  class="slideInner___2mfX9 carousel__inner-slide"
+                >
+                  <a
+                    class="card"
+                    href="/movies/cff01b1b-a943-4bcf-a396-afd80417150a"
+                  >
+                    <img
+                      alt="Affiche du film Dune"
+                      class="movieCardImg"
+                      src="https://image.tmdb.org/t/p/w1280/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carouselShadow"
+        />
+      </div>
+    </div>
+    <button
+      class="seeDetailsBtn"
+    >
+      Voir les 521 films &gt;
+    </button>
   </div>
-  <button
-    class="seeDetailsBtn"
-  >
-    Voir les 0 films &gt;
-  </button>
-</div>
+</body>
 `;
