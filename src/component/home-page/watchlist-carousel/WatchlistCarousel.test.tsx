@@ -29,8 +29,9 @@ describe('Watchlist movie carousel component tests', () => {
 
         // Then
         await waitFor(() => {
-            expect(component.container).toMatchSnapshot();
+            expect(component.getByAltText("Affiche du film Pauvres créatures")).toBeInTheDocument();
         });
+        expect(component.baseElement).toMatchSnapshot();
     });
 
     it('renders error when failing to get watchlist movies', async () => {
@@ -54,6 +55,7 @@ describe('Watchlist movie carousel component tests', () => {
 
         // Then
         await waitFor(() => {
+            expect(component.getByText("Une erreur s'est produite lors du chargement des films.")).toBeInTheDocument();
             expect(component.container).toMatchSnapshot();
         });
     });
@@ -81,6 +83,7 @@ describe('Watchlist movie carousel component tests', () => {
             setTimeout(() => {
                 console.log('time out');
             }, 5001);
+            expect(component.getByText("Une erreur s'est produite lors du chargement des films.")).toBeInTheDocument();
             expect(component.container).toMatchSnapshot();
         });
     });

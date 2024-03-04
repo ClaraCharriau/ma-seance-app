@@ -132,7 +132,8 @@
             ".json",
             "index.tsx",
             "reportWebVitals.ts",
-            ".*__snapshots__/.*"
+            ".*__snapshots__/.*",
+            "config.helper.tsx"
         ],
         "coverageReporters": [
             "json-summary",

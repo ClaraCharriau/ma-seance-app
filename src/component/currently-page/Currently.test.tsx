@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import Currently from './Currently';
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { getCurrentlyMovies } from '../../client/movies/movies.client';
 import mockMovies from '../../mocks/movies/current-movies.json';
 
@@ -11,7 +11,7 @@ const mockGetCurrentlyMovies = getCurrentlyMovies as jest.MockedFunction<typeof 
 
 describe('Currently component test', () => {
     jest.useFakeTimers().setSystemTime(new Date('2020-01-01'));
-    it('should render component with a list of current movies', () => {
+    it('should render component with a list of current movies', async () => {
         // Given
         mockGetCurrentlyMovies.mockResolvedValue(mockMovies);
 
@@ -23,10 +23,13 @@ describe('Currently component test', () => {
         );
 
         // Then
+        await waitFor(() => {
+            expect(component.getByText("Madame Web")).toBeInTheDocument();
+        });
         expect(component.baseElement).toMatchSnapshot();
     });
 
-    it('should fail to render a list of current movies', () => {
+    it('should fail to render a list of current movies', async () => {
         // Given
         mockGetCurrentlyMovies.mockRejectedValue(new Error());
 
@@ -38,6 +41,9 @@ describe('Currently component test', () => {
         );
 
         // Then
-        expect(component.baseElement).toMatchSnapshot();
+        await waitFor(() => {
+            expect(component.getByText("Une erreur s'est produite lors du chargement des films.")).toBeInTheDocument();
+            expect(component.container).toMatchSnapshot();
+        });
     });
 });
