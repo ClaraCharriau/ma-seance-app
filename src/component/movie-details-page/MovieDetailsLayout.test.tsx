@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import mockMovie from '../../mocks/movies/movie-1.json';
-import MovieDetails from './MovieDetails';
+import MovieDetailsLayout from './MovieDetailsLayout';
+import { BrowserRouter } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
@@ -11,7 +12,13 @@ jest.mock('react-router-dom', () => ({
 
 describe('Movie Details Component', () => {
     it('renders movie details component', () => {
-        const component = render(<MovieDetails />);
+        jest.useFakeTimers().setSystemTime(new Date('2020-01-01'));
+        
+        const component = render(
+            <BrowserRouter>
+                <MovieDetailsLayout />
+            </BrowserRouter>
+        );
 
         expect(component.container).toMatchSnapshot();
     });
