@@ -37,7 +37,7 @@ const TheaterDetailsLayout = () => {
 
                             <section>
                                 <h3 className={style.plannerTitle}>Prochaines séances :</h3>
-                                <WeekNavigation />
+                                <WeekNavigation context="theaters" />
                                 <Outlet />
                             </section>
                         </main>

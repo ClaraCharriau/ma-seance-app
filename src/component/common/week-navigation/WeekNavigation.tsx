@@ -2,8 +2,13 @@ import style from './WeekNavigation.module.css';
 import useWeekDays, { IDay } from '../../../hooks/dates/useWeekDays';
 import { NavLink, useParams } from 'react-router-dom';
 
-const WeekNavigation = () => {
-    const { theaterId } = useParams();
+interface WeekNavigationProps {
+    context: 'theaters' | 'movies';
+}
+
+const WeekNavigation = (props: WeekNavigationProps) => {
+    const { context } = props;
+    const { id } = useParams();
     const weekDays: IDay[] = useWeekDays();
 
     const navLinkClassName = (isActive: boolean, isPending: boolean) =>
@@ -14,7 +19,7 @@ const WeekNavigation = () => {
             <nav className={style.plannerWrapper}>
                 {weekDays.map((day, index) => (
                     <NavLink
-                        to={`/theaters/${theaterId}/day-${index + 1}`}
+                        to={`${context}/${id}/day-${index + 1}`}
                         preventScrollReset={true}
                         className={({ isActive, isPending }) => navLinkClassName(isActive, isPending)}
                         key={day.dayNumber}

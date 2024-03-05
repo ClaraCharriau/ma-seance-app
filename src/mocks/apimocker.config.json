@@ -75,15 +75,28 @@
                 "idb88f9510-d302-47d5-9d6b-8b13740f541d": { "httpStatus": 200, "mockFile": "movies/movie-2.json" }
             }
         },
-        "screenings": {
+        "screenings/theaters/:id": {
             "httpStatus": 200,
             "verbs": ["get"],
+            "latency": 300,
             "mockFile": "screenings/movies-screenings-by-theater-id-and-day-1.json",
             "switch": ["day"],
             "switchResponses": {
                 "day1": { "httpStatus": 200, "mockFile": "screenings/movies-screenings-by-theater-id-and-day-1.json"},
                 "day2": { "httpStatus": 200, "mockFile": "screenings/movies-screenings-by-theater-id-and-day-2.json"},
                 "day3": { "httpStatus": 200, "mockFile": "screenings/movies-screenings-by-theater-id-and-day-3.json"}
+            }
+        },
+        "screenings/movies/:id": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "latency": 300,
+            "mockFile": "screenings/theaters-screenings-by-movie-id-and-day-1.json",
+            "switch": ["day"],
+            "switchResponses": {
+                "day1": { "httpStatus": 200, "mockFile": "screenings/theaters-screenings-by-movie-id-and-day-1.json"},
+                "day2": { "httpStatus": 200, "mockFile": "screenings/theaters-screenings-by-movie-id-and-day-2.json"},
+                "day3": { "httpStatus": 200, "mockFile": "screenings/theaters-screenings-by-movie-id-and-day-3.json"}
             }
         }
     }

@@ -7,5 +7,6 @@ export const movieLoader = async (args: ActionFunctionArgs) => {
     if (id === undefined) {
         id = '';
     }
+
     return await getMovieById(id);
 };

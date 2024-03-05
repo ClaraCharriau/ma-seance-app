@@ -1,0 +1,25 @@
+.sectionTitle {
+    font-weight: 300;
+    font-size: clamp(12px, 3vw, 18px);
+}
+
+.theaterName {
+    font-family: 'Yeseva One', serif;
+    font-size: clamp(14px, 3vw, 20px);
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.showtimesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+}
+
+@media (max-width: 500px) {
+    .showtimesSection {
+        gap: 40px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+[
+    {
+        "theater": {
+            "id": "18",
+            "name": "UGC Ciné Cité Strasbourg Etoile",
+            "address": "25, avenue du Rhin 67100 Strasbourg",
+            "imgPath": "/ugc-etoile-strasbourg"
+        },
+        "schedule": [
+            "2024-02-17T11:45:00",
+            "2024-02-17T14:15:00",
+            "2024-02-17T16:45:00",
+            "2024-02-17T19:15:00",
+            "2024-02-17T21:45:00"
+        ]
+    },
+    {
+        "theater": {
+            "id": "21",
+            "name": "Star Saint-Exupery",
+            "address": "18, rue du 22-Novembre 67000 Strasbourg",
+            "imgPath": "/star-st-ex-strasbourg"
+        },
+        "schedule": ["2024-02-17T11:45:00", "2024-02-17T14:15:00", "2024-02-17T16:45:00"]
+    },
+    {
+        "theater": {
+            "id": "23",
+            "name": "Cinéma Vox",
+            "address": "17, rue des Francs-Bourgeois 67000 Strasbourg",
+            "imgPath": "/vox-strasbourg"
+        },
+        "schedule": [
+            "2024-02-17T11:45:00",
+            "2024-02-17T14:15:00",
+            "2024-02-17T16:45:00",
+            "2024-02-17T19:15:00",
+            "2024-02-17T21:45:00"
+        ]
+    }
+]

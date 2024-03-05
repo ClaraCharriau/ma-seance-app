@@ -1,7 +1,7 @@
 import { ActionFunctionArgs } from 'react-router-dom';
-import { getMovieScreeningsByTheaterAndDay as getMovieScreeningsByTheaterIdAndDay } from '../../client/screenings/screenings.client';
+import { getTheaterScreeningsByMovieIdAndDay } from '../../client/screenings/screenings.client';
 
-export const movieScreeningsLoader = async (args: ActionFunctionArgs) => {
+export const theaterScreeningsLoader = async (args: ActionFunctionArgs) => {
     const { params } = args;
     let { id, day } = params;
 
@@ -18,5 +18,5 @@ export const movieScreeningsLoader = async (args: ActionFunctionArgs) => {
     // remove "day"
     day = day.split('-')[1];
 
-    return await getMovieScreeningsByTheaterIdAndDay(id, day);
+    return await getTheaterScreeningsByMovieIdAndDay(id, day);
 };

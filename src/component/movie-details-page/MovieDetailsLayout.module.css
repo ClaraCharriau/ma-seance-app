@@ -55,27 +55,30 @@
 }
 
 .movieTitle {
-    font-size: 35px;
+    font-size: clamp(25px, 3vw, 35px);
     margin-bottom: 20px;
 }
 
 .movieDetails {
-    font-size: 14px;
+    font-size: clamp(10px, 3vw, 14px);
     font-weight: 300;
 }
 
 .directorText {
+    font-size: clamp(12px, 3vw, 16px);
     font-weight: 600;
     margin-top: 40px;
 }
 
 .castText,
 .trailerLink {
+    font-size: clamp(12px, 3vw, 16px);
     color: var(--primary);
     margin-top: 20px;
 }
 
 .resume {
+    font-size: clamp(12px, 3vw, 16px);
     font-weight: 300;
     margin-top: 40px;
 }

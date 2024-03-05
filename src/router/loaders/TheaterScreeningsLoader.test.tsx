@@ -1,9 +1,9 @@
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
-import { movieScreeningsLoader } from './MovieScreeningsLoader';
-import mockScreenings from '../../mocks/screenings/movies-screenings-by-theater-id-and-day-1.json';
+import mockScreenings from '../../mocks/screenings/theaters-screenings-by-movie-id-and-day-1.json';
+import { theaterScreeningsLoader } from './TheaterScreeningsLoader';
 
-describe('Movie screenings loader tests', () => {
+describe('Theater screenings loader tests', () => {
     let axiosMock: MockAdapter;
 
     beforeEach(() => {
@@ -12,10 +12,10 @@ describe('Movie screenings loader tests', () => {
     afterEach(() => {
         axiosMock.reset();
     });
-    it('should get movie screenings successfully', async () => {
+    it('should get theater screenings successfully', async () => {
         // Given
         const id = '3d8f1342-15f1-44b1-a48f-4581d654b94a';
-        axiosMock.onGet('http://localhost:7878/screenings/theaters/' + id).reply(200, mockScreenings);
+        axiosMock.onGet('http://localhost:7878/screenings/movies/' + id).reply(200, mockScreenings);
         const args: any = {
             params: {
                 id
@@ -23,16 +23,16 @@ describe('Movie screenings loader tests', () => {
         };
 
         // When
-        const response = await movieScreeningsLoader(args);
+        const response = await theaterScreeningsLoader(args);
 
         // Then
         expect(response).toEqual(mockScreenings);
     });
 
-    it('should get movie screenings successfully with a defined day', async () => {
+    it('should get theater screenings successfully with a defined day', async () => {
         // Given
         const id = '3d8f1342-15f1-44b1-a48f-4581d654b94a';
-        axiosMock.onGet('http://localhost:7878/screenings/theaters/' + id).reply(200, mockScreenings);
+        axiosMock.onGet('http://localhost:7878/screenings/movies/' + id).reply(200, mockScreenings);
         const args: any = {
             params: {
                 id,
@@ -41,7 +41,7 @@ describe('Movie screenings loader tests', () => {
         };
 
         // When
-        const response = await movieScreeningsLoader(args);
+        const response = await theaterScreeningsLoader(args);
 
         // Then
         expect(response).toEqual(mockScreenings);
@@ -50,7 +50,7 @@ describe('Movie screenings loader tests', () => {
     it('should throw error', async () => {
         // Given
         const id = undefined;
-        axiosMock.onGet('http://localhost:7878/screenings/theaters/' + id).reply(200, mockScreenings);
+        axiosMock.onGet('http://localhost:7878/screenings/movies/' + id).reply(200, mockScreenings);
         const args: any = {
             params: {
                 id
@@ -59,7 +59,7 @@ describe('Movie screenings loader tests', () => {
 
         // When
         try {
-            await movieScreeningsLoader(args);
+            await theaterScreeningsLoader(args);
         } catch (e: any) {
             // Then
             expect(e.status).toEqual(404);

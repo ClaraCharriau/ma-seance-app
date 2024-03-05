@@ -8,12 +8,14 @@ import FavTheaters from '../component/fav-theaters-page/FavTheaterPage';
 import { appLoader } from './loaders/AppLoader';
 import { theaterLoader } from './loaders/TheaterLoader';
 import AppLayout from './AppLayout';
-import MovieDetails from '../component/movie-details-page/MovieDetails';
+import MovieDetailsLayout from '../component/movie-details-page/MovieDetailsLayout';
 import { movieLoader } from './loaders/MovieLoader';
 import Currently from '../component/currently-page/Currently';
 import Spinner from '../component/common/spinner/Spinner';
 import MoviesScreeningsList from '../component/theater-details-page/movies-screenings-list/MoviesScreeningsList';
 import { movieScreeningsLoader } from './loaders/MovieScreeningsLoader';
+import { theaterScreeningsLoader } from './loaders/TheaterScreeningsLoader';
+import TheaterScreeningsList from '../component/movie-details-page/theater-screenings-list/TheaterScreeningsList';
 
 const AppRouter = () => {
     const router = createBrowserRouter([
@@ -39,10 +41,15 @@ const AppRouter = () => {
                     element: <>Agenda</>
                 },
                 {
-                    path: '/movies/:id',
                     loader: movieLoader,
-                    element: <MovieDetails />,
-                    errorElement: <Error />
+                    element: <MovieDetailsLayout />,
+                    children: [
+                        {
+                            path: '/movies/:id/:day?',
+                            loader: theaterScreeningsLoader,
+                            element: <TheaterScreeningsList />
+                        }
+                    ]
                 },
                 {
                     path: '/profile',
@@ -61,7 +68,7 @@ const AppRouter = () => {
                     element: <TheaterDetailsLayout />,
                     children: [
                         {
-                            path: '/theaters/:theaterId/:day?',
+                            path: '/theaters/:id/:day?',
                             loader: movieScreeningsLoader,
                             element: <MoviesScreeningsList />
                         }
