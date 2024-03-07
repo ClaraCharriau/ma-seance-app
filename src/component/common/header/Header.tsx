@@ -29,7 +29,7 @@ const Header = () => {
 
             <Searchbar />
 
-            <div className={style.headerButtons}>
+            <nav className={style.headerButtons}>
                 <Link className={style.watchlistBtn} to="/watchlist">
                     <svg width="31" height="28" viewBox="0 0 31 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -97,7 +97,7 @@ const Header = () => {
                     </svg>
                     <span>compte</span>
                 </Link>
-            </div>
+            </nav>
         </header>
     );
 };
