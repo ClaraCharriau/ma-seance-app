@@ -8,7 +8,7 @@ exports[`Movie list component test should render component with a list of movies
     >
       <a
         class="movieCard"
-        href="/movies/d171796e-93af-4d51-8b39-8d38b354d3c8"
+        href="/movies/d171796e-93af-4d51-8b39-8d38b354d3c8/day-1"
       >
         <img
           alt="affiche du film The Beekeeper"
@@ -44,7 +44,7 @@ exports[`Movie list component test should render component with a list of movies
       </a>
       <a
         class="movieCard"
-        href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a"
+        href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
       >
         <img
           alt="affiche du film Pauvres créatures"
@@ -80,7 +80,7 @@ exports[`Movie list component test should render component with a list of movies
       </a>
       <a
         class="movieCard"
-        href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785"
+        href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785/day-1"
       >
         <img
           alt="affiche du film Argylle"
@@ -116,7 +116,7 @@ exports[`Movie list component test should render component with a list of movies
       </a>
       <a
         class="movieCard"
-        href="/movies/51e755d5-ec43-4e77-a2e6-f4f82a0e8ec5"
+        href="/movies/51e755d5-ec43-4e77-a2e6-f4f82a0e8ec5/day-1"
       >
         <img
           alt="affiche du film Night Swim"
@@ -152,7 +152,7 @@ exports[`Movie list component test should render component with a list of movies
       </a>
       <a
         class="movieCard"
-        href="/movies/b88f9510-d302-47d5-9d6b-8b13740f541d"
+        href="/movies/b88f9510-d302-47d5-9d6b-8b13740f541d/day-1"
       >
         <img
           alt="affiche du film Madame Web"
@@ -188,7 +188,7 @@ exports[`Movie list component test should render component with a list of movies
       </a>
       <a
         class="movieCard"
-        href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029"
+        href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029/day-1"
       >
         <img
           alt="affiche du film La Couleur Pourpre"
@@ -224,7 +224,7 @@ exports[`Movie list component test should render component with a list of movies
       </a>
       <a
         class="movieCard"
-        href="/movies/b1d0de57-b205-4927-a13e-85e9405f5d8f"
+        href="/movies/b1d0de57-b205-4927-a13e-85e9405f5d8f/day-1"
       >
         <img
           alt="affiche du film Mean Girls - Lolita Malgré Moi"
@@ -260,7 +260,7 @@ exports[`Movie list component test should render component with a list of movies
       </a>
       <a
         class="movieCard"
-        href="/movies/03a20bb3-b24b-4d76-af62-0b0fe4d03b91"
+        href="/movies/03a20bb3-b24b-4d76-af62-0b0fe4d03b91/day-1"
       >
         <img
           alt="affiche du film Bob Marley : One Love"

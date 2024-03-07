@@ -74,7 +74,7 @@ exports[`Watchlist movie carousel component tests renders movie Carousel compone
                 >
                   <a
                     class="card"
-                    href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a"
+                    href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
                   >
                     <img
                       alt="Affiche du film Pauvres créatures"
@@ -97,7 +97,7 @@ exports[`Watchlist movie carousel component tests renders movie Carousel compone
                 >
                   <a
                     class="card"
-                    href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785"
+                    href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785/day-1"
                   >
                     <img
                       alt="Affiche du film Argylle"
@@ -120,7 +120,7 @@ exports[`Watchlist movie carousel component tests renders movie Carousel compone
                 >
                   <a
                     class="card"
-                    href="/movies/cff01b1b-a943-4bcf-a396-afd80417150a"
+                    href="/movies/cff01b1b-a943-4bcf-a396-afd80417150a/day-1"
                   >
                     <img
                       alt="Affiche du film Dune"

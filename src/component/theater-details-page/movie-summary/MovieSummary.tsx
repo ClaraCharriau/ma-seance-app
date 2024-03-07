@@ -19,7 +19,7 @@ const MovieSummary = (props: MovieSummaryProps) => {
     const formattedReleaseDate = useDateDMYFormat(movie.releaseDate);
     const directors = useStringListFormat(movie.directors);
     const cast = useStringListFormat(movie.cast);
-    const movieLink = '/movies/' + movie.id;
+    const movieLink = '/movies/' + movie.id + '/day-1';
 
     return (
         <div className={style.movieSummaryWrapper}>

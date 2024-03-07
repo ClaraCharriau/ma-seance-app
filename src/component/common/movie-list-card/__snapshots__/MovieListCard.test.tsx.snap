@@ -5,7 +5,7 @@ exports[`Movie list card component test should render component a card 1`] = `
   <div>
     <a
       class="movieCard"
-      href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a"
+      href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
     >
       <img
         alt="affiche du film Pauvres créatures"
