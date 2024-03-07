@@ -12,7 +12,7 @@ const MovieCard = (props: MovieCardProps) => {
     const TMDB_PATH = config.tmdbImgPath.large;
 
     return (
-        <NavLink to={`/movies/${movie.id}`} state={{ id: movie.id }} className={style.card}>
+        <NavLink to={`/movies/${movie.id}/day-1`} state={{ id: movie.id }} className={style.card}>
             <img
                 className={style.movieCardImg}
                 src={TMDB_PATH + movie.posterLink}

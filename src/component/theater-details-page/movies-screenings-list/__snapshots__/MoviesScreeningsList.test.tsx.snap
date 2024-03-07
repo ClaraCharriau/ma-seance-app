@@ -9,7 +9,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
       class="movieSummaryWrapper"
     >
       <a
-        href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a"
+        href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
       >
         <img
           alt="photo de Pauvres créatures"
@@ -23,7 +23,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           class="movieInfos"
         >
           <a
-            href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a"
+            href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
           >
             <p
               class="movieTitle"
@@ -95,7 +95,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           </div>
           <a
             class=""
-            href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a"
+            href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
           >
             Voir d'autres séances pour ce film &gt;
           </a>
@@ -106,7 +106,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
       class="movieSummaryWrapper"
     >
       <a
-        href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785"
+        href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785/day-1"
       >
         <img
           alt="photo de Close"
@@ -120,7 +120,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           class="movieInfos"
         >
           <a
-            href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785"
+            href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785/day-1"
           >
             <p
               class="movieTitle"
@@ -182,7 +182,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           </div>
           <a
             class=""
-            href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785"
+            href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785/day-1"
           >
             Voir d'autres séances pour ce film &gt;
           </a>
@@ -193,7 +193,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
       class="movieSummaryWrapper"
     >
       <a
-        href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029"
+        href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029/day-1"
       >
         <img
           alt="photo de Portrait de la jeune fille en feu"
@@ -207,7 +207,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           class="movieInfos"
         >
           <a
-            href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029"
+            href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029/day-1"
           >
             <p
               class="movieTitle"
@@ -279,7 +279,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
           </div>
           <a
             class=""
-            href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029"
+            href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029/day-1"
           >
             Voir d'autres séances pour ce film &gt;
           </a>

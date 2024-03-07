@@ -7,9 +7,11 @@ interface TimeSlotsListProps {
 
 const TimeSlotsList = (props: TimeSlotsListProps) => {
     const { schedule } = props;
+    const scheduleList: string[] = schedule.sort();
+
     return (
         <div className={style.timeSlotWrapper}>
-            {schedule.map(time => (
+            {scheduleList.map(time => (
                 <TimeSlotButton key={time} time={time} />
             ))}
         </div>
