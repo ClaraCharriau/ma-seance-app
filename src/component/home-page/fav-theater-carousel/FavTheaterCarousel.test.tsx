@@ -12,7 +12,7 @@ const mockGetUserFavTheaters = getUserFavTheaters as jest.MockedFunction<typeof 
 describe('Fav Theater Carousel Component', () => {
     it('renders Fav Theater Carousel component', async () => {
         const mockUser = {
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         };
@@ -54,7 +54,7 @@ describe('Fav Theater Carousel Component', () => {
 
     it('renders Fav Theater Carousel component when user has no favorite theaters', async () => {
         const mockUser = {
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         };
@@ -74,7 +74,7 @@ describe('Fav Theater Carousel Component', () => {
 
     it('renders Fav Theater Carousel component when an error happened', async () => {
         const mockUser = {
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         };

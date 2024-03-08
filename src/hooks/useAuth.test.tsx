@@ -40,7 +40,7 @@ describe('useAuth hook tests', () => {
         // Then
         const user = await loginPromise;
         expect(user).toEqual({
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
@@ -123,7 +123,7 @@ describe('useAuth hook tests', () => {
     it('should delete user', async () => {
         // Given
         const { result } = renderHook(useAuth);
-        const id = 1;
+        const id = "1";
         axiosMock.onDelete().reply(200);
 
         // When

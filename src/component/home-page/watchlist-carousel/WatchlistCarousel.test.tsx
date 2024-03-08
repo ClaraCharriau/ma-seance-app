@@ -14,7 +14,7 @@ describe('Watchlist movie carousel component tests', () => {
     it('renders movie Carousel component', async () => {
         // Given
         const mockUser = {
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         };
@@ -37,7 +37,7 @@ describe('Watchlist movie carousel component tests', () => {
     it('renders error when failing to get watchlist movies', async () => {
         // Given
         const mockUser = {
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         };
@@ -63,7 +63,7 @@ describe('Watchlist movie carousel component tests', () => {
     it('renders error when time out', async () => {
         // Given
         const mockUser = {
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         };

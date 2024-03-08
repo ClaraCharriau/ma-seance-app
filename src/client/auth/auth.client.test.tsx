@@ -26,7 +26,7 @@ describe('AuthClient tests', () => {
 
         // Then
         expect(response).toEqual({
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
@@ -65,7 +65,7 @@ describe('AuthClient tests', () => {
         // Given
         const email = 'test@mail.com';
         axiosMock.onPost('http://localhost:7878/verify').reply(200, {
-            id: 2
+            id: "2"
         });
         let response = {};
 
@@ -107,7 +107,7 @@ describe('AuthClient tests', () => {
 
         // Then
         expect(response).toEqual({
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
@@ -143,7 +143,7 @@ describe('AuthClient tests', () => {
 
         // Then
         expect(response).toEqual({
-            id: 1,
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
@@ -169,7 +169,7 @@ describe('AuthClient tests', () => {
 
     it('should delete user', async () => {
         // Given
-        const id = 1;
+        const id = "1";
         axiosMock.onDelete('http://localhost:7878/sign-out/1').reply(200);
 
         // When
@@ -181,7 +181,7 @@ describe('AuthClient tests', () => {
 
     it('should fail to delete user', async () => {
         // Given
-        const id = 1;
+        const id = "1";
         axiosMock.onDelete('http://localhost:7878/sign-out/1').reply(500);
 
         // When

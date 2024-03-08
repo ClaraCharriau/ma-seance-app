@@ -36,7 +36,7 @@ describe('User client tests', () => {
         const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
-        const response = await getUserFavTheaters(1);
+        const response = await getUserFavTheaters('1');
 
         // Then
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-theaters');
@@ -64,7 +64,7 @@ describe('User client tests', () => {
 
         // When
         try {
-            response = await getUserFavTheaters(1);
+            response = await getUserFavTheaters('1');
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);
@@ -79,7 +79,7 @@ describe('User client tests', () => {
         const axiosPatch = jest.spyOn(require('axios'), 'patch');
 
         // When
-        await updateUserFavTheaters(2, '3');
+        await updateUserFavTheaters('2', '3');
 
         // Then
         expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-theaters', '3');
@@ -92,7 +92,7 @@ describe('User client tests', () => {
 
         // When
         try {
-            await updateUserFavTheaters(2, '2');
+            await updateUserFavTheaters('2', '2');
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);
@@ -106,7 +106,7 @@ describe('User client tests', () => {
         const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
-        const response = await getUserFavMovies(1);
+        const response = await getUserFavMovies('1');
 
         // Then
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-movies');
@@ -121,7 +121,7 @@ describe('User client tests', () => {
 
         // When
         try {
-            response = await getUserFavMovies(1);
+            response = await getUserFavMovies('1');
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);
@@ -136,7 +136,7 @@ describe('User client tests', () => {
         const axiosPatch = jest.spyOn(require('axios'), 'patch');
 
         // When
-        await updateUserFavMovies(2, '3');
+        await updateUserFavMovies('2', '3');
 
         // Then
         expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-movies', '3');
@@ -149,7 +149,7 @@ describe('User client tests', () => {
 
         // When
         try {
-            await updateUserFavMovies(2, '2');
+            await updateUserFavMovies('2', '2');
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);
@@ -163,7 +163,7 @@ describe('User client tests', () => {
         const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
-        const response = await getUserAgenda(2);
+        const response = await getUserAgenda('2');
 
         // Then
         expect(response).toEqual(mockUserShowtimes)
@@ -177,7 +177,7 @@ describe('User client tests', () => {
 
         // When
         try {
-            await getUserAgenda(2);
+            await getUserAgenda('2');
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);

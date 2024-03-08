@@ -1,6 +1,7 @@
 import { act } from 'react-dom/test-utils';
 import { AuthProvider, useAuthContext } from './auth.context';
 import { render, renderHook, waitFor } from '@testing-library/react';
+import mockUser from '../mocks/users/users.json'
 
 const { result } = renderHook(useAuthContext);
 
@@ -29,11 +30,6 @@ describe('Authentication context tests', () => {
 
     it('should set user if user exists in localStorage', async () => {
         // Given
-        const mockUser = {
-            id: 1,
-            pseudo: 'Jane',
-            email: 'test@mail.com'
-        };
         localStorage.setItem('user', JSON.stringify(mockUser));
 
         // When
@@ -54,11 +50,6 @@ describe('Authentication context tests', () => {
 
     it('should unset user', async () => {
         // Given
-        const mockUser = {
-            id: 1,
-            pseudo: 'Jane',
-            email: 'test@mail.com'
-        };
         localStorage.setItem('user', JSON.stringify(mockUser));
         render(
             <AuthProvider>
@@ -81,11 +72,6 @@ describe('Authentication context tests', () => {
 
     it('should set user', async () => {
         // Given
-        const mockUser = {
-            id: 1,
-            pseudo: 'Jane',
-            email: 'test@mail.com'
-        };
         localStorage.removeItem('user');
         render(
             <AuthProvider>

@@ -8,7 +8,7 @@ import { act } from 'react-dom/test-utils';
 describe('UpdateProfileForm component tests', () => {
     let axiosMock: MockAdapter;
     const mockUser = {
-        id: 1,
+        id: "1",
         pseudo: 'Jane',
         email: 'test@mail.com'
     };
