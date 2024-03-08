@@ -42,8 +42,21 @@
             "posterLink": "/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg",
             "photoLink": "",
             "directors": ["Denis Villeneuve"],
-            "cast": ["Timothée Chalamet, Zendaya, Rebecca Ferguson"],
+            "cast": ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
             "genres": ["Drame", "Science-Fiction"]
+        },
+        {
+            "id": "dd4cdbd2-44b7-4fb4-84b4-4f016d379ddb",
+            "title": "The Grand Budapest Hotel",
+            "releaseDate": "2014-02-26",
+            "duration": 100,
+            "resume": "Pendant l’entre‐deux guerres, le légendaire concierge d’un grand hôtel et son jeune protégé se retrouvent impliqués dans une histoire mêlant le vol d’un tableau de la Renaissance, la bataille pour une énorme fortune familiale, et le lent puis soudain bouleversement qui transforme l’Europe en cette première moitié de XXème siècle.",
+            "trailerLink": "",
+            "posterLink": "/atLMzzA7pOB0BdfM89V7BbdtLN6.jpg",
+            "photoLink": "/xHDynIimfsgj0ZOs0j5ma8v1vmM.jpg",
+            "directors": ["Wes Anderson"],
+            "cast": ["Ralph Fiennes", "Zendaya", "Rebecca Ferguson"],
+            "genres": ["Comédie", "Drame"]
         }
     ]
 }

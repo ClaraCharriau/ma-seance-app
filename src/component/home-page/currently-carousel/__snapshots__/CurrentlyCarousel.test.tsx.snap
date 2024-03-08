@@ -64,12 +64,12 @@ exports[`Currently showing movie carousel component tests renders movie Carousel
                 >
                   <a
                     class="card"
-                    href="/movies/d171796e-93af-4d51-8b39-8d38b354d3c8/day-1"
+                    href="/movies/3e07de0f-f2c8-4c46-9ac9-744abb8af481/day-1"
                   >
                     <img
-                      alt="Affiche du film The Beekeeper"
+                      alt="Affiche du film Your Name."
                       class="movieCardImg"
-                      src="https://image.tmdb.org/t/p/w1280/oJWHzabe1QxgomK4gaEDhITvxcM.jpg"
+                      src="https://image.tmdb.org/t/p/w1280/zyHjvVRgKOt9wgVx4ikp2kGArGF.jpg"
                     />
                   </a>
                 </div>

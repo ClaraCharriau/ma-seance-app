@@ -470,11 +470,15 @@ exports[`Home Component should render home page 1`] = `
             </h2>
           </a>
         </div>
-        <button
-          class="seeDetailsBtn"
+        <div
+          class="showtimesList"
+        />
+        <a
+          class="seeDetails"
+          href="/agenda"
         >
           Voir les prochaines séances &gt;
-        </button>
+        </a>
       </section>
       <section
         class="homeRightSection"
