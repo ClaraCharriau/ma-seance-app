@@ -27,7 +27,7 @@ describe('Currently showing movie carousel component tests', () => {
 
         // Then
         await waitFor(() => {
-            expect(component.getByAltText("Affiche du film The Beekeeper")).toBeInTheDocument();
+            expect(component.getByAltText("Affiche du film Argylle")).toBeInTheDocument();
         });
         expect(component.baseElement).toMatchSnapshot();
     });

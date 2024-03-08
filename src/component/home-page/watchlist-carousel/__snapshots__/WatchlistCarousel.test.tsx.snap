@@ -59,14 +59,14 @@ exports[`Watchlist movie carousel component tests renders movie Carousel compone
           >
             <div
               class="sliderTray___-vHFQ sliderAnimation___300FY carousel__slider-tray carousel__slider-tray--horizontal"
-              style="width: 75%; transform: translateX(0%) translateX(0px); flex-direction: row;"
+              style="width: 100%; transform: translateX(0%) translateX(0px); flex-direction: row;"
             >
               <div
                 aria-label="slide"
                 aria-selected="true"
                 class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
                 role="option"
-                style="width: 33.333333333333336%; padding-bottom: 44.44444444444444%;"
+                style="width: 25%; padding-bottom: 33.333333333333336%;"
                 tabindex="0"
               >
                 <div
@@ -89,7 +89,7 @@ exports[`Watchlist movie carousel component tests renders movie Carousel compone
                 aria-selected="true"
                 class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
                 role="option"
-                style="width: 33.333333333333336%; padding-bottom: 44.44444444444444%;"
+                style="width: 25%; padding-bottom: 33.333333333333336%;"
                 tabindex="0"
               >
                 <div
@@ -112,7 +112,7 @@ exports[`Watchlist movie carousel component tests renders movie Carousel compone
                 aria-selected="true"
                 class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
                 role="option"
-                style="width: 33.333333333333336%; padding-bottom: 44.44444444444444%;"
+                style="width: 25%; padding-bottom: 33.333333333333336%;"
                 tabindex="0"
               >
                 <div
@@ -126,6 +126,29 @@ exports[`Watchlist movie carousel component tests renders movie Carousel compone
                       alt="Affiche du film Dune"
                       class="movieCardImg"
                       src="https://image.tmdb.org/t/p/w1280/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-label="slide"
+                aria-selected="true"
+                class="slide___3-Nqo slideHorizontal___1NzNV carousel__slide carousel__slide--visible slide"
+                role="option"
+                style="width: 25%; padding-bottom: 33.333333333333336%;"
+                tabindex="0"
+              >
+                <div
+                  class="slideInner___2mfX9 carousel__inner-slide"
+                >
+                  <a
+                    class="card"
+                    href="/movies/dd4cdbd2-44b7-4fb4-84b4-4f016d379ddb/day-1"
+                  >
+                    <img
+                      alt="Affiche du film The Grand Budapest Hotel"
+                      class="movieCardImg"
+                      src="https://image.tmdb.org/t/p/w1280/atLMzzA7pOB0BdfM89V7BbdtLN6.jpg"
                     />
                   </a>
                 </div>

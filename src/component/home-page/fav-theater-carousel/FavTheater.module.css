@@ -4,7 +4,8 @@
     display: flex;
     align-items: center;
     gap: 1vw;
-    min-height: 100px;
+    /* min-height to be removed after fixing spinner */
+    min-height: 150px;
 }
 
 .slider {

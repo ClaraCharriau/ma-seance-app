@@ -8,37 +8,37 @@ exports[`Movie list component test should render component with a list of movies
     >
       <a
         class="movieCard"
-        href="/movies/d171796e-93af-4d51-8b39-8d38b354d3c8/day-1"
+        href="/movies/3e07de0f-f2c8-4c46-9ac9-744abb8af481/day-1"
       >
         <img
-          alt="affiche du film The Beekeeper"
+          alt="affiche du film Your Name."
           class="movieCardImg"
-          src="https://image.tmdb.org/t/p/w500/oJWHzabe1QxgomK4gaEDhITvxcM.jpg"
+          src="https://image.tmdb.org/t/p/w500/zyHjvVRgKOt9wgVx4ikp2kGArGF.jpg"
         />
         <div>
           <p
             class="movieTitle"
           >
-            The Beekeeper
+            Your Name.
           </p>
           <p
             class="movieDateDuration"
           >
-            11 janvier 2024
+            28 décembre 2016
              - 
-            1h45
+            1h47
           </p>
           <p
             class="movieDirector"
           >
             Réalisé par 
-            David Ayer
+            Makoto Shinkai
           </p>
           <p
             class="movieCast"
           >
             Avec 
-            Jason statham, Josh Husherton, Amber Sienna
+            Ryunosuke Kamiki, Mone Kamishiraishi, Ryo Narita
           </p>
         </div>
       </a>

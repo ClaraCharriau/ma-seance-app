@@ -5,6 +5,7 @@
     align-items: center;
     gap: 1vw;
     margin-bottom: 10px;
+    /* min-height to be removed after fixing spinner */
     min-height: 200px;
 }
 

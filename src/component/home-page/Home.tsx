@@ -1,12 +1,13 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useAuthContext } from '../../context/auth.context';
+import { useFavoriteContext } from '../../context/favorite.context';
 import SeeDetailsBtn from '../common/see-details-btn/SeeDetailsBtn';
+import style from './Home.module.css';
 import CurrentlyCarousel from './currently-carousel/CurrentlyCarousel';
 import FavTheaterCarousel from './fav-theater-carousel/FavTheaterCarousel';
-import style from './Home.module.css';
-import WatchlistCarousel from './watchlist-carousel/WatchlistCarousel';
-import { useFavoriteContext } from '../../context/favorite.context';
+import NextShowtimesList from './next-showtimes-list/NextScreeningsList';
 import TheaterMovieCarousel from './theater-movie-carousel/TheaterMovieCarousel';
+import WatchlistCarousel from './watchlist-carousel/WatchlistCarousel';
 
 const Home = () => {
     const { currentUser } = useAuthContext();
@@ -128,7 +129,10 @@ const Home = () => {
                                 </h2>
                             </NavLink>
                         </div>
-                        <SeeDetailsBtn text="Voir les prochaines séances >" navigatePath="/agenda" showIcon={false} />
+                        <NextShowtimesList />
+                        <Link className={style.seeDetails} to="/agenda">
+                            {'Voir les prochaines séances >'}
+                        </Link>
                     </section>
 
                     {/* WATCHLIST */}
