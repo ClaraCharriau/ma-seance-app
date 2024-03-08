@@ -40,17 +40,17 @@
             "hourly": "18:45"
         },
         "movie": {
-            "id": "b1d0de57-b205-4927-a13e-85e9405f5d8f",
-            "title": "Mean Girls - Lolita Malgré Moi",
-            "releaseDate": "2024-01-10",
-            "duration": 90,
-            "resume": "Après une enfance heureuse en Afrique, Cady, 16 ans, découvre une scolarité \" normale \" au sein d'un lycée américain. Plus méconnu et sauvage pour elle que la jungle, Cady va se confronter au monde des \" lolitas \" dont la chef est la terrible Regina.",
+            "id": "dd4cdbd2-44b7-4fb4-84b4-4f016d379ddb",
+            "title": "The Grand Budapest Hotel",
+            "releaseDate": "2014-02-26",
+            "duration": 100,
+            "resume": "Pendant l’entre‐deux guerres, le légendaire concierge d’un grand hôtel et son jeune protégé se retrouvent impliqués dans une histoire mêlant le vol d’un tableau de la Renaissance, la bataille pour une énorme fortune familiale, et le lent puis soudain bouleversement qui transforme l’Europe en cette première moitié de XXème siècle.",
             "trailerLink": "",
-            "posterLink": "/fVuPnZAEsF4ssCvUuQxISKzdDTt.jpg",
-            "photoLink": "",
-            "directors": ["Samantha Jayne", "Arturo Perez Jr"],
-            "cast": ["Angourie Rice", "Reneé Rapp"],
-            "genres": ["Comédie", "Musical"]
+            "posterLink": "/atLMzzA7pOB0BdfM89V7BbdtLN6.jpg",
+            "photoLink": "/xHDynIimfsgj0ZOs0j5ma8v1vmM.jpg",
+            "directors": ["Wes Anderson"],
+            "cast": ["Ralph Fiennes", "Zendaya", "Rebecca Ferguson"],
+            "genres": ["Comédie", "Drame"]
         },
         "theater": {
             "id": "16",

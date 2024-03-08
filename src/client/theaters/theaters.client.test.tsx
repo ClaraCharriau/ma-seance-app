@@ -2,8 +2,9 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { Theater } from '../../models/Theater';
-import { getTheaterById, getTheaterMoviesByTheaterId } from './theaters.client';
+import { getMovieScreeningsByTheaterIdAndDay, getTheaterById, getTheaterMoviesByTheaterId } from './theaters.client';
 import mockMovies from '../../mocks/theaters/theater-movies.json';
+import mockMovieScreenings from '../../mocks/theaters/movies-screenings-by-theater-id-and-day-1.json';
 
 describe('Theaters client tests', () => {
     let axiosMock: MockAdapter;
@@ -88,6 +89,38 @@ describe('Theaters client tests', () => {
             expect(response).toEqual({});
         }
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1/movies');
+    });
+
+    it('should get movie screenings successfully', async () => {
+        // Given
+        axiosMock.onGet('http://localhost:7878/theaters/1/screenings').reply(200, mockMovieScreenings);
+        const axiosGet = jest.spyOn(require('axios'), 'get');
+
+        // When
+        const response = await getMovieScreeningsByTheaterIdAndDay('1', '2');
+
+        // Then
+        expect(response).toEqual(mockMovieScreenings);
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1/screenings', {
+            params: { day: '2' }
+        });
+    });
+
+    it('should fail to get movie screenings', async () => {
+        // Given
+        axiosMock.onGet('http://localhost:7878/theaters/1/screenings').reply(500);
+        const axiosGet = jest.spyOn(require('axios'), 'get');
+
+        // When
+        try {
+            await getMovieScreeningsByTheaterIdAndDay('1', '2');
+        } catch (e: any) {
+            // Then
+            expect(e.status).toBe(500);
+        }
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1/screenings', {
+            params: { day: '2' }
+        });
     });
 });
 

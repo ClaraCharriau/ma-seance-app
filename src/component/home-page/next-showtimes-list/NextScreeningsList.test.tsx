@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import NextShowtimesList from './NextScreeningsList';
-import mockShowtimes from '../../../mocks/showtimes/user-showtimes.json';
+import mockShowtimes from '../../../mocks/users/user-showtimes.json';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('Next screenings list component test', () => {

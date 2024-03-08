@@ -1,7 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
-import mockScreeningsData from '../../../mocks/screenings/movies-screenings-by-theater-id-and-day-1.json'
+import mockScreeningsData from '../../../mocks/theaters/movies-screenings-by-theater-id-and-day-1.json';
 import MoviesScreeningsList from './MoviesScreeningsList';
 
 jest.mock('react-router-dom', () => ({

@@ -3,8 +3,8 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { Theater } from '../../models/Theater';
 import { getUserAgenda, getUserFavMovies, getUserFavTheaters, updateUserFavMovies, updateUserFavTheaters } from './user.client';
-import mockMoviesList from '../../mocks/movies/fav-movies.json';
-import mockShowtimes from '../../mocks/showtimes/user-showtimes.json';
+import mockFavMoviesList from '../../mocks/users/fav-movies.json';
+import mockUserShowtimes from '../../mocks/users/user-showtimes.json';
 
 describe('User client tests', () => {
     let axiosMock: MockAdapter;
@@ -102,7 +102,7 @@ describe('User client tests', () => {
 
     it('should get user favorite movies successfully', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/users/1/fav-movies').reply(200, mockMoviesList);
+        axiosMock.onGet('http://localhost:7878/users/1/fav-movies').reply(200, mockFavMoviesList);
         const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
@@ -110,7 +110,7 @@ describe('User client tests', () => {
 
         // Then
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-movies');
-        expect(response).toEqual(mockMoviesList);
+        expect(response).toEqual(mockFavMoviesList);
     });
 
     it('should fail to get user favorite movies', async () => {
@@ -159,14 +159,14 @@ describe('User client tests', () => {
 
     it('should get user showtimes successfully', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/users/2/showtimes').reply(200, mockShowtimes);
+        axiosMock.onGet('http://localhost:7878/users/2/showtimes').reply(200, mockUserShowtimes);
         const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
         const response = await getUserAgenda(2);
 
         // Then
-        expect(response).toEqual(mockShowtimes)
+        expect(response).toEqual(mockUserShowtimes)
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/2/showtimes');
     });
 
