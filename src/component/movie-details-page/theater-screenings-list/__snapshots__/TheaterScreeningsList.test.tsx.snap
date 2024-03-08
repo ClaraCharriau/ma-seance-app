@@ -44,22 +44,22 @@ exports[`Movie Details Component renders movie details component 1`] = `
         <button
           class="timeSlot"
         >
-          16:45
-        </button>
-        <button
-          class="timeSlot"
-        >
           18:15
         </button>
         <button
           class="timeSlot"
         >
-          19:15
+          21:35
         </button>
         <button
           class="timeSlot"
         >
-          21:35
+          16:45
+        </button>
+        <button
+          class="timeSlot"
+        >
+          19:15
         </button>
         <button
           class="timeSlot"

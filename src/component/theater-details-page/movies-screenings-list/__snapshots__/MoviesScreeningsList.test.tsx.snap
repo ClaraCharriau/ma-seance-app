@@ -70,12 +70,32 @@ exports[`Theater Details Component renders theater details component 1`] = `
             <button
               class="timeSlot"
             >
-              11:45
+              09:45
+            </button>
+            <button
+              class="timeSlot"
+            >
+              10:15
             </button>
             <button
               class="timeSlot"
             >
               14:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              15:05
+            </button>
+            <button
+              class="timeSlot"
+            >
+              18:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              21:35
             </button>
             <button
               class="timeSlot"
@@ -167,7 +187,12 @@ exports[`Theater Details Component renders theater details component 1`] = `
             <button
               class="timeSlot"
             >
-              11:45
+              09:45
+            </button>
+            <button
+              class="timeSlot"
+            >
+              10:15
             </button>
             <button
               class="timeSlot"
@@ -177,7 +202,32 @@ exports[`Theater Details Component renders theater details component 1`] = `
             <button
               class="timeSlot"
             >
+              15:05
+            </button>
+            <button
+              class="timeSlot"
+            >
+              18:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              21:35
+            </button>
+            <button
+              class="timeSlot"
+            >
               16:45
+            </button>
+            <button
+              class="timeSlot"
+            >
+              19:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              21:45
             </button>
           </div>
           <a

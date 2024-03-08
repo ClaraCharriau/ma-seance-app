@@ -4,7 +4,7 @@ Front side of Ma-seance
 
 | Statements                  | Branches                | Functions                 | Lines             |
 | --------------------------- | ----------------------- | ------------------------- | ----------------- |
-| ![Statements](https://img.shields.io/badge/statements-96.46%25-brightgreen.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-86.34%25-yellow.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-95.56%25-brightgreen.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-96.4%25-brightgreen.svg?style=flat) |
+| ![Statements](https://img.shields.io/badge/statements-96.43%25-brightgreen.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-86.25%25-yellow.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-95.47%25-brightgreen.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-96.51%25-brightgreen.svg?style=flat) |
 
 ## How to run ?
 

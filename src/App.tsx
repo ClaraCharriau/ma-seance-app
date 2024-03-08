@@ -1,4 +1,3 @@
-import './App.css';
 import { AgendaProvider } from './context/agenda.context';
 import { AuthProvider } from './context/auth.context';
 import { FavoriteProvider } from './context/favorite.context';
