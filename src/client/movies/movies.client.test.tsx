@@ -1,9 +1,10 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { getCurrentlyMovies, getMovieById } from './movies.client';
+import { getCurrentlyMovies, getMovieById, getTheaterScreeningsByMovieIdAndDay } from './movies.client';
 import mockMovies from '../../mocks/movies/current-movies.json';
 import mockMovie from '../../mocks/movies/movie-1.json';
+import mockTheaterScreenings from '../../mocks/movies/theaters-screenings-by-movie-id-and-day-1.json';
 
 describe('Movies client tests', () => {
     let axiosMock: MockAdapter;
@@ -75,6 +76,38 @@ describe('Movies client tests', () => {
             expect(response).toEqual({});
         }
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/movies/' + movieId);
+    });
+
+    it('should get theater screenings successfully', async () => {
+        // Given
+        axiosMock.onGet('http://localhost:7878/movies/1/screenings').reply(200, mockTheaterScreenings);
+        const axiosGet = jest.spyOn(require('axios'), 'get');
+
+        // When
+        const response = await getTheaterScreeningsByMovieIdAndDay('1', '2');
+
+        // Then
+        expect(response).toEqual(mockTheaterScreenings);
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/movies/1/screenings', {
+            params: { day: '2' }
+        });
+    });
+
+    it('should fail to get theater screenings', async () => {
+        // Given
+        axiosMock.onGet('http://localhost:7878/movies/1/screenings').reply(500);
+        const axiosGet = jest.spyOn(require('axios'), 'get');
+
+        // When
+        try {
+            await getTheaterScreeningsByMovieIdAndDay('1', '2');
+        } catch (e: any) {
+            // Then
+            expect(e.status).toBe(500);
+        }
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/movies/1/screenings', {
+            params: { day: '2' }
+        });
     });
 });
 

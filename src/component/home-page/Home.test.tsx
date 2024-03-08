@@ -4,7 +4,7 @@ import Home from './Home';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 import { AuthProvider } from '../../context/auth.context';
-import mockTheaters from '../../mocks/theaters/fav-theaters.json';
+import mockTheaters from '../../mocks/users/fav-theaters.json';
 
 describe('Home Component', () => {
     const favoriteContext = require('../../context/favorite.context');

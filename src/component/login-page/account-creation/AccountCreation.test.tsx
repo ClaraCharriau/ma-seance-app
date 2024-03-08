@@ -4,7 +4,7 @@ import AccountCreation from './AccountCreation';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import { act } from 'react-dom/test-utils';
-import mockUser from '../../../mocks/auth/users.json';
+import mockUser from '../../../mocks/users/users.json';
 
 describe('AccountCreation component tests', () => {
     let axiosMock: MockAdapter;

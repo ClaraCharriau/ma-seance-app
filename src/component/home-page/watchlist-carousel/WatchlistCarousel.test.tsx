@@ -1,5 +1,5 @@
 import { render, waitFor } from '@testing-library/react';
-import mockMovies from '../../../mocks/movies/fav-movies.json';
+import mockMovies from '../../../mocks/users/fav-movies.json';
 import WatchlistCarousel from './WatchlistCarousel';
 import { BrowserRouter } from 'react-router-dom';
 import { getUserFavMovies } from '../../../client/users/user.client';
