@@ -8,7 +8,7 @@ import axios from 'axios';
 describe('UpdateProfileForm component tests', () => {
     let axiosMock: MockAdapter;
     const mockUser = {
-        id: 1,
+        id: "1",
         pseudo: 'Jane',
         email: 'test@mail.com'
     };

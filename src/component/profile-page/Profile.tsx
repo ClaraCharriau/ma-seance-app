@@ -23,7 +23,7 @@ const Profile = () => {
         setShowModale(true);
     };
 
-    const deleteAccount = async (id: number): Promise<void> => {
+    const deleteAccount = async (id: string): Promise<void> => {
         await deleteUserAccount(id);
         logOut();
     };

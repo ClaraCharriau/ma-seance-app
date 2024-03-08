@@ -55,7 +55,7 @@ export const updateAccount = async (pseudo: string, email: string, password: str
         .catch(error => handleError(error));
 };
 
-export const deleteAccount = async (id: number): Promise<AxiosResponse<any, any>> => {
+export const deleteAccount = async (id: string): Promise<AxiosResponse<any, any>> => {
     return await axios
         .delete(user_sign_out_path + '/' + id)
         .then(response => handleDeleteResponse(response))

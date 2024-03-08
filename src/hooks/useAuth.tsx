@@ -22,7 +22,7 @@ export const useAuth = () => {
         await updateAccount(pseudo, email, password);
     };
 
-    const deleteUserAccount = async (id: number) => {
+    const deleteUserAccount = async (id: string) => {
         await deleteAccount(id);
     };
 
