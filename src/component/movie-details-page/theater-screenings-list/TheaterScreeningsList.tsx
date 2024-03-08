@@ -12,7 +12,7 @@ const TheaterScreeningsList = () => {
             {showtimes.map(showtimes => (
                 <div key={showtimes.theater.id} className={style.theaterSchedule}>
                     <p className={style.theaterName}>{showtimes.theater.name}</p>
-                    <TimeSlotsList schedule={showtimes.schedule} />
+                    <TimeSlotsList scheduleList={showtimes.schedule} />
                 </div>
             ))}
         </section>

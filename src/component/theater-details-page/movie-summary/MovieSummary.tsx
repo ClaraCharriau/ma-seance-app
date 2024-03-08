@@ -6,10 +6,11 @@ import useStringListFormat from '../../../hooks/useStringListFormat';
 import { Movie } from '../../../models/Movie';
 import style from './MovieSummary.module.css';
 import TimeSlotsList from '../../common/time-slots-list/TimeSlotsList';
+import { ScreeningDate } from '../../../models/ScreeningDate';
 
 interface MovieSummaryProps {
     movie: Movie;
-    schedule: string[];
+    schedule: ScreeningDate[];
 }
 
 const MovieSummary = (props: MovieSummaryProps) => {
@@ -45,7 +46,7 @@ const MovieSummary = (props: MovieSummaryProps) => {
                 {/* Movie schedule */}
                 <div className={style.timeSlotColumn}>
                     <p className={style.timeSlotTitle}>Horaires</p>
-                    <TimeSlotsList schedule={schedule} />
+                    <TimeSlotsList scheduleList={schedule} />
                     <NavLink to={movieLink}>{"Voir d'autres séances pour ce film >"}</NavLink>
                 </div>
             </div>

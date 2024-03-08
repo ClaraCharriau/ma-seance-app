@@ -14,14 +14,46 @@
             "genres": ["Action", "Science-Fiction"]
         },
         "schedule": [
-            "2024-02-17T11:45:00",
-            "2024-02-17T14:15:00",
-            "2024-02-17T10:15:00",
-            "2024-02-17T15:30:00",
-            "2024-02-17T16:45:00",
-            "2024-02-17T17:35:00",
-            "2024-02-17T19:15:00",
-            "2024-02-17T21:45:00"
+            {
+                "date": "2024-02-17T11:45:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "11:45"
+            },
+            {
+                "date": "2024-02-17T14:15:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "14:15"
+            },
+            {
+                "date": "2024-02-17T16:45:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "16:45"
+            },
+            {
+                "date": "2024-02-17T19:15:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "19:15"
+            },
+            {
+                "date": "2024-02-17T21:45:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "21:45"
+            }
         ]
     },
     {
@@ -38,7 +70,80 @@
             "cast": ["Sandra Hüller", "Swann Arlaud", "Samuel Theis"],
             "genres": ["Drame", "Mystère", "Crime"]
         },
-        "schedule": ["2024-02-17T11:45:00", "2024-02-17T19:15:00", "2024-02-17T21:45:00"]
+        "schedule": [
+            {
+                "date": "2024-02-17T09:45:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "09:45"
+            },
+            {
+                "date": "2024-02-17T10:15:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "10:15"
+            },
+            {
+                "date": "2024-02-17T14:15:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "14:15"
+            },
+            {
+                "date": "2024-02-17T15:05:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "15:05"
+            },
+            {
+                "date": "2024-02-17T18:15:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "18:15"
+            },
+            {
+                "date": "2024-02-17T21:35:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "21:35"
+            },
+            {
+                "date": "2024-02-17T16:45:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "16:45"
+            },
+            {
+                "date": "2024-02-17T19:15:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "19:15"
+            },
+            {
+                "date": "2024-02-17T21:45:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "21:45"
+            }
+        ]
     },
     {
         "movie": {
@@ -54,6 +159,31 @@
             "cast": ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
             "genres": ["Drame", "Science-Fiction"]
         },
-        "schedule": ["2024-02-17T11:45:00", "2024-02-17T14:15:00", "2024-02-17T16:45:00"]
+        "schedule": [
+            {
+                "date": "2024-02-17T11:45:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "11:45"
+            },
+            {
+                "date": "2024-02-17T14:15:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "14:15"
+            },
+            {
+                "date": "2024-02-17T16:45:00",
+                "dayName": "mercredi",
+                "dayNumber": "17",
+                "month": "février",
+                "year": "2024",
+                "hourly": "16:45"
+            }
+        ]
     }
 ]
