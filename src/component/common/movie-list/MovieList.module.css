@@ -5,8 +5,16 @@
     margin-top: 40px;
 }
 
+.movieList a {
+    width: 45%;
+}
+
 @media (max-width: 900px) {
     .movieList {
         gap: 5vw;
+    }
+
+    .movieList a {
+        width: 100%;
     }
 }

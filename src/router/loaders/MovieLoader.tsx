@@ -3,9 +3,9 @@ import { getMovieById } from '../../client/movies/movies.client';
 
 export const movieLoader = async (args: ActionFunctionArgs) => {
     const { params } = args;
-    let { id } = params;
-    if (id === undefined) {
-        id = '';
+    const { id } = params;
+    if (!id || id === undefined) {
+        throw new Error();
     }
 
     return await getMovieById(id);

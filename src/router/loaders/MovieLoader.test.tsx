@@ -44,7 +44,7 @@ describe('Movie loader tests', () => {
             await movieLoader(args);
         } catch (e: any) {
             // Then
-            expect(e.status).toEqual(404);
+            expect(e).toEqual(Error());
         }
     });
 });

@@ -44,6 +44,10 @@
     border-radius: 6px;
 }
 
+.homeRightSection {
+    margin-bottom: 20px;
+}
+
 .seeDetails {
     color: var(--primary-variant);
     font-size: 10px;
