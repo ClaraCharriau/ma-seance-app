@@ -1,22 +1,22 @@
-import { ActionFunctionArgs } from 'react-router-dom';
+import { ActionFunctionArgs, defer } from 'react-router-dom';
 import { getMovieScreeningsByTheaterIdAndDay } from '../../client/theaters/theaters.client';
 
 export const movieScreeningsLoader = async (args: ActionFunctionArgs) => {
     const { params } = args;
-    let { id, day } = params;
+    const { id } = params;
+    let { day } = params;
 
-    // Theater id
-    if (id === undefined) {
-        id = '';
-        // api call will throw error anyway
+    if (!id || id === undefined) {
+        throw new Error();
     }
 
-    // Selected day
-    if (day === undefined) {
+    if (!day || day === undefined) {
         day = '1';
     }
     // remove "day"
     day = day.split('-')[1];
 
-    return await getMovieScreeningsByTheaterIdAndDay(id, day);
+    const movieScreeningsPromise = await getMovieScreeningsByTheaterIdAndDay(id, day);
+
+    return defer({ movieScreenings: movieScreeningsPromise });
 };

@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Theater Details Component renders theater details component 1`] = `
+exports[`Movie Screenings Component should display empty screening list message 1`] = `
+<div>
+  <p>
+    Pas de séances ce jour-là...
+  </p>
+</div>
+`;
+
+exports[`Movie Screenings Component should renders movie screenings list component 1`] = `
 <div>
   <section
     class="showtimesSection"

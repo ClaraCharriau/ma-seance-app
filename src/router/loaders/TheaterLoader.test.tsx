@@ -40,23 +40,20 @@ describe('Theater loader tests', () => {
 
     it('should fail to load theater', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/theaters/1').reply(200, mockTheater);
+        const id = undefined;
         const args: any = {
             params: {
-                id: '1'
+                id
             }
         };
-        let response: any;
 
         // When
-        await act(async () => {
-            response = await theaterLoader(args);
-        });
-
-        // Then
-        waitFor(() => {
-            expect(response.data).toEqual(mockResponse);
-        });
+        try {
+            await theaterLoader(args);
+        } catch (e: any) {
+            // Then
+            expect(e).toEqual(Error());
+        }
     });
 });
 

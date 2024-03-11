@@ -2,18 +2,21 @@ import { Await, Outlet, useLoaderData } from 'react-router-dom';
 import style from './TheaterDetailsLayout.module.css';
 import FavoriteButton from '../common/favorite-button/FavoriteButton';
 import WeekNavigation from '../common/week-navigation/WeekNavigation';
-import React from 'react';
 import ErrorPage from '../error-page/Error';
 import Spinner from '../common/spinner/Spinner';
+import { Theater } from '../../models/Theater';
+import { Suspense } from 'react';
 
 const TheaterDetailsLayout = () => {
-    const data: any = useLoaderData();
+    const data = useLoaderData() as {
+        theater: Theater;
+    };
 
     const IMG_PATH = '/assets/img/theaters';
     const IMG_SUFFIX = '.jpg';
 
     return (
-        <React.Suspense fallback={<Spinner />}>
+        <Suspense fallback={<Spinner />}>
             <Await resolve={data.theater} errorElement={<ErrorPage />}>
                 {theater => (
                     <>
@@ -44,7 +47,7 @@ const TheaterDetailsLayout = () => {
                     </>
                 )}
             </Await>
-        </React.Suspense>
+        </Suspense>
     );
 };
 

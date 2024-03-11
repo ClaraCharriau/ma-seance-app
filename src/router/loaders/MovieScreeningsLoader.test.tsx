@@ -2,6 +2,7 @@ import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import { movieScreeningsLoader } from './MovieScreeningsLoader';
 import mockScreenings from '../../mocks/theaters/movies-screenings-by-theater-id-and-day-1.json';
+import { waitFor } from '@testing-library/react';
 
 describe('Movie screenings loader tests', () => {
     let axiosMock: MockAdapter;
@@ -26,7 +27,7 @@ describe('Movie screenings loader tests', () => {
         const response = await movieScreeningsLoader(args);
 
         // Then
-        expect(response).toEqual(mockScreenings);
+        expect(response.data.movieScreenings).toEqual(mockScreenings);
     });
 
     it('should get movie screenings successfully with a defined day', async () => {
@@ -44,13 +45,12 @@ describe('Movie screenings loader tests', () => {
         const response = await movieScreeningsLoader(args);
 
         // Then
-        expect(response).toEqual(mockScreenings);
+        expect(response.data.movieScreenings).toEqual(mockScreenings);
     });
 
     it('should throw error', async () => {
         // Given
         const id = undefined;
-        axiosMock.onGet('http://localhost:7878/theaters/' + id + '/screenings').reply(200, mockScreenings);
         const args: any = {
             params: {
                 id
@@ -62,7 +62,7 @@ describe('Movie screenings loader tests', () => {
             await movieScreeningsLoader(args);
         } catch (e: any) {
             // Then
-            expect(e.status).toEqual(404);
+            expect(e).toEqual(Error());
         }
     });
 });
