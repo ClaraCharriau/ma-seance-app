@@ -3,9 +3,13 @@ import { getTheaterById } from '../../client/theaters/theaters.client';
 
 export const theaterLoader = async (args: ActionFunctionArgs) => {
     const { params } = args;
-    const { theaterId } = params;
+    const { id } = params;
 
-    const theaterPromise = getTheaterById(Number(theaterId));
+    if (!id || id === undefined) {
+        throw new Error();
+    }
+
+    const theaterPromise = await getTheaterById(id);
 
     return defer({ theater: theaterPromise });
 };

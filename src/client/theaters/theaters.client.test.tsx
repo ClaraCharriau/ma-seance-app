@@ -30,7 +30,7 @@ describe('Theaters client tests', () => {
         const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
-        const response = await getTheaterById(1);
+        const response = await getTheaterById("1");
 
         // Then
         expect(response).toEqual([
@@ -52,7 +52,7 @@ describe('Theaters client tests', () => {
 
         // When
         try {
-            response = await getTheaterById(1);
+            response = await getTheaterById("1");
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);

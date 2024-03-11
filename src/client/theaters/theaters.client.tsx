@@ -7,7 +7,7 @@ import { MovieScreenings } from '../../models/MovieScreenings';
 const THEATERS_PATH = HOST + '/theaters';
 const SCREENINGS_PATH = '/screenings';
 
-export const getTheaterById = async (theaterId: number): Promise<Theater> => {
+export const getTheaterById = async (theaterId: string): Promise<Theater> => {
     return await axios
         .get(THEATERS_PATH + '/' + theaterId)
         .then(response => handleResponse(response))
