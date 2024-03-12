@@ -1,0 +1,35 @@
+.theaterCardWrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.theaterImg {
+    height: 110px;
+    width: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.theaterCardInfos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.theaterName {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.theaterAddress {
+    font-weight: 300;
+    max-width: 400px;
+}
+
+@media (max-width: 900px) {
+    .theaterImg {
+        height: 70px;
+        width: 70px;
+    }
+}

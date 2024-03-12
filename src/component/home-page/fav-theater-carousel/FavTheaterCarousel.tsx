@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import FavTheaterCard from './FavTheaterCard';
 import style from './FavTheater.module.css';
 import Spinner from '../../common/spinner/Spinner';
-import EmptyHomeSection from '../empty-homesection/EmptyHomeSection';
+import EmptySection from '../../common/empty-section/EmptySection';
 
 interface FavTheaterCarouselProps {
     currentUser: User;
@@ -130,7 +130,7 @@ const FavTheaterCarousel = (props: FavTheaterCarouselProps) => {
                     </div>
                 </>
             ) : (
-                <EmptyHomeSection itemType="theater" />
+                <EmptySection itemType="theater" />
             )}
         </CarouselProvider>
     );
