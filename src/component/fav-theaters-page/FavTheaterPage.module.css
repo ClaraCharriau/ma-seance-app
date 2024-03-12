@@ -1,0 +1,9 @@
+.mainFavTheaterPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainFavTheaterPage h2 {
+    margin-bottom: 20px;
+}

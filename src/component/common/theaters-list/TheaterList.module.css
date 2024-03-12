@@ -1,0 +1,20 @@
+.theaterList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vw;
+    margin-top: 40px;
+}
+
+.theaterList a {
+    width: 45%;
+}
+
+@media (max-width: 900px) {
+    .theaterList {
+        gap: 5vw;
+    }
+
+    .theaterList a {
+        width: 100%;
+    }
+}

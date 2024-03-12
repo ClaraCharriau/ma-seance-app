@@ -2,8 +2,236 @@
 
 exports[`Favorite theaters Component renders favorite theaters component 1`] = `
 <div>
-  <div>
-    FavTheaters
-  </div>
+  <main
+    class="mainFavTheaterPage"
+  >
+    <h2>
+      Mes cinémas favoris
+    </h2>
+    <section
+      class="theaterList"
+    >
+      <a
+        class="theaterCardWrapper"
+        href="/theaters/1/day-1"
+      >
+        <img
+          alt="photo de C2L Saint-Germain"
+          class="theaterImg"
+          src="/assets/img/theaters/c2l-saint-germain.jpg"
+        />
+        <div
+          class="theaterCardInfos"
+        >
+          <p
+            class="theaterName"
+          >
+            C2L Saint-Germain
+          </p>
+          <p
+            class="theaterAddress"
+          >
+            25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye
+          </p>
+        </div>
+      </a>
+      <a
+        class="theaterCardWrapper"
+        href="/theaters/2/day-1"
+      >
+        <img
+          alt="photo de C2L Poissy"
+          class="theaterImg"
+          src="/assets/img/theaters/c2l-poissy.jpg"
+        />
+        <div
+          class="theaterCardInfos"
+        >
+          <p
+            class="theaterName"
+          >
+            C2L Poissy
+          </p>
+          <p
+            class="theaterAddress"
+          >
+            112 Rue du Général de Gaulle 78300 Poissy
+          </p>
+        </div>
+      </a>
+      <a
+        class="theaterCardWrapper"
+        href="/theaters/3/day-1"
+      >
+        <img
+          alt="photo de UGC Ciné Cité La Défense"
+          class="theaterImg"
+          src="/assets/img/theaters/ugc-defense-puteaux.jpg"
+        />
+        <div
+          class="theaterCardInfos"
+        >
+          <p
+            class="theaterName"
+          >
+            UGC Ciné Cité La Défense
+          </p>
+          <p
+            class="theaterAddress"
+          >
+            Le Dôme - Centre commercial Westfield - Les 4 Temps 92092 Puteaux
+          </p>
+        </div>
+      </a>
+      <a
+        class="theaterCardWrapper"
+        href="/theaters/4/day-1"
+      >
+        <img
+          alt="photo de Les 5 Caumartin"
+          class="theaterImg"
+          src="/assets/img/theaters/5-caumartin-paris.jpg"
+        />
+        <div
+          class="theaterCardInfos"
+        >
+          <p
+            class="theaterName"
+          >
+            Les 5 Caumartin
+          </p>
+          <p
+            class="theaterAddress"
+          >
+            101, rue Saint-Lazare 75009 Paris 9e arrondissement
+          </p>
+        </div>
+      </a>
+      <a
+        class="theaterCardWrapper"
+        href="/theaters/5/day-1"
+      >
+        <img
+          alt="photo de UGC Ciné Cité Les Halles"
+          class="theaterImg"
+          src="/assets/img/theaters/ugc-les-halles-paris.jpg"
+        />
+        <div
+          class="theaterCardInfos"
+        >
+          <p
+            class="theaterName"
+          >
+            UGC Ciné Cité Les Halles
+          </p>
+          <p
+            class="theaterAddress"
+          >
+            7 Place de la Rotonde 75001 Paris
+          </p>
+        </div>
+      </a>
+      <a
+        class="theaterCardWrapper"
+        href="/theaters/6/day-1"
+      >
+        <img
+          alt="photo de UGC Normandie"
+          class="theaterImg"
+          src="/assets/img/theaters/ugc-normandie-paris.jpg"
+        />
+        <div
+          class="theaterCardInfos"
+        >
+          <p
+            class="theaterName"
+          >
+            UGC Normandie
+          </p>
+          <p
+            class="theaterAddress"
+          >
+            116 bis Av. des Champs-Élysées 75008 Paris
+          </p>
+        </div>
+      </a>
+      <a
+        class="theaterCardWrapper"
+        href="/theaters/7/day-1"
+      >
+        <img
+          alt="photo de Publicis Cinémas"
+          class="theaterImg"
+          src="/assets/img/theaters/publicis-paris.jpg"
+        />
+        <div
+          class="theaterCardInfos"
+        >
+          <p
+            class="theaterName"
+          >
+            Publicis Cinémas
+          </p>
+          <p
+            class="theaterAddress"
+          >
+            129, av. des Champs-Elysées 75008 Paris 8e arrondissement
+          </p>
+        </div>
+      </a>
+      <a
+        class="theaterCardWrapper"
+        href="/theaters/8/day-1"
+      >
+        <img
+          alt="photo de Elysées Lincoln"
+          class="theaterImg"
+          src="/assets/img/theaters/lincoln-paris.jpg"
+        />
+        <div
+          class="theaterCardInfos"
+        >
+          <p
+            class="theaterName"
+          >
+            Elysées Lincoln
+          </p>
+          <p
+            class="theaterAddress"
+          >
+            14 Rue Lincoln 75008 Paris
+          </p>
+        </div>
+      </a>
+    </section>
+  </main>
+</div>
+`;
+
+exports[`Favorite theaters Component renders favorite theaters component when there are no favorite theaters 1`] = `
+<div>
+  <main
+    class="mainFavTheaterPage"
+  >
+    <h2>
+      Mes cinémas favoris
+    </h2>
+    <section
+      class="theaterList"
+    />
+    <div
+      class="emptySection"
+    >
+      <p>
+        Vous n'avez pas encore de cinémas favoris
+      </p>
+      <button
+        class="button"
+      >
+        Rechercher un 
+        cinéma
+      </button>
+    </div>
+  </main>
 </div>
 `;

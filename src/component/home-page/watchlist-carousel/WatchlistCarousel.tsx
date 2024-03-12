@@ -7,7 +7,7 @@ import { CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import style from './WatchlistCarousel.module.css';
 import MovieCard from '../movie-card/MovieCard';
 import SeeDetailsBtn from '../../common/see-details-btn/SeeDetailsBtn';
-import EmptyHomeSection from '../empty-homesection/EmptyHomeSection';
+import EmptySection from '../../common/empty-section/EmptySection';
 import Spinner from '../../common/spinner/Spinner';
 
 interface FavMoviesCarouselProps {
@@ -77,7 +77,7 @@ const WatchlistCarousel = (props: FavMoviesCarouselProps) => {
                         </div>
                     </>
                 ) : (
-                    <EmptyHomeSection itemType="movie" />
+                    <EmptySection itemType="movie" />
                 )}
             </CarouselProvider>
             <SeeDetailsBtn text={`Voir les ${favMoviesTotal} films >`} navigatePath="/watchlist" showIcon={false} />

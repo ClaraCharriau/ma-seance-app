@@ -1,11 +1,11 @@
 import { redirect } from 'react-router-dom';
-import style from './EmptyHomeSection.module.css';
+import style from './EmptySection.module.css';
 
-interface EmptyHomeSectionProps {
+interface EmptySectionProps {
     itemType: 'theater' | 'movie';
 }
 
-const EmptyHomeSection = (props: EmptyHomeSectionProps) => {
+const EmptySection = (props: EmptySectionProps) => {
     const { itemType } = props;
 
     return (
@@ -22,4 +22,4 @@ const EmptyHomeSection = (props: EmptyHomeSectionProps) => {
     );
 };
 
-export default EmptyHomeSection;
+export default EmptySection;
