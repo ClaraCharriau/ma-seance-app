@@ -13,7 +13,7 @@
 .theaterCardInfos {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
     gap: 15px;
 }
 
@@ -24,4 +24,12 @@
 
 .theaterAddress {
     font-weight: 300;
+    max-width: 400px;
+}
+
+@media (max-width: 900px) {
+    .theaterImg {
+        height: 70px;
+        width: 70px;
+    }
 }
