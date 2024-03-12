@@ -1,7 +1,7 @@
-import { Theater } from '../../models/Theater';
 import axios from 'axios';
+import { Showtime } from '../../models/Showtime';
+import { Theater } from '../../models/Theater';
 import { HOST, PaginatedMovieResponse, handleError, handleResponse } from '../client.utils';
-import { Showtime } from '../../models/Screening';
 
 const users_path = HOST + '/users';
 

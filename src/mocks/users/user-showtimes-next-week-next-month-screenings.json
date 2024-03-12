@@ -1,0 +1,62 @@
+[
+    {
+        "id": "caadad78-7daf-4c49-abe8-2514b43884f6",
+        "schedule": {
+            "date": "2024-03-17T11:45:00",
+            "dayName": "dimanche",
+            "dayNumber": "17",
+            "month": "mars",
+            "year": "2024",
+            "hourly": "11:45"
+        },
+        "movie": {
+            "id": "cff01b1b-a943-4bcf-a396-afd80417150a",
+            "title": "Dune",
+            "releaseDate": "2024-03-31",
+            "duration": 166,
+            "resume": "Paul Atréides se rallie à Chani et aux Fremen tout en préparant sa revanche contre ceux qui ont détruit sa famille. Alors qu'il doit faire un choix entre l'amour de sa vie et le destin de la galaxie, il devra néanmoins tout faire pour empêcher un terrible futur que lui seul peut prédire.",
+            "trailerLink": "",
+            "posterLink": "/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg",
+            "photoLink": "",
+            "directors": ["Denis Villeneuve"],
+            "cast": ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
+            "genres": ["Drame", "Science-Fiction"]
+        },
+        "theater": {
+            "id": "18",
+            "name": "UGC Ciné Cité Strasbourg Etoile",
+            "address": "25, avenue du Rhin 67100 Strasbourg",
+            "imgPath": "/ugc-etoile-strasbourg"
+        }
+    },
+    {
+        "id": "bbf24dfe-7788-4084-a6ca-43c3b75df2a4",
+        "schedule": {
+            "date": "2024-03-23T18:45:00",
+            "dayName": "lundi",
+            "dayNumber": "23",
+            "month": "mars",
+            "year": "2024",
+            "hourly": "18:45"
+        },
+        "movie": {
+            "id": "dd4cdbd2-44b7-4fb4-84b4-4f016d379ddb",
+            "title": "The Grand Budapest Hotel",
+            "releaseDate": "2014-02-26",
+            "duration": 100,
+            "resume": "Pendant l’entre‐deux guerres, le légendaire concierge d’un grand hôtel et son jeune protégé se retrouvent impliqués dans une histoire mêlant le vol d’un tableau de la Renaissance, la bataille pour une énorme fortune familiale, et le lent puis soudain bouleversement qui transforme l’Europe en cette première moitié de XXème siècle.",
+            "trailerLink": "",
+            "posterLink": "/atLMzzA7pOB0BdfM89V7BbdtLN6.jpg",
+            "photoLink": "/xHDynIimfsgj0ZOs0j5ma8v1vmM.jpg",
+            "directors": ["Wes Anderson"],
+            "cast": ["Ralph Fiennes", "Zendaya", "Rebecca Ferguson"],
+            "genres": ["Comédie", "Drame"]
+        },
+        "theater": {
+            "id": "16",
+            "name": "Pathé Angers",
+            "address": "1, avenue des Droits de l'Homme 49000 Angers",
+            "imgPath": "/pathe-angers"
+        }
+    }
+]

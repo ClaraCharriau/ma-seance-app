@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { getUserAgenda } from '../client/users/user.client';
-import { Showtime } from '../models/Screening';
 import { useAuthContext } from './auth.context';
+import { Showtime } from '../models/Showtime';
 
 /* eslint-disable */
 interface IAgendaContext {

@@ -1,18 +1,18 @@
 .movieCard {
     display: flex;
-    width: 45%;
     gap: 20px;
 }
 
 .movieCardImg {
-    height: 20vh;
+    max-height: 15vh;
+    border-radius: 6px;
 }
 
 .movieTitle,
 .movieDateDuration,
 .movieDirector,
 .movieCast {
-    font-size: clamp(10px, 3vw, 16px)
+    font-size: clamp(12px, 3vw, 14px)
 }
 
 .movieTitle {
