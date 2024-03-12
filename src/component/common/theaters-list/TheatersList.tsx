@@ -16,14 +16,16 @@ const TheatersList = (props: TheatersListProps) => {
     const { currentUser } = useAuthContext();
 
     const [showModale, setShowModale] = useState<boolean>(false);
+    const [theaterToDelete, setTheaterToDelete] = useState<Theater | null>(null);
 
-    const openDeleteConfirmationModale = () => {
+    const openDeleteConfirmationModale = (theater: Theater) => {
+        setTheaterToDelete(theater);
         setShowModale(true);
     };
 
-    const deleteTheater = async (theaterId: string) => {
+    const deleteTheater = async () => {
         // eslint-disable-next-line
-        await deleteUserFavTheater(currentUser!.id, theaterId);
+        await deleteUserFavTheater(currentUser!.id, theaterToDelete!.id);
         setShowModale(false);
     };
 
@@ -34,9 +36,10 @@ const TheatersList = (props: TheatersListProps) => {
                     <TheaterCard theater={theater} />
                     {isUpdate && (
                         <button
+                            data-testid="delete-button"
                             className={style.deleteButton}
                             onClick={() => {
-                                openDeleteConfirmationModale();
+                                openDeleteConfirmationModale(theater);
                             }}
                         >
                             <svg
@@ -61,14 +64,16 @@ const TheatersList = (props: TheatersListProps) => {
                             </svg>
                         </button>
                     )}
-                    <ConfirmationModal
-                        confirmationText={`Êtes-vous bien sûr de vouloir supprimer le cinéma ${theater.name} de vos favoris ?`}
-                        openModal={showModale}
-                        rightButtonCallback={() => setShowModale(false)}
-                        leftButtonCallback={() => deleteTheater(theater.id)}
-                    />
                 </div>
             ))}
+            {theaterToDelete && (
+                <ConfirmationModal
+                    confirmationText={`Êtes-vous bien sûr de vouloir supprimer le cinéma ${theaterToDelete.name} de vos favoris ?`}
+                    openModal={showModale}
+                    rightButtonCallback={() => setShowModale(false)}
+                    leftButtonCallback={() => deleteTheater()}
+                />
+            )}
         </section>
     );
 };
