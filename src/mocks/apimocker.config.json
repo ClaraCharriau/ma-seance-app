@@ -45,8 +45,13 @@
         "users/:id/fav-movies": {
             "httpStatus": 200,
             "latency": 500,
-            "verbs": ["get", "patch"],
+            "verbs": ["get"],
             "mockFile": "users/fav-movies.json"
+        },
+        "users/:id/fav-movies/:id": {
+            "httpStatus": 200,
+            "latency": 200,
+            "verbs": ["delete", "patch"]
         },
         "users/:id/showtimes": {
             "httpStatus": 200,
