@@ -17,6 +17,7 @@ import { movieLoader } from './loaders/MovieLoader';
 import { movieScreeningsLoader } from './loaders/MovieScreeningsLoader';
 import { theaterLoader } from './loaders/TheaterLoader';
 import { theaterScreeningsLoader } from './loaders/TheaterScreeningsLoader';
+import WatchList from '../component/watchlist-page/WatchList';
 
 const AppRouter = () => {
     const router = createBrowserRouter([
@@ -81,7 +82,7 @@ const AppRouter = () => {
                 },
                 {
                     path: '/watchlist',
-                    element: <>Watchlist</>
+                    element: <WatchList />
                 }
             ]
         }

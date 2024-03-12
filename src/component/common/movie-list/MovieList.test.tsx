@@ -9,7 +9,7 @@ describe('Movie list component test', () => {
         // When
         const component = render(
             <BrowserRouter>
-                <MovieList movieList={mockMovieList} />
+                <MovieList movieList={mockMovieList} isUpdate={false} />
             </BrowserRouter>
         );
 

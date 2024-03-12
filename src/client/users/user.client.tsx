@@ -35,7 +35,14 @@ export const getUserFavMovies = async (userId: string): Promise<PaginatedMovieRe
 
 export const updateUserFavMovies = async (userId: string, movieId: string): Promise<void> => {
     return await axios
-        .patch(users_path + '/' + userId + '/fav-movies', movieId)
+        .patch(users_path + '/' + userId + '/fav-movies/' + movieId)
+        .then(response => handleResponse(response))
+        .catch(error => handleError(error));
+};
+
+export const deleteUserFavMovie = async (userId: string, movieId: string): Promise<void> => {
+    return await axios
+        .delete(users_path + '/' + userId + '/fav-movies/' + movieId)
         .then(response => handleResponse(response))
         .catch(error => handleError(error));
 };

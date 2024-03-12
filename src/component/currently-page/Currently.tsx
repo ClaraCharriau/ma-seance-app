@@ -50,7 +50,13 @@ const Currently = () => {
                 Sorties de la semaine
             </h2>
             <p className={style.currentWeek}>{currentWeek}</p>
-            {loading ? <Spinner /> : error ? <div>{error}</div> : <MovieList movieList={currentMovies} />}
+            {loading ? (
+                <Spinner />
+            ) : error ? (
+                <div>{error}</div>
+            ) : (
+                <MovieList movieList={currentMovies} isUpdate={false} />
+            )}
         </main>
     );
 };

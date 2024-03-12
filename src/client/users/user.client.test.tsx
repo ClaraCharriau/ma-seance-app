@@ -2,7 +2,14 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { Theater } from '../../models/Theater';
-import { deleteUserFavTheater, getUserAgenda, getUserFavMovies, getUserFavTheaters, updateUserFavMovies, updateUserFavTheaters } from './user.client';
+import {
+    deleteUserFavTheater,
+    getUserAgenda,
+    getUserFavMovies,
+    getUserFavTheaters,
+    updateUserFavMovies,
+    updateUserFavTheaters
+} from './user.client';
 import mockFavMoviesList from '../../mocks/users/fav-movies.json';
 import mockUserShowtimes from '../../mocks/users/user-showtimes.json';
 
@@ -159,19 +166,19 @@ describe('User client tests', () => {
 
     it('should update user favorite movies successfully', async () => {
         // Given
-        axiosMock.onPatch('http://localhost:7878/users/2/fav-movies').reply(200);
+        axiosMock.onPatch('http://localhost:7878/users/2/fav-movies/3').reply(200);
         const axiosPatch = jest.spyOn(require('axios'), 'patch');
 
         // When
         await updateUserFavMovies('2', '3');
 
         // Then
-        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-movies', '3');
+        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-movies/3');
     });
 
     it('should fail to update user favorite movies', async () => {
         // Given
-        axiosMock.onPatch('http://localhost:7878/users/2/fav-movies').reply(500);
+        axiosMock.onPatch('http://localhost:7878/users/2/fav-movies/2').reply(500);
         const axiosPatch = jest.spyOn(require('axios'), 'patch');
 
         // When
@@ -181,7 +188,7 @@ describe('User client tests', () => {
             // Then
             expect(e.status).toBe(500);
         }
-        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-movies', '2');
+        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-movies/2');
     });
 
     it('should get user showtimes successfully', async () => {
@@ -193,7 +200,7 @@ describe('User client tests', () => {
         const response = await getUserAgenda('2');
 
         // Then
-        expect(response).toEqual(mockUserShowtimes)
+        expect(response).toEqual(mockUserShowtimes);
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/2/showtimes');
     });
 
