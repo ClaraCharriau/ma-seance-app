@@ -34,8 +34,13 @@
         "users/:id/fav-theaters": {
             "httpStatus": 200,
             "latency": 500,
-            "verbs": ["get", "patch"],
+            "verbs": ["get"],
             "mockFile": "users/fav-theaters.json"
+        },
+        "users/:id/fav-theaters/:id": {
+            "httpStatus": 200,
+            "latency": 200,
+            "verbs": ["delete", "patch"]
         },
         "users/:id/fav-movies": {
             "httpStatus": 200,

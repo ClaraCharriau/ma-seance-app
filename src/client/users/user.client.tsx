@@ -14,7 +14,14 @@ export const getUserFavTheaters = async (userId: string): Promise<Theater[]> => 
 
 export const updateUserFavTheaters = async (userId: string, theaterId: string): Promise<void> => {
     return await axios
-        .patch(users_path + '/' + userId + '/fav-theaters', theaterId)
+        .patch(users_path + '/' + userId + '/fav-theaters/' + theaterId)
+        .then(response => handleResponse(response))
+        .catch(error => handleError(error));
+};
+
+export const deleteUserFavTheater = async (userId: string, theaterId: string): Promise<void> => {
+    return await axios
+        .delete(users_path + '/' + userId + '/fav-theaters/' + theaterId)
         .then(response => handleResponse(response))
         .catch(error => handleError(error));
 };

@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import { Theater } from '../../../models/Theater';
 import TheaterCard from '../theaters-card/TheaterCard';
 import style from './TheaterList.module.css';
+import ConfirmationModal from '../modals/confirmation-modal/ConfirmationModal';
+import { deleteUserFavTheater } from '../../../client/users/user.client';
+import { useAuthContext } from '../../../context/auth.context';
 
 type TheatersListProps = {
     theaters: Theater[];
@@ -9,6 +13,19 @@ type TheatersListProps = {
 
 const TheatersList = (props: TheatersListProps) => {
     const { theaters, isUpdate } = props;
+    const { currentUser } = useAuthContext();
+
+    const [showModale, setShowModale] = useState<boolean>(false);
+
+    const openDeleteConfirmationModale = () => {
+        setShowModale(true);
+    };
+
+    const deleteTheater = async (theaterId: string) => {
+        // eslint-disable-next-line
+        await deleteUserFavTheater(currentUser!.id, theaterId);
+        setShowModale(false);
+    };
 
     return (
         <section className={style.theaterList}>
@@ -16,7 +33,12 @@ const TheatersList = (props: TheatersListProps) => {
                 <div key={theater.id} className={style.theaterListCard}>
                     <TheaterCard theater={theater} />
                     {isUpdate && (
-                        <button className={style.deleteButton}>
+                        <button
+                            className={style.deleteButton}
+                            onClick={() => {
+                                openDeleteConfirmationModale();
+                            }}
+                        >
                             <svg
                                 width="22"
                                 height="22"
@@ -39,6 +61,12 @@ const TheatersList = (props: TheatersListProps) => {
                             </svg>
                         </button>
                     )}
+                    <ConfirmationModal
+                        confirmationText={`Êtes-vous bien sûr de vouloir supprimer le cinéma ${theater.name} de vos favoris ?`}
+                        openModal={showModale}
+                        rightButtonCallback={() => setShowModale(false)}
+                        leftButtonCallback={() => deleteTheater(theater.id)}
+                    />
                 </div>
             ))}
         </section>

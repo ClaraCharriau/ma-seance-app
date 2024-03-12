@@ -6,6 +6,7 @@ import style from './FavTheaterPage.module.css';
 
 const FavTheaters = () => {
     const { favoriteTheaters } = useFavoriteContext();
+
     const [isUpdate, setIsUpdate] = useState<boolean>(false);
 
     const toggleUpdate = () => {
