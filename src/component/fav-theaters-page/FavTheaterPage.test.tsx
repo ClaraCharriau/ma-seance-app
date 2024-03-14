@@ -6,6 +6,7 @@ import mockUser from '../../mocks/users/users.json';
 import { act } from 'react-dom/test-utils';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
+import { axiosInstance } from '../../client/axios.config';
 
 describe('Favorite theaters Component', () => {
     const favoriteContext = require('../../context/favorite.context');
@@ -13,7 +14,7 @@ describe('Favorite theaters Component', () => {
     let axiosMock: MockAdapter;
 
     beforeEach(() => {
-        axiosMock = new MockAdapter(axios);
+        axiosMock = new MockAdapter(axiosInstance);
     });
     afterEach(() => {
         axiosMock.reset();
@@ -110,8 +111,8 @@ describe('Favorite theaters Component', () => {
         jest.spyOn(authContext, 'useAuthContext').mockReturnValue({
             currentUser: mockUser
         });
-        axiosMock.onDelete('http://localhost:7878/users/1/fav-theaters/1').reply(200);
-        const axiosDelete = jest.spyOn(require('axios'), 'delete');
+        axiosMock.onDelete('/users/1/fav-theaters/1').reply(200);
+        const axiosDelete = jest.spyOn(axiosInstance, 'delete');
         const component = render(
             <BrowserRouter>
                 <FavTheaters />
@@ -132,7 +133,7 @@ describe('Favorite theaters Component', () => {
         // Then
         await waitFor(() => {
             expect(component.container).toMatchSnapshot();
-            expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-theaters/1');
+            expect(axiosDelete).toHaveBeenCalledWith('/users/1/fav-theaters/1');
         });
     });
 

@@ -1,24 +1,17 @@
-import axios from 'axios';
-import { HOST, handleError, handleResponse } from '../client.utils';
-import { Theater } from '../../models/Theater';
 import { Movie } from '../../models/Movie';
 import { MovieScreenings } from '../../models/MovieScreenings';
+import { Theater } from '../../models/Theater';
+import { axiosInstance } from '../axios.config';
 
-const THEATERS_PATH = HOST + '/theaters';
+const THEATERS_PATH = '/theaters';
 const SCREENINGS_PATH = '/screenings';
 
 export const getTheaterById = async (theaterId: string): Promise<Theater> => {
-    return await axios
-        .get(THEATERS_PATH + '/' + theaterId)
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.get(THEATERS_PATH + '/' + theaterId);
 };
 
 export const getTheaterMoviesByTheaterId = async (theaterId: string): Promise<Movie[]> => {
-    return await axios
-        .get(THEATERS_PATH + '/' + theaterId + '/movies')
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.get(THEATERS_PATH + '/' + theaterId + '/movies');
 };
 
 export const getMovieScreeningsByTheaterIdAndDay = async (
@@ -28,8 +21,5 @@ export const getMovieScreeningsByTheaterIdAndDay = async (
     const params = {
         day
     };
-    return await axios
-        .get(THEATERS_PATH + '/' + theaterId + SCREENINGS_PATH, { params })
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.get(THEATERS_PATH + '/' + theaterId + SCREENINGS_PATH, { params });
 };

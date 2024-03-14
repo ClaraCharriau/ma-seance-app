@@ -1,7 +1,9 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
+import mockFavMoviesList from '../../mocks/users/fav-movies.json';
+import mockUserShowtimes from '../../mocks/users/user-showtimes.json';
 import { Theater } from '../../models/Theater';
+import { axiosInstance } from '../axios.config';
 import {
     deleteUserFavTheater,
     getUserAgenda,
@@ -10,11 +12,12 @@ import {
     updateUserFavMovies,
     updateUserFavTheaters
 } from './user.client';
-import mockFavMoviesList from '../../mocks/users/fav-movies.json';
-import mockUserShowtimes from '../../mocks/users/user-showtimes.json';
 
 describe('User client tests', () => {
     let axiosMock: MockAdapter;
+    const axiosGet = jest.spyOn(axiosInstance, 'get');
+    const axiosPatch = jest.spyOn(axiosInstance, 'patch');
+    const axiosDelete = jest.spyOn(axiosInstance, 'delete');
     const mockTheaterList: Theater[] = [
         {
             id: '1',
@@ -31,7 +34,7 @@ describe('User client tests', () => {
     ];
 
     beforeEach(() => {
-        axiosMock = new MockAdapter(axios);
+        axiosMock = new MockAdapter(axiosInstance);
     });
     afterEach(() => {
         axiosMock.reset();
@@ -39,14 +42,13 @@ describe('User client tests', () => {
 
     it('should get user favorite theaters successfully', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(200, mockTheaterList);
-        const axiosGet = jest.spyOn(require('axios'), 'get');
+        axiosMock.onGet('/users/1/fav-theaters').reply(200, mockTheaterList);
 
         // When
         const response = await getUserFavTheaters('1');
 
         // Then
-        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-theaters');
+        expect(axiosGet).toHaveBeenCalledWith('/users/1/fav-theaters');
         expect(response).toEqual([
             {
                 id: '1',
@@ -65,9 +67,8 @@ describe('User client tests', () => {
 
     it('should fail to get user favorite theaters', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(500, {});
+        axiosMock.onGet('/users/1/fav-theaters').reply(500, {});
         let response = {};
-        const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
         try {
@@ -77,25 +78,23 @@ describe('User client tests', () => {
             expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-theaters');
+        expect(axiosGet).toHaveBeenCalledWith('/users/1/fav-theaters');
     });
 
     it('should update user favorite theaters successfully', async () => {
         // Given
-        axiosMock.onPatch('http://localhost:7878/users/2/fav-theaters/3').reply(200);
-        const axiosPatch = jest.spyOn(require('axios'), 'patch');
+        axiosMock.onPatch('/users/2/fav-theaters/3').reply(200);
 
         // When
         await updateUserFavTheaters('2', '3');
 
         // Then
-        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-theaters/3');
+        expect(axiosPatch).toHaveBeenCalledWith('/users/2/fav-theaters/3');
     });
 
     it('should fail to update user favorite theaters', async () => {
         // Given
-        axiosMock.onPatch('http://localhost:7878/users/2/fav-theaters/2').reply(500);
-        const axiosPatch = jest.spyOn(require('axios'), 'patch');
+        axiosMock.onPatch('/users/2/fav-theaters/2').reply(500);
 
         // When
         try {
@@ -104,25 +103,23 @@ describe('User client tests', () => {
             // Then
             expect(e.status).toBe(500);
         }
-        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-theaters/2');
+        expect(axiosPatch).toHaveBeenCalledWith('/users/2/fav-theaters/2');
     });
 
     it('should delete user favorite theaters successfully', async () => {
         // Given
-        axiosMock.onDelete('http://localhost:7878/users/2/fav-theaters/3').reply(200);
-        const axiosDelete = jest.spyOn(require('axios'), 'delete');
+        axiosMock.onDelete('/users/2/fav-theaters/3').reply(200);
 
         // When
         await deleteUserFavTheater('2', '3');
 
         // Then
-        expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-theaters/3');
+        expect(axiosDelete).toHaveBeenCalledWith('/users/2/fav-theaters/3');
     });
 
     it('should fail to delete user favorite theaters', async () => {
         // Given
-        axiosMock.onDelete('http://localhost:7878/users/2/fav-theaters/2').reply(500);
-        const axiosDelete = jest.spyOn(require('axios'), 'delete');
+        axiosMock.onDelete('/users/2/fav-theaters/2').reply(500);
 
         // When
         try {
@@ -131,27 +128,25 @@ describe('User client tests', () => {
             // Then
             expect(e.status).toBe(500);
         }
-        expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-theaters/2');
+        expect(axiosDelete).toHaveBeenCalledWith('/users/2/fav-theaters/2');
     });
 
     it('should get user favorite movies successfully', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/users/1/fav-movies').reply(200, mockFavMoviesList);
-        const axiosGet = jest.spyOn(require('axios'), 'get');
+        axiosMock.onGet('/users/1/fav-movies').reply(200, mockFavMoviesList);
 
         // When
         const response = await getUserFavMovies('1');
 
         // Then
-        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-movies');
+        expect(axiosGet).toHaveBeenCalledWith('/users/1/fav-movies');
         expect(response).toEqual(mockFavMoviesList);
     });
 
     it('should fail to get user favorite movies', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/users/1/fav-movies').reply(500);
+        axiosMock.onGet('/users/1/fav-movies').reply(500);
         let response = {};
-        const axiosGet = jest.spyOn(require('axios'), 'get');
 
         // When
         try {
@@ -161,25 +156,23 @@ describe('User client tests', () => {
             expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-movies');
+        expect(axiosGet).toHaveBeenCalledWith('/users/1/fav-movies');
     });
 
     it('should update user favorite movies successfully', async () => {
         // Given
-        axiosMock.onPatch('http://localhost:7878/users/2/fav-movies/3').reply(200);
-        const axiosPatch = jest.spyOn(require('axios'), 'patch');
+        axiosMock.onPatch('/users/2/fav-movies/3').reply(200);
 
         // When
         await updateUserFavMovies('2', '3');
 
         // Then
-        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-movies/3');
+        expect(axiosPatch).toHaveBeenCalledWith('/users/2/fav-movies/3');
     });
 
     it('should fail to update user favorite movies', async () => {
         // Given
-        axiosMock.onPatch('http://localhost:7878/users/2/fav-movies/2').reply(500);
-        const axiosPatch = jest.spyOn(require('axios'), 'patch');
+        axiosMock.onPatch('/users/2/fav-movies/2').reply(500);
 
         // When
         try {
@@ -188,26 +181,24 @@ describe('User client tests', () => {
             // Then
             expect(e.status).toBe(500);
         }
-        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/users/2/fav-movies/2');
+        expect(axiosPatch).toHaveBeenCalledWith('/users/2/fav-movies/2');
     });
 
     it('should get user showtimes successfully', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/users/2/showtimes').reply(200, mockUserShowtimes);
-        const axiosGet = jest.spyOn(require('axios'), 'get');
+        axiosMock.onGet('/users/2/showtimes').reply(200, mockUserShowtimes);
 
         // When
         const response = await getUserAgenda('2');
 
         // Then
         expect(response).toEqual(mockUserShowtimes);
-        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/2/showtimes');
+        expect(axiosGet).toHaveBeenCalledWith('/users/2/showtimes');
     });
 
     it('should fail to update user favorite movies', async () => {
         // Given
-        axiosMock.onGet('http://localhost:7878/users/2/showtimes').reply(500);
-        const axiosGet = jest.spyOn(require('axios'), 'get');
+        axiosMock.onGet('/users/2/showtimes').reply(500);
 
         // When
         try {
@@ -216,8 +207,6 @@ describe('User client tests', () => {
             // Then
             expect(e.status).toBe(500);
         }
-        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/users/2/showtimes');
+        expect(axiosGet).toHaveBeenCalledWith('/users/2/showtimes');
     });
 });
-
-export {};

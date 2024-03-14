@@ -1,18 +1,15 @@
-import { AxiosResponse } from 'axios';
-import { Movie } from '../models/Movie';
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+import axios, { AxiosError, AxiosResponse } from 'axios';
 import config from '../config/config.helper';
 
-export interface PaginatedMovieResponse {
-    _metadata: {
-        page: number;
-        per_page: number;
-        page_count: number;
-        total_count: number;
-    };
-    records: Movie[];
-}
+export const axiosInstance = axios.create({
+    baseURL: config.services.prefix
+});
 
-export const HOST = config.services.prefix;
+axiosInstance.interceptors.response.use(
+    response => handleResponse(response),
+    (error: AxiosError) => handleError(error)
+);
 
 export const handleError = (error: any) => {
     if (error.response) {
@@ -27,8 +24,4 @@ export const handleError = (error: any) => {
 
 export const handleResponse = (response: AxiosResponse) => {
     return response.data;
-};
-
-export const handleDeleteResponse = (response: AxiosResponse) => {
-    return response;
 };

@@ -1,14 +1,13 @@
 import MockAdapter from 'axios-mock-adapter';
-import axios from 'axios';
-import { movieScreeningsLoader } from './MovieScreeningsLoader';
+import { axiosInstance } from '../../client/axios.config';
 import mockScreenings from '../../mocks/theaters/movies-screenings-by-theater-id-and-day-1.json';
-import { waitFor } from '@testing-library/react';
+import { movieScreeningsLoader } from './MovieScreeningsLoader';
 
 describe('Movie screenings loader tests', () => {
     let axiosMock: MockAdapter;
 
     beforeEach(() => {
-        axiosMock = new MockAdapter(axios);
+        axiosMock = new MockAdapter(axiosInstance);
     });
     afterEach(() => {
         axiosMock.reset();
@@ -16,7 +15,7 @@ describe('Movie screenings loader tests', () => {
     it('should get movie screenings successfully', async () => {
         // Given
         const id = '3d8f1342-15f1-44b1-a48f-4581d654b94a';
-        axiosMock.onGet('http://localhost:7878/theaters/' + id + '/screenings').reply(200, mockScreenings);
+        axiosMock.onGet('/theaters/' + id + '/screenings').reply(200, mockScreenings);
         const args: any = {
             params: {
                 id
@@ -33,7 +32,7 @@ describe('Movie screenings loader tests', () => {
     it('should get movie screenings successfully with a defined day', async () => {
         // Given
         const id = '3d8f1342-15f1-44b1-a48f-4581d654b94a';
-        axiosMock.onGet('http://localhost:7878/theaters/' + id + '/screenings').reply(200, mockScreenings);
+        axiosMock.onGet('/theaters/' + id + '/screenings').reply(200, mockScreenings);
         const args: any = {
             params: {
                 id,

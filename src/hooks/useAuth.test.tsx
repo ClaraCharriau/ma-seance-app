@@ -4,15 +4,16 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import mockUser from '../mocks/users/users.json';
 import mockVerify from '../mocks/auth/verify-false.json';
+import { axiosInstance } from '../client/axios.config';
 
 describe('useAuth hook tests', () => {
     let axiosMock: MockAdapter;
-    const axiosPostSpy = jest.spyOn(axios, 'post');
-    const axiosPatchSpy = jest.spyOn(axios, 'patch');
-    const axiosDeleteSpy = jest.spyOn(axios, 'delete');
+    const axiosPostSpy = jest.spyOn(axiosInstance, 'post');
+    const axiosPatchSpy = jest.spyOn(axiosInstance, 'patch');
+    const axiosDeleteSpy = jest.spyOn(axiosInstance, 'delete');
 
     beforeEach(() => {
-        axiosMock = new MockAdapter(axios);
+        axiosMock = new MockAdapter(axiosInstance);
     });
     afterEach(() => {
         axiosMock.reset();
@@ -40,11 +41,11 @@ describe('useAuth hook tests', () => {
         // Then
         const user = await loginPromise;
         expect(user).toEqual({
-            id: "1",
+            id: '1',
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
-        expect(axiosPostSpy).toHaveBeenCalledWith('http://localhost:7878/auth', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('/registrations', {
             email: 'test@mail.com',
             password: 'password'
         });
@@ -63,7 +64,7 @@ describe('useAuth hook tests', () => {
         // Then
         const response = await existsPromise;
         expect(response).toBeFalsy();
-        expect(axiosPostSpy).toHaveBeenCalledWith('http://localhost:7878/verify', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('/token', {
             email: 'test@mail.com'
         });
     });
@@ -80,7 +81,7 @@ describe('useAuth hook tests', () => {
         result.current.createUserAccount(pseudo, email, password);
 
         // Then
-        expect(axiosPostSpy).toHaveBeenCalledWith('http://localhost:7878/sign-in', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('/registrations', {
             pseudo: 'Jane',
             email: 'test@mail.com',
             password: 'password'
@@ -113,7 +114,7 @@ describe('useAuth hook tests', () => {
         result.current.updateUserAccount(pseudo, email, password);
 
         // Then
-        expect(axiosPatchSpy).toHaveBeenCalledWith('http://localhost:7878/sign-in', {
+        expect(axiosPatchSpy).toHaveBeenCalledWith('/registrations', {
             pseudo: 'Jane',
             email: 'test@mail.com',
             password: 'password'
@@ -123,14 +124,14 @@ describe('useAuth hook tests', () => {
     it('should delete user', async () => {
         // Given
         const { result } = renderHook(useAuth);
-        const id = "1";
+        const id = '1';
         axiosMock.onDelete().reply(200);
 
         // When
         result.current.deleteUserAccount(id);
 
         // Then
-        expect(axiosDeleteSpy).toHaveBeenCalledWith('http://localhost:7878/sign-out/1');
+        expect(axiosDeleteSpy).toHaveBeenCalledWith('/registrations/1');
     });
 });
 export {};

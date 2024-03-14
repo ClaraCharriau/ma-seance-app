@@ -26,7 +26,7 @@ describe('Favorite button component tests', () => {
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
             favoriteTheaters: mockTheaters
         });
-        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(200, mockTheaters);
+        axiosMock.onGet('users/1/fav-theaters').reply(200, mockTheaters);
 
         // When
         const component = render(<FavoriteButton itemId={'1'} itemType={'theater'} />);
@@ -40,7 +40,7 @@ describe('Favorite button component tests', () => {
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
             favoriteTheaters: mockTheaters
         });
-        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(200, mockTheaters);
+        axiosMock.onGet('users/1/fav-theaters').reply(200, mockTheaters);
 
         // When
         const component = render(<FavoriteButton itemId={'10'} itemType={'theater'} />);
@@ -55,7 +55,7 @@ describe('Favorite button component tests', () => {
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
             favoriteTheaters: mockTheaters
         });
-        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').replyOnce(200, [
+        axiosMock.onGet('users/1/fav-theaters').replyOnce(200, [
             {
                 id: '1',
                 name: 'C2L Saint-Germain',
@@ -63,7 +63,7 @@ describe('Favorite button component tests', () => {
                 imgPath: '/c2l-saint-germain'
             }
         ]);
-        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(200, [
+        axiosMock.onGet('users/1/fav-theaters').reply(200, [
             {
                 id: '1',
                 name: 'C2L Saint-Germain',
@@ -127,8 +127,8 @@ describe('Favorite button component tests', () => {
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
             favoriteMovies: mockMovies.records
         });
-        axiosMock.onGet('http://localhost:7878/users/1/fav-movies').replyOnce(200, mockMovies);
-        axiosMock.onGet('http://localhost:7878/users/1/fav-movies').reply(200, [
+        axiosMock.onGet('users/1/fav-movies').replyOnce(200, mockMovies);
+        axiosMock.onGet('users/1/fav-movies').reply(200, [
             {
                 id: 'b88f9510-d302-47d5-9d6b-8b13740f541d',
                 title: 'Madame Web',

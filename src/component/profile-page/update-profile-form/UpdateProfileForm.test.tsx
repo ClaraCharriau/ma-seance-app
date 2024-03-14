@@ -1,9 +1,9 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import UpdateProfileForm from './UpdateProfileForm';
-import { act } from 'react-dom/test-utils';
 import MockAdapter from 'axios-mock-adapter';
-import axios from 'axios';
+import { act } from 'react-dom/test-utils';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { axiosInstance } from '../../../client/axios.config';
+import UpdateProfileForm from './UpdateProfileForm';
 
 describe('UpdateProfileForm component tests', () => {
     let axiosMock: MockAdapter;
@@ -14,7 +14,7 @@ describe('UpdateProfileForm component tests', () => {
     };
 
     beforeEach(() => {
-        axiosMock = new MockAdapter(axios);
+        axiosMock = new MockAdapter(axiosInstance);
     });
 
     afterEach(() => {
@@ -163,7 +163,7 @@ describe('UpdateProfileForm component tests', () => {
 
     it('should set password error if password is incorrect', () => {
         // Given
-        axiosMock.onPost('http://localhost:7878/auth').reply(200, null);
+        axiosMock.onPost('/registrations').reply(200, null);
         const component = render(
             <Router>
                 <UpdateProfileForm user={mockUser} />
@@ -191,8 +191,8 @@ describe('UpdateProfileForm component tests', () => {
 
     it('should set verify error if email already exist', () => {
         // Given
-        axiosMock.onPost('http://localhost:7878/auth').reply(200);
-        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
+        axiosMock.onPost('/registrations').reply(200);
+        axiosMock.onPost('/token').reply(200, {
             exists: true
         });
         const component = render(
@@ -216,19 +216,19 @@ describe('UpdateProfileForm component tests', () => {
 
         // Then
         waitFor(() => {
-            expect(axiosMock.onPost('http://localhost:7878/auth')).toHaveBeenCalled();
-            expect(axiosMock.onPost('http://localhost:7878/verify')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/registrations')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/token')).toHaveBeenCalled();
             expect(component.getByText('Un compte existe déjà avec cette adresse email.')).toBeInTheDocument();
         });
     });
 
     it('should update user profile', () => {
         // Given
-        axiosMock.onPost('http://localhost:7878/auth').reply(200);
-        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
+        axiosMock.onPost('/registrations').reply(200);
+        axiosMock.onPost('/token').reply(200, {
             exists: false
         });
-        axiosMock.onPatch('http://localhost:7878/sign-in').reply(200, mockUser);
+        axiosMock.onPatch('sign-in').reply(200, mockUser);
         const component = render(
             <Router>
                 <UpdateProfileForm user={mockUser} />
@@ -250,10 +250,11 @@ describe('UpdateProfileForm component tests', () => {
 
         // Then
         waitFor(() => {
-            expect(axiosMock.onPost('http://localhost:7878/auth')).toHaveBeenCalled();
-            expect(axiosMock.onPost('http://localhost:7878/verify')).toHaveBeenCalled();
-            expect(axiosMock.onPatch('http://localhost:7878/sign-in')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/registrations')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/token')).toHaveBeenCalled();
+            expect(axiosMock.onPatch('sign-in')).toHaveBeenCalled();
         });
     });
 });
-export {};
+export { };
+

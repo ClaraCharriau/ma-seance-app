@@ -142,7 +142,7 @@ describe('Profile page component tests', () => {
     it('should delete account on click on "confirmer" button on modale', () => {
         // Given
         let component: any;
-        axiosMock.onDelete('http://localhost:7878/sign-out/1').reply(200);
+        axiosMock.onDelete('sign-out/1').reply(200);
         const navigate = jest.spyOn(require('react-router-dom'), 'useNavigate').mockImplementation(() => jest.fn());
         act(() => {
             component = render(
