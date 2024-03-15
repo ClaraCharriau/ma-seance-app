@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Theater } from '../../../models/Theater';
-import TheaterCard from '../theaters-card/TheaterCard';
+import TheaterCard from '../theater-card/TheaterCard';
 import style from './TheaterList.module.css';
 import ConfirmationModal from '../modals/confirmation-modal/ConfirmationModal';
 import { deleteUserFavTheater } from '../../../client/users/user.client';

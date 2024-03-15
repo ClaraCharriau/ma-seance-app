@@ -14,7 +14,7 @@ const FavTheaterCard = (props: FavTheaterCardProps) => {
     const IMG_SUFFIX = '.jpg';
 
     return (
-        <Link to={`/theaters/${theater.id}/day-1`} state={{ id: theater.id }} className={style.card}>
+        <Link to={`/theaters/${theater.id}/day-1`} state={{ theater: theater }} className={style.card}>
             <img
                 className={style.theaterCardImg}
                 src={IMG_PATH + theater.imgPath + IMG_SUFFIX}

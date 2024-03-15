@@ -1,26 +1,28 @@
-import MovieSummary from '../movie-summary/MovieSummary';
-import { MovieScreenings } from '../../../models/MovieScreenings';
-import style from './MoviesScreeningsList.module.css';
-import { Await, useLoaderData } from 'react-router-dom';
 import { Suspense } from 'react';
+import { Await, useLoaderData, useLocation } from 'react-router-dom';
 import Spinner from '../../common/spinner/Spinner';
 import ErrorPage from '../../error-page/Error';
+import MovieSummary from '../movie-summary/MovieSummary';
+import style from './MoviesScreeningsList.module.css';
+import { MovieScreenings } from '../../../models/MovieScreenings';
 
 const MoviesScreeningsList = () => {
     const data = useLoaderData() as { movieScreenings: MovieScreenings[] };
+    const location = useLocation();
 
     return (
         <Suspense fallback={<Spinner />}>
             <Await resolve={data.movieScreenings} errorElement={<ErrorPage />}>
-                {(movieScreenings: MovieScreenings[]) => {
-                    if (movieScreenings.length > 0) {
+                {(screenings: MovieScreenings[]) => {
+                    if (screenings.length > 0) {
                         return (
                             <section className={style.showtimesSection}>
-                                {movieScreenings.map(showtimes => (
+                                {screenings.map(showtimes => (
                                     <MovieSummary
                                         key={showtimes.movie.id}
                                         movie={showtimes.movie}
                                         schedule={showtimes.schedule}
+                                        theater={location.state.theater}
                                     />
                                 ))}
                             </section>

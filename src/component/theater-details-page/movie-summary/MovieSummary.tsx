@@ -7,14 +7,16 @@ import { Movie } from '../../../models/Movie';
 import style from './MovieSummary.module.css';
 import TimeSlotsList from '../../common/time-slots-list/TimeSlotsList';
 import { ScreeningDate } from '../../../models/ScreeningDate';
+import { Theater } from '../../../models/Theater';
 
 interface MovieSummaryProps {
     movie: Movie;
+    theater: Theater;
     schedule: ScreeningDate[];
 }
 
 const MovieSummary = (props: MovieSummaryProps) => {
-    const { movie, schedule } = props;
+    const { movie, schedule, theater } = props;
     const TMDB_PATH = config.tmdbImgPath.medium;
     const formattedDuration = useDurationFormat(movie.duration);
     const formattedReleaseDate = useDateDMYFormat(movie.releaseDate);
@@ -46,7 +48,7 @@ const MovieSummary = (props: MovieSummaryProps) => {
                 {/* Movie schedule */}
                 <div className={style.timeSlotColumn}>
                     <p className={style.timeSlotTitle}>Horaires</p>
-                    <TimeSlotsList scheduleList={schedule} />
+                    <TimeSlotsList screeningDateList={schedule} theater={theater} movie={movie} />
                     <NavLink to={movieLink}>{"Voir d'autres séances pour ce film >"}</NavLink>
                 </div>
             </div>
