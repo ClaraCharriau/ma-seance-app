@@ -1,14 +1,20 @@
 import { render, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import mockScreeningsData from '../../../mocks/movies/theaters-screenings-by-movie-id-and-day-1.json';
+import mockMovie from '../../../mocks/movies/movie-1.json';
 import TheaterScreeningsList from './TheaterScreeningsList';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useLoaderData: () => {
         return mockScreeningsData;
-    }
+    },
+    useLocation: () => ({
+        state: {
+            movie: mockMovie
+        }
+    })
 }));
 
 describe('Movie Details Component', () => {
