@@ -1,10 +1,10 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
+import MockAdapter from 'axios-mock-adapter';
+import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
+import { axiosInstance } from '../../client/axios.config';
 import mockFavoriteMovies from '../../mocks/users/fav-movies.json';
 import mockUser from '../../mocks/users/users.json';
-import { act } from 'react-dom/test-utils';
-import MockAdapter from 'axios-mock-adapter';
-import axios from 'axios';
 import WatchList from './WatchList';
 
 describe('Favorite theaters Component', () => {
@@ -13,7 +13,7 @@ describe('Favorite theaters Component', () => {
     let axiosMock: MockAdapter;
 
     beforeEach(() => {
-        axiosMock = new MockAdapter(axios);
+        axiosMock = new MockAdapter(axiosInstance);
     });
     afterEach(() => {
         axiosMock.reset();
@@ -110,8 +110,8 @@ describe('Favorite theaters Component', () => {
         jest.spyOn(authContext, 'useAuthContext').mockReturnValue({
             currentUser: mockUser
         });
-        axiosMock.onDelete('http://localhost:7878/users/1/fav-movies/3d8f1342-15f1-44b1-a48f-4581d654b94a').reply(200);
-        const axiosDelete = jest.spyOn(require('axios'), 'delete');
+        axiosMock.onDelete('/users/1/fav-movies/3d8f1342-15f1-44b1-a48f-4581d654b94a').reply(200);
+        const axiosDelete = jest.spyOn(axiosInstance, 'delete');
         const component = render(
             <BrowserRouter>
                 <WatchList />
@@ -131,7 +131,7 @@ describe('Favorite theaters Component', () => {
 
         // Then
         await waitFor(() => {
-            expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-movies/3d8f1342-15f1-44b1-a48f-4581d654b94a');
+            expect(axiosDelete).toHaveBeenCalledWith('/users/1/fav-movies/3d8f1342-15f1-44b1-a48f-4581d654b94a');
         });
         expect(component.container).toMatchSnapshot();
     });

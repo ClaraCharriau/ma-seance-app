@@ -11,7 +11,8 @@ export const useAuth = () => {
     };
 
     const checkUserExists = async (email: string): Promise<boolean> => {
-        return await checkAccountExists(email);
+        const response: { exists: boolean } = await checkAccountExists(email);
+        return response.exists;
     };
 
     const createUserAccount = async (pseudo: string, email: string, password: string) => {

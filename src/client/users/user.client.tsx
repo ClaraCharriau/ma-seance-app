@@ -1,55 +1,37 @@
-import axios from 'axios';
+import { PaginatedMovieResponse } from '../../models/PaginatedResponse';
 import { Showtime } from '../../models/Showtime';
 import { Theater } from '../../models/Theater';
-import { HOST, PaginatedMovieResponse, handleError, handleResponse } from '../client.utils';
+import { axiosInstance } from '../axios.config';
 
-const users_path = HOST + '/users';
+const USERS_PATH = '/users/';
+const FAV_THEATERS_PATH = '/fav-theaters';
+const FAV_MOVIES_PATH = '/fav-movies';
+const SHOWTIMES_PATH = '/showtimes';
 
 export const getUserFavTheaters = async (userId: string): Promise<Theater[]> => {
-    return await axios
-        .get(users_path + '/' + userId + '/fav-theaters')
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.get(USERS_PATH + userId + FAV_THEATERS_PATH);
 };
 
 export const updateUserFavTheaters = async (userId: string, theaterId: string): Promise<void> => {
-    return await axios
-        .patch(users_path + '/' + userId + '/fav-theaters/' + theaterId)
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.patch(USERS_PATH + userId + FAV_THEATERS_PATH + '/' + theaterId);
 };
 
 export const deleteUserFavTheater = async (userId: string, theaterId: string): Promise<void> => {
-    return await axios
-        .delete(users_path + '/' + userId + '/fav-theaters/' + theaterId)
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.delete(USERS_PATH + userId + FAV_THEATERS_PATH + '/' + theaterId);
 };
 
 export const getUserFavMovies = async (userId: string): Promise<PaginatedMovieResponse> => {
-    return await axios
-        .get(users_path + '/' + userId + '/fav-movies')
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.get(USERS_PATH + userId + FAV_MOVIES_PATH);
 };
 
 export const updateUserFavMovies = async (userId: string, movieId: string): Promise<void> => {
-    return await axios
-        .patch(users_path + '/' + userId + '/fav-movies/' + movieId)
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.patch(USERS_PATH + userId + FAV_MOVIES_PATH + '/' + movieId);
 };
 
 export const deleteUserFavMovie = async (userId: string, movieId: string): Promise<void> => {
-    return await axios
-        .delete(users_path + '/' + userId + '/fav-movies/' + movieId)
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.delete(USERS_PATH + userId + FAV_MOVIES_PATH + '/' + movieId);
 };
 
 export const getUserAgenda = async (userId: string): Promise<Showtime[]> => {
-    return await axios
-        .get(users_path + '/' + userId + '/showtimes')
-        .then(response => handleResponse(response))
-        .catch(error => handleError(error));
+    return await axiosInstance.get(USERS_PATH + userId + SHOWTIMES_PATH);
 };

@@ -1,9 +1,9 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
-import LoginForm from './LoginForm';
-import { BrowserRouter as Router } from 'react-router-dom';
 import MockAdapter from 'axios-mock-adapter';
-import axios from 'axios';
 import { act } from 'react-dom/test-utils';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { axiosInstance } from '../../../client/axios.config';
+import LoginForm from './LoginForm';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
@@ -14,7 +14,7 @@ describe('LoginForm component tests', () => {
     let axiosMock: MockAdapter;
 
     beforeEach(() => {
-        axiosMock = new MockAdapter(axios);
+        axiosMock = new MockAdapter(axiosInstance);
     });
     afterEach(() => {
         axiosMock.reset();
@@ -37,10 +37,10 @@ describe('LoginForm component tests', () => {
 
     it('should login existing user', async () => {
         // Given
-        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
+        axiosMock.onPost('/token').reply(200, {
             exists: true
         });
-        axiosMock.onPost('http://localhost:7878/auth').reply(200, {
+        axiosMock.onPost('/registrations').reply(200, {
             id: 678,
             email: 'toto@mail.it',
             pseudo: 'tonySoprano'
@@ -67,16 +67,16 @@ describe('LoginForm component tests', () => {
         await waitFor(() => {
             expect(navigate).toHaveBeenCalled();
             expect(axiosMock.history.post.length).toBe(2);
-            expect(axiosMock.history.post[0].url).toBe('http://localhost:7878/verify');
+            expect(axiosMock.history.post[0].url).toBe('/token');
             expect(axiosMock.history.post[0].data).toEqual('{"email":"toto@mail.it"}');
-            expect(axiosMock.history.post[1].url).toBe('http://localhost:7878/auth');
+            expect(axiosMock.history.post[1].url).toBe('/registrations');
             expect(axiosMock.history.post[1].data).toEqual('{"email":"toto@mail.it","password":"awesomePassword123"}');
         });
     });
 
     it('should set non existing user error', async () => {
         // Given
-        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
+        axiosMock.onPost('/token').reply(200, {
             exists: false
         });
         const { getByLabelText, getByText, getByRole } = render(
@@ -104,7 +104,7 @@ describe('LoginForm component tests', () => {
 
     it('should return false and set missing email error', async () => {
         // Given
-        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
+        axiosMock.onPost('/token').reply(200, {
             exists: true
         });
         const { getByLabelText, getByText, getByRole } = render(
@@ -130,7 +130,7 @@ describe('LoginForm component tests', () => {
 
     it('should return false and set invalid email error', async () => {
         // Given
-        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
+        axiosMock.onPost('/token').reply(200, {
             exists: true
         });
         const { getByLabelText, getByText, getByRole } = render(
@@ -156,7 +156,7 @@ describe('LoginForm component tests', () => {
 
     it('should return false and set missing password error', async () => {
         // Given
-        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
+        axiosMock.onPost('/token').reply(200, {
             exists: true
         });
         const { getByLabelText, getByText, getByRole } = render(
@@ -182,4 +182,5 @@ describe('LoginForm component tests', () => {
         });
     });
 });
-export {};
+export { };
+
