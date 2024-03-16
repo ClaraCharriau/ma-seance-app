@@ -1,18 +1,27 @@
+import { Movie } from '../../../models/Movie';
 import { ScreeningDate } from '../../../models/ScreeningDate';
+import { Theater } from '../../../models/Theater';
 import TimeSlotButton from '../time-slot-button/TimeSlotButton';
 import style from './TimeSlotsList.module.css';
 
 interface TimeSlotsListProps {
-    scheduleList: ScreeningDate[];
+    screeningDateList: ScreeningDate[];
+    theater: Theater;
+    movie: Movie;
 }
 
 const TimeSlotsList = (props: TimeSlotsListProps) => {
-    const { scheduleList } = props;
+    const { screeningDateList, theater, movie } = props;
 
     return (
         <div className={style.timeSlotWrapper}>
-            {scheduleList.map(schedule => (
-                <TimeSlotButton key={schedule.date} time={schedule.hourly} />
+            {screeningDateList.map((screeningDate: ScreeningDate) => (
+                <TimeSlotButton
+                    key={screeningDate.date}
+                    screeningDate={screeningDate}
+                    theater={theater}
+                    movie={movie}
+                />
             ))}
         </div>
     );

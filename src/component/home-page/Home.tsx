@@ -76,7 +76,7 @@ const Home = () => {
                         favoriteTheaters.map((theater, index) => (
                             <section className={style.homeLeftSection} key={index}>
                                 <div className={style.sectionTitleWrapper}>
-                                    <NavLink to={'/theaters/' + theater.id}>
+                                    <NavLink to={'/theaters/' + theater.id} state={{ theater: theater }}>
                                         <h2 className={style.homeSectionTitle}>
                                             <svg
                                                 width="18"

@@ -1,6 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import MockAdapter from 'axios-mock-adapter';
 import mockFavMoviesList from '../../mocks/users/fav-movies.json';
+import mockShowtime from '../../mocks/users/showtimes.json';
 import mockUserShowtimes from '../../mocks/users/user-showtimes.json';
 import { Theater } from '../../models/Theater';
 import { axiosInstance } from '../axios.config';
@@ -9,6 +10,7 @@ import {
     getUserAgenda,
     getUserFavMovies,
     getUserFavTheaters,
+    updateUserAgenda,
     updateUserFavMovies,
     updateUserFavTheaters
 } from './user.client';
@@ -196,7 +198,7 @@ describe('User client tests', () => {
         expect(axiosGet).toHaveBeenCalledWith('/users/2/showtimes');
     });
 
-    it('should fail to update user favorite movies', async () => {
+    it('should fail to get user showtimes', async () => {
         // Given
         axiosMock.onGet('/users/2/showtimes').reply(500);
 
@@ -208,5 +210,31 @@ describe('User client tests', () => {
             expect(e.status).toBe(500);
         }
         expect(axiosGet).toHaveBeenCalledWith('/users/2/showtimes');
+    });
+
+    it('should update user showtimes successfully', async () => {
+        // Given
+        axiosMock.onPatch('/users/2/showtimes').reply(200, mockUserShowtimes);
+
+        // When
+        const response = await updateUserAgenda('2', mockShowtime);
+
+        // Then
+        expect(response).toEqual(mockUserShowtimes);
+        expect(axiosPatch).toHaveBeenCalledWith('/users/2/showtimes', mockShowtime);
+    });
+
+    it('should fail to update user showtimes', async () => {
+        // Given
+        axiosMock.onPatch('/users/2/showtimes').reply(500);
+
+        // When
+        try {
+            await updateUserAgenda('2', mockShowtime);
+        } catch (e: any) {
+            // Then
+            expect(e.status).toBe(500);
+        }
+        expect(axiosPatch).toHaveBeenCalledWith('/users/2/showtimes', mockShowtime);
     });
 });

@@ -19,7 +19,7 @@ const MovieListCard = (props: MovieListCardProps) => {
     const cast = useStringListFormat(movie.cast);
 
     return (
-        <NavLink to={`/movies/${movie.id}/day-1`} state={{ id: movie.id }} className={style.movieCard}>
+        <NavLink to={`/movies/${movie.id}/day-1`} state={{ movie: movie }} className={style.movieCard}>
             <img
                 src={TMDB_PATH + movie.posterLink}
                 alt={`affiche du film ${movie.title}`}

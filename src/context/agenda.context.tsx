@@ -1,15 +1,17 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { getUserAgenda } from '../client/users/user.client';
-import { useAuthContext } from './auth.context';
+import { getUserAgenda, updateUserAgenda } from '../client/users/user.client';
 import { Showtime } from '../models/Showtime';
+import { useAuthContext } from './auth.context';
 
 /* eslint-disable */
 interface IAgendaContext {
     showtimes: Showtime[] | [];
+    updateAgenda: (showtime: Showtime) => Promise<void>;
 }
 
 const defaultContext: IAgendaContext = {
-    showtimes: []
+    showtimes: [],
+    updateAgenda: async () => {}
 };
 /* eslint-enable */
 
@@ -33,8 +35,15 @@ export const AgendaProvider = (props: AgendaProviderProps) => {
         getAgenda();
     }, [currentUser]);
 
+    const updateAgenda = async (showtime: Showtime) => {
+        if (currentUser) {
+            await updateUserAgenda(currentUser.id, showtime).then(response => setShowtimes(response));
+        }
+    };
+
     const agendaContext: IAgendaContext = {
-        showtimes
+        showtimes,
+        updateAgenda
     };
 
     return <AgendaContext.Provider value={agendaContext}>{children}</AgendaContext.Provider>;

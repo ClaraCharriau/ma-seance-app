@@ -3,6 +3,7 @@ import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
 import mockScreeningsData from '../../../mocks/theaters/movies-screenings-by-theater-id-and-day-1.json';
 import MoviesScreeningsList from './MoviesScreeningsList';
+import mockTheater from '../../../mocks/theaters/theaters-1.json';
 
 let mockData = mockScreeningsData;
 
@@ -10,7 +11,12 @@ jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useLoaderData: () => {
         return { movieScreenings: mockData };
-    }
+    },
+    useLocation: () => ({
+        state: {
+            theater: mockTheater
+        }
+    })
 }));
 
 describe('Movie Screenings Component', () => {
