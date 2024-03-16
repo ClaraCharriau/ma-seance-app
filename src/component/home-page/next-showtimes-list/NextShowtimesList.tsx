@@ -1,6 +1,6 @@
 import { useAgendaContext } from '../../../context/agenda.context';
 import ShowtimeCard from '../../common/showtime-card/ShowtimeCard';
-import style from './NextScreeningsList.module.css';
+import style from './NextShowtimesList.module.css';
 
 const NextShowtimesList = () => {
     const { showtimes } = useAgendaContext();

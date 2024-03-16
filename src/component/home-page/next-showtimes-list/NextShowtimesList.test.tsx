@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import NextShowtimesList from './NextScreeningsList';
+import NextShowtimesList from './NextShowtimesList';
 import mockShowtimes from '../../../mocks/users/user-showtimes.json';
 import { BrowserRouter } from 'react-router-dom';
 

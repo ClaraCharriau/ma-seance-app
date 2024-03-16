@@ -5,7 +5,7 @@ import SeeDetailsBtn from '../common/see-details-btn/SeeDetailsBtn';
 import style from './Home.module.css';
 import CurrentlyCarousel from './currently-carousel/CurrentlyCarousel';
 import FavTheaterCarousel from './fav-theater-carousel/FavTheaterCarousel';
-import NextShowtimesList from './next-showtimes-list/NextScreeningsList';
+import NextShowtimesList from './next-showtimes-list/NextShowtimesList';
 import TheaterMovieCarousel from './theater-movie-carousel/TheaterMovieCarousel';
 import WatchlistCarousel from './watchlist-carousel/WatchlistCarousel';
 

@@ -9,15 +9,17 @@ import Login from '../component/login-page/Login';
 import MovieDetailsLayout from '../component/movie-details-page/MovieDetailsLayout';
 import TheaterScreeningsList from '../component/movie-details-page/theater-screenings-list/TheaterScreeningsList';
 import Profile from '../component/profile-page/Profile';
+import ShowtimePage from '../component/showtime-page/ShowtimePage';
 import TheaterDetailsLayout from '../component/theater-details-page/TheaterDetailsLayout';
 import MoviesScreeningsList from '../component/theater-details-page/movies-screenings-list/MoviesScreeningsList';
+import WatchList from '../component/watchlist-page/WatchList';
 import AppLayout from './AppLayout';
 import { appLoader } from './loaders/AppLoader';
 import { movieLoader } from './loaders/MovieLoader';
 import { movieScreeningsLoader } from './loaders/MovieScreeningsLoader';
 import { theaterLoader } from './loaders/TheaterLoader';
 import { theaterScreeningsLoader } from './loaders/TheaterScreeningsLoader';
-import WatchList from '../component/watchlist-page/WatchList';
+import { showtimeLoader } from './loaders/showtime-loader/ShowtimeLoader';
 
 const AppRouter = () => {
     const router = createBrowserRouter([
@@ -58,8 +60,9 @@ const AppRouter = () => {
                     element: <Profile />
                 },
                 {
-                    path: '/screening',
-                    element: <>Screening</>
+                    path: '/showtimes/:id',
+                    loader: showtimeLoader,
+                    element: <ShowtimePage />
                 },
                 {
                     path: '/search',
