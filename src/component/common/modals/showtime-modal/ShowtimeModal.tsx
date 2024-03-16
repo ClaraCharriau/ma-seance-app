@@ -3,8 +3,10 @@ import { Movie } from '../../../../models/Movie';
 import { ScreeningDate } from '../../../../models/ScreeningDate';
 import { Showtime } from '../../../../models/Showtime';
 import { Theater } from '../../../../models/Theater';
-import style from '../Modal.module.css';
+import styleModal from '../Modal.module.css';
 import { useAgendaContext } from '../../../../context/agenda.context';
+import { ShowtimeModalInfos } from './showtime-modal-infos/ShowtimeModalInfos';
+import style from './ShowtimeModale.module.css';
 
 ReactModal.setAppElement('body');
 
@@ -33,23 +35,22 @@ const ShowtimeModal = (props: ShowtimeModalProps) => {
     return (
         <ReactModal
             isOpen={openModal}
-            className={style.confirmationModal}
-            overlayClassName={style.overlay}
+            className={styleModal.confirmationModal}
+            overlayClassName={styleModal.overlay}
             ariaHideApp={false}
         >
-            <div>
-                <p>{movie.title}</p>
-                <p>{theater.name}</p>
-                <p>{screeningDate.date}</p>
-            </div>
+            <ShowtimeModalInfos movie={movie} theater={theater} screeningDate={screeningDate} />
             <button
+                className={style.addToAgendaBtn}
                 onClick={() => {
                     addShowtimeToUserAgenda(screeningDate, movie, theater);
                 }}
             >
                 Ajouter à l'agenda
             </button>
-            <button>Annuler</button>
+            <button className={style.cancelBtn} onClick={closeModal}>
+                Annuler
+            </button>
         </ReactModal>
     );
 };
