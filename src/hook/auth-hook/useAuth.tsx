@@ -1,6 +1,9 @@
-import { checkAccountExists, deleteAccount, loginUser, signIn, updateAccount } from '../client/auth/auth.client';
-import { useAuthContext } from '../context/auth.context';
+import { checkAccountExists, deleteAccount, loginUser, signIn, updateAccount } from '../../client/auth/auth.client';
+import { useAuthContext } from '../../context/auth.context';
 
+/**
+ * Custom hook that facilitate authentification handling
+ */
 export const useAuth = () => {
     const { setCurrentUser, clearCurrentUser } = useAuthContext();
 

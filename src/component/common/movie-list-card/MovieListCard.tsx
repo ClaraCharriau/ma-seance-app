@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom';
+import config from '../../../config/config.helper';
+import { useYearFromDate } from '../../../hook/date-hook/date.hook';
+import { useTextDuration, useTextList } from '../../../hook/string-hook/string.hook';
 import { Movie } from '../../../models/Movie';
 import style from './MovieListCard.module.css';
-import useDurationFormat from '../../../hooks/useDurationFormat';
-import useDateDMYFormat from '../../../hooks/dates/useDateDMYFormat';
-import useStringListFormat from '../../../hooks/useStringListFormat';
-import config from '../../../config/config.helper';
 
 interface MovieListCardProps {
     movie: Movie;
@@ -13,10 +12,10 @@ interface MovieListCardProps {
 const MovieListCard = (props: MovieListCardProps) => {
     const { movie } = props;
     const TMDB_PATH = config.tmdbImgPath.medium;
-    const formattedDuration = useDurationFormat(movie.duration);
-    const formattedReleaseDate = useDateDMYFormat(movie.releaseDate);
-    const directors = useStringListFormat(movie.directors);
-    const cast = useStringListFormat(movie.cast);
+    const duration = useTextDuration(movie.duration);
+    const releaseDate = useYearFromDate(movie.releaseDate);
+    const directors = useTextList(movie.directors);
+    const cast = useTextList(movie.cast);
 
     return (
         <NavLink to={`/movies/${movie.id}/day-1`} state={{ movie: movie }} className={style.movieCard}>
@@ -28,7 +27,7 @@ const MovieListCard = (props: MovieListCardProps) => {
             <div>
                 <p className={style.movieTitle}>{movie.title}</p>
                 <p className={style.movieDateDuration}>
-                    {formattedReleaseDate} - {formattedDuration}
+                    {releaseDate} - {duration}
                 </p>
                 <p className={style.movieDirector}>Réalisé par {directors}</p>
                 <p className={style.movieCast}>Avec {cast}</p>

@@ -1,10 +1,9 @@
 import { renderHook } from '@testing-library/react';
-import { useAuth } from './useAuth';
-import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import mockUser from '../mocks/users/users.json';
-import mockVerify from '../mocks/auth/verify-false.json';
-import { axiosInstance } from '../client/axios.config';
+import { axiosInstance } from '../../client/axios.config';
+import mockVerify from '../../mocks/auth/verify-false.json';
+import mockUser from '../../mocks/users/users.json';
+import { useAuth } from './useAuth';
 
 describe('useAuth hook tests', () => {
     let axiosMock: MockAdapter;
@@ -27,7 +26,7 @@ describe('useAuth hook tests', () => {
 
     it('should log user', async () => {
         // Given
-        const authContext = require('../context/auth.context');
+        const authContext = require('../../context/auth.context');
         const setCurrentUser = jest.fn();
         jest.spyOn(authContext, 'useAuthContext').mockReturnValue({ setCurrentUser });
         const { result } = renderHook(useAuth);
@@ -90,7 +89,7 @@ describe('useAuth hook tests', () => {
 
     it('should log out user', async () => {
         // Given
-        const authContext = require('../context/auth.context');
+        const authContext = require('../../context/auth.context');
         const clearCurrentUser = jest.fn();
         jest.spyOn(authContext, 'useAuthContext').mockReturnValue({ clearCurrentUser });
         const { result } = renderHook(useAuth);
@@ -134,4 +133,3 @@ describe('useAuth hook tests', () => {
         expect(axiosDeleteSpy).toHaveBeenCalledWith('/registrations/1');
     });
 });
-export {};

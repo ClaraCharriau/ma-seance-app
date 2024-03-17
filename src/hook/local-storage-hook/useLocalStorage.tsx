@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+/**
+ * Custom hook that facilitate local storage handling
+ */
 export const useLocalStorage = () => {
     const [value, setValue] = useState<string | null>(null);
 

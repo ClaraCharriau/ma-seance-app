@@ -3,8 +3,8 @@ import MovieList from '../common/movie-list/MovieList';
 import { getCurrentlyMovies } from '../../client/movies/movies.client';
 import Spinner from '../common/spinner/Spinner';
 import { Movie } from '../../models/Movie';
-import useCurrentTheaterWeek from '../../hooks/dates/useCurrentWeek';
 import style from './Currently.module.css';
+import { useCurrentTheaterWeek } from '../../hook/date-hook/date.hook';
 
 const Currently = () => {
     const [currentMovies, setCurrentMovies] = useState<Movie[]>([]);

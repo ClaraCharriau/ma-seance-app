@@ -1,11 +1,11 @@
-import style from './Profile.module.css';
-import UpdateProfileForm from './update-profile-form/UpdateProfileForm';
-import UpdatePasswordForm from './update-password-form/UpdatePasswordForm';
-import { useAuthContext } from '../../context/auth.context';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../hooks/useAuth';
-import ConfirmationModal from '../common/modals/confirmation-modal/ConfirmationModal';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuthContext } from '../../context/auth.context';
+import { useAuth } from '../../hook/auth-hook/useAuth';
+import ConfirmationModal from '../common/modals/confirmation-modal/ConfirmationModal';
+import style from './Profile.module.css';
+import UpdatePasswordForm from './update-password-form/UpdatePasswordForm';
+import UpdateProfileForm from './update-profile-form/UpdateProfileForm';
 
 const Profile = () => {
     const { currentUser, clearCurrentUser } = useAuthContext();

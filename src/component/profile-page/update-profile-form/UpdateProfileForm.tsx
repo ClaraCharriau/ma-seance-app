@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
-import style from '../Profile.module.css';
-import { useAuth } from '../../../hooks/useAuth';
+import { useAuth } from '../../../hook/auth-hook/useAuth';
 import { User } from '../../../models/User';
+import style from '../Profile.module.css';
 
 interface UpdateProfileFormProps {
     user: User;

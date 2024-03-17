@@ -1,13 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
 import config from '../../../config/config.helper';
-import useDateDMYFormat from '../../../hooks/dates/useDateDMYFormat';
-import useDurationFormat from '../../../hooks/useDurationFormat';
-import useStringListFormat from '../../../hooks/useStringListFormat';
 import { Movie } from '../../../models/Movie';
 import style from './MovieSummary.module.css';
 import TimeSlotsList from '../../common/time-slots-list/TimeSlotsList';
 import { ScreeningDate } from '../../../models/ScreeningDate';
 import { Theater } from '../../../models/Theater';
+import { useTextDuration, useTextList } from '../../../hook/string-hook/string.hook';
+import { useTextDate } from '../../../hook/date-hook/date.hook';
 
 interface MovieSummaryProps {
     movie: Movie;
@@ -18,10 +17,10 @@ interface MovieSummaryProps {
 const MovieSummary = (props: MovieSummaryProps) => {
     const { movie, schedule, theater } = props;
     const TMDB_PATH = config.tmdbImgPath.medium;
-    const formattedDuration = useDurationFormat(movie.duration);
-    const formattedReleaseDate = useDateDMYFormat(movie.releaseDate);
-    const directors = useStringListFormat(movie.directors);
-    const cast = useStringListFormat(movie.cast);
+    const duration = useTextDuration(movie.duration);
+    const releaseDate = useTextDate(movie.releaseDate);
+    const directors = useTextList(movie.directors);
+    const cast = useTextList(movie.cast);
     const movieLink = '/movies/' + movie.id + '/day-1';
 
     return (
@@ -40,7 +39,7 @@ const MovieSummary = (props: MovieSummaryProps) => {
                     <p className={style.movieDirectors}>De {directors}</p>
                     <p className={style.movieCast}>Avec {cast}</p>
                     <p className={style.movieDuration}>
-                        {formattedDuration} ● Sorti le {formattedReleaseDate}
+                        {duration} ● Sorti le {releaseDate}
                     </p>
                     <p className={style.movieResume}>{movie.resume}</p>
                 </div>

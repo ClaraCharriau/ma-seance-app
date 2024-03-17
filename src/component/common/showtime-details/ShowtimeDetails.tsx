@@ -1,10 +1,11 @@
 import config from '../../../config/config.helper';
-import useDurationFormat from '../../../hooks/useDurationFormat';
 import { Movie } from '../../../models/Movie';
 import { ScreeningDate } from '../../../models/ScreeningDate';
 import { Theater } from '../../../models/Theater';
 import modaleStyle from './ShowtimeDetails.module.css';
 import pageStyle from '../../showtime-page/ShowtimePage.module.css';
+import { useTextDuration } from '../../../hook/string-hook/string.hook';
+import { useYearFromDate } from '../../../hook/date-hook/date.hook';
 
 interface ShowtimeDetailsProps {
     screeningDate: ScreeningDate;
@@ -22,7 +23,8 @@ export const ShowtimeDetails = (props: ShowtimeDetailsProps) => {
 
     const style = isBooked ? pageStyle : modaleStyle;
 
-    const formattedDuration = useDurationFormat(movie.duration);
+    const duration = useTextDuration(movie.duration);
+    const releaseYear = useYearFromDate(movie.releaseDate);
 
     return (
         <div className={style.showtimeWrapper}>
@@ -37,7 +39,7 @@ export const ShowtimeDetails = (props: ShowtimeDetailsProps) => {
                     <div>
                         <p className={style.movieTitle}>{movie.title}</p>
                         <p className={style.movieDetails}>
-                            {formattedDuration} ● {movie.releaseDate}
+                            {duration} ● {releaseYear}
                         </p>
                     </div>
                 </div>

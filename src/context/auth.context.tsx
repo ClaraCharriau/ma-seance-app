@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { User } from '../models/User';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { useLocalStorage } from '../hook/local-storage-hook/useLocalStorage';
 
 /* eslint-disable */
 interface IAuthContext {
