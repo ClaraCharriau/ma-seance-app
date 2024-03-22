@@ -25,6 +25,7 @@
         "id": "16",
         "name": "Pathé Angers",
         "address": "1, avenue des Droits de l'Homme 49000 Angers",
-        "imgPath": "/pathe-angers"
+        "imgPath": "/pathe-angers",
+        "bookingPath": "https://www.pathe.fr/cinemas/cinema-pathe-angers"
     }
 }

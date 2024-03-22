@@ -141,6 +141,11 @@
 }
 
 .bookingButton {
+    text-transform: uppercase;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 2.08px;
+    height: 55px;
     background-color: var(--primary-variant);
     color: var(--secondary);
     display: flex;

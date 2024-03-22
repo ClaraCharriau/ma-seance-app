@@ -1,10 +1,10 @@
-import { fireEvent, render, renderHook, waitFor } from '@testing-library/react';
-import { AgendaProvider, useAgendaContext } from './agenda.context';
-import { act } from 'react-dom/test-utils';
-import mockUser from '../mocks/users/users.json';
-import mockUserShowtimes from '../mocks/showtimes/showtimes.json';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
+import { act } from 'react-dom/test-utils';
 import { axiosInstance } from '../client/axios.config';
+import mockUserShowtimes from '../mocks/showtimes/showtimes.json';
+import mockUser from '../mocks/users/users.json';
+import { AgendaProvider, useAgendaContext } from './agenda.context';
 
 describe('agenda context tests', () => {
     const authContext = require('../context/auth.context');

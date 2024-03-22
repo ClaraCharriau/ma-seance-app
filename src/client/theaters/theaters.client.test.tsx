@@ -14,7 +14,8 @@ describe('Theaters client tests', () => {
             id: '1',
             name: 'C2L Saint-Germain',
             address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
-            imgPath: '/c2l-saint-germain'
+            imgPath: '/c2l-saint-germain',
+            bookingPath: ''
         }
     ];
 
@@ -38,7 +39,8 @@ describe('Theaters client tests', () => {
                 id: '1',
                 name: 'C2L Saint-Germain',
                 address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
-                imgPath: '/c2l-saint-germain'
+                imgPath: '/c2l-saint-germain',
+                bookingPath: ''
             }
         ]);
         expect(axiosGet).toHaveBeenCalledWith('/theaters/1');
