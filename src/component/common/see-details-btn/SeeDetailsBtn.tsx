@@ -3,12 +3,12 @@ import style from './SeeDetails.module.css';
 
 interface SeeDetailsBtnProps {
     text: string;
-    showIcon: boolean;
+    showIcon?: boolean;
     navigatePath: string;
 }
 
 const SeeDetailsBtn = (props: SeeDetailsBtnProps) => {
-    const { text, navigatePath, showIcon } = props;
+    const { text, navigatePath, showIcon = false } = props;
     const navigate = useNavigate();
 
     return (

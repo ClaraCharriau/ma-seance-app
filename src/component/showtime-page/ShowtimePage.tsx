@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { Showtime } from '../../models/Showtime';
 import { ShowtimeDetails } from '../common/showtime-details/ShowtimeDetails';
 import style from './ShowtimePage.module.css';
@@ -13,11 +13,9 @@ const ShowtimePage = () => {
         <main className={style.showtimeMain}>
             <h2 className={style.pageTitle}>Séance à venir</h2>
             <section className={style.showtimePageSection}>
-                <img
-                    className={style.movieDesktopImg}
-                    src={TMDB_PATH + movie.posterLink}
-                    alt={`affiche du film ${movie.title}`}
-                />
+                <Link to={`/movies/${movie.id}/day-1`} state={{ movie: movie }} className={style.movieDesktopImg}>
+                    <img src={TMDB_PATH + movie.posterLink} alt={`affiche du film ${movie.title}`} />
+                </Link>
                 <div className={style.rightColumn}>
                     <ShowtimeDetails screeningDate={schedule} movie={movie} theater={theater} isBooked={true} />
                     <button className={style.bookingButton}>

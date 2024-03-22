@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import config from '../../../config/config.helper';
+import { useYearFromDate } from '../../../hook/date-hook/date.hook';
+import { useTextDuration } from '../../../hook/string-hook/string.hook';
 import { Movie } from '../../../models/Movie';
 import { ScreeningDate } from '../../../models/ScreeningDate';
 import { Theater } from '../../../models/Theater';
-import modaleStyle from './ShowtimeDetails.module.css';
 import pageStyle from '../../showtime-page/ShowtimePage.module.css';
-import { useTextDuration } from '../../../hook/string-hook/string.hook';
-import { useYearFromDate } from '../../../hook/date-hook/date.hook';
+import modaleStyle from './ShowtimeDetails.module.css';
 
 interface ShowtimeDetailsProps {
     screeningDate: ScreeningDate;
@@ -31,13 +32,17 @@ export const ShowtimeDetails = (props: ShowtimeDetailsProps) => {
             <div className={style.movieAndDateWrapper}>
                 {/* MOVIE */}
                 <div className={style.movieBox}>
-                    <img
-                        className={style.movieImg}
-                        src={TMDB_PATH + movie.posterLink}
-                        alt={`affiche du film ${movie.title}`}
-                    />
+                    <Link to={`/movies/${movie.id}/day-1`} state={{ movie: movie }}>
+                        <img
+                            className={style.movieImg}
+                            src={TMDB_PATH + movie.posterLink}
+                            alt={`affiche du film ${movie.title}`}
+                        />
+                    </Link>
                     <div>
-                        <p className={style.movieTitle}>{movie.title}</p>
+                        <Link to={`/movies/${movie.id}/day-1`} state={{ movie: movie }} className={style.movieTitle}>
+                            {movie.title}
+                        </Link>
                         <p className={style.movieDetails}>
                             {duration} ● {releaseYear}
                         </p>

@@ -13,6 +13,7 @@
     flex-direction: column;
     gap: 15px;
     width: 100%;
+    max-width: 1000px;
 }
 
 .pastScreeningsTitle {
@@ -23,6 +24,9 @@
 
 .pastScreeningsWrapper {
     opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .emptyAgendaMessage {

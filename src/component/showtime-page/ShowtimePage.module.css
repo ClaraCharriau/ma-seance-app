@@ -68,10 +68,10 @@
     font-size: 13px;
 }
 
-.movieDesktopImg {
+.movieDesktopImg img {
     border-radius: 6px;
     object-fit: cover;
-    width: 30%;
+    width: 100%;
     max-width: 250px;
     max-height: 400px;
 }
@@ -82,6 +82,7 @@
     color: var(--primary-variant);
     margin-bottom: 15px;
     min-width: 250px;
+    display: block;
 }
 
 .movieDetails {
@@ -112,6 +113,7 @@
 
 .theaterAddress {
     font-weight: 200;
+    font-size: 12px;
 }
 
 .theaterDetails {

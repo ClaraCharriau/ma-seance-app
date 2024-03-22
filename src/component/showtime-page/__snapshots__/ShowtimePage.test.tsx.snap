@@ -14,11 +14,15 @@ exports[`showtime page component tests should render page 1`] = `
       <section
         class="showtimePageSection"
       >
-        <img
-          alt="affiche du film Dune"
+        <a
           class="movieDesktopImg"
-          src="https://image.tmdb.org/t/p/w500/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg"
-        />
+          href="/movies/cff01b1b-a943-4bcf-a396-afd80417150a/day-1"
+        >
+          <img
+            alt="affiche du film Dune"
+            src="https://image.tmdb.org/t/p/w500/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg"
+          />
+        </a>
         <div
           class="rightColumn"
         >
@@ -31,17 +35,22 @@ exports[`showtime page component tests should render page 1`] = `
               <div
                 class="movieBox"
               >
-                <img
-                  alt="affiche du film Dune"
-                  class="movieImg"
-                  src="https://image.tmdb.org/t/p/w500/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg"
-                />
+                <a
+                  href="/movies/cff01b1b-a943-4bcf-a396-afd80417150a/day-1"
+                >
+                  <img
+                    alt="affiche du film Dune"
+                    class="movieImg"
+                    src="https://image.tmdb.org/t/p/w500/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg"
+                  />
+                </a>
                 <div>
-                  <p
+                  <a
                     class="movieTitle"
+                    href="/movies/cff01b1b-a943-4bcf-a396-afd80417150a/day-1"
                   >
                     Dune
-                  </p>
+                  </a>
                   <p
                     class="movieDetails"
                   >

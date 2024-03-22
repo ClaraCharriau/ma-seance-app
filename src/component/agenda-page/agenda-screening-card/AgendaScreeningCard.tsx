@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import { Showtime } from '../../../models/Showtime';
 import MovieListCard from '../../common/movie-list-card/MovieListCard';
+import SeeDetailsBtn from '../../common/see-details-btn/SeeDetailsBtn';
 import style from './AgendaScreeningCard.module.css';
 
 type AgendaScreeningCardProps = {
@@ -13,7 +13,7 @@ const AgendaScreeningCard = (props: AgendaScreeningCardProps) => {
     const { dayName, dayNumber, month, hourly } = schedule;
 
     return (
-        <NavLink className={style.showtimeCardWrapper} to="/">
+        <div className={style.showtimeCardWrapper}>
             <p className={style.calendarDate}>
                 <svg className={style.calendarFrame} viewBox="0 0 49 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -25,6 +25,7 @@ const AgendaScreeningCard = (props: AgendaScreeningCardProps) => {
                 <span>{dayNumber}</span>
                 <span>{month}</span>
             </p>
+
             <div className={style.movieTitleAndPlace}>
                 <p className={style.movieTitle}>{movie.title}</p>
                 <div className={style.hourAndPlace}>
@@ -33,14 +34,7 @@ const AgendaScreeningCard = (props: AgendaScreeningCardProps) => {
                 </div>
             </div>
 
-            <svg
-                className={style.circleSeparator}
-                width="10"
-                height="136"
-                viewBox="0 0 10 136"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg className={style.circleSeparator} fill="none">
                 <circle cx="5" cy="5" r="5" fill="#021F38" />
                 <circle cx="5" cy="23" r="5" fill="#021F38" />
                 <circle cx="5" cy="41" r="5" fill="#021F38" />
@@ -51,10 +45,13 @@ const AgendaScreeningCard = (props: AgendaScreeningCardProps) => {
                 <circle cx="5" cy="131" r="5" fill="#021F38" />
             </svg>
 
-            <div className={style.movieCard}>
-                <MovieListCard movie={movie} />
+            <div className={style.movieAndDetailsButton}>
+                <div className={style.movieCard}>
+                    <MovieListCard movie={movie} />
+                </div>
+                <SeeDetailsBtn navigatePath={`/showtimes/${showtime.id}`} text="détails" showIcon={true} />
             </div>
-        </NavLink>
+        </div>
     );
 };
 

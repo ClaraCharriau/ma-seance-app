@@ -38,7 +38,7 @@ const Home = () => {
                                     Cinémas favoris
                                 </h2>
                             </NavLink>
-                            <SeeDetailsBtn text="Voir plus >" navigatePath="/fav-theaters" showIcon={false} />
+                            <SeeDetailsBtn text="Voir plus >" navigatePath="/fav-theaters" />
                         </div>
                         <FavTheaterCarousel currentUser={currentUser} />
                     </section>
@@ -66,7 +66,7 @@ const Home = () => {
                                     Sorties de la semaine
                                 </h2>
                             </NavLink>
-                            <SeeDetailsBtn text="Voir plus >" navigatePath="/currently" showIcon={false} />
+                            <SeeDetailsBtn text="Voir plus >" navigatePath="/currently" />
                         </div>
                         <CurrentlyCarousel />
                     </section>
@@ -93,11 +93,7 @@ const Home = () => {
                                             {theater.name}
                                         </h2>
                                     </NavLink>
-                                    <SeeDetailsBtn
-                                        text="Voir plus >"
-                                        navigatePath={'/theaters/' + theater.id}
-                                        showIcon={false}
-                                    />
+                                    <SeeDetailsBtn text="Voir plus >" navigatePath={'/theaters/' + theater.id} />
                                 </div>
                                 <TheaterMovieCarousel theaterId={theater.id} />
                             </section>
