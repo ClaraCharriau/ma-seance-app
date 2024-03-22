@@ -121,14 +121,14 @@ exports[`Profile page component tests should close modale on click on "annuler" 
           >
             <label
               class="inputLabel"
-              for="oldPassword"
+              for="oldUpdatePassword"
             >
               Ancien mot de passe *
             </label>
             <input
               class=""
-              id="oldPassword"
-              name="oldPassword"
+              id="oldUpdatePassword"
+              name="oldUpdatePassword"
               required=""
               type="password"
               value=""
@@ -332,14 +332,14 @@ exports[`Profile page component tests should delete account on click on "confirm
           >
             <label
               class="inputLabel"
-              for="oldPassword"
+              for="oldUpdatePassword"
             >
               Ancien mot de passe *
             </label>
             <input
               class=""
-              id="oldPassword"
-              name="oldPassword"
+              id="oldUpdatePassword"
+              name="oldUpdatePassword"
               required=""
               type="password"
               value=""
@@ -595,14 +595,14 @@ exports[`Profile page component tests should open modale on click on "Supprimer 
           >
             <label
               class="inputLabel"
-              for="oldPassword"
+              for="oldUpdatePassword"
             >
               Ancien mot de passe *
             </label>
             <input
               class=""
-              id="oldPassword"
-              name="oldPassword"
+              id="oldUpdatePassword"
+              name="oldUpdatePassword"
               required=""
               type="password"
               value=""
@@ -845,14 +845,14 @@ exports[`Profile page component tests should render profile page 1`] = `
           >
             <label
               class="inputLabel"
-              for="oldPassword"
+              for="oldUpdatePassword"
             >
               Ancien mot de passe *
             </label>
             <input
               class=""
-              id="oldPassword"
-              name="oldPassword"
+              id="oldUpdatePassword"
+              name="oldUpdatePassword"
               required=""
               type="password"
               value=""
