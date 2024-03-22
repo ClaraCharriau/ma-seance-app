@@ -196,8 +196,11 @@ exports[`showtime page component tests should render page 1`] = `
               </div>
             </div>
           </div>
-          <button
+          <a
             class="bookingButton"
+            href="https://www.ugc.fr"
+            rel="noreferrer"
+            target="_blank"
           >
             Réserver ma séance
             <svg
@@ -212,7 +215,7 @@ exports[`showtime page component tests should render page 1`] = `
                 stroke="black"
               />
             </svg>
-          </button>
+          </a>
           <button
             class="cancelButton"
           >

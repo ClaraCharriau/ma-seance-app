@@ -32,7 +32,8 @@ describe('Showtime card component tests', () => {
                 id: '18',
                 name: 'UGC Ciné Cité Strasbourg Etoile',
                 address: '25, avenue du Rhin 67100 Strasbourg',
-                imgPath: '/ugc-etoile-strasbourg'
+                imgPath: '/ugc-etoile-strasbourg',
+                bookingPath: ''
             }
         };
 

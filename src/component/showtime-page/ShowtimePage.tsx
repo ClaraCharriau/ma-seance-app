@@ -18,7 +18,7 @@ const ShowtimePage = () => {
                 </Link>
                 <div className={style.rightColumn}>
                     <ShowtimeDetails screeningDate={schedule} movie={movie} theater={theater} isBooked={true} />
-                    <button className={style.bookingButton}>
+                    <a href={theater.bookingPath} className={style.bookingButton} target="_blank" rel="noreferrer">
                         Réserver ma séance
                         <svg width="29" height="24" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -26,7 +26,7 @@ const ShowtimePage = () => {
                                 stroke="black"
                             />
                         </svg>
-                    </button>
+                    </a>
                     <button className={style.cancelButton}>Supprimer la séance</button>
                 </div>
             </section>

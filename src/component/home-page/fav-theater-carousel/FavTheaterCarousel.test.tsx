@@ -12,7 +12,7 @@ const mockGetUserFavTheaters = getUserFavTheaters as jest.MockedFunction<typeof 
 describe('Fav Theater Carousel Component', () => {
     it('renders Fav Theater Carousel component', async () => {
         const mockUser = {
-            id: "1",
+            id: '1',
             pseudo: 'Jane',
             email: 'test@mail.com'
         };
@@ -21,19 +21,22 @@ describe('Fav Theater Carousel Component', () => {
                 id: '1',
                 name: 'Le Grand Rex',
                 address: '',
-                imgPath: ''
+                imgPath: '',
+                bookingPath: ''
             },
             {
                 id: '2',
                 name: 'Pathé Levallois',
                 address: '',
-                imgPath: ''
+                imgPath: '',
+                bookingPath: ''
             },
             {
                 id: '3',
                 name: 'Super cinoche',
                 address: '',
-                imgPath: ''
+                imgPath: '',
+                bookingPath: ''
             }
         ];
         mockGetUserFavTheaters.mockResolvedValueOnce(mockFavTheaters);
@@ -54,7 +57,7 @@ describe('Fav Theater Carousel Component', () => {
 
     it('renders Fav Theater Carousel component when user has no favorite theaters', async () => {
         const mockUser = {
-            id: "1",
+            id: '1',
             pseudo: 'Jane',
             email: 'test@mail.com'
         };
@@ -69,12 +72,13 @@ describe('Fav Theater Carousel Component', () => {
 
         await waitFor(() => {
             expect(component.getByText("Vous n'avez pas encore de cinémas favoris")).toBeInTheDocument();
-            expect(component.container).toMatchSnapshot();});
+            expect(component.container).toMatchSnapshot();
+        });
     });
 
     it('renders Fav Theater Carousel component when an error happened', async () => {
         const mockUser = {
-            id: "1",
+            id: '1',
             pseudo: 'Jane',
             email: 'test@mail.com'
         };
@@ -87,7 +91,9 @@ describe('Fav Theater Carousel Component', () => {
         );
 
         await waitFor(() => {
-            expect(component.getByText("Une erreur s'est produite lors du chargement des cinémas. Veuillez réessayer.")).toBeInTheDocument();
+            expect(
+                component.getByText("Une erreur s'est produite lors du chargement des cinémas. Veuillez réessayer.")
+            ).toBeInTheDocument();
             expect(component.container).toMatchSnapshot();
         });
     });

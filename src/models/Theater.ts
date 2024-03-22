@@ -3,4 +3,5 @@ export interface Theater {
     name: string;
     address: string;
     imgPath: string;
+    bookingPath: string;
 }
