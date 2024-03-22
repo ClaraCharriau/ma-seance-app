@@ -3,9 +3,8 @@
 exports[`Showtime card component tests should rend showtime card component 1`] = `
 <div>
   <a
-    aria-current="page"
-    class="showtimeCardWrapper active"
-    href="/"
+    class="showtimeCardWrapper"
+    href="/showtimes/caadad78-7daf-4c49-abe8-2514b43884f6"
   >
     <p
       class="calendarDate"

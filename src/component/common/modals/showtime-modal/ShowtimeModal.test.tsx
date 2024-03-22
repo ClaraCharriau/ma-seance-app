@@ -2,6 +2,7 @@ import { fireEvent, render } from '@testing-library/react';
 import mockMovie from '../../../../mocks/movies/movie-1.json';
 import mockTheater from '../../../../mocks/theaters/theaters-1.json';
 import ShowtimeModal from './ShowtimeModal';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('showtime modal component test', () => {
     const mockScreeningDate = {
@@ -23,13 +24,15 @@ describe('showtime modal component test', () => {
     it('should render showtime modal', () => {
         // Given
         const component = render(
-            <ShowtimeModal
-                theater={mockTheater}
-                movie={mockMovie}
-                screeningDate={mockScreeningDate}
-                openModal={true}
-                closeModal={mockCloseBtnCallback}
-            />
+            <BrowserRouter>
+                <ShowtimeModal
+                    theater={mockTheater}
+                    movie={mockMovie}
+                    screeningDate={mockScreeningDate}
+                    openModal={true}
+                    closeModal={mockCloseBtnCallback}
+                />
+            </BrowserRouter>
         );
         const addToAgendaButton = component.getByText("Ajouter à l'agenda");
 

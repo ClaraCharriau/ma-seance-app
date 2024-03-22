@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { useAuth } from '../../../hooks/useAuth';
+import { useAuth } from '../../../hook/auth-hook/useAuth';
 import style from '../Login.module.css';
 
 interface AccountCreationProps {

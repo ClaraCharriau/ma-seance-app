@@ -117,6 +117,12 @@
                 "day2": { "httpStatus": 200, "mockFile": "movies/theaters-screenings-by-movie-id-and-day-2.json" },
                 "day3": { "httpStatus": 200, "mockFile": "movies/theaters-screenings-by-movie-id-and-day-3.json" }
             }
+        },
+        "showtimes/:id": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "latency": 200,
+            "mockFile": "showtimes/showtimes-2.json"
         }
     }
 }

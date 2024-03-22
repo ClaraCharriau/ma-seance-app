@@ -1,10 +1,8 @@
 .showtimeCardWrapper {
-    font-size: 10px;
-    background-color: var(--secondary-variant);
-    padding: 4px 10px;
-    border-radius: 6px;
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
+    background-color: var(--secondary-variant);
+    border-radius: 6px;
 }
 
 .calendarDate {
@@ -14,11 +12,12 @@
     align-items: center;
     justify-content: center;
     padding: 13px;
+    min-width: 80px;
 }
 
 .calendarFrame {
     position: absolute;
-    height: 70px;
+    height: 80px;
 }
 
 .calendarDate span {
@@ -29,89 +28,103 @@
 }
 
 .movieTitleAndPlace {
-    display: block;
-    overflow: hidden;
-    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hourAndPlace {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: baseline;
     gap: 10px;
 }
 
-.movieTitle {
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--primary-variant);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-bottom: 5px;
+.hourly {
+    font-size: clamp(12px, 3vw, 16px);
 }
 
-.hourly {
-    font-size: 16px;
+.movieTitle {
+    display: none;
+    font-size: clamp(10px, 3vw, 12px);
 }
 
 .theaterName {
     font-weight: 300;
-    font-size: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.movieCard {
-    display: none;
+    font-size: clamp(10px, 3vw, 12px);
+    width: 200px;
 }
 
 .circleSeparator {
-    display: none;
-    height: 100%;
+    height: 120px;
+    width: 20px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-@media (min-width: 800px) {
-    .showtimeCardWrapper {
-        padding: 5px 20px;
-        align-items: center;
-    }
+.movieAndDetailsButton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
 
-    .theaterName {
-        font-weight: 300;
-        font-size: clamp(10px, 3vw, 14px);
-        width: 15vw;
-        white-space: normal;
-    }
-
-    .movieTitle {
+@media (max-width: 900px) {
+    .movieCard,
+    .circleSeparator {
         display: none;
     }
 
-    .hourAndPlace {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
+    .calendarDate {
+        min-width: 55px;
     }
 
-    .movieCard {
-        display: block;
+    .movieTitle {
+        display: inline;
+        font-weight: 500;
+        color: var(--primary-variant);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 5px;
     }
 
     .calendarFrame {
-        height: 80px;
+        height: 70px;
     }
 
-    .circleSeparator {
-        display: block;
+    .hourly {
+        font-size: 14px;
+        max-width: 45px;
+    }
+
+    .theaterName {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .movieAndDetailsButton {
+        justify-content: flex-end;
     }
 
     .movieTitleAndPlace {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        overflow: visible;
-        margin: 10px 0;
+        margin: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .calendarFrame {
+        height: 50px;
+    }
+
+    .calendarDate {
+        min-width: 40px;
+    }
+
+    .calendarDate span {
+        font-size: 10px;
     }
 }

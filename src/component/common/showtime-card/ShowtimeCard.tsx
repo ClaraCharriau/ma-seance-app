@@ -12,7 +12,7 @@ const ShowtimeCard = (props: ShowtimeCardProps) => {
     const { dayName, dayNumber, month, hourly } = schedule;
 
     return (
-        <NavLink className={style.showtimeCardWrapper} to="/">
+        <NavLink className={style.showtimeCardWrapper} to={`/showtimes/${showtime.id}`}>
             <p className={style.calendarDate}>
                 <svg
                     className={style.calendarFrame}

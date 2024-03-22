@@ -1,11 +1,11 @@
 import ReactModal from 'react-modal';
+import { useAgendaContext } from '../../../../context/agenda.context';
 import { Movie } from '../../../../models/Movie';
 import { ScreeningDate } from '../../../../models/ScreeningDate';
 import { Showtime } from '../../../../models/Showtime';
 import { Theater } from '../../../../models/Theater';
+import { ShowtimeDetails } from '../../showtime-details/ShowtimeDetails';
 import styleModal from '../Modal.module.css';
-import { useAgendaContext } from '../../../../context/agenda.context';
-import { ShowtimeModalInfos } from './showtime-modal-infos/ShowtimeModalInfos';
 import style from './ShowtimeModale.module.css';
 
 ReactModal.setAppElement('body');
@@ -39,7 +39,7 @@ const ShowtimeModal = (props: ShowtimeModalProps) => {
             overlayClassName={styleModal.overlay}
             ariaHideApp={false}
         >
-            <ShowtimeModalInfos movie={movie} theater={theater} screeningDate={screeningDate} />
+            <ShowtimeDetails movie={movie} theater={theater} screeningDate={screeningDate} />
             <button
                 className={style.addToAgendaBtn}
                 onClick={() => {

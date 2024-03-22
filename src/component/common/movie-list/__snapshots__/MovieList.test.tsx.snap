@@ -27,7 +27,7 @@ exports[`Movie list component test should render component with a list of movies
             <p
               class="movieDateDuration"
             >
-              28 décembre 2016
+              2016
                - 
               1h47
             </p>
@@ -67,7 +67,7 @@ exports[`Movie list component test should render component with a list of movies
             <p
               class="movieDateDuration"
             >
-              17 janvier 2024
+              2024
                - 
               1h30
             </p>
@@ -107,7 +107,7 @@ exports[`Movie list component test should render component with a list of movies
             <p
               class="movieDateDuration"
             >
-              31 janvier 2024
+              2024
                - 
               1h30
             </p>
@@ -147,7 +147,7 @@ exports[`Movie list component test should render component with a list of movies
             <p
               class="movieDateDuration"
             >
-              3 janvier 2024
+              2024
                - 
               1h30
             </p>
@@ -187,7 +187,7 @@ exports[`Movie list component test should render component with a list of movies
             <p
               class="movieDateDuration"
             >
-              14 février 2024
+              2024
                - 
               1h30
             </p>
@@ -227,7 +227,7 @@ exports[`Movie list component test should render component with a list of movies
             <p
               class="movieDateDuration"
             >
-              24 janvier 2024
+              2024
                - 
               1h30
             </p>
@@ -267,7 +267,7 @@ exports[`Movie list component test should render component with a list of movies
             <p
               class="movieDateDuration"
             >
-              10 janvier 2024
+              2024
                - 
               1h30
             </p>
@@ -307,7 +307,7 @@ exports[`Movie list component test should render component with a list of movies
             <p
               class="movieDateDuration"
             >
-              14 février 2024
+              2024
                - 
               1h30
             </p>

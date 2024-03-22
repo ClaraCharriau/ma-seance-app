@@ -1,6 +1,6 @@
-import style from './WeekNavigation.module.css';
-import useWeekDays, { IDay } from '../../../hooks/dates/useWeekDays';
 import { NavLink, useLocation, useParams } from 'react-router-dom';
+import { IDay, useWeekDays } from '../../../hook/date-hook/date.hook';
+import style from './WeekNavigation.module.css';
 
 interface WeekNavigationProps {
     context: 'theaters' | 'movies';

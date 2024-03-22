@@ -1,0 +1,92 @@
+.showtimeWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    background-color: var(--secondary);
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.showtimeWrapper hr {
+   border: 1px solid var(--secondary-variant);
+}
+
+.movieAndDateWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.movieImg {
+    width: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.movieTitle {
+    font-family: 'Yeseva One', serif;
+    font-size: clamp(18px, 3vw, 28px);
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.theaterDetails,
+.dateBox,
+.movieBox,
+.hourly,
+.date,
+.mapBtn {
+    display: flex;
+}
+
+.theaterDetails {
+    gap: 20px
+}
+
+.theaterBox img {
+    display: none;
+}
+
+.theaterBox,
+.dateBox,
+.movieBox {
+    gap: 20px;
+}
+
+.hourly,
+.date {
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: clamp(10px, 3vw, 13px);
+}
+
+.screeningDate,
+.screeningHourly {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: clamp(12px, 3vw, 14px);
+}
+
+.theaterName {
+    font-family: 'Yeseva One', serif;
+    margin-bottom: 10px;
+}
+
+.theaterAddress {
+    font-weight: 200;
+    font-size: clamp(10px, 3vw, 13px);
+}
+
+/* BUTTONS */
+
+.mapBtn {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(10px, 3vw, 12px);
+    gap: 5px;
+    flex-wrap: nowrap;
+    min-width: 65px
+}

@@ -21,7 +21,7 @@ exports[`Movie list card component test should render component a card 1`] = `
         <p
           class="movieDateDuration"
         >
-          17 janvier 2024
+          2024
            - 
           1h30
         </p>

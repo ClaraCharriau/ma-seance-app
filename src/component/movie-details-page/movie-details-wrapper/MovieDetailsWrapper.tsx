@@ -1,7 +1,6 @@
 import config from '../../../config/config.helper';
-import useDateDMYFormat from '../../../hooks/dates/useDateDMYFormat';
-import useDurationFormat from '../../../hooks/useDurationFormat';
-import useStringListFormat from '../../../hooks/useStringListFormat';
+import { useTextDate } from '../../../hook/date-hook/date.hook';
+import { useTextDuration, useTextList } from '../../../hook/string-hook/string.hook';
 import { Movie } from '../../../models/Movie';
 import FavoriteButton from '../../common/favorite-button/FavoriteButton';
 import style from '../MovieDetailsLayout.module.css';
@@ -14,11 +13,11 @@ const MovieDetailsWrapper = (props: MovieDetailsWrapperProps) => {
     const { movie } = props;
     const TMDB_PATH = config.tmdbImgPath.medium;
 
-    const formattedDuration = useDurationFormat(movie.duration);
-    const formattedReleaseDate = useDateDMYFormat(movie.releaseDate);
-    const directors = useStringListFormat(movie.directors);
-    const cast = useStringListFormat(movie.cast);
-    const genres = useStringListFormat(movie.genres);
+    const duration = useTextDuration(movie.duration);
+    const releaseDate = useTextDate(movie.releaseDate);
+    const directors = useTextList(movie.directors);
+    const cast = useTextList(movie.cast);
+    const genres = useTextList(movie.genres);
 
     return (
         <section className={style.movieInformations}>
@@ -28,7 +27,7 @@ const MovieDetailsWrapper = (props: MovieDetailsWrapperProps) => {
                 <div>
                     <h2 className={style.movieTitle}>{movie.title}</h2>
                     <p className={style.movieDetails}>
-                        Sorti le {formattedReleaseDate} ● {genres} ● {formattedDuration}
+                        Sorti le {releaseDate} ● {genres} ● {duration}
                     </p>
 
                     <p className={style.directorText}>Réalisé par {directors}</p>
