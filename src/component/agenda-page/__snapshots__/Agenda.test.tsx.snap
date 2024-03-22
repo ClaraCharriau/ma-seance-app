@@ -144,7 +144,7 @@ exports[`Agenda page tests should render agenda page with next week and next mon
               <p
                 class="movieDateDuration"
               >
-                31 mars 2024
+                2024
                  - 
                 2h46
               </p>
@@ -297,7 +297,7 @@ exports[`Agenda page tests should render agenda page with next week and next mon
               <p
                 class="movieDateDuration"
               >
-                26 février 2014
+                2014
                  - 
                 1h40
               </p>
@@ -469,7 +469,7 @@ exports[`Agenda page tests should render agenda page with passed screenings and 
               <p
                 class="movieDateDuration"
               >
-                17 janvier 2024
+                2024
                  - 
                 1h30
               </p>
@@ -643,7 +643,7 @@ exports[`Agenda page tests should render agenda page with passed screenings and 
                 <p
                   class="movieDateDuration"
                 >
-                  28 décembre 2016
+                  2016
                    - 
                   1h47
                 </p>
