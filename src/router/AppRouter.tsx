@@ -15,10 +15,10 @@ import MoviesScreeningsList from '../component/theater-details-page/movies-scree
 import WatchList from '../component/watchlist-page/WatchList';
 import AppLayout from './AppLayout';
 import { appLoader } from './loaders/AppLoader';
-import { movieLoader } from './loaders/MovieLoader';
-import { movieScreeningsLoader } from './loaders/MovieScreeningsLoader';
-import { theaterLoader } from './loaders/TheaterLoader';
-import { theaterScreeningsLoader } from './loaders/TheaterScreeningsLoader';
+import { movieLoader } from './loaders/movie-loader/MovieLoader';
+import { movieScreeningsLoader } from './loaders/movie-screenings-loader/MovieScreeningsLoader';
+import { theaterLoader } from './loaders/theater-loader/TheaterLoader';
+import { theaterScreeningsLoader } from './loaders/theater-screenings-loader/TheaterScreeningsLoader';
 import { showtimeLoader } from './loaders/showtime-loader/ShowtimeLoader';
 
 const AppRouter = () => {

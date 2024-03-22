@@ -1,6 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
-import { axiosInstance } from '../../client/axios.config';
-import mockScreenings from '../../mocks/theaters/movies-screenings-by-theater-id-and-day-1.json';
+import { axiosInstance } from '../../../client/axios.config';
+import mockScreenings from '../../../mocks/theaters/movies-screenings-by-theater-id-and-day-1.json';
 import { movieScreeningsLoader } from './MovieScreeningsLoader';
 
 describe('Movie screenings loader tests', () => {

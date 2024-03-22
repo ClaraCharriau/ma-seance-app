@@ -1,6 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
-import { axiosInstance } from '../../client/axios.config';
-import mockMovie from '../../mocks/movies/movie-1.json';
+import { axiosInstance } from '../../../client/axios.config';
+import mockMovie from '../../../mocks/movies/movie-1.json';
 import { movieLoader } from './MovieLoader';
 
 describe('Movie loader tests', () => {
@@ -51,6 +51,3 @@ describe('Movie loader tests', () => {
         expect(axiosGet).not.toHaveBeenCalledWith('/movies/' + movieId);
     });
 });
-
-export { };
-

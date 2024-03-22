@@ -1,6 +1,9 @@
 import { ActionFunctionArgs } from 'react-router-dom';
-import { getTheaterScreeningsByMovieIdAndDay } from '../../client/movies/movies.client';
+import { getTheaterScreeningsByMovieIdAndDay } from '../../../client/movies/movies.client';
 
+/**
+ * Loader that provide the theater screenings before the page renders
+ */
 export const theaterScreeningsLoader = async (args: ActionFunctionArgs) => {
     const { params } = args;
     let { id, day } = params;
