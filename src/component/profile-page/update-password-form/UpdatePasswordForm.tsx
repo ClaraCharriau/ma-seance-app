@@ -75,13 +75,13 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
             <p>Modifier votre mot de passe</p>
             {/* Old password */}
             <div className={style.inputContainer}>
-                <label htmlFor="oldPassword" className={style.inputLabel}>
+                <label htmlFor="oldUpdatePassword" className={style.inputLabel}>
                     Ancien mot de passe *
                 </label>
                 <input
                     type="password"
-                    id="oldPassword"
-                    name="oldPassword"
+                    id="oldUpdatePassword"
+                    name="oldUpdatePassword"
                     value={currentPassword}
                     onChange={event => setCurrentPassword(event.target.value)}
                     className={currentPasswordError && style.errorInput}
