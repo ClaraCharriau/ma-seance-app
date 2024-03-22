@@ -5,12 +5,17 @@
     "latency": 50,
     "logRequestHeaders": false,
     "webServices": {
-        "auth": {
+        "registrations": {
             "mockFile": "users/users.json",
             "latency": 20,
-            "verbs": ["post"]
+            "verbs": ["post", "patch"]
         },
-        "verify": {
+        "registrations/:id": {
+            "httpStatus": 204,
+            "latency": 20,
+            "verbs": ["delete"]
+        },
+        "token": {
             "verbs": ["post"],
             "latency": 20,
             "switch": ["email"],
@@ -20,16 +25,6 @@
             "switchResponses": {
                 "emailtest%40mail.com": { "httpStatus": 200, "mockFile": "auth/verify-true.json" }
             }
-        },
-        "sign-in": {
-            "mockFile": "users/users.json",
-            "latency": 20,
-            "verbs": ["post", "patch"]
-        },
-        "sign-out/1": {
-            "httpStatus": 204,
-            "latency": 20,
-            "verbs": ["delete"]
         },
         "users/:id/fav-theaters": {
             "httpStatus": 200,
