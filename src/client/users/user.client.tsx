@@ -32,10 +32,14 @@ export const deleteUserFavMovie = async (userId: string, movieId: string): Promi
     return await axiosInstance.delete(USERS_PATH + userId + FAV_MOVIES_PATH + '/' + movieId);
 };
 
-export const getUserAgenda = async (userId: string): Promise<Showtime[]> => {
+export const getUserShowtimes = async (userId: string): Promise<Showtime[]> => {
     return await axiosInstance.get(USERS_PATH + userId + SHOWTIMES_PATH);
 };
 
-export const updateUserAgenda = async (userId: string, showtime: Showtime): Promise<Showtime[]> => {
+export const updateUserShowtimes = async (userId: string, showtime: Showtime): Promise<Showtime[]> => {
     return await axiosInstance.patch(USERS_PATH + userId + SHOWTIMES_PATH, showtime);
+};
+
+export const deleteUserShowtime = async (userId: string, showtimeId: string): Promise<void> => {
+    return await axiosInstance.delete(USERS_PATH + userId + SHOWTIMES_PATH + '/' + showtimeId);
 };

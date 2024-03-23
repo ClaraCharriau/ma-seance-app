@@ -1,18 +1,20 @@
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { Movie } from '../../../models/Movie';
+import { Theater } from '../../../models/Theater';
 import style from './SeeDetails.module.css';
 
 interface SeeDetailsBtnProps {
     text: string;
     showIcon?: boolean;
     navigatePath: string;
+    item?: Movie | Theater;
 }
 
 const SeeDetailsBtn = (props: SeeDetailsBtnProps) => {
-    const { text, navigatePath, showIcon = false } = props;
-    const navigate = useNavigate();
+    const { text, navigatePath, showIcon = false, item } = props;
 
     return (
-        <button className={style.seeDetailsBtn} onClick={() => navigate(navigatePath)}>
+        <NavLink className={style.seeDetailsBtn} to={navigatePath} state={{ item }}>
             {showIcon && (
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_1079_753)">
@@ -33,7 +35,7 @@ const SeeDetailsBtn = (props: SeeDetailsBtnProps) => {
                 </svg>
             )}
             {text}
-        </button>
+        </NavLink>
     );
 };
 

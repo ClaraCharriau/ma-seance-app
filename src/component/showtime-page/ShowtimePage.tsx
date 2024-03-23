@@ -3,17 +3,58 @@ import { Showtime } from '../../models/Showtime';
 import { ShowtimeDetails } from '../common/showtime-details/ShowtimeDetails';
 import style from './ShowtimePage.module.css';
 import config from '../../config/config.helper';
+import { deleteUserShowtime } from '../../client/users/user.client';
+import { useAuthContext } from '../../context/auth.context';
+import { toast } from 'react-toastify';
+import { useState } from 'react';
+import ConfirmationModal from '../common/modals/confirmation-modal/ConfirmationModal';
 
 const ShowtimePage = () => {
+    const { currentUser } = useAuthContext();
+    const [showModale, setShowModale] = useState<boolean>(false);
     const showtime = useLoaderData() as Showtime;
+
+    // Calculate if the showtime is upcoming or not to set the correct page title
+    const today = new Date();
+    const showtimeDate = new Date(showtime.schedule.date);
+    const pageTitle = showtimeDate > today ? 'Séance à venir' : 'Séance passée';
+
     const { schedule, movie, theater } = showtime;
     const TMDB_PATH = config.tmdbImgPath.medium;
 
+    const deleteShowtime = async () => {
+        try {
+            currentUser &&
+                showtime.id &&
+                (await deleteUserShowtime(currentUser.id, showtime.id).then(() =>
+                    toast.info(`La séance de ${movie.title} a été supprimée de votre agenda`, {
+                        icon: () => (
+                            <svg
+                                width="52"
+                                height="52"
+                                viewBox="0 0 52 52"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M26.0001 0C40.3595 0 52 11.6406 52 26.0001C52 40.3595 40.3595 52 26.0001 52C11.6406 52 0 40.3595 0 26.0001C0 11.6406 11.6406 0 26.0001 0ZM26.0001 3.8994C13.7942 3.8994 3.8994 13.7942 3.8994 26.0001C3.8994 38.206 13.7942 48.1006 26.0001 48.1006C38.2058 48.1006 48.1006 38.206 48.1006 26.0001C48.1006 13.7942 38.2058 3.8994 26.0001 3.8994ZM25.9905 22.0981C26.9776 22.0976 27.7938 22.8304 27.9236 23.7819L27.9415 24.0465L27.9509 38.3485C27.9516 39.4252 27.0792 40.2987 26.0025 40.2995C25.0154 40.3 24.1991 39.5672 24.0694 38.6157L24.0515 38.3511L24.0421 24.0491C24.0413 22.9724 24.9137 22.0989 25.9905 22.0981ZM26.0012 13.0053C27.4351 13.0053 28.5974 14.1677 28.5974 15.6014C28.5974 17.0353 27.4351 18.1976 26.0012 18.1976C24.5675 18.1976 23.4049 17.0353 23.4049 15.6014C23.4049 14.1677 24.5675 13.0053 26.0012 13.0053Z"
+                                    fill="#1B3043"
+                                />
+                            </svg>
+                        )
+                    })
+                ));
+            setShowModale(false);
+        } catch (error: any) {
+            console.error('An error occured');
+        }
+    };
+
     return (
         <main className={style.showtimeMain}>
-            <h2 className={style.pageTitle}>Séance à venir</h2>
+            <h2 className={style.pageTitle}>{pageTitle}</h2>
             <section className={style.showtimePageSection}>
-                <Link to={`/movies/${movie.id}/day-1`} state={{ movie: movie }} className={style.movieDesktopImg}>
+                <Link to={`/movies/${movie.id}/day-1`} state={{ movie }} className={style.movieDesktopImg}>
                     <img src={TMDB_PATH + movie.posterLink} alt={`affiche du film ${movie.title}`} />
                 </Link>
                 <div className={style.rightColumn}>
@@ -27,8 +68,17 @@ const ShowtimePage = () => {
                             />
                         </svg>
                     </a>
-                    <button className={style.cancelButton}>Supprimer la séance</button>
+                    <button className={style.cancelButton} onClick={() => setShowModale(true)}>
+                        Supprimer la séance
+                    </button>
                 </div>
+
+                <ConfirmationModal
+                    confirmationText={`Êtes-vous bien sûr de vouloir supprimer la séance du film ${movie.title} de votre agenda ?`}
+                    openModal={showModale}
+                    rightButtonCallback={() => setShowModale(false)}
+                    leftButtonCallback={() => deleteShowtime()}
+                />
             </section>
         </main>
     );

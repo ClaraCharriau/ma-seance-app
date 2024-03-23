@@ -18,25 +18,4 @@ describe('See Details button Component', () => {
         expect(component.getByText('See details')).toBeInTheDocument();
         expect(component.baseElement).toMatchSnapshot();
     });
-
-    it('should navigate on click', () => {
-        // Given
-        const navigate = jest.spyOn(require('react-router-dom'), 'useNavigate').mockImplementation(() => jest.fn());
-        const navigatePath = '/details';
-        const text = 'See Details';
-
-        const { getByText } = render(
-            <BrowserRouter>
-                <SeeDetailsBtn text={text} navigatePath={navigatePath} showIcon={true} />
-            </BrowserRouter>
-        );
-
-        // When
-        const button = getByText(text);
-        fireEvent.click(button);
-
-        // Then
-        expect(navigate).toHaveBeenCalled();
-        navigate.mockRestore();
-    });
 });

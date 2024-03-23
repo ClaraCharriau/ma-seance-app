@@ -9,7 +9,7 @@ exports[`showtime page component tests should render page 1`] = `
       <h2
         class="pageTitle"
       >
-        Séance à venir
+        Séance passée
       </h2>
       <section
         class="showtimePageSection"
@@ -225,5 +225,8 @@ exports[`showtime page component tests should render page 1`] = `
       </section>
     </main>
   </div>
+  <div
+    class="ReactModalPortal"
+  />
 </body>
 `;

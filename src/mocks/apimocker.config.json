@@ -54,6 +54,11 @@
             "verbs": ["get", "patch"],
             "mockFile": "users/user-showtimes-2.json"
         },
+        "users/:id/showtimes/:id": {
+            "httpStatus": 200,
+            "latency": 200,
+            "verbs": ["delete"]
+        },
         "theaters/:id": {
             "httpStatus": 200,
             "latency": 500,
@@ -117,7 +122,11 @@
             "httpStatus": 200,
             "verbs": ["get"],
             "latency": 200,
-            "mockFile": "showtimes/showtimes-2.json"
+            "mockFile": "showtimes/showtimes.json",
+            "switch": ["id"],
+            "switchResponses": {
+                "idbbf24dfe-7788-4084-a6ca-43c3b75df2a4": { "httpStatus": 200, "mockFile": "showtimes/showtimes-2.json" }
+            }
         }
     }
 }

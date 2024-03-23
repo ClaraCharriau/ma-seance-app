@@ -11,11 +11,12 @@ exports[`Watchlist movie carousel component tests renders error when failing to 
       Une erreur s'est produite lors du chargement des films.
     </div>
   </div>
-  <button
+  <a
     class="seeDetailsBtn"
+    href="/watchlist"
   >
     Voir les 0 films &gt;
-  </button>
+  </a>
 </div>
 `;
 
@@ -30,11 +31,12 @@ exports[`Watchlist movie carousel component tests renders error when time out 1`
       Une erreur s'est produite lors du chargement des films.
     </div>
   </div>
-  <button
+  <a
     class="seeDetailsBtn"
+    href="/watchlist"
   >
     Voir les 0 films &gt;
-  </button>
+  </a>
 </div>
 `;
 
@@ -161,11 +163,12 @@ exports[`Watchlist movie carousel component tests renders movie Carousel compone
         />
       </div>
     </div>
-    <button
+    <a
       class="seeDetailsBtn"
+      href="/watchlist"
     >
       Voir les 521 films &gt;
-    </button>
+    </a>
   </div>
 </body>
 `;

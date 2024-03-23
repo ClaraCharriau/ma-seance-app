@@ -49,7 +49,7 @@ const AgendaScreeningCard = (props: AgendaScreeningCardProps) => {
                 <div className={style.movieCard}>
                     <MovieListCard movie={movie} />
                 </div>
-                <SeeDetailsBtn navigatePath={`/showtimes/${showtime.id}`} text="détails" showIcon={true} />
+                <SeeDetailsBtn navigatePath={`/showtimes/${showtime.id}`} text="détails" showIcon={true} item={movie} />
             </div>
         </div>
     );

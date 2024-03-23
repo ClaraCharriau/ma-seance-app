@@ -13,7 +13,7 @@ const TheaterCard = (props: TheaterCardProps) => {
     const IMG_SUFFIX = '.jpg';
 
     return (
-        <NavLink to={`/theaters/${theater.id}/day-1`} state={{ theater: theater }} className={style.theaterCardWrapper}>
+        <NavLink to={`/theaters/${theater.id}/day-1`} state={{ theater }} className={style.theaterCardWrapper}>
             <img
                 className={style.theaterImg}
                 src={IMG_PATH + theater.imgPath + IMG_SUFFIX}
