@@ -1,4 +1,5 @@
 import { FormEvent, useState } from 'react';
+import { toast } from 'react-toastify';
 import { useAuth } from '../../../hook/auth-hook/useAuth';
 import { User } from '../../../models/User';
 import style from '../Profile.module.css';
@@ -22,14 +23,19 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
     const [verifyError, setVerifyError] = useState('');
     const [currentPasswordError, setCurrentPasswordError] = useState('');
 
-    const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+    const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        updateProfile();
+        await updateProfile();
     };
 
     const updateProfile = async () => {
         if (await isFormValid()) {
-            updateUserAccount(pseudo, email, currentPassword);
+            try {
+                await updateUserAccount(pseudo, email, currentPassword);
+                toast.success('Votre profil a bien été mis à jour');
+            } catch (error: any) {
+                console.error('An error occured.');
+            }
         }
     };
 

@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react';
 import { useAuth } from '../../../hook/auth-hook/useAuth';
 import { User } from '../../../models/User';
 import style from '../Profile.module.css';
+import { toast } from 'react-toastify';
 
 interface UpdatePasswordFormProps {
     user: User;
@@ -25,7 +26,12 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
 
     const updatePassword = async (): Promise<void> => {
         if (await isFormValid()) {
-            updateUserAccount(pseudo, email, newPassword);
+            try {
+                await updateUserAccount(pseudo, email, newPassword);
+                toast.success('Votre mot de passe a bien été mis à jour');
+            } catch (error: any) {
+                console.error('An error occured');
+            }
         }
     };
 

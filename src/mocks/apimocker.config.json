@@ -11,7 +11,7 @@
             "verbs": ["post", "patch"]
         },
         "registrations/:id": {
-            "httpStatus": 204,
+            "httpStatus": 404,
             "latency": 20,
             "verbs": ["delete"]
         },

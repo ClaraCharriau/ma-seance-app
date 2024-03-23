@@ -1,4 +1,5 @@
 import ReactModal from 'react-modal';
+import { toast } from 'react-toastify';
 import { useAgendaContext } from '../../../../context/agenda.context';
 import { Movie } from '../../../../models/Movie';
 import { ScreeningDate } from '../../../../models/ScreeningDate';
@@ -26,9 +27,14 @@ const ShowtimeModal = (props: ShowtimeModalProps) => {
         return new Showtime(screeningDate, movie, theater);
     };
 
-    const addShowtimeToUserAgenda = (screeningDate: ScreeningDate, movie: Movie, theater: Theater) => {
+    const addShowtimeToUserAgenda = async (screeningDate: ScreeningDate, movie: Movie, theater: Theater) => {
         const showtime = buildShowtime(screeningDate, movie, theater);
-        updateAgenda(showtime);
+        try {
+            await updateAgenda(showtime);
+            toast.success(`La séance de ${showtime.movie.title} a été ajoutée à l'agenda`);
+        } catch (error: any) {
+            console.error('An error occured');
+        }
         closeModal();
     };
 

@@ -5,6 +5,7 @@ import style from './TheaterList.module.css';
 import ConfirmationModal from '../modals/confirmation-modal/ConfirmationModal';
 import { deleteUserFavTheater } from '../../../client/users/user.client';
 import { useAuthContext } from '../../../context/auth.context';
+import { toast } from 'react-toastify';
 
 type TheatersListProps = {
     theaters: Theater[];
@@ -24,9 +25,15 @@ const TheatersList = (props: TheatersListProps) => {
     };
 
     const deleteTheater = async () => {
-        // eslint-disable-next-line
-        await deleteUserFavTheater(currentUser!.id, theaterToDelete!.id);
-        setShowModale(false);
+        try {
+            if (currentUser && theaterToDelete) {
+                await deleteUserFavTheater(currentUser.id, theaterToDelete.id);
+                toast.info(theaterToDelete.name + ' a bien été supprimé de vos favoris');
+            }
+            setShowModale(false);
+        } catch (error: any) {
+            console.error('An error occured.');
+        }
     };
 
     return (
