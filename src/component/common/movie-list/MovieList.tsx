@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import { deleteUserFavMovie } from '../../../client/users/user.client';
 import { useAuthContext } from '../../../context/auth.context';
 import { Movie } from '../../../models/Movie';
 import ConfirmationModal from '../modals/confirmation-modal/ConfirmationModal';
 import MovieListCard from '../movie-list-card/MovieListCard';
 import style from './MovieList.module.css';
-import { toast } from 'react-toastify';
 
 interface MovieListProps {
     movieList: Movie[];
@@ -28,7 +28,16 @@ const MovieList = (props: MovieListProps) => {
         try {
             if (currentUser && movieToDelete) {
                 await deleteUserFavMovie(currentUser.id, movieToDelete.id);
-                toast.info(movieToDelete.title + ' a bien été supprimé de votre watchlist');
+                toast.info(movieToDelete.title + ' a bien été supprimé de votre watchlist', {
+                    icon: () => (
+                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M26.0001 0C40.3595 0 52 11.6406 52 26.0001C52 40.3595 40.3595 52 26.0001 52C11.6406 52 0 40.3595 0 26.0001C0 11.6406 11.6406 0 26.0001 0ZM26.0001 3.8994C13.7942 3.8994 3.8994 13.7942 3.8994 26.0001C3.8994 38.206 13.7942 48.1006 26.0001 48.1006C38.2058 48.1006 48.1006 38.206 48.1006 26.0001C48.1006 13.7942 38.2058 3.8994 26.0001 3.8994ZM25.9905 22.0981C26.9776 22.0976 27.7938 22.8304 27.9236 23.7819L27.9415 24.0465L27.9509 38.3485C27.9516 39.4252 27.0792 40.2987 26.0025 40.2995C25.0154 40.3 24.1991 39.5672 24.0694 38.6157L24.0515 38.3511L24.0421 24.0491C24.0413 22.9724 24.9137 22.0989 25.9905 22.0981ZM26.0012 13.0053C27.4351 13.0053 28.5974 14.1677 28.5974 15.6014C28.5974 17.0353 27.4351 18.1976 26.0012 18.1976C24.5675 18.1976 23.4049 17.0353 23.4049 15.6014C23.4049 14.1677 24.5675 13.0053 26.0012 13.0053Z"
+                                fill="#1B3043"
+                            />
+                        </svg>
+                    )
+                });
             }
             setShowModale(false);
         } catch (error: any) {

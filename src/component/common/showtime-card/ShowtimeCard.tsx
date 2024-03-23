@@ -28,7 +28,7 @@ const ShowtimeCard = (props: ShowtimeCardProps) => {
                     />
                 </svg>
                 <span>{dayName}</span>
-                <span>{dayNumber}</span>
+                <span className={style.dayNumber}>{dayNumber}</span>
                 <span>{month}</span>
             </p>
             <div className={style.movieTitleAndPlace}>

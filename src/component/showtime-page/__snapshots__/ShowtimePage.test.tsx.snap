@@ -225,5 +225,8 @@ exports[`showtime page component tests should render page 1`] = `
       </section>
     </main>
   </div>
+  <div
+    class="ReactModalPortal"
+  />
 </body>
 `;

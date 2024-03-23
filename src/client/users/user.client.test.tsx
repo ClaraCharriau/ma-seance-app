@@ -7,10 +7,10 @@ import { Theater } from '../../models/Theater';
 import { axiosInstance } from '../axios.config';
 import {
     deleteUserFavTheater,
-    getUserAgenda,
+    getUserShowtimes,
     getUserFavMovies,
     getUserFavTheaters,
-    updateUserAgenda,
+    updateUserShowtimes,
     updateUserFavMovies,
     updateUserFavTheaters
 } from './user.client';
@@ -195,7 +195,7 @@ describe('User client tests', () => {
         axiosMock.onGet('/users/2/showtimes').reply(200, mockUserShowtimes);
 
         // When
-        const response = await getUserAgenda('2');
+        const response = await getUserShowtimes('2');
 
         // Then
         expect(response).toEqual(mockUserShowtimes);
@@ -208,7 +208,7 @@ describe('User client tests', () => {
 
         // When
         try {
-            await getUserAgenda('2');
+            await getUserShowtimes('2');
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);
@@ -221,7 +221,7 @@ describe('User client tests', () => {
         axiosMock.onPatch('/users/2/showtimes').reply(200, mockUserShowtimes);
 
         // When
-        const response = await updateUserAgenda('2', mockShowtime);
+        const response = await updateUserShowtimes('2', mockShowtime);
 
         // Then
         expect(response).toEqual(mockUserShowtimes);
@@ -234,7 +234,7 @@ describe('User client tests', () => {
 
         // When
         try {
-            await updateUserAgenda('2', mockShowtime);
+            await updateUserShowtimes('2', mockShowtime);
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);

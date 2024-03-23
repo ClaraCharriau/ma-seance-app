@@ -25,7 +25,9 @@ exports[`Showtime card component tests should rend showtime card component 1`] =
       <span>
         jeudi
       </span>
-      <span>
+      <span
+        class="dayNumber"
+      >
         17
       </span>
       <span>

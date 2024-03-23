@@ -1,8 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { getUserAgenda } from '../client/users/user.client';
-import { useAuthContext } from './auth.context';
+import { getUserShowtimes, updateUserShowtimes } from '../client/users/user.client';
 import { Showtime } from '../models/Showtime';
-import { updateUserAgenda } from '../client/users/user.client';
+import { useAuthContext } from './auth.context';
 
 /* eslint-disable */
 interface IAgendaContext {
@@ -30,7 +29,7 @@ export const AgendaProvider = (props: AgendaProviderProps) => {
     useEffect(() => {
         const getAgenda = async () => {
             if (currentUser) {
-                await getUserAgenda(currentUser.id).then(response => setShowtimes(response));
+                await getUserShowtimes(currentUser.id).then(response => setShowtimes(response));
             }
         };
         getAgenda();
@@ -38,7 +37,7 @@ export const AgendaProvider = (props: AgendaProviderProps) => {
 
     const updateAgenda = async (showtime: Showtime) => {
         if (currentUser) {
-            await updateUserAgenda(currentUser.id, showtime).then(response => setShowtimes(response));
+            await updateUserShowtimes(currentUser.id, showtime).then(response => setShowtimes(response));
         }
     };
 
