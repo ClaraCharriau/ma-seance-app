@@ -73,8 +73,8 @@ const Home = () => {
 
                     {/* MOVIES BY THEATERS */}
                     {favoriteTheaters.length > 0 &&
-                        favoriteTheaters.map((theater, index) => (
-                            <section className={style.homeLeftSection} key={index}>
+                        favoriteTheaters.map(theater => (
+                            <section className={style.homeLeftSection} key={theater.id}>
                                 <div className={style.sectionTitleWrapper}>
                                     <NavLink to={'/theaters/' + theater.id} state={{ theater: theater }}>
                                         <h2 className={style.homeSectionTitle}>

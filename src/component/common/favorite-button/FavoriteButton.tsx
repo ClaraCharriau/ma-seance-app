@@ -6,6 +6,7 @@ import { updateUserFavMovies, updateUserFavTheaters } from '../../../client/user
 import { Movie } from '../../../models/Movie';
 import { Theater } from '../../../models/Theater';
 import { Tooltip } from 'react-tooltip';
+import { toast } from 'react-toastify';
 
 interface FavoriteButtonProps {
     itemId: string;
@@ -39,11 +40,25 @@ const FavoriteButton = (props: FavoriteButtonProps) => {
 
     const toggleFavorite = async () => {
         if (itemType === 'movie') {
-            currentUser && (await updateUserFavMovies(currentUser.id, itemId));
-            setFavoriteValue(favoriteMovies);
+            try {
+                currentUser &&
+                    (await updateUserFavMovies(currentUser.id, itemId).then(() => {
+                        toast.success(isFavorite ? 'Retiré de la watchlist' : 'Ajouté à la watchlist');
+                        setFavoriteValue(favoriteMovies);
+                    }));
+            } catch (error: any) {
+                console.error('An error occured');
+            }
         } else if (itemType === 'theater') {
-            currentUser && (await updateUserFavTheaters(currentUser.id, itemId));
-            setFavoriteValue(favoriteTheaters);
+            try {
+                currentUser &&
+                    (await updateUserFavTheaters(currentUser.id, itemId).then(() => {
+                        toast.success(isFavorite ? 'Retiré des favoris' : 'Ajouté aux favoris');
+                        setFavoriteValue(favoriteTheaters);
+                    }));
+            } catch (error: any) {
+                console.error('An error occured');
+            }
         }
     };
 

@@ -5,6 +5,7 @@ import { Movie } from '../../../models/Movie';
 import ConfirmationModal from '../modals/confirmation-modal/ConfirmationModal';
 import MovieListCard from '../movie-list-card/MovieListCard';
 import style from './MovieList.module.css';
+import { toast } from 'react-toastify';
 
 interface MovieListProps {
     movieList: Movie[];
@@ -24,10 +25,17 @@ const MovieList = (props: MovieListProps) => {
     };
 
     const deleteMovie = async () => {
-        // eslint-disable-next-line
-        await deleteUserFavMovie(currentUser!.id, movieToDelete!.id);
-        setShowModale(false);
+        try {
+            if (currentUser && movieToDelete) {
+                await deleteUserFavMovie(currentUser.id, movieToDelete.id);
+                toast.info(movieToDelete.title + ' a bien été supprimé de votre watchlist');
+            }
+            setShowModale(false);
+        } catch (error: any) {
+            console.error('An error occured.');
+        }
     };
+
     return (
         <section className={style.movieList}>
             {movieList.map(movie => (

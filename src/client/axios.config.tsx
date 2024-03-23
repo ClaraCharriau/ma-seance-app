@@ -1,5 +1,5 @@
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
+import { toast } from 'react-toastify';
 import config from '../config/config.helper';
 
 export const axiosInstance = axios.create({
@@ -8,10 +8,11 @@ export const axiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(
     response => handleResponse(response),
-    (error: AxiosError) => handleError(error)
+    error => handleError(error)
 );
 
 export const handleError = (error: any) => {
+    toast.error("Une erreur s'est produite.");
     if (error.response) {
         throw new Response(error.response.data, {
             status: error.response.status,

@@ -16,6 +16,16 @@
   --red: #eb6a5d;
   --valid: #aadab1;
   --almost-white: #fffdef;
+
+  --toastify-font-family: 'Work Sans', sans-serif; 
+  --toastify-color-light: var(--secondary-variant);
+  --toastify-color-dark: var(--secondary-variant);
+  --toastify-color-info: var(--secondary-variant);
+  --toastify-color-success: var(--secondary-variant);
+  --toastify-color-warning: var(--secondary-variant);
+  --toastify-color-error: var(--secondary-variant);
+  --toastify-text-color-light: var(--secondary-variant);
+  --toastify-text-color-dark: var(--secondary-variant);
 }
 
 /* NORMALIZE */
@@ -98,4 +108,13 @@ input::placeholder {
   main {
     margin: 100px 15px 0;
   }
+}
+
+/* TOASTS */
+.Toastify__toast--success, .Toastify__toast--info {
+  background-color: var(--valid);
+}
+
+.Toastify__toast--error {
+  background-color: var(--red);
 }

@@ -24,8 +24,12 @@ const Profile = () => {
     };
 
     const deleteAccount = async (id: string): Promise<void> => {
-        await deleteUserAccount(id);
-        logOut();
+        try {
+            await deleteUserAccount(id);
+            logOut();
+        } catch (error: any) {
+            console.error('An error occured while requesting delete');
+        }
     };
 
     return (
