@@ -14,6 +14,11 @@ const ShowtimePage = () => {
     const [showModale, setShowModale] = useState<boolean>(false);
     const showtime = useLoaderData() as Showtime;
 
+    // Calculate if the showtime is upcoming or not to set the correct page title
+    const today = new Date();
+    const showtimeDate = new Date(showtime.schedule.date);
+    const pageTitle = showtimeDate > today ? 'Séance à venir' : 'Séance passée';
+
     const { schedule, movie, theater } = showtime;
     const TMDB_PATH = config.tmdbImgPath.medium;
 
@@ -47,9 +52,9 @@ const ShowtimePage = () => {
 
     return (
         <main className={style.showtimeMain}>
-            <h2 className={style.pageTitle}>Séance à venir</h2>
+            <h2 className={style.pageTitle}>{pageTitle}</h2>
             <section className={style.showtimePageSection}>
-                <Link to={`/movies/${movie.id}/day-1`} state={{ movie: movie }} className={style.movieDesktopImg}>
+                <Link to={`/movies/${movie.id}/day-1`} state={{ movie }} className={style.movieDesktopImg}>
                     <img src={TMDB_PATH + movie.posterLink} alt={`affiche du film ${movie.title}`} />
                 </Link>
                 <div className={style.rightColumn}>
