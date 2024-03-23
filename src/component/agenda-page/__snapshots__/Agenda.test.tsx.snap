@@ -160,8 +160,9 @@ exports[`Agenda page tests should render agenda page with next week and next mon
               </div>
             </a>
           </div>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/showtimes/caadad78-7daf-4c49-abe8-2514b43884f6"
           >
             <svg
               fill="none"
@@ -196,7 +197,7 @@ exports[`Agenda page tests should render agenda page with next week and next mon
               </defs>
             </svg>
             détails
-          </button>
+          </a>
         </div>
       </div>
       <p>
@@ -348,8 +349,9 @@ exports[`Agenda page tests should render agenda page with next week and next mon
               </div>
             </a>
           </div>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/showtimes/bbf24dfe-7788-4084-a6ca-43c3b75df2a4"
           >
             <svg
               fill="none"
@@ -384,7 +386,7 @@ exports[`Agenda page tests should render agenda page with next week and next mon
               </defs>
             </svg>
             détails
-          </button>
+          </a>
         </div>
       </div>
       <div
@@ -555,8 +557,9 @@ exports[`Agenda page tests should render agenda page with passed screenings and 
               </div>
             </a>
           </div>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/showtimes/c747873f-b2cf-4a0e-a7bd-13111df85789"
           >
             <svg
               fill="none"
@@ -591,7 +594,7 @@ exports[`Agenda page tests should render agenda page with passed screenings and 
               </defs>
             </svg>
             détails
-          </button>
+          </a>
         </div>
       </div>
       <p
@@ -764,8 +767,9 @@ exports[`Agenda page tests should render agenda page with passed screenings and 
                 </div>
               </a>
             </div>
-            <button
+            <a
               class="seeDetailsBtn"
+              href="/showtimes/0cbd2689-2866-469f-8f39-98104c18dc26"
             >
               <svg
                 fill="none"
@@ -800,7 +804,7 @@ exports[`Agenda page tests should render agenda page with passed screenings and 
                 </defs>
               </svg>
               détails
-            </button>
+            </a>
           </div>
         </div>
       </div>

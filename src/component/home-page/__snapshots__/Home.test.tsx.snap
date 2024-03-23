@@ -37,11 +37,12 @@ exports[`Home Component should render home page 1`] = `
               Cinémas favoris
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/fav-theaters"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -83,11 +84,12 @@ exports[`Home Component should render home page 1`] = `
               Sorties de la semaine
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/currently"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -125,11 +127,12 @@ exports[`Home Component should render home page 1`] = `
               C2L Saint-Germain
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/theaters/1"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -167,11 +170,12 @@ exports[`Home Component should render home page 1`] = `
               C2L Poissy
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/theaters/2"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -209,11 +213,12 @@ exports[`Home Component should render home page 1`] = `
               UGC Ciné Cité La Défense
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/theaters/3"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -251,11 +256,12 @@ exports[`Home Component should render home page 1`] = `
               Les 5 Caumartin
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/theaters/4"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -293,11 +299,12 @@ exports[`Home Component should render home page 1`] = `
               UGC Ciné Cité Les Halles
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/theaters/5"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -335,11 +342,12 @@ exports[`Home Component should render home page 1`] = `
               UGC Normandie
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/theaters/6"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -377,11 +385,12 @@ exports[`Home Component should render home page 1`] = `
               Publicis Cinémas
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/theaters/7"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -419,11 +428,12 @@ exports[`Home Component should render home page 1`] = `
               Elysées Lincoln
             </h2>
           </a>
-          <button
+          <a
             class="seeDetailsBtn"
+            href="/theaters/8"
           >
             Voir plus &gt;
-          </button>
+          </a>
         </div>
         <div
           class="carousel carousel"
@@ -516,11 +526,12 @@ exports[`Home Component should render home page 1`] = `
             class="spinner"
           />
         </div>
-        <button
+        <a
           class="seeDetailsBtn"
+          href="/watchlist"
         >
           Voir les 0 films &gt;
-        </button>
+        </a>
       </section>
     </div>
   </main>

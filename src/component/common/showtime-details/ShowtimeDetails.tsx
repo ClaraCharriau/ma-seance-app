@@ -32,7 +32,7 @@ export const ShowtimeDetails = (props: ShowtimeDetailsProps) => {
             <div className={style.movieAndDateWrapper}>
                 {/* MOVIE */}
                 <div className={style.movieBox}>
-                    <Link to={`/movies/${movie.id}/day-1`} state={{ movie: movie }}>
+                    <Link to={`/movies/${movie.id}/day-1`} state={{ movie }}>
                         <img
                             className={style.movieImg}
                             src={TMDB_PATH + movie.posterLink}
@@ -40,7 +40,7 @@ export const ShowtimeDetails = (props: ShowtimeDetailsProps) => {
                         />
                     </Link>
                     <div>
-                        <Link to={`/movies/${movie.id}/day-1`} state={{ movie: movie }} className={style.movieTitle}>
+                        <Link to={`/movies/${movie.id}/day-1`} state={{ movie }} className={style.movieTitle}>
                             {movie.title}
                         </Link>
                         <p className={style.movieDetails}>

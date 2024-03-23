@@ -3,11 +3,12 @@
 exports[`See Details button Component should render see details button component 1`] = `
 <body>
   <div>
-    <button
+    <a
       class="seeDetailsBtn"
+      href="/fav-theaters"
     >
       See details
-    </button>
+    </a>
   </div>
 </body>
 `;
