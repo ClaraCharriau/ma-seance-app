@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useMemo, useState } from 'react';
 import { getUserShowtimes, updateUserShowtimes } from '../client/users/user.client';
 import { Showtime } from '../models/Showtime';
 import { useAuthContext } from './auth.context';
@@ -26,7 +26,7 @@ export const AgendaProvider = (props: AgendaProviderProps) => {
     const { currentUser } = useAuthContext();
     const [showtimes, setShowtimes] = useState<Showtime[]>([]);
 
-    useEffect(() => {
+    useMemo(() => {
         const getAgenda = async () => {
             if (currentUser) {
                 await getUserShowtimes(currentUser.id).then(response => setShowtimes(response));
