@@ -7,6 +7,7 @@ import { Theater } from '../../models/Theater';
 import MovieList from '../common/movie-list/MovieList';
 import Spinner from '../common/spinner/Spinner';
 import TheatersList from '../common/theaters-list/TheatersList';
+import style from './SearchPage.module.css';
 
 export const SearchPage = () => {
     const { search, state } = useLocation();
@@ -14,55 +15,78 @@ export const SearchPage = () => {
     const [theaterResults, setTheaterResults] = useState<Theater[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const [isMovieSearch, setIsMovieSearch] = useState<boolean>(false);
+
     const ERROR_MESSAGE = "Une erreur s'est produite lors de votre recherche. Veuillez réessayer.";
 
     useEffect(() => {
-        const timeoutId = setTimeout(() => {
+        setError('');
+        setLoading(true);
+        const timeout = setTimeout(() => {
             setError(ERROR_MESSAGE);
             setLoading(false);
         }, 5000); // 5s
 
-        console.log(state.query);
-        searchMovies(state.query)
-            .then(response => {
-                setMovieResults(response);
-                setLoading(false);
-                clearTimeout(timeoutId);
-            })
-            .catch(() => {
-                setError(ERROR_MESSAGE);
-                setLoading(false);
-            });
+        if (!isMovieSearch) {
+            searchTheaters(state.query)
+                .then(response => {
+                    setTheaterResults(response);
+                    setLoading(false);
+                    clearTimeout(timeout);
+                })
+                .catch(() => {
+                    setError(ERROR_MESSAGE);
+                    setLoading(false);
+                });
+        } else {
+            searchMovies(state.query)
+                .then(response => {
+                    setMovieResults(response);
+                    setLoading(false);
+                    clearTimeout(timeout);
+                })
+                .catch(() => {
+                    setError(ERROR_MESSAGE);
+                    setLoading(false);
+                });
+        }
 
-        searchTheaters(state.query)
-            .then(response => {
-                setTheaterResults(response);
-                setLoading(false);
-                clearTimeout(timeoutId);
-            })
-            .catch(() => {
-                setError(ERROR_MESSAGE);
-                setLoading(false);
-            });
+        return () => clearTimeout(timeout);
+    }, [state.query, isMovieSearch]);
 
-        return () => clearTimeout(timeoutId);
-    }, [state.query]);
+    const handleChange = () => {
+        setIsMovieSearch(!isMovieSearch);
+    };
 
     return (
         <main>
             <p>Résultats de la recherche "{state.query ?? search.split('?q=')}"</p>
 
+            <div>
+                <label className={style.switch}>
+                    <input
+                        className={style.switchInput}
+                        type="checkbox"
+                        checked={isMovieSearch}
+                        onChange={handleChange}
+                    />
+                    <span className={style.switchSlider}></span>
+                    <span className={style.cinemaLabel}>Cinémas</span>
+                    <span className={style.filmLabel}>Films</span>
+                </label>
+            </div>
+
             {loading ? (
                 <Spinner />
             ) : error ? (
-                <div>{error}</div>
-            ) : movieResults.length > 0 ? (
+                <div className={style.error}>{error}</div>
+            ) : isMovieSearch && movieResults.length > 0 ? (
                 <MovieList movieList={movieResults} />
+            ) : !isMovieSearch && theaterResults.length > 0 ? (
+                <TheatersList theaters={theaterResults} />
             ) : (
-                <p>Aucun film ne corresponds à votre recherche.</p>
+                <p>Aucun {isMovieSearch ? 'film' : 'cinéma'} ne corresponds à votre recherche.</p>
             )}
-
-            <TheatersList theaters={theaterResults} />
         </main>
     );
 };

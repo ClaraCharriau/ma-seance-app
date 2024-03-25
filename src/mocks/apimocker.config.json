@@ -60,7 +60,7 @@
             "verbs": ["delete"]
         },
         "theaters/search": {
-            "httpStatus": 500,
+            "httpStatus": 200,
             "verbs": ["get"],
             "mockFile": "theaters/theaters-search-results.json",
             "switch": ["q"]
