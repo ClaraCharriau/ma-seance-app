@@ -20,6 +20,7 @@ import { movieScreeningsLoader } from './loaders/movie-screenings-loader/MovieSc
 import { theaterLoader } from './loaders/theater-loader/TheaterLoader';
 import { theaterScreeningsLoader } from './loaders/theater-screenings-loader/TheaterScreeningsLoader';
 import { showtimeLoader } from './loaders/showtime-loader/ShowtimeLoader';
+import { SearchPage } from '../component/search-page/SearchPage';
 
 const AppRouter = () => {
     const router = createBrowserRouter([
@@ -65,10 +66,6 @@ const AppRouter = () => {
                     element: <ShowtimePage />
                 },
                 {
-                    path: '/search',
-                    element: <>Search</>
-                },
-                {
                     loader: theaterLoader,
                     element: <TheaterDetailsLayout />,
                     children: [
@@ -86,6 +83,10 @@ const AppRouter = () => {
                 {
                     path: '/watchlist',
                     element: <WatchList />
+                },
+                {
+                    path: '/search',
+                    element: <SearchPage />
                 }
             ]
         }
