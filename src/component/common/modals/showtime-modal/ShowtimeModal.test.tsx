@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import mockMovie from '../../../../mocks/movies/movie-1.json';
 import mockTheater from '../../../../mocks/theaters/theaters-1.json';
 import ShowtimeModal from './ShowtimeModal';
-import { BrowserRouter } from 'react-router-dom';
 
 describe('showtime modal component test', () => {
     const mockScreeningDate = {
@@ -14,7 +14,7 @@ describe('showtime modal component test', () => {
         hourly: '11:45'
     };
     const mockCloseBtnCallback = () => {
-        console.log('click on close modal btn');
+        return;
     };
     const agendaContext = require('../../../../context/agenda.context');
     jest.spyOn(agendaContext, 'useAgendaContext').mockReturnValue({

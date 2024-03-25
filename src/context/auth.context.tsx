@@ -1,6 +1,6 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { User } from '../models/User';
+import { createContext, useContext, useState } from 'react';
 import { useLocalStorage } from '../hook/local-storage-hook/useLocalStorage';
+import { User } from '../models/User';
 
 /* eslint-disable */
 interface IAuthContext {
@@ -29,14 +29,6 @@ export const AuthProvider = (props: AuthProviderProps) => {
         const storedUser = getItem('user');
         return storedUser ? JSON.parse(storedUser) : null;
     });
-
-    useEffect(() => {
-        const storedUser = getItem('user');
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     const setCurrentUser = (user: User | null) => {
         setUser(user);

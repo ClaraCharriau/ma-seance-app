@@ -1,9 +1,8 @@
-import { render, waitFor } from '@testing-library/react';
-import { getCurrentlyMovies } from '../../../client/movies/movies.client';
-import CurrentlyCarousel from './CurrentlyCarousel';
-import { act } from 'react-dom/test-utils';
-import mockMovies from '../../../mocks/movies/current-movies.json';
+import { act, render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { getCurrentlyMovies } from '../../../client/movies/movies.client';
+import mockMovies from '../../../mocks/movies/current-movies.json';
+import CurrentlyCarousel from './CurrentlyCarousel';
 
 jest.mock('../../../client/movies/movies.client', () => ({
     getCurrentlyMovies: jest.fn()

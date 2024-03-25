@@ -1,10 +1,9 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-import { render, waitFor } from '@testing-library/react';
-import Home from './Home';
+import { act, render, waitFor } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { act } from 'react-dom/test-utils';
 import { AuthProvider } from '../../context/auth.context';
 import mockTheaters from '../../mocks/users/fav-theaters.json';
+import Home from './Home';
 
 describe('Home Component', () => {
     const favoriteContext = require('../../context/favorite.context');

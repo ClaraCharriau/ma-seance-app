@@ -1,7 +1,6 @@
-import { render, waitFor } from '@testing-library/react';
-import TheaterDetailsLayout from './TheaterDetailsLayout';
-import { act } from 'react-dom/test-utils';
+import { act, render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import TheaterDetailsLayout from './TheaterDetailsLayout';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),

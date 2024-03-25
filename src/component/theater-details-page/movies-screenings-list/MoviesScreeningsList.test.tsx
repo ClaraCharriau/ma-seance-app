@@ -1,9 +1,8 @@
-import { render, waitFor } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
+import { act, render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import mockScreeningsData from '../../../mocks/theaters/movies-screenings-by-theater-id-and-day-1.json';
-import MoviesScreeningsList from './MoviesScreeningsList';
 import mockTheater from '../../../mocks/theaters/theaters-1.json';
+import MoviesScreeningsList from './MoviesScreeningsList';
 
 let mockData = mockScreeningsData;
 
