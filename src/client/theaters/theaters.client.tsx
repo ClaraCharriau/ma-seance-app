@@ -23,3 +23,7 @@ export const getMovieScreeningsByTheaterIdAndDay = async (
     };
     return await axiosInstance.get(THEATERS_PATH + '/' + theaterId + SCREENINGS_PATH, { params });
 };
+
+export const searchTheaters = async (query: string): Promise<Theater[]> => {
+    return await axiosInstance.get(THEATERS_PATH + '/search?q=' + query);
+};

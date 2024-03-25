@@ -59,6 +59,12 @@
             "latency": 200,
             "verbs": ["delete"]
         },
+        "theaters/search": {
+            "httpStatus": 500,
+            "verbs": ["get"],
+            "mockFile": "theaters/theaters-search-results.json",
+            "switch": ["q"]
+        },
         "theaters/:id": {
             "httpStatus": 200,
             "latency": 500,
@@ -76,11 +82,29 @@
             "verbs": ["get"],
             "mockFile": "theaters/theater-movies.json"
         },
+        "theaters/:id/screenings": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "latency": 300,
+            "mockFile": "theaters/movies-screenings-by-theater-id-and-day-1.json",
+            "switch": ["day"],
+            "switchResponses": {
+                "day1": { "httpStatus": 200, "mockFile": "theaters/movies-screenings-by-theater-id-and-day-1.json" },
+                "day2": { "httpStatus": 200, "mockFile": "theaters/movies-screenings-by-theater-id-and-day-2.json" },
+                "day3": { "httpStatus": 200, "mockFile": "theaters/movies-screenings-by-theater-id-and-day-3.json" }
+            }
+        },
         "movies/currently": {
             "httpStatus": 200,
             "latency": 400,
             "verbs": ["get"],
             "mockFile": "movies/current-movies.json"
+        },
+        "movies/search": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "movies/movies-search-results.json",
+            "switch": ["q"]
         },
         "movies/:id": {
             "httpStatus": 200,
@@ -92,18 +116,6 @@
                 "id3e07de0f-f2c8-4c46-9ac9-744abb8af481": { "httpStatus": 200, "mockFile": "movies/movie-3.json" },
                 "idcff01b1b-a943-4bcf-a396-afd80417150a": { "httpStatus": 200, "mockFile": "movies/movie-4.json" },
                 "iddd4cdbd2-44b7-4fb4-84b4-4f016d379ddb": { "httpStatus": 200, "mockFile": "movies/movie-5.json" }
-            }
-        },
-        "theaters/:id/screenings": {
-            "httpStatus": 200,
-            "verbs": ["get"],
-            "latency": 300,
-            "mockFile": "theaters/movies-screenings-by-theater-id-and-day-1.json",
-            "switch": ["day"],
-            "switchResponses": {
-                "day1": { "httpStatus": 200, "mockFile": "theaters/movies-screenings-by-theater-id-and-day-1.json" },
-                "day2": { "httpStatus": 200, "mockFile": "theaters/movies-screenings-by-theater-id-and-day-2.json" },
-                "day3": { "httpStatus": 200, "mockFile": "theaters/movies-screenings-by-theater-id-and-day-3.json" }
             }
         },
         "movies/:id/screenings": {

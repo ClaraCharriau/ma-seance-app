@@ -9,11 +9,11 @@ import { toast } from 'react-toastify';
 
 type TheatersListProps = {
     theaters: Theater[];
-    isUpdate: boolean;
+    isUpdate?: boolean;
 };
 
 const TheatersList = (props: TheatersListProps) => {
-    const { theaters, isUpdate } = props;
+    const { theaters, isUpdate = false } = props;
     const { currentUser } = useAuthContext();
 
     const [showModale, setShowModale] = useState<boolean>(false);
