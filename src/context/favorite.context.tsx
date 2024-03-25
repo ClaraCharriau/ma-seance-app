@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { getUserFavMovies, getUserFavTheaters } from '../client/users/user.client';
 import { Movie } from '../models/Movie';
 import { Theater } from '../models/Theater';
@@ -28,7 +28,7 @@ export const FavoriteProvider = (props: FavoriteProviderProps) => {
     const [favoriteTheaters, setFavoriteTheaters] = useState<Theater[]>([]);
     const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
 
-    useMemo(() => {
+    useEffect(() => {
         const getFavorites = async () => {
             if (currentUser) {
                 await Promise.allSettled([
@@ -40,10 +40,10 @@ export const FavoriteProvider = (props: FavoriteProviderProps) => {
         getFavorites();
     }, [currentUser]);
 
-    const favoriteContext: IFavoriteContext = {
-        favoriteTheaters,
-        favoriteMovies
-    };
+    const favoriteContext: IFavoriteContext = useMemo(
+        () => ({ favoriteTheaters, favoriteMovies }),
+        [favoriteMovies, favoriteTheaters]
+    );
 
     return <FavoriteContext.Provider value={favoriteContext}>{children}</FavoriteContext.Provider>;
 };
