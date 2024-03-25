@@ -19,8 +19,6 @@ export const handleError = (error: any) => {
             statusText: error.response.statusText
         });
     }
-    console.error(error.message);
-    throw error;
 };
 
 export const handleResponse = (response: AxiosResponse) => {

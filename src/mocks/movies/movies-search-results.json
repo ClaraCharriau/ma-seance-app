@@ -1,0 +1,41 @@
+[
+    {
+        "id": "51e755d5-ec43-4e77-a2e6-f4f82a0e8ec5",
+        "title": "Night Swim",
+        "releaseDate": "2024-01-03",
+        "duration": 90,
+        "resume": "Ray Waller, un ancien joueur de football américain qui a dû abandonner sa carrière en raison d’une maladie dégénérative, s’installe dans une nouvelle maison, avec sa famille : sa femme Eve, leur fille Izzy et leur plus jeune fils. Ray, contre toute attente, ne désespère pas de reprendre sa carrière et persuade toute la famille que la piscine qui se trouve dans le jardin sera parfaite pour sa rééducation et pour ses enfants. Mais cette maison cache un lourd passé et ils vont sans le vouloir réveiller une force malveillante qui va tous les précipiter aux tréfonds de l’horreur absolue.",
+        "trailerLink": "",
+        "posterLink": "/1njKOrYQPQKAAX0Wt3PFptX4ULG.jpg",
+        "photoLink": "",
+        "directors": ["Bryce McGuire"],
+        "cast": ["Wyatt Russell", "Kerry Condon", "Gavin Warren"],
+        "genres": ["Horreur"]
+    },
+    {
+        "id": "b88f9510-d302-47d5-9d6b-8b13740f541d",
+        "title": "Madame Web",
+        "releaseDate": "2024-02-14",
+        "duration": 90,
+        "resume": "Cassandra Web est une ambulancière de Manhattan qui serait capable de voir dans le futur. Forcée de faire face à des révélations sur son passé, elle noue une relation avec trois jeunes femmes destinées à un avenir hors du commun... si toutefois elles parviennent à survivre à un présent mortel.",
+        "trailerLink": "",
+        "posterLink": "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
+        "photoLink": "",
+        "directors": ["S. J. Clarkson"],
+        "cast": ["Dakota Johnson", "Sydney Sweeney", "Isabela Merced"],
+        "genres": ["Action", "Science-Fiction"]
+    },
+    {
+        "id": "e301d3db-6aaf-47b6-a003-6a1bb0a3f029",
+        "title": "La Couleur Pourpre",
+        "releaseDate": "2024-01-24",
+        "duration": 90,
+        "resume": "Déchirée de sa sœur et de ses enfants, Celie fait face à de nombreuses difficultés dans la vie, notamment à un mari violent. Avec le soutien d'un chanteur sensuel nommé Shug Avery, ainsi que de sa belle-fille, Celie trouve finalement une force extraordinaire dans les liens indestructibles d'un nouveau type de fraternité.",
+        "trailerLink": "",
+        "posterLink": "/fKkWAjAwNXHHtxnpufRUbgFpmxr.jpg",
+        "photoLink": "",
+        "directors": ["Blitz Bazawule"],
+        "cast": ["Fantasia Barrino", "araji P. Henson"],
+        "genres": ["Musical", "Drame"]
+    }
+]

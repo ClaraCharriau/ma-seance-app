@@ -9,11 +9,11 @@ import style from './MovieList.module.css';
 
 interface MovieListProps {
     movieList: Movie[];
-    isUpdate: boolean;
+    isUpdate?: boolean;
 }
 
 const MovieList = (props: MovieListProps) => {
-    const { movieList, isUpdate } = props;
+    const { movieList, isUpdate = false } = props;
     const { currentUser } = useAuthContext();
 
     const [showModale, setShowModale] = useState<boolean>(false);

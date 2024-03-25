@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search bar component tests should render search field with input 1`] = `
+<body>
+  <div>
+    <form
+      class="searchLayout"
+    >
+      <button
+        class="searchBtn"
+        type="submit"
+      >
+        <label
+          for="search"
+        >
+          <svg
+            fill="none"
+            height="30"
+            viewBox="0 0 31 30"
+            width="31"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.3009 23.75C19.7895 23.75 24.2388 19.2728 24.2388 13.75C24.2388 8.22715 19.7895 3.75 14.3009 3.75C8.81238 3.75 4.36304 8.22715 4.36304 13.75C4.36304 19.2728 8.81238 23.75 14.3009 23.75Z"
+              stroke="#FAB32D"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+            <path
+              d="M26.7233 26.25L21.3196 20.8125"
+              stroke="#FAB32D"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </label>
+      </button>
+      <input
+        class="searchInput"
+        id="search"
+        name="search"
+        placeholder="Rechercher un cinéma, un film..."
+        type="text"
+      />
+    </form>
+  </div>
+</body>
+`;

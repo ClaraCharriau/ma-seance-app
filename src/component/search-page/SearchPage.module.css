@@ -1,0 +1,82 @@
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 170px;
+    height: 34px;
+    cursor: pointer;
+    margin: 30px 0 5px;
+}
+
+/* Hide default HTML checkbox */
+.switchInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.switchSlider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--primary-variant);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 6px;
+}
+
+.switchSlider:before {
+    position: absolute;
+    content: '';
+    height: 30px;
+    width: 90px;
+    left: -2px;
+    background-color: var(--primary-variant);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 6px;
+}
+
+.switchInput:checked + .switchSlider:before {
+    -webkit-transform: translateX(60px);
+    -ms-transform: translateX(60px);
+    transform: translateX(100px);
+    width: 70px;
+}
+
+.cinemaLabel,
+.filmLabel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary);
+    transition: 0.4s;
+}
+
+.cinemaLabel {
+    left: 10px;
+}
+
+.filmLabel {
+    right: 10px;
+    color: var(--primary-variant);
+}
+
+.switchInput:checked ~ .cinemaLabel {
+    color: var(--primary-variant);
+    transition: 0.4s;
+}
+
+.switchInput:checked ~ .filmLabel {
+    color: var(--secondary);
+    transition: 0.4s;
+}
+
+.error {
+    color: var(--red);
+}

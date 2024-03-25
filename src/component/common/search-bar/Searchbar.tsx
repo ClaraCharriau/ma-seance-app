@@ -1,9 +1,26 @@
+import { FormEvent, useState } from 'react';
+import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 import style from './Searchbar.module.css';
 
 const Searchbar = () => {
+    const [searchBarParams, setSearchBarParams] = useSearchParams();
+    const [query, setQuery] = useState<string>('');
+    const navigate = useNavigate();
+
+    const submitSearch = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        searchInput();
+    };
+
+    const searchInput = () => {
+        searchBarParams.set('q', query);
+        setSearchBarParams(searchBarParams);
+        navigate({ pathname: '/search', search: createSearchParams(searchBarParams).toString() }, { state: { query } });
+    };
+
     return (
-        <div className={style.searchLayout}>
-            <button className={style.searchBtn}>
+        <form onSubmit={event => submitSearch(event)} className={style.searchLayout}>
+            <button className={style.searchBtn} type="submit">
                 <label htmlFor="search">
                     <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -29,8 +46,9 @@ const Searchbar = () => {
                 name="search"
                 id="search"
                 placeholder="Rechercher un cinéma, un film..."
+                onChange={event => setQuery(event.target.value)}
             />
-        </div>
+        </form>
     );
 };
 
