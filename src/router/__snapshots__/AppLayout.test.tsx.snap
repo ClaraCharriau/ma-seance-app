@@ -43,11 +43,12 @@ exports[`App layout component tests should render app layout component 1`] = `
         />
       </svg>
     </a>
-    <div
+    <form
       class="searchLayout"
     >
       <button
         class="searchBtn"
+        type="submit"
       >
         <label
           for="search"
@@ -83,7 +84,7 @@ exports[`App layout component tests should render app layout component 1`] = `
         placeholder="Rechercher un cinéma, un film..."
         type="text"
       />
-    </div>
+    </form>
     <nav
       class="headerButtons"
     >
@@ -384,11 +385,12 @@ exports[`App layout component tests should render spinner 1`] = `
         />
       </svg>
     </a>
-    <div
+    <form
       class="searchLayout"
     >
       <button
         class="searchBtn"
+        type="submit"
       >
         <label
           for="search"
@@ -424,7 +426,7 @@ exports[`App layout component tests should render spinner 1`] = `
         placeholder="Rechercher un cinéma, un film..."
         type="text"
       />
-    </div>
+    </form>
     <nav
       class="headerButtons"
     >
