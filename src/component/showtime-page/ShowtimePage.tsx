@@ -1,18 +1,20 @@
+import { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { deleteUserShowtime } from '../../client/users/user.client';
+import config from '../../config/config.helper';
+import { useAuthContext } from '../../context/auth.context';
 import { Showtime } from '../../models/Showtime';
+import ConfirmationModal from '../common/modals/confirmation-modal/ConfirmationModal';
 import { ShowtimeDetails } from '../common/showtime-details/ShowtimeDetails';
 import style from './ShowtimePage.module.css';
-import config from '../../config/config.helper';
-import { deleteUserShowtime } from '../../client/users/user.client';
-import { useAuthContext } from '../../context/auth.context';
-import { toast } from 'react-toastify';
-import { useState } from 'react';
-import ConfirmationModal from '../common/modals/confirmation-modal/ConfirmationModal';
 
 const ShowtimePage = () => {
     const { currentUser } = useAuthContext();
     const [showModale, setShowModale] = useState<boolean>(false);
     const showtime = useLoaderData() as Showtime;
+    const navigate = useNavigate();
 
     // Calculate if the showtime is upcoming or not to set the correct page title
     const today = new Date();
@@ -45,6 +47,7 @@ const ShowtimePage = () => {
                     })
                 ));
             setShowModale(false);
+            navigate('/agenda');
         } catch (error: any) {
             console.error('An error occured');
         }

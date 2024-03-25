@@ -1,11 +1,10 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-import { fireEvent, render, waitFor } from '@testing-library/react';
-import Profile from './Profile';
+import { act, fireEvent, render, waitFor } from '@testing-library/react';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from '../../context/auth.context';
-import { act } from 'react-dom/test-utils';
-import MockAdapter from 'axios-mock-adapter';
-import axios from 'axios';
+import Profile from './Profile';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
@@ -32,20 +31,14 @@ describe('Profile page component tests', () => {
     });
 
     it('should render profile page', () => {
-        // Given
-        let component: any;
-
         // When
-        act(() => {
-            component = render(
-                <AuthProvider>
-                    <Router>
-                        <Profile />
-                    </Router>
-                </AuthProvider>
-            );
-        });
-
+        const component = render(
+            <AuthProvider>
+                <Router>
+                    <Profile />
+                </Router>
+            </AuthProvider>
+        );
         // Then
         expect(component.baseElement).toMatchSnapshot();
     });

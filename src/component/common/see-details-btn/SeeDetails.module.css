@@ -1,7 +1,6 @@
 .seeDetailsBtn {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     gap: 10px;
     color: var(--primary-variant);
@@ -14,4 +13,8 @@
     .seeDetailsBtn {
         display: none;
     }
+}
+
+.seeDetailsBtn svg {
+    margin: 0 auto;
 }

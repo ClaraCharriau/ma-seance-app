@@ -12,6 +12,10 @@
     width: 100%;
 }
 
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
 .sliderWrapper {
     width: 100%;
     position: relative;

@@ -1,7 +1,6 @@
 /* eslint-disable  @typescript-eslint/no-empty-function */
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
-import { act } from 'react-dom/test-utils';
 import { axiosInstance } from '../../../client/axios.config';
 import mockUser from '../../../mocks/users/users.json';
 import AccountCreation from './AccountCreation';
@@ -268,4 +267,5 @@ describe('AccountCreation component tests', () => {
         });
     });
 });
-export {};
+export { };
+

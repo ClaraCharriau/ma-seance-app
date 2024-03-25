@@ -1,6 +1,5 @@
-import { waitFor } from '@testing-library/react';
+import { act, waitFor } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
-import { act } from 'react-dom/test-utils';
 import { axiosInstance } from '../../../client/axios.config';
 import mockTheater from '../../../mocks/theaters/theaters-1.json';
 import { theaterLoader } from './TheaterLoader';
