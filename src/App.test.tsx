@@ -1,9 +1,8 @@
-import { render } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 import App from './App';
-import { act } from 'react-dom/test-utils';
 
-it('renders App without crashing', () => {
-    act(() => {
+it('renders App without crashing', async () => {
+    await act(async () => {
         render(<App />);
     });
     expect(true).toBeTruthy();

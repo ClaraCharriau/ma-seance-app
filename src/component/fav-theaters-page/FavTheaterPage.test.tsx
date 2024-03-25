@@ -1,12 +1,10 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
-import FavTheaters from './FavTheaterPage';
+import { act, fireEvent, render, waitFor } from '@testing-library/react';
+import MockAdapter from 'axios-mock-adapter';
 import { BrowserRouter } from 'react-router-dom';
+import { axiosInstance } from '../../client/axios.config';
 import mockFavoriteTheaters from '../../mocks/users/fav-theaters.json';
 import mockUser from '../../mocks/users/users.json';
-import { act } from 'react-dom/test-utils';
-import MockAdapter from 'axios-mock-adapter';
-import axios from 'axios';
-import { axiosInstance } from '../../client/axios.config';
+import FavTheaters from './FavTheaterPage';
 
 describe('Favorite theaters Component', () => {
     const favoriteContext = require('../../context/favorite.context');

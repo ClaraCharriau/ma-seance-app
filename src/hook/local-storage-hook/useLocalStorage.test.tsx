@@ -1,6 +1,5 @@
-import { renderHook } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import { useLocalStorage } from './useLocalStorage';
-import { act } from 'react-dom/test-utils';
 
 describe('useLocalStorage hook tests', () => {
     const mockSetItem = jest.spyOn(Storage.prototype, 'setItem');

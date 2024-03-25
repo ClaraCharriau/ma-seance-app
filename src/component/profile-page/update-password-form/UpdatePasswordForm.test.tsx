@@ -1,6 +1,5 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
-import { act } from 'react-dom/test-utils';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { axiosInstance } from '../../../client/axios.config';
 import UpdatePasswordForm from './UpdatePasswordForm';

@@ -1,8 +1,7 @@
-import { render, waitFor } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
-import { BrowserRouter, MemoryRouter } from 'react-router-dom';
-import mockScreeningsData from '../../../mocks/movies/theaters-screenings-by-movie-id-and-day-1.json';
+import { act, render, waitFor } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import mockMovie from '../../../mocks/movies/movie-1.json';
+import mockScreeningsData from '../../../mocks/movies/theaters-screenings-by-movie-id-and-day-1.json';
 import TheaterScreeningsList from './TheaterScreeningsList';
 
 jest.mock('react-router-dom', () => ({

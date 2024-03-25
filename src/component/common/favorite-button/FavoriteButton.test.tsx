@@ -1,11 +1,10 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
-import FavoriteButton from './FavoriteButton';
-import MockAdapter from 'axios-mock-adapter';
+import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import axios from 'axios';
-import { act } from 'react-dom/test-utils';
-import mockUser from '../../../mocks/users/users.json';
-import mockTheaters from '../../../mocks/users/fav-theaters.json';
+import MockAdapter from 'axios-mock-adapter';
 import mockMovies from '../../../mocks/users/fav-movies.json';
+import mockTheaters from '../../../mocks/users/fav-theaters.json';
+import mockUser from '../../../mocks/users/users.json';
+import FavoriteButton from './FavoriteButton';
 
 describe('Favorite button component tests', () => {
     const favoriteContext = require('../../../context/favorite.context');

@@ -1,7 +1,6 @@
-import { act } from 'react-dom/test-utils';
+import { act, render, renderHook, waitFor } from '@testing-library/react';
+import mockUser from '../mocks/users/users.json';
 import { AuthProvider, useAuthContext } from './auth.context';
-import { render, renderHook, waitFor } from '@testing-library/react';
-import mockUser from '../mocks/users/users.json'
 
 const { result } = renderHook(useAuthContext);
 
@@ -92,4 +91,5 @@ describe('Authentication context tests', () => {
         });
     });
 });
-export {};
+export { };
+
