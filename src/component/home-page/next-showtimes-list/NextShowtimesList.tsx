@@ -24,6 +24,7 @@ const NextShowtimesList = () => {
         setNextShowtimes(userNextShowtimes);
         setLoading(false);
         clearTimeout(timeout);
+        // eslint-disable-next-line
     }, [showtimes]);
 
     const getUserNextShowtimes = (): Showtime[] => {
