@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { getUserShowtimes, updateUserShowtimes } from '../client/users/user.client';
 import { Showtime } from '../models/Showtime';
 import { useAuthContext } from './auth.context';
@@ -6,7 +6,7 @@ import { useAuthContext } from './auth.context';
 /* eslint-disable */
 interface IAgendaContext {
     showtimes: Showtime[] | [];
-    updateAgenda: (showtime: Showtime) => Promise<void>;
+    updateAgenda: (showtime: Showtime) => Promise<void>
 }
 
 const defaultContext: IAgendaContext = {
@@ -26,7 +26,7 @@ export const AgendaProvider = (props: AgendaProviderProps) => {
     const { currentUser } = useAuthContext();
     const [showtimes, setShowtimes] = useState<Showtime[]>([]);
 
-    useMemo(() => {
+    useEffect(() => {
         const getAgenda = async () => {
             if (currentUser) {
                 await getUserShowtimes(currentUser.id).then(response => setShowtimes(response));
@@ -41,10 +41,14 @@ export const AgendaProvider = (props: AgendaProviderProps) => {
         }
     };
 
-    const agendaContext: IAgendaContext = {
-        showtimes,
-        updateAgenda
-    };
+    const agendaContext: IAgendaContext = useMemo(
+        () => ({
+            showtimes,
+            updateAgenda
+        }),
+        // eslint-disable-next-line
+        [showtimes]
+    );
 
     return <AgendaContext.Provider value={agendaContext}>{children}</AgendaContext.Provider>;
 };

@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from 'react';
-import { useLocalStorage } from '../hook/local-storage-hook/useLocalStorage';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { User } from '../models/User';
+import { useLocalStorage } from '../hook/local-storage-hook/useLocalStorage';
 
 /* eslint-disable */
 interface IAuthContext {
@@ -40,11 +40,15 @@ export const AuthProvider = (props: AuthProviderProps) => {
         removeItem('user');
     };
 
-    const authContext: IAuthContext = {
-        currentUser: user,
-        setCurrentUser,
-        clearCurrentUser
-    };
+    const authContext: IAuthContext = useMemo(
+        () => ({
+            currentUser: user,
+            setCurrentUser,
+            clearCurrentUser
+        }),
+        // eslint-disable-next-line
+        [user]
+    );
 
     return <AuthContext.Provider value={authContext}>{children}</AuthContext.Provider>;
 };
