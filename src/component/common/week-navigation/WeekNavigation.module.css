@@ -1,0 +1,87 @@
+.plannerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    background-color: var(--secondary-variant);
+    border-radius: 8px;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    margin: 4vh 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.plannerWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.shadowWrapper {
+    position: relative;
+}
+
+.shadow {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 13%;
+    height: 100%;
+    background: linear-gradient(to left, var(--secondary-variant), transparent);
+}
+
+.plannerWrapper a {
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.plannerWrapper a:hover {
+    opacity: 0.5;
+}
+
+.dayButtonActive {
+    background-color: var(--primary-variant-fade);
+    border-bottom: solid 3px var(--primary-variant);
+    transition: all 0.2;
+}
+
+.dayOfWeek,
+.month {
+    font-weight: 300;
+}
+
+.dayOfWeek {
+    font-size: 14px;
+}
+
+.dayNumber {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.month {
+    font-size: 10px;
+}
+
+@media (max-width: 500px) {
+    .dayOfWeek,
+    .month {
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 3ch;
+    }
+
+    .plannerWrapper a {
+        min-width: 15vw;
+    }
+}

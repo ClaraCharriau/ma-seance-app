@@ -1,0 +1,27 @@
+.movieList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vw;
+    margin-top: 40px;
+}
+
+.movieListCard {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deleteButton {
+    align-self: flex-start;
+    height: auto;
+}
+
+@media (max-width: 900px) {
+    .movieList {
+        gap: 5vw;
+    }
+
+    .movieListCard {
+        width: 100%;
+    }
+}

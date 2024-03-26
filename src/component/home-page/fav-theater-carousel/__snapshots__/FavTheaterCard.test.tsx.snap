@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fav Theater Card Component renders Fav Theater Card component 1`] = `
+<div>
+  <a
+    class="card"
+    href="/theaters/6/day-1"
+  >
+    <img
+      alt="photo de UGC Normandie"
+      class="theaterCardImg"
+      src="/assets/img/theaters/ugc-normandie-paris.jpg"
+    />
+    <div
+      class="theaterName"
+    >
+      <p>
+        UGC Normandie
+      </p>
+    </div>
+  </a>
+</div>
+`;

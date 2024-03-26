@@ -1,0 +1,90 @@
+.movieSummaryWrapper {
+    display: flex;
+    gap: 3vw;
+}
+
+.movieSummaryWrapper img {
+    max-height: 200px;
+    border-radius: 6px;
+}
+
+.movieInfosWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.movieInfos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+}
+
+.movieTitle {
+    color: var(--primary-variant);
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 600;
+    letter-spacing: 2.08px;
+}
+
+.movieDirectors,
+.movieCast,
+.movieDuration {
+    color: var(--primary);
+    font-size: clamp(12px, 3vw, 16px);
+    font-weight: 300;
+}
+
+.movieResume {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.timeSlotColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 12px;
+    width: 30%;
+}
+
+.timeSlotTitle {
+    color: var(--primary);
+}
+
+@media (max-width: 900px) {
+    .movieInfosWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .movieInfos {
+        width: 100%;
+    }
+
+    .timeSlotColumn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .movieSummaryWrapper img {
+        max-height: 100px;
+    }
+
+    .movieInfosWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .movieInfos {
+        gap: 10px;
+    }
+
+    .movieCast, .movieResume, .timeSlotTitle, .timeSlotColumn a {
+        display: none;
+    }
+}

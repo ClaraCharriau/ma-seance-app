@@ -1,0 +1,144 @@
+{
+    "mockDirectory": "src/mocks",
+    "quiet": false,
+    "port": "7878",
+    "latency": 50,
+    "logRequestHeaders": false,
+    "webServices": {
+        "registrations": {
+            "mockFile": "users/users.json",
+            "latency": 20,
+            "verbs": ["post", "patch"]
+        },
+        "registrations/:id": {
+            "httpStatus": 404,
+            "latency": 20,
+            "verbs": ["delete"]
+        },
+        "token": {
+            "verbs": ["post"],
+            "latency": 20,
+            "switch": ["email"],
+            "responses": {
+                "post": { "httpStatus": 200, "mockFile": "auth/verify-false.json" }
+            },
+            "switchResponses": {
+                "emailtest%40mail.com": { "httpStatus": 200, "mockFile": "auth/verify-true.json" }
+            }
+        },
+        "users/:id/fav-theaters": {
+            "httpStatus": 200,
+            "latency": 500,
+            "verbs": ["get"],
+            "mockFile": "users/fav-theaters.json"
+        },
+        "users/:id/fav-theaters/:id": {
+            "httpStatus": 200,
+            "latency": 200,
+            "verbs": ["delete", "patch"]
+        },
+        "users/:id/fav-movies": {
+            "httpStatus": 200,
+            "latency": 500,
+            "verbs": ["get"],
+            "mockFile": "users/fav-movies.json"
+        },
+        "users/:id/fav-movies/:id": {
+            "httpStatus": 200,
+            "latency": 200,
+            "verbs": ["delete", "patch"]
+        },
+        "users/:id/showtimes": {
+            "httpStatus": 200,
+            "latency": 200,
+            "verbs": ["get", "patch"],
+            "mockFile": "users/user-showtimes-2.json"
+        },
+        "users/:id/showtimes/:id": {
+            "httpStatus": 200,
+            "latency": 200,
+            "verbs": ["delete"]
+        },
+        "theaters/search": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "theaters/theaters-search-results.json",
+            "switch": ["q"]
+        },
+        "theaters/:id": {
+            "httpStatus": 200,
+            "latency": 500,
+            "verbs": ["get"],
+            "mockFile": "theaters/theaters-1.json",
+            "switch": ["id"],
+            "switchResponses": {
+                "id10": { "httpStatus": 200, "mockFile": "theaters/theaters-10.json" },
+                "id2": { "httpStatus": 200, "mockFile": "theaters/theaters-2.json" },
+                "id3": { "httpStatus": 200, "mockFile": "theaters/theaters-3.json" }
+            }
+        },
+        "theaters/:id/movies": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "theaters/theater-movies.json"
+        },
+        "theaters/:id/screenings": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "latency": 300,
+            "mockFile": "theaters/movies-screenings-by-theater-id-and-day-1.json",
+            "switch": ["day"],
+            "switchResponses": {
+                "day1": { "httpStatus": 200, "mockFile": "theaters/movies-screenings-by-theater-id-and-day-1.json" },
+                "day2": { "httpStatus": 200, "mockFile": "theaters/movies-screenings-by-theater-id-and-day-2.json" },
+                "day3": { "httpStatus": 200, "mockFile": "theaters/movies-screenings-by-theater-id-and-day-3.json" }
+            }
+        },
+        "movies/currently": {
+            "httpStatus": 200,
+            "latency": 400,
+            "verbs": ["get"],
+            "mockFile": "movies/current-movies.json"
+        },
+        "movies/search": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "movies/movies-search-results.json",
+            "switch": ["q"]
+        },
+        "movies/:id": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "mockFile": "movies/movie-1.json",
+            "switch": ["id"],
+            "switchResponses": {
+                "idb88f9510-d302-47d5-9d6b-8b13740f541d": { "httpStatus": 200, "mockFile": "movies/movie-2.json" },
+                "id3e07de0f-f2c8-4c46-9ac9-744abb8af481": { "httpStatus": 200, "mockFile": "movies/movie-3.json" },
+                "idcff01b1b-a943-4bcf-a396-afd80417150a": { "httpStatus": 200, "mockFile": "movies/movie-4.json" },
+                "iddd4cdbd2-44b7-4fb4-84b4-4f016d379ddb": { "httpStatus": 200, "mockFile": "movies/movie-5.json" }
+            }
+        },
+        "movies/:id/screenings": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "latency": 300,
+            "mockFile": "movies/theaters-screenings-by-movie-id-and-day-1.json",
+            "switch": ["day"],
+            "switchResponses": {
+                "day1": { "httpStatus": 200, "mockFile": "movies/theaters-screenings-by-movie-id-and-day-1.json" },
+                "day2": { "httpStatus": 200, "mockFile": "movies/theaters-screenings-by-movie-id-and-day-2.json" },
+                "day3": { "httpStatus": 200, "mockFile": "movies/theaters-screenings-by-movie-id-and-day-3.json" }
+            }
+        },
+        "showtimes/:id": {
+            "httpStatus": 200,
+            "verbs": ["get"],
+            "latency": 200,
+            "mockFile": "showtimes/showtimes.json",
+            "switch": ["id"],
+            "switchResponses": {
+                "idbbf24dfe-7788-4084-a6ca-43c3b75df2a4": { "httpStatus": 200, "mockFile": "showtimes/showtimes-2.json" }
+            }
+        }
+    }
+}

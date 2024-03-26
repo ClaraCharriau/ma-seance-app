@@ -1,0 +1,66 @@
+.showtimeCardWrapper {
+    font-size: 10px;
+    background-color: var(--secondary-variant);
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: flex;
+    gap: 15px;
+}
+
+.calendarDate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 13px;
+}
+
+.calendarFrame {
+    position: absolute;
+}
+
+.calendarDate span {
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 3ch;
+}
+
+.movieTitleAndPlace {
+    display: block;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.hourAndPlace {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.movieTitle {
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--primary-variant);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.hourly {
+    font-size: 14px;
+    max-width: 45px;
+}
+
+.dayNumber {
+    font-weight: 800;
+}
+
+.theaterName {
+    font-weight: 300;
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

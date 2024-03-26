@@ -1,0 +1,126 @@
+[
+    {
+        "id": "caadad78-7daf-4c49-abe8-2514b43884f6",
+        "schedule": {
+            "date": "2024-03-17T11:45:00",
+            "dayName": "dimanche",
+            "dayNumber": "17",
+            "month": "mars",
+            "year": "2024",
+            "hourly": "11:45"
+        },
+        "movie": {
+            "id": "cff01b1b-a943-4bcf-a396-afd80417150a",
+            "title": "Dune",
+            "releaseDate": "2024-03-31",
+            "duration": 166,
+            "resume": "Paul Atréides se rallie à Chani et aux Fremen tout en préparant sa revanche contre ceux qui ont détruit sa famille. Alors qu'il doit faire un choix entre l'amour de sa vie et le destin de la galaxie, il devra néanmoins tout faire pour empêcher un terrible futur que lui seul peut prédire.",
+            "trailerLink": "",
+            "posterLink": "/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg",
+            "photoLink": "",
+            "directors": ["Denis Villeneuve"],
+            "cast": ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
+            "genres": ["Drame", "Science-Fiction"]
+        },
+        "theater": {
+            "id": "18",
+            "name": "UGC Ciné Cité Strasbourg Etoile",
+            "address": "25, avenue du Rhin 67100 Strasbourg",
+            "imgPath": "/ugc-etoile-strasbourg",
+            "bookingPath": ""
+        }
+    },
+    {
+        "id": "bbf24dfe-7788-4084-a6ca-43c3b75df2a4",
+        "schedule": {
+            "date": "2024-03-23T18:45:00",
+            "dayName": "lundi",
+            "dayNumber": "23",
+            "month": "mars",
+            "year": "2024",
+            "hourly": "18:45"
+        },
+        "movie": {
+            "id": "dd4cdbd2-44b7-4fb4-84b4-4f016d379ddb",
+            "title": "The Grand Budapest Hotel",
+            "releaseDate": "2014-02-26",
+            "duration": 100,
+            "resume": "Pendant l’entre‐deux guerres, le légendaire concierge d’un grand hôtel et son jeune protégé se retrouvent impliqués dans une histoire mêlant le vol d’un tableau de la Renaissance, la bataille pour une énorme fortune familiale, et le lent puis soudain bouleversement qui transforme l’Europe en cette première moitié de XXème siècle.",
+            "trailerLink": "",
+            "posterLink": "/atLMzzA7pOB0BdfM89V7BbdtLN6.jpg",
+            "photoLink": "/xHDynIimfsgj0ZOs0j5ma8v1vmM.jpg",
+            "directors": ["Wes Anderson"],
+            "cast": ["Ralph Fiennes", "Zendaya", "Rebecca Ferguson"],
+            "genres": ["Comédie", "Drame"]
+        },
+        "theater": {
+            "id": "16",
+            "name": "Pathé Angers",
+            "address": "1, avenue des Droits de l'Homme 49000 Angers",
+            "imgPath": "/pathe-angers",
+            "bookingPath": ""
+        }
+    },
+    {
+        "id": "c747873f-b2cf-4a0e-a7bd-13111df85789",
+        "schedule": {
+            "date": "2024-07-10T20:00:00",
+            "dayName": "jeudi",
+            "dayNumber": "10",
+            "month": "juillet",
+            "year": "2024",
+            "hourly": "20:00"
+        },
+        "movie": {
+            "id": "3d8f1342-15f1-44b1-a48f-4581d654b94a",
+            "title": "Pauvres créatures",
+            "releaseDate": "2024-01-17",
+            "duration": 90,
+            "resume": "Après s'être noyée pour échapper à son mari violent, le cerveau de Bella Baxter est remplacé par celui de son enfant à naître.",
+            "trailerLink": "https://www.youtube.com/watch?v=ZGwOzkF6HjI&t=1s",
+            "posterLink": "/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg",
+            "photoLink": "/bQS43HSLZzMjZkcHJz4fGc7fNdz.jpg",
+            "directors": ["Yorgos Lanthimos"],
+            "cast": ["Emma Stone", "Mark Ruffalo", "Willem Dafoe"],
+            "genres": ["Science-Fiction", "Romance", "Comédie"]
+        },
+        "theater": {
+            "id": "18",
+            "name": "UGC Ciné Cité Strasbourg Etoile",
+            "address": "25, avenue du Rhin 67100 Strasbourg",
+            "imgPath": "/ugc-etoile-strasbourg",
+            "bookingPath": ""
+        }
+    },
+    {
+        "id": "0cbd2689-2866-469f-8f39-98104c18dc26",
+        "schedule": {
+            "date": "2017-07-10T10:45:00",
+            "dayName": "vendredi",
+            "dayNumber": "10",
+            "month": "janvier",
+            "year": "2017",
+            "hourly": "10:45"
+        },
+        "movie": {
+            "id": "3e07de0f-f2c8-4c46-9ac9-744abb8af481",
+            "title": "Your Name.",
+            "releaseDate": "2016-12-28",
+            "duration": 107,
+            "resume": "Mitsuha est une lycéenne, la fille du maire d'une petite ville nichée entre les montagnes. Vivant avec sa petite sœur et sa grand-mère, c'est une demoiselle franche qui n'hésite pas à dire qu'elle n'a pas envie de participer aux rituels shinto, ou d'aider son père dans ses campagnes électorales. En fait, elle rêve de pouvoir quitter cette ville où elle s'ennuie, pour partir tenter sa chance à la capitale. Taki est un lycéen, un tokyoïte qui travaille à mi-temps dans un restaurant italien, tout en aspirant à des études d'architecture ou dans les Beaux-Arts. Chaque nuit, il fait un rêve étrange, où il devient… une lycéenne campagnarde, vivant dans une petite ville entre les montagnes. Quel secret se cache derrière ces rêves mutuels, qui unissent ces deux êtres qui ne se sont jamais rencontrés ?",
+            "trailerLink": "",
+            "posterLink": "/zyHjvVRgKOt9wgVx4ikp2kGArGF.jpg",
+            "photoLink": "/dIWwZW7dJJtqC6CgWzYkNVKIUm8.jpg",
+            "directors": ["Makoto Shinkai"],
+            "cast": ["Ryunosuke Kamiki", "Mone Kamishiraishi", "Ryo Narita"],
+            "genres": ["Animation", "Romance"]
+        },
+        "theater": {
+            "id": "23",
+            "name": "Cinéma Vox",
+            "address": "17, rue des Francs-Bourgeois 67000 Strasbourg",
+            "imgPath": "/vox-strasbourg",
+            "bookingPath": ""
+        }
+    }
+]

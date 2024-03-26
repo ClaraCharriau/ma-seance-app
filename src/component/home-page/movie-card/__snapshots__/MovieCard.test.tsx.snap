@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Currently showing movie card component tests renders Movie Card component 1`] = `
+<body>
+  <div>
+    <a
+      class="card"
+      href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
+    >
+      <img
+        alt="Affiche du film Pauvres créatures"
+        class="movieCardImg"
+        src="https://image.tmdb.org/t/p/w1280/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+      />
+    </a>
+  </div>
+</body>
+`;

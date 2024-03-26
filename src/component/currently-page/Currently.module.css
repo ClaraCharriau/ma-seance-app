@@ -1,0 +1,17 @@
+.pageTitle,
+.currentWeek {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pageTitle {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(24px, 3vw, 28px);
+}
+
+.currentWeek {
+    font-size: clamp(12px, 3vw, 16px);
+}

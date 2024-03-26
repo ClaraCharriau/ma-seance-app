@@ -1,0 +1,81 @@
+.homePageMain {
+    flex-direction: row;
+}
+
+.leftColumn {
+    width: 57vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.rightColumn {
+    position: fixed;
+    right: 70px;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+}
+
+.homeSectionTitle {
+    font-family: 'Work Sans', sans-serif;
+    font-size: clamp(13px, 3vw, 11px);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 15px 0;
+    white-space: nowrap;
+}
+
+.sectionTitleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.homeLeftSection {
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.homeLeftSectionBg {
+    background-color: var(--secondary-variant);
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.homeRightSection {
+    margin-bottom: 20px;
+}
+
+.seeDetails {
+    color: var(--primary-variant);
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+    .homePageMain {
+        flex-direction: column-reverse;
+        gap: 2vh;
+    }
+
+    .leftColumn {
+        width: 100%;
+        gap: 2vh;
+    }
+
+    .rightColumn {
+        position: relative;
+        right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .homeLeftSection {
+        padding: 0;
+    }
+}

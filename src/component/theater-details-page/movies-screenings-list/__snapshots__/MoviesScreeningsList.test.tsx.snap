@@ -1,0 +1,349 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Screenings Component should display empty screening list message 1`] = `
+<div>
+  <p>
+    Pas de séances ce jour-là...
+  </p>
+</div>
+`;
+
+exports[`Movie Screenings Component should renders movie screenings list component 1`] = `
+<div>
+  <section
+    class="showtimesSection"
+  >
+    <div
+      class="movieSummaryWrapper"
+    >
+      <a
+        href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
+      >
+        <img
+          alt="photo de Pauvres créatures"
+          src="https://image.tmdb.org/t/p/w500/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+        />
+      </a>
+      <div
+        class="movieInfosWrapper"
+      >
+        <div
+          class="movieInfos"
+        >
+          <a
+            href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
+          >
+            <p
+              class="movieTitle"
+            >
+              Pauvres créatures
+            </p>
+          </a>
+          <p
+            class="movieDirectors"
+          >
+            De 
+            Yorgos Lanthimos
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Emma Stone, Mark Ruffalo, Willem Dafoe
+          </p>
+          <p
+            class="movieDuration"
+          >
+            1h30
+             ● Sorti le 
+            17 janvier 2024
+          </p>
+          <p
+            class="movieResume"
+          >
+            Après s'être noyée pour échapper à son mari violent, le cerveau de Bella Baxter est remplacé par celui de son enfant à naître.
+          </p>
+        </div>
+        <div
+          class="timeSlotColumn"
+        >
+          <p
+            class="timeSlotTitle"
+          >
+            Horaires
+          </p>
+          <div
+            class="timeSlotWrapper"
+          >
+            <button
+              class="timeSlot"
+            >
+              09:45
+            </button>
+            <button
+              class="timeSlot"
+            >
+              10:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              14:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              15:05
+            </button>
+            <button
+              class="timeSlot"
+            >
+              18:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              21:35
+            </button>
+            <button
+              class="timeSlot"
+            >
+              16:45
+            </button>
+            <button
+              class="timeSlot"
+            >
+              19:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              21:45
+            </button>
+          </div>
+          <a
+            class=""
+            href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
+          >
+            Voir d'autres séances pour ce film &gt;
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="movieSummaryWrapper"
+    >
+      <a
+        href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785/day-1"
+      >
+        <img
+          alt="photo de Close"
+          src="https://image.tmdb.org/t/p/w500/DmixG0Bb1bB3FUbAtq7bt5rjDg.jpg"
+        />
+      </a>
+      <div
+        class="movieInfosWrapper"
+      >
+        <div
+          class="movieInfos"
+        >
+          <a
+            href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785/day-1"
+          >
+            <p
+              class="movieTitle"
+            >
+              Close
+            </p>
+          </a>
+          <p
+            class="movieDirectors"
+          >
+            De 
+            Lukas Dhont
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Eden Dambrine, Gustav de Waele, Emilie Dequenne
+          </p>
+          <p
+            class="movieDuration"
+          >
+            1h20
+             ● Sorti le 
+            1 novembre 2022
+          </p>
+          <p
+            class="movieResume"
+          >
+            Léo et Rémi, 13 ans, sont amis depuis toujours. Jusqu'à ce qu'un événement impensable les sépare. Léo se rapproche alors de Sophie, la mère de Rémi, pour essayer de comprendre…
+          </p>
+        </div>
+        <div
+          class="timeSlotColumn"
+        >
+          <p
+            class="timeSlotTitle"
+          >
+            Horaires
+          </p>
+          <div
+            class="timeSlotWrapper"
+          >
+            <button
+              class="timeSlot"
+            >
+              09:45
+            </button>
+            <button
+              class="timeSlot"
+            >
+              10:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              14:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              15:05
+            </button>
+            <button
+              class="timeSlot"
+            >
+              18:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              21:35
+            </button>
+            <button
+              class="timeSlot"
+            >
+              16:45
+            </button>
+            <button
+              class="timeSlot"
+            >
+              19:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              21:45
+            </button>
+          </div>
+          <a
+            class=""
+            href="/movies/f7e41334-179d-451a-a1d4-e1b9a60ee785/day-1"
+          >
+            Voir d'autres séances pour ce film &gt;
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="movieSummaryWrapper"
+    >
+      <a
+        href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029/day-1"
+      >
+        <img
+          alt="photo de Portrait de la jeune fille en feu"
+          src="https://image.tmdb.org/t/p/w500/lH2hSK6F1FZmS3ao384kZCMsbCl.jpg"
+        />
+      </a>
+      <div
+        class="movieInfosWrapper"
+      >
+        <div
+          class="movieInfos"
+        >
+          <a
+            href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029/day-1"
+          >
+            <p
+              class="movieTitle"
+            >
+              Portrait de la jeune fille en feu
+            </p>
+          </a>
+          <p
+            class="movieDirectors"
+          >
+            De 
+            Céline Sciamma
+          </p>
+          <p
+            class="movieCast"
+          >
+            Avec 
+            Adèle Haenel
+          </p>
+          <p
+            class="movieDuration"
+          >
+            1h20
+             ● Sorti le 
+            18 septembre 2019
+          </p>
+          <p
+            class="movieResume"
+          >
+            1770. Marianne est peintre et doit réaliser le portrait de mariage d’Héloïse, une jeune femme qui vient de quitter le couvent. Héloïse résiste à son destin d’épouse en refusant de poser. Marianne va devoir la peindre en secret. Introduite auprès d’elle en tant que dame de compagnie, elle la regarde.
+          </p>
+        </div>
+        <div
+          class="timeSlotColumn"
+        >
+          <p
+            class="timeSlotTitle"
+          >
+            Horaires
+          </p>
+          <div
+            class="timeSlotWrapper"
+          >
+            <button
+              class="timeSlot"
+            >
+              11:45
+            </button>
+            <button
+              class="timeSlot"
+            >
+              14:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              16:45
+            </button>
+            <button
+              class="timeSlot"
+            >
+              19:15
+            </button>
+            <button
+              class="timeSlot"
+            >
+              21:45
+            </button>
+          </div>
+          <a
+            class=""
+            href="/movies/e301d3db-6aaf-47b6-a003-6a1bb0a3f029/day-1"
+          >
+            Voir d'autres séances pour ce film &gt;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

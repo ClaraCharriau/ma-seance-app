@@ -1,0 +1,27 @@
+.theaterList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vw;
+    margin: 40px 0;
+}
+
+.theaterListCard {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deleteButton {
+    align-self: flex-start;
+    height: auto;
+}
+
+@media (max-width: 900px) {
+    .theaterList {
+        gap: 5vw;
+    }
+
+    .theaterListCard {
+        width: 100%;
+    }
+}

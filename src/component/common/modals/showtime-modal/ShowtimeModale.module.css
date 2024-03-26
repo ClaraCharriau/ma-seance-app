@@ -1,0 +1,11 @@
+.addToAgendaBtn {
+    background-color: var(--primary-variant);
+    color: var(--secondary);
+    width: 100%;
+    margin: 20px 0;
+}
+
+.cancelBtn {
+    border: 1px var(--almost-white) solid;
+    width: 100%;
+}

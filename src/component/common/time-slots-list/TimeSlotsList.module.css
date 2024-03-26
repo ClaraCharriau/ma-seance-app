@@ -1,0 +1,28 @@
+.timeSlotColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.timeSlotTitle {
+    color: var(--primary);
+}
+
+.timeSlotWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 900px) {
+    .timeSlotWrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .timeSlotWrapper {
+        width: 100%;
+    }
+}

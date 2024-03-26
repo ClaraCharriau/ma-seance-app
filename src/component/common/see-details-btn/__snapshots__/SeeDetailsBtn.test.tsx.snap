@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`See Details button Component should render see details button component 1`] = `
+<body>
+  <div>
+    <a
+      class="seeDetailsBtn"
+      href="/fav-theaters"
+    >
+      See details
+    </a>
+  </div>
+</body>
+`;

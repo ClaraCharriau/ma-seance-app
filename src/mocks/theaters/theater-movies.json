@@ -1,0 +1,68 @@
+[
+    {
+      "id": "3d8f1342-15f1-44b1-a48f-4581d654b94a",
+      "title": "Anatomie d'une chute",
+      "releaseDate": "2023-08-13",
+      "duration": 80,
+      "resume": "Alors qu'une femme est suspectée du meurtre de son mari, son fils aveugle est placé face à un dilemme moral en tant qu'unique témoin.",
+      "trailerLink": "null",
+      "posterLink": "/vwpB79T0KGxqZSx0wormGC58OZB.jpg",
+      "photoLink": "/fGe1ej335XbqN1j9teoDpofpbLX.jpg",
+      "directors": ["Justine Triet"],
+      "cast": [],
+      "genres": ["Drame", "Mystère", "Crime"]
+    },
+    {
+      "id": "f7e41334-179d-451a-a1d4-e1b9a60ee785",
+      "title": "Close",
+      "releaseDate": "2022-11-01",
+      "duration": 80,
+      "resume": "Léo et Rémi, 13 ans, sont amis depuis toujours. Jusqu'à ce qu'un événement impensable les sépare. Léo se rapproche alors de Sophie, la mère de Rémi, pour essayer de comprendre…",
+      "trailerLink": "null",
+      "posterLink": "/DmixG0Bb1bB3FUbAtq7bt5rjDg.jpg",
+      "photoLink": "/doZEE6CiLM8Q1hu4Hqoxr4Pf2JA.jpg",
+      "directors": [],
+      "cast": [],
+      "genres": ["Drame"]
+    },
+    {
+      "id": "e301d3db-6aaf-47b6-a003-6a1bb0a3f029",
+      "title": "Portrait de la jeune fille en feu",
+      "releaseDate": "2019-09-18",
+      "duration": 80,
+      "resume": "1770. Marianne est peintre et doit réaliser le portrait de mariage d’Héloïse, une jeune femme qui vient de quitter le couvent. Héloïse résiste à son destin d’épouse en refusant de poser. Marianne va devoir la peindre en secret. Introduite auprès d’elle en tant que dame de compagnie, elle la regarde.",
+      "trailerLink": "null",
+      "posterLink": "/lH2hSK6F1FZmS3ao384kZCMsbCl.jpg",
+      "photoLink": "/foFq1RZWQIgFuCQ0nyYccywjFyX.jpg",
+      "directors": ["Céline Sciamma"],
+      "cast": ["Adèle Haenel"],
+      "genres": ["Drame", "Romance"]
+    },
+    {
+      "id": "e301d3db-6aaf-47b6-a003-6a1bb0a3f029",
+      "title": "Les Quatre Cents Coups",
+      "releaseDate": "1959-06-03",
+      "duration": 80,
+      "resume": "Antoine a une adolescence turbulente. Il ment à ses parents indifférents à son sort, vole, fugue. Son seul réconfort, il fait les quatre cents coups avec son ami René. Un jour, la police s'en mêle.",
+      "trailerLink": "null",
+      "posterLink": "/9y51Fk9VeihwWzuCdkLDeCnjfoO.jpg",
+      "photoLink": "/cy7ymUaMEWRoig7LWXpfzaaw2vv.jpg",
+      "directors": ["François Truffaut"],
+      "cast": ["Jean-Pierre Léaud"],
+      "genres": ["Drame"]
+    },
+    {
+      "id": "3d8f1342-15f1-44b1-a48f-4581d654b94e",
+      "title": "Ascenseur pour l'échafaud",
+      "releaseDate": "1958-01-29",
+      "duration": 80,
+      "resume": "Un homme assassine son patron avec l'aide de sa femme dont il est l'amant. Voulant supprimer un indice compromettant, il se retrouve bloqué dans l'ascenseur qui l'emporte sur les lieux du crime.",
+      "trailerLink": "null",
+      "posterLink": "/r6iFAvndVjJmGBK955zL0gwGtuq.jpg",
+      "photoLink": "/aTKvtg7KEXnbAPhQ2pF9KXO4oKM.jpg",
+      "directors": ["Louis Malle"],
+      "cast": ["Jeanne Moreau"],
+      "genres": ["Crime", "Drame", "Thriller"]
+    }
+  ]
+  

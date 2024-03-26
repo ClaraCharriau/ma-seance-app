@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search page tests should render search page 1`] = `
+<body>
+  <div>
+    <main>
+      <p>
+        Résultats de la recherche "
+        test
+        "
+      </p>
+      <div>
+        <label
+          class="switch"
+        >
+          <input
+            class="switchInput"
+            type="checkbox"
+          />
+          <span
+            class="switchSlider"
+          />
+          <span
+            class="cinemaLabel"
+          >
+            Cinémas
+          </span>
+          <span
+            class="filmLabel"
+          >
+            Films
+          </span>
+        </label>
+      </div>
+      <div
+        class="spinner"
+      />
+    </main>
+  </div>
+</body>
+`;

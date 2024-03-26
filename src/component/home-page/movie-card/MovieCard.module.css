@@ -1,0 +1,17 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+}
+
+.movieCardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

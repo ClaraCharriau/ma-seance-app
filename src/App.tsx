@@ -1,12 +1,22 @@
-import './App.css';
-import { Outlet } from "react-router-dom";
+import Toast from './component/common/toast/Toast';
+import { AgendaProvider } from './context/agenda.context';
+import { AuthProvider } from './context/auth.context';
+import { FavoriteProvider } from './context/favorite.context';
+import AppRouter from './router/AppRouter';
 
 function App() {
-  return (
-    <div data-testid="app-component">
-      <Outlet />
-    </div >
-  );
+    return (
+        <>
+            <AuthProvider>
+                <FavoriteProvider>
+                    <AgendaProvider>
+                        <AppRouter />
+                    </AgendaProvider>
+                </FavoriteProvider>
+            </AuthProvider>
+            <Toast />
+        </>
+    );
 }
 
 export default App;
