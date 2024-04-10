@@ -83,7 +83,7 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
             return false;
         }
 
-        if (await isAlreadyExistingEmail()) {
+        if (newEmail !== email && (await isAlreadyExistingEmail())) {
             setVerifyError('Un compte existe déjà avec cette adresse email.');
             return false;
         }
