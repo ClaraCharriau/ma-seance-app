@@ -12,12 +12,13 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
     const { user } = props;
     const { pseudo, email } = user;
     const { logUser, updateUserAccount } = useAuth();
-
     const [newPassword, setNewPassword] = useState('');
     const [currentPassword, setCurrentPassword] = useState('');
     const [passwordBis, setPasswordBis] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [currentPasswordError, setCurrentPasswordError] = useState('');
+
+    const passwordRegex = new RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/);
 
     const submitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -28,15 +29,19 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
         if (await isFormValid()) {
             try {
                 await updateUserAccount(pseudo, email, newPassword);
-                toast.success('Votre mot de passe a bien été mis à jour');
             } catch (error: any) {
                 console.error('An error occured');
             }
+            toast.success('Votre mot de passe a bien été mis à jour');
         }
     };
 
     const isCurrentPasswordValid = async (): Promise<boolean> => {
         return !!(await logUser(email, currentPassword));
+    };
+
+    const isNewPasswordValid = (password: string): boolean => {
+        return !passwordRegex.test(password);
     };
 
     const isFormValid = async (): Promise<boolean> => {
@@ -68,8 +73,10 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
             return false;
         }
 
-        if (newPassword.length < 7) {
-            setPasswordError('Le mot de passe doit contenir au moins 8 caractères');
+        if (isNewPasswordValid(newPassword)) {
+            setPasswordError(
+                'Le mot de passe doit contenir au moins 12 caractères, 1 majuscule, 1 minuscule et 1 chiffre'
+            );
             return false;
         }
 

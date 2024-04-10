@@ -263,7 +263,7 @@ describe('AccountCreation component tests', () => {
 
         // Then
         await waitFor(() => {
-            expect(getByText('Le mot de passe doit contenir au moins 8 caractères')).toBeInTheDocument();
+            expect(getByText('Le mot de passe doit contenir au moins 12 caractères, 1 majuscule, 1 minuscule et 1 chiffre')).toBeInTheDocument();
         });
     });
 });
