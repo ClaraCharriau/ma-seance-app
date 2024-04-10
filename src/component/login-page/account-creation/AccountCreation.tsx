@@ -9,7 +9,6 @@ interface AccountCreationProps {
 const AccountCreation = (props: AccountCreationProps) => {
     const { onSignUpClick } = props;
     const { createUserAccount, checkUserExists } = useAuth();
-
     const [pseudo, setPseudo] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -18,6 +17,8 @@ const AccountCreation = (props: AccountCreationProps) => {
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [verifyError, setVerifyError] = useState('');
+
+    const passwordRegex = new RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/);
 
     const submitHandler = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
@@ -36,6 +37,10 @@ const AccountCreation = (props: AccountCreationProps) => {
         } else {
             setVerifyError('Un compte existe déjà avec cette adresse email.');
         }
+    };
+
+    const isNewPasswordValid = (password: string): boolean => {
+        return !passwordRegex.test(password);
     };
 
     const isFormValid = (): boolean => {
@@ -73,8 +78,10 @@ const AccountCreation = (props: AccountCreationProps) => {
             return false;
         }
 
-        if (password.length < 7) {
-            setPasswordError('Le mot de passe doit contenir au moins 8 caractères');
+        if (isNewPasswordValid(password)) {
+            setPasswordError(
+                'Le mot de passe doit contenir au moins 12 caractères, 1 majuscule, 1 minuscule et 1 chiffre'
+            );
             return false;
         }
 
