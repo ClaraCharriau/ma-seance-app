@@ -5,12 +5,12 @@
 */
 let config = require('./dev.json');
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.REACT_APP_ENV === 'staging') {
     try {
-        const prodConfig = require('./prod.json');
-        config = { ...config, ...prodConfig };
+        const stagingConfig = require('./staging.json');
+        config = { ...config, ...stagingConfig };
     } catch (error) {
-        console.error('Could not load production configuration file', error);
+        console.error('Could not load staging configuration file', error);
     }
 }
 

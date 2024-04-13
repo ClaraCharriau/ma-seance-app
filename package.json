@@ -45,6 +45,7 @@
     },
     "scripts": {
         "start": "react-scripts start & npm run apimocker",
+        "start:staging": "REACT_APP_ENV=staging react-scripts start",
         "build": "react-scripts build",
         "test": "jest",
         "test:ci": "npm run coverage",

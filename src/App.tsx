@@ -7,6 +7,8 @@ import AppRouter from './router/AppRouter';
 function App() {
     return (
         <>
+            {/* TODO: remove after test in prod */}
+            {console.log('Env : ' + process.env.REACT_APP_ENV ? process.env.REACT_APP_ENV : '')}
             <AuthProvider>
                 <FavoriteProvider>
                     <AgendaProvider>
