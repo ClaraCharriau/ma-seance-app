@@ -1,6 +1,11 @@
 {
     "services" : {
-        "prefix": "http://localhost:7878"
+        "prefix": "http://localhost:7878",
+        "auth": {
+            "verify": "/verify",
+            "login": "/login",
+            "registrations": "/registrations"
+        }
     },
     "tmdbImgPath" : {
         "medium": "https://image.tmdb.org/t/p/w500",

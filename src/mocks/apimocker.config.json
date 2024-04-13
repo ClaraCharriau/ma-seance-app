@@ -4,18 +4,29 @@
     "port": "7878",
     "latency": 50,
     "logRequestHeaders": false,
+    "allowedDomains": ["*"],
     "webServices": {
+        "login": {
+            "httpStatus": 200,
+            "mockFile": "auth/user-token.json",
+            "latency": 20,
+            "verbs": ["post"]
+        },
         "registrations": {
+            "httpStatus": 200,
             "mockFile": "users/users.json",
             "latency": 20,
-            "verbs": ["post", "patch"]
+            "verbs": ["post"]
         },
         "registrations/:id": {
-            "httpStatus": 404,
             "latency": 20,
-            "verbs": ["delete"]
+            "verbs": ["delete", "patch"],
+            "responses": {
+                "delete": { "httpStatus": 404 },
+                "patch": { "httpStatus": 200, "mockfile": "users/users.json" }
+            }
         },
-        "token": {
+        "verify": {
             "verbs": ["post"],
             "latency": 20,
             "switch": ["email"],
@@ -137,7 +148,10 @@
             "mockFile": "showtimes/showtimes.json",
             "switch": ["id"],
             "switchResponses": {
-                "idbbf24dfe-7788-4084-a6ca-43c3b75df2a4": { "httpStatus": 200, "mockFile": "showtimes/showtimes-2.json" }
+                "idbbf24dfe-7788-4084-a6ca-43c3b75df2a4": {
+                    "httpStatus": 200,
+                    "mockFile": "showtimes/showtimes-2.json"
+                }
             }
         }
     }

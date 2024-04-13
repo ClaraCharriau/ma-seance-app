@@ -160,9 +160,9 @@ describe('UpdateProfileForm component tests', () => {
         });
     });
 
-    it('should set password error if password is incorrect', () => {
+    it('should set password error if password is incorrect', async () => {
         // Given
-        axiosMock.onPost('/registrations').reply(200, null);
+        axiosMock.onPost('/login').reply(200, null);
         const component = render(
             <Router>
                 <UpdateProfileForm user={mockUser} />
@@ -190,9 +190,9 @@ describe('UpdateProfileForm component tests', () => {
 
     it('should set verify error if email already exist', () => {
         // Given
-        axiosMock.onPost('/registrations').reply(200);
-        axiosMock.onPost('/token').reply(200, {
-            exists: true
+        axiosMock.onPost('/login').reply(200);
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: true
         });
         const component = render(
             <Router>
@@ -216,16 +216,16 @@ describe('UpdateProfileForm component tests', () => {
         // Then
         waitFor(() => {
             expect(axiosMock.onPost('/registrations')).toHaveBeenCalled();
-            expect(axiosMock.onPost('/token')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/verify')).toHaveBeenCalled();
             expect(component.getByText('Un compte existe déjà avec cette adresse email.')).toBeInTheDocument();
         });
     });
 
     it('should update user profile', () => {
         // Given
-        axiosMock.onPost('/registrations').reply(200);
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/login').reply(200);
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         axiosMock.onPatch('sign-in').reply(200, mockUser);
         const component = render(
@@ -255,5 +255,3 @@ describe('UpdateProfileForm component tests', () => {
         });
     });
 });
-export { };
-

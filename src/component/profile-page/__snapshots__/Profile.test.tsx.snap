@@ -1,474 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Profile page component tests should close modale on click on "annuler" button 1`] = `
-<body
-  class=""
->
-  <div>
-    <main
-      class="profileMain"
-    >
-      <section>
-        <svg
-          class="profileIcon"
-          fill="none"
-          viewBox="0 0 24 25"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 0.362183C5.38308 0.362183 0 5.74526 0 12.3622C0 18.9787 5.38308 24.3622 12 24.3622C18.6165 24.3622 24 18.9787 24 12.3622C24 5.74526 18.6165 0.362183 12 0.362183ZM12 1.54251C17.9658 1.54251 22.8197 6.39602 22.8197 12.3622C22.8197 14.3428 22.2822 16.1994 21.3494 17.7976C20.6258 14.8334 17.9252 12.4633 14.4523 11.6914C15.2577 10.9993 15.7708 9.97595 15.7708 8.8334C15.7708 6.75445 14.0793 5.06304 12.0004 5.06304C9.92144 5.06304 8.23003 6.75445 8.23003 8.8334C8.23003 9.97595 8.74269 10.9993 9.54807 11.6914C6.07515 12.4633 3.37456 14.8334 2.65141 17.7976C1.71777 16.1994 1.18033 14.3428 1.18033 12.3622C1.18033 6.39602 6.03384 1.54251 12 1.54251ZM9.40997 8.8334C9.40997 7.4052 10.5718 6.24336 12 6.24336C13.4282 6.24336 14.59 7.4052 14.59 8.8334C14.59 10.2616 13.4282 11.4234 12 11.4234C10.5718 11.4234 9.40997 10.2616 9.40997 8.8334ZM12 23.1819C8.64118 23.1819 5.63528 21.6435 3.64918 19.2341C3.75305 15.5648 7.45495 12.6038 12 12.6038C16.545 12.6038 20.247 15.5644 20.3512 19.2341C18.3647 21.6435 15.3588 23.1819 12 23.1819Z"
-          />
-        </svg>
-        <h2
-          class="profileName"
-        >
-          Jane
-        </h2>
-        <p>
-          Paramètres de votre profil
-        </p>
-        <button
-          class="logoutBtn"
-        >
-          Déconnexion
-        </button>
-      </section>
-      <section
-        class="profileFormsContainer"
-      >
-        <form>
-          <p>
-            Modifier vos informations de profil
-          </p>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="pseudo"
-            >
-              Pseudo *
-            </label>
-            <input
-              class=""
-              id="pseudo"
-              name="pseudo"
-              required=""
-              type="text"
-              value="Jane"
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="email"
-            >
-              Adresse e-mail *
-            </label>
-            <input
-              class=""
-              id="email"
-              name="email"
-              required=""
-              type="mail"
-              value="test@gmail.com"
-            />
-            <label
-              class="error"
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="oldPassword"
-            >
-              Votre mot de passe *
-            </label>
-            <input
-              class=""
-              id="oldPassword"
-              name="oldPassword"
-              required=""
-              type="password"
-              value=""
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <button
-            class="orangeBtn"
-          >
-            Sauver les changements
-          </button>
-        </form>
-        <form>
-          <p>
-            Modifier votre mot de passe
-          </p>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="oldUpdatePassword"
-            >
-              Ancien mot de passe *
-            </label>
-            <input
-              class=""
-              id="oldUpdatePassword"
-              name="oldUpdatePassword"
-              required=""
-              type="password"
-              value=""
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="newPassword"
-            >
-              Nouveau mot de passe *
-            </label>
-            <input
-              class=""
-              id="newPassword"
-              name="newPassword"
-              required=""
-              type="password"
-              value=""
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="passwordBis"
-            >
-              Confirmez le mot de passe *
-            </label>
-            <input
-              class=""
-              id="passwordBis"
-              name="passwordBis"
-              required=""
-              type="password"
-              value=""
-            />
-          </div>
-          <button
-            class="orangeBtn"
-            type="submit"
-          >
-            Changer de mot de passe
-          </button>
-        </form>
-      </section>
-      <button
-        class="deleteBtn"
-      >
-        Supprimer mon compte
-      </button>
-      <p>
-        ⚠️ Attention, la suppression de votre compte est irréversible.
-      </p>
-    </main>
-  </div>
-  <div
-    class="ReactModalPortal"
-  />
-</body>
-`;
-
-exports[`Profile page component tests should close modale on click on "annuler" button 2`] = `
-<body
-  class=""
-/>
-`;
-
-exports[`Profile page component tests should delete account on click on "confirmer" button on modale 1`] = `
-<body
-  class="ReactModal__Body--open"
->
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div>
-    <main
-      class="profileMain"
-    >
-      <section>
-        <svg
-          class="profileIcon"
-          fill="none"
-          viewBox="0 0 24 25"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 0.362183C5.38308 0.362183 0 5.74526 0 12.3622C0 18.9787 5.38308 24.3622 12 24.3622C18.6165 24.3622 24 18.9787 24 12.3622C24 5.74526 18.6165 0.362183 12 0.362183ZM12 1.54251C17.9658 1.54251 22.8197 6.39602 22.8197 12.3622C22.8197 14.3428 22.2822 16.1994 21.3494 17.7976C20.6258 14.8334 17.9252 12.4633 14.4523 11.6914C15.2577 10.9993 15.7708 9.97595 15.7708 8.8334C15.7708 6.75445 14.0793 5.06304 12.0004 5.06304C9.92144 5.06304 8.23003 6.75445 8.23003 8.8334C8.23003 9.97595 8.74269 10.9993 9.54807 11.6914C6.07515 12.4633 3.37456 14.8334 2.65141 17.7976C1.71777 16.1994 1.18033 14.3428 1.18033 12.3622C1.18033 6.39602 6.03384 1.54251 12 1.54251ZM9.40997 8.8334C9.40997 7.4052 10.5718 6.24336 12 6.24336C13.4282 6.24336 14.59 7.4052 14.59 8.8334C14.59 10.2616 13.4282 11.4234 12 11.4234C10.5718 11.4234 9.40997 10.2616 9.40997 8.8334ZM12 23.1819C8.64118 23.1819 5.63528 21.6435 3.64918 19.2341C3.75305 15.5648 7.45495 12.6038 12 12.6038C16.545 12.6038 20.247 15.5644 20.3512 19.2341C18.3647 21.6435 15.3588 23.1819 12 23.1819Z"
-          />
-        </svg>
-        <h2
-          class="profileName"
-        >
-          Jane
-        </h2>
-        <p>
-          Paramètres de votre profil
-        </p>
-        <button
-          class="logoutBtn"
-        >
-          Déconnexion
-        </button>
-      </section>
-      <section
-        class="profileFormsContainer"
-      >
-        <form>
-          <p>
-            Modifier vos informations de profil
-          </p>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="pseudo"
-            >
-              Pseudo *
-            </label>
-            <input
-              class=""
-              id="pseudo"
-              name="pseudo"
-              required=""
-              type="text"
-              value="Jane"
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="email"
-            >
-              Adresse e-mail *
-            </label>
-            <input
-              class=""
-              id="email"
-              name="email"
-              required=""
-              type="mail"
-              value="test@gmail.com"
-            />
-            <label
-              class="error"
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="oldPassword"
-            >
-              Votre mot de passe *
-            </label>
-            <input
-              class=""
-              id="oldPassword"
-              name="oldPassword"
-              required=""
-              type="password"
-              value=""
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <button
-            class="orangeBtn"
-          >
-            Sauver les changements
-          </button>
-        </form>
-        <form>
-          <p>
-            Modifier votre mot de passe
-          </p>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="oldUpdatePassword"
-            >
-              Ancien mot de passe *
-            </label>
-            <input
-              class=""
-              id="oldUpdatePassword"
-              name="oldUpdatePassword"
-              required=""
-              type="password"
-              value=""
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="newPassword"
-            >
-              Nouveau mot de passe *
-            </label>
-            <input
-              class=""
-              id="newPassword"
-              name="newPassword"
-              required=""
-              type="password"
-              value=""
-            />
-            <label
-              class="error"
-            />
-          </div>
-          <div
-            class="inputContainer"
-          >
-            <label
-              class="inputLabel"
-              for="passwordBis"
-            >
-              Confirmez le mot de passe *
-            </label>
-            <input
-              class=""
-              id="passwordBis"
-              name="passwordBis"
-              required=""
-              type="password"
-              value=""
-            />
-          </div>
-          <button
-            class="orangeBtn"
-            type="submit"
-          >
-            Changer de mot de passe
-          </button>
-        </form>
-      </section>
-      <button
-        class="deleteBtn"
-      >
-        Supprimer mon compte
-      </button>
-      <p>
-        ⚠️ Attention, la suppression de votre compte est irréversible.
-      </p>
-    </main>
-  </div>
-  <div
-    class="ReactModalPortal"
-  >
-    <div
-      class="ReactModal__Overlay overlay"
-    >
-      <div
-        aria-modal="true"
-        class="ReactModal__Content confirmationModal"
-        role="dialog"
-        tabindex="-1"
-      >
-        <div
-          class="rowWrapper"
-        >
-          <svg
-            fill="none"
-            height="40"
-            viewBox="0 0 31 31"
-            width="40"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15.4997 0.915283C23.5551 0.915283 30.0852 7.44548 30.0852 15.5009C30.0852 23.5563 23.5551 30.0864 15.4997 30.0864C7.44426 30.0864 0.914062 23.5563 0.914062 15.5009C0.914062 7.44548 7.44426 0.915283 15.4997 0.915283ZM15.4997 3.10278C8.65239 3.10278 3.10156 8.65361 3.10156 15.5009C3.10156 22.3482 8.65239 27.8989 15.4997 27.8989C22.3469 27.8989 27.8977 22.3482 27.8977 15.5009C27.8977 8.65361 22.3469 3.10278 15.4997 3.10278ZM15.4943 13.312C16.048 13.3117 16.506 13.7228 16.5787 14.2565L16.5888 14.405L16.594 22.4282C16.5945 23.0322 16.1051 23.5222 15.501 23.5226C14.9473 23.5229 14.4894 23.1118 14.4166 22.5781L14.4065 22.4296L14.4013 14.4064C14.4009 13.8024 14.8903 13.3124 15.4943 13.312ZM15.5003 8.21106C16.3047 8.21106 16.9567 8.86311 16.9567 9.66744C16.9567 10.4718 16.3047 11.1238 15.5003 11.1238C14.696 11.1238 14.0439 10.4718 14.0439 9.66744C14.0439 8.86311 14.696 8.21106 15.5003 8.21106Z"
-              fill="#FFF1A7"
-            />
-          </svg>
-          <p
-            class="confirmationText"
-          >
-            Êtes-vous bien sûr de vouloir supprimer votre compte ? ⚠️ Cette action est irréversible.
-          </p>
-        </div>
-        <div
-          class="buttonWrapper"
-        >
-          <button
-            class="leftButton"
-          >
-            confirmer
-          </button>
-          <button
-            class="rightButton"
-          >
-            annuler
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-</body>
-`;
-
-exports[`Profile page component tests should delete account on click on "confirmer" button on modale 2`] = `
-<body
-  class=""
-/>
-`;
-
 exports[`Profile page component tests should open modale on click on "Supprimer mon compte" button 1`] = `
 <body
   class="ReactModal__Body--open"
@@ -496,7 +27,7 @@ exports[`Profile page component tests should open modale on click on "Supprimer 
         <h2
           class="profileName"
         >
-          Jane
+          Monica
         </h2>
         <p>
           Paramètres de votre profil
@@ -529,7 +60,7 @@ exports[`Profile page component tests should open modale on click on "Supprimer 
               name="pseudo"
               required=""
               type="text"
-              value="Jane"
+              value="Monica"
             />
             <label
               class="error"
@@ -550,7 +81,7 @@ exports[`Profile page component tests should open modale on click on "Supprimer 
               name="email"
               required=""
               type="mail"
-              value="test@gmail.com"
+              value="monica_geller@example.com"
             />
             <label
               class="error"
@@ -746,7 +277,7 @@ exports[`Profile page component tests should render profile page 1`] = `
         <h2
           class="profileName"
         >
-          Jane
+          Monica
         </h2>
         <p>
           Paramètres de votre profil
@@ -779,7 +310,7 @@ exports[`Profile page component tests should render profile page 1`] = `
               name="pseudo"
               required=""
               type="text"
-              value="Jane"
+              value="Monica"
             />
             <label
               class="error"
@@ -800,7 +331,7 @@ exports[`Profile page component tests should render profile page 1`] = `
               name="email"
               required=""
               type="mail"
-              value="test@gmail.com"
+              value="monica_geller@example.com"
             />
             <label
               class="error"

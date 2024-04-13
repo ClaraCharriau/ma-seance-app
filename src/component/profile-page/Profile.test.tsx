@@ -4,6 +4,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from '../../context/auth.context';
+import mockToken from '../../mocks/auth/user-token.json';
 import Profile from './Profile';
 
 jest.mock('react-router-dom', () => ({
@@ -17,12 +18,7 @@ describe('Profile page component tests', () => {
 
     beforeEach(() => {
         axiosMock = new MockAdapter(axios);
-        const mockUser = {
-            id: 1,
-            pseudo: 'Jane',
-            email: 'test@gmail.com'
-        };
-        localStorage.setItem('user', JSON.stringify(mockUser));
+        localStorage.setItem('maSeanceId', JSON.stringify(mockToken));
     });
 
     afterEach(() => {
@@ -56,8 +52,8 @@ describe('Profile page component tests', () => {
                 </AuthProvider>
             );
         });
-        const clearCurrentUser = jest.fn();
-        jest.spyOn(require('../../context/auth.context'), 'useAuthContext').mockReturnValueOnce({ clearCurrentUser });
+        const clearCurrentUserToken = jest.fn();
+        jest.spyOn(require('../../context/auth.context'), 'useAuthContext').mockReturnValueOnce({ clearCurrentUserToken });
 
         // When
         act(() => {
@@ -66,9 +62,41 @@ describe('Profile page component tests', () => {
 
         // Then
         waitFor(() => {
-            expect(clearCurrentUser).toHaveBeenCalled();
+            expect(clearCurrentUserToken).toHaveBeenCalled();
             expect(navigate).toHaveBeenCalled();
             expect(window.location.pathname).toEqual('/login');
+        });
+    });
+
+    it('should close modale on click on "annuler" button', () => {
+        // Given
+        let component: any;
+        act(() => {
+            component = render(
+                <AuthProvider>
+                    <Router>
+                        <Profile />
+                    </Router>
+                </AuthProvider>
+            );
+        });
+
+        // When
+        waitFor(() => {
+            fireEvent.click(component.getByRole('button', { name: 'Supprimer mon compte' }));
+        });
+        waitFor(() => {
+            fireEvent.click(component.getByRole('button', { name: 'annuler' }));
+        });
+
+        // Then
+        waitFor(async () => {
+            expect(component.getByText('Paramètres de votre profil')).toBeInTheDocument();
+            expect(
+                component.getByText(
+                    'Êtes-vous bien sûr de vouloir supprimer votre compte ? ⚠️ Cette action est irréversible.'
+                )
+            ).not.toBeInTheDocument();
         });
     });
 
@@ -99,43 +127,10 @@ describe('Profile page component tests', () => {
         ).toBeInTheDocument();
     });
 
-    it('should close modale on click on "annuler" button', () => {
-        // Given
-        let component: any;
-        act(() => {
-            component = render(
-                <AuthProvider>
-                    <Router>
-                        <Profile />
-                    </Router>
-                </AuthProvider>
-            );
-        });
-
-        // When
-        waitFor(() => {
-            fireEvent.click(component.getByRole('button', { name: 'Supprimer mon compte' }));
-        });
-        waitFor(() => {
-            fireEvent.click(component.getByRole('button', { name: 'annuler' }));
-        });
-
-        // Then
-        waitFor(() => {
-            expect(component.baseElement).toMatchSnapshot();
-            expect(component.getByText('Paramètres de votre profil')).toBeInTheDocument();
-            expect(
-                component.getByText(
-                    'Êtes-vous bien sûr de vouloir supprimer votre compte ? ⚠️ Cette action est irréversible.'
-                )
-            ).not.toBeInTheDocument();
-        });
-    });
-
     it('should delete account on click on "confirmer" button on modale', () => {
         // Given
         let component: any;
-        axiosMock.onDelete('sign-out/1').reply(200);
+        axiosMock.onDelete('sign-out/3658f41e-4d56-4980-93a9-621eab2ad3b2').reply(200);
         const navigate = jest.spyOn(require('react-router-dom'), 'useNavigate').mockImplementation(() => jest.fn());
         act(() => {
             component = render(

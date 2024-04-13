@@ -8,13 +8,13 @@ import UpdatePasswordForm from './update-password-form/UpdatePasswordForm';
 import UpdateProfileForm from './update-profile-form/UpdateProfileForm';
 
 const Profile = () => {
-    const { currentUser, clearCurrentUser } = useAuthContext();
+    const { currentUser, clearCurrentUserToken } = useAuthContext();
     const { deleteUserAccount } = useAuth();
     const navigate = useNavigate();
     const [showModale, setShowModale] = useState<boolean>(false);
 
     const logOut = (): void => {
-        clearCurrentUser();
+        clearCurrentUserToken();
         navigate('/login');
     };
 

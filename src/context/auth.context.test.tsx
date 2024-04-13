@@ -1,5 +1,6 @@
 import { act, render, renderHook, waitFor } from '@testing-library/react';
 import mockUser from '../mocks/users/users.json';
+import mockUserToken from '../mocks/auth/user-token.json';
 import { AuthProvider, useAuthContext } from './auth.context';
 
 const { result } = renderHook(useAuthContext);
@@ -58,7 +59,7 @@ describe('Authentication context tests', () => {
 
         // When
         act(() => {
-            result.current.clearCurrentUser();
+            result.current.clearCurrentUserToken();
         });
 
         // Then
@@ -80,7 +81,7 @@ describe('Authentication context tests', () => {
 
         // When
         act(() => {
-            result.current.setCurrentUser(mockUser);
+            result.current.setCurrentUserToken(mockUserToken);
         });
 
         // Then
@@ -91,5 +92,4 @@ describe('Authentication context tests', () => {
         });
     });
 });
-export { };
-
+export {};

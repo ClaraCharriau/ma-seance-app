@@ -27,8 +27,8 @@ describe('useAuth hook tests', () => {
     it('should log user', async () => {
         // Given
         const authContext = require('../../context/auth.context');
-        const setCurrentUser = jest.fn();
-        jest.spyOn(authContext, 'useAuthContext').mockReturnValue({ setCurrentUser });
+        const setCurrentUserToken = jest.fn();
+        jest.spyOn(authContext, 'useAuthContext').mockReturnValue({ setCurrentUserToken });
         const { result } = renderHook(useAuth);
         const email = 'test@mail.com';
         const password = 'password';
@@ -44,11 +44,11 @@ describe('useAuth hook tests', () => {
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
-        expect(axiosPostSpy).toHaveBeenCalledWith('/registrations', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('/login', {
             email: 'test@mail.com',
             password: 'password'
         });
-        expect(setCurrentUser).toHaveBeenCalledWith(mockUser);
+        expect(setCurrentUserToken).toHaveBeenCalledWith(mockUser);
     });
 
     it('should check that user exists', async () => {
@@ -63,7 +63,7 @@ describe('useAuth hook tests', () => {
         // Then
         const response = await existsPromise;
         expect(response).toBeFalsy();
-        expect(axiosPostSpy).toHaveBeenCalledWith('/token', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('/verify', {
             email: 'test@mail.com'
         });
     });
@@ -90,15 +90,15 @@ describe('useAuth hook tests', () => {
     it('should log out user', async () => {
         // Given
         const authContext = require('../../context/auth.context');
-        const clearCurrentUser = jest.fn();
-        jest.spyOn(authContext, 'useAuthContext').mockReturnValue({ clearCurrentUser });
+        const clearCurrentUserToken = jest.fn();
+        jest.spyOn(authContext, 'useAuthContext').mockReturnValue({ clearCurrentUserToken });
         const { result } = renderHook(useAuth);
 
         // When
         result.current.logout();
 
         // Then
-        expect(clearCurrentUser).toHaveBeenCalled();
+        expect(clearCurrentUserToken).toHaveBeenCalled();
     });
 
     it('should update user', async () => {
@@ -110,10 +110,11 @@ describe('useAuth hook tests', () => {
         axiosMock.onPatch().reply(200, mockUser);
 
         // When
-        result.current.updateUserAccount(pseudo, email, password);
+        result.current.updateUserAccount('1', pseudo, email, password);
 
         // Then
-        expect(axiosPatchSpy).toHaveBeenCalledWith('/registrations', {
+        expect(axiosPatchSpy).toHaveBeenCalledWith('/registrations/1', {
+            id: '1',
             pseudo: 'Jane',
             email: 'test@mail.com',
             password: 'password'

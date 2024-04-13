@@ -1,4 +1,3 @@
-/* eslint-disable  @typescript-eslint/no-empty-function */
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
 import { axiosInstance } from '../../../client/axios.config';
@@ -35,8 +34,8 @@ describe('AccountCreation component tests', () => {
 
     it('should create account', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         axiosMock.onPost('/registrations').reply(200, mockUser);
         const { getByLabelText, getByRole } = render(<AccountCreation onSignUpClick={() => {}} />);
@@ -59,7 +58,7 @@ describe('AccountCreation component tests', () => {
         // Then
         await waitFor(() => {
             expect(axiosMock.history.post.length).toBe(2);
-            expect(axiosMock.history.post[0].url).toBe('/token');
+            expect(axiosMock.history.post[0].url).toBe('/verify');
             expect(axiosMock.history.post[0].data).toEqual('{"email":"toto@mail.it"}');
             expect(axiosMock.history.post[1].url).toBe('/registrations');
             expect(axiosMock.history.post[1].data).toEqual(
@@ -70,8 +69,8 @@ describe('AccountCreation component tests', () => {
 
     it('should set already existing account error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: true
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: true
         });
         const { getByLabelText, getByText, getByRole } = render(<AccountCreation onSignUpClick={() => {}} />);
         const pseudoInput = getByLabelText('Pseudo *');
@@ -94,8 +93,8 @@ describe('AccountCreation component tests', () => {
 
     it('should return false and set missing pseudo error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         const { getByLabelText, getByText, getByRole } = render(<AccountCreation onSignUpClick={() => {}} />);
         const pseudoInput = getByLabelText('Pseudo *');
@@ -115,10 +114,10 @@ describe('AccountCreation component tests', () => {
         });
     });
 
-    it('should return false and set missing pseudo error', async () => {
+    it('should return false and set invalid pseudo error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         const { getByLabelText, getByText, getByRole } = render(<AccountCreation onSignUpClick={() => {}} />);
         const pseudoInput = getByLabelText('Pseudo *');
@@ -139,8 +138,8 @@ describe('AccountCreation component tests', () => {
 
     it('should return false and set missing email error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         const { getByLabelText, getByText, getByRole } = render(<AccountCreation onSignUpClick={() => {}} />);
         const pseudoInput = getByLabelText('Pseudo *');
@@ -163,8 +162,8 @@ describe('AccountCreation component tests', () => {
 
     it('should return false and set invalid email error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         const { getByLabelText, getByText, getByRole } = render(<AccountCreation onSignUpClick={() => {}} />);
         const pseudoInput = getByLabelText('Pseudo *');
@@ -187,8 +186,8 @@ describe('AccountCreation component tests', () => {
 
     it('should return false and set missing password error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         const { getByLabelText, getByText, getByRole } = render(<AccountCreation onSignUpClick={() => {}} />);
         const pseudoInput = getByLabelText('Pseudo *');
@@ -213,8 +212,8 @@ describe('AccountCreation component tests', () => {
 
     it('should return false and set unmaching password error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         const { getByLabelText, getByText, getByRole } = render(<AccountCreation onSignUpClick={() => {}} />);
         const pseudoInput = getByLabelText('Pseudo *');
@@ -241,8 +240,8 @@ describe('AccountCreation component tests', () => {
 
     it('should return false and set longer password error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         const { getByLabelText, getByText, getByRole } = render(<AccountCreation onSignUpClick={() => {}} />);
         const pseudoInput = getByLabelText('Pseudo *');
@@ -267,5 +266,3 @@ describe('AccountCreation component tests', () => {
         });
     });
 });
-export { };
-

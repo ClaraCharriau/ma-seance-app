@@ -62,7 +62,7 @@ describe('UpdateProfileForm component tests', () => {
 
     it('should set current password error if password is incorrect', () => {
         // Given
-        axiosMock.onPost('/registrations').reply(200, null);
+        axiosMock.onPost('/login').reply(200, null);
         const { getByLabelText, getByText, getByRole } = render(
             <Router>
                 <UpdatePasswordForm user={mockUser} />
@@ -81,13 +81,13 @@ describe('UpdateProfileForm component tests', () => {
         // Then
         waitFor(() => {
             expect(getByText('Votre mot de passe actuel est erroné')).toBeInTheDocument();
-            expect(axiosMock.onPost('/registrations')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/login')).toHaveBeenCalled();
         });
     });
 
     it('should set new password error if field is empty', () => {
         // Given
-        axiosMock.onPost('/registrations').reply(200, mockUser);
+        axiosMock.onPost('/login').reply(200, mockUser);
         const component = render(
             <Router>
                 <UpdatePasswordForm user={mockUser} />
@@ -108,14 +108,14 @@ describe('UpdateProfileForm component tests', () => {
         // Then
         waitFor(() => {
             expect(component.getByText('Entrez votre nouveau mot de passe')).toBeInTheDocument();
-            expect(axiosMock.onPost('/registrations')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/login')).toHaveBeenCalled();
             expect(component.baseElement).toMatchSnapshot();
         });
     });
 
     it('should set new password bis error if field is empty', () => {
         // Given
-        axiosMock.onPost('/registrations').reply(200, mockUser);
+        axiosMock.onPost('/login').reply(200, mockUser);
         const component = render(
             <Router>
                 <UpdatePasswordForm user={mockUser} />
@@ -138,13 +138,13 @@ describe('UpdateProfileForm component tests', () => {
         // Then
         waitFor(() => {
             expect(component.getByText('Entrez une seconde fois votre nouveau mot de passe')).toBeInTheDocument();
-            expect(axiosMock.onPost('/registrations')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/login')).toHaveBeenCalled();
         });
     });
 
     it('should set new password error if new password are not matching', () => {
         // Given
-        axiosMock.onPost('/registrations').reply(200, mockUser);
+        axiosMock.onPost('/login').reply(200, mockUser);
         const component = render(
             <Router>
                 <UpdatePasswordForm user={mockUser} />
@@ -167,13 +167,13 @@ describe('UpdateProfileForm component tests', () => {
         // Then
         waitFor(() => {
             expect(component.getByText('Les mots de passe doivent être identiques')).toBeInTheDocument();
-            expect(axiosMock.onPost('/registrations')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/login')).toHaveBeenCalled();
         });
     });
 
     it('should set new password error if password is under 8 characters', () => {
         // Given
-        axiosMock.onPost('/registrations').reply(200, mockUser);
+        axiosMock.onPost('/login').reply(200, mockUser);
         const component = render(
             <Router>
                 <UpdatePasswordForm user={mockUser} />
@@ -196,13 +196,13 @@ describe('UpdateProfileForm component tests', () => {
         // Then
         waitFor(() => {
             expect(component.getByText('Le mot de passe doit contenir au moins 12 caractères, 1 majuscule, 1 minuscule et 1 chiffre')).toBeInTheDocument();
-            expect(axiosMock.onPost('/registrations')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/login')).toHaveBeenCalled();
         });
     });
 
     it('should successfully update user password', () => {
         // Given
-        axiosMock.onPost('/registrations').reply(200, mockUser);
+        axiosMock.onPost('/login').reply(200, mockUser);
         axiosMock.onPatch('/registrations').reply(200, mockUser);
         const component = render(
             <Router>
@@ -225,10 +225,8 @@ describe('UpdateProfileForm component tests', () => {
 
         // Then
         waitFor(() => {
-            expect(axiosMock.onPost('/registrations')).toHaveBeenCalled();
+            expect(axiosMock.onPost('/login')).toHaveBeenCalled();
             expect(axiosMock.onPatch('/registrations')).toHaveBeenCalled();
         });
     });
 });
-export { };
-
