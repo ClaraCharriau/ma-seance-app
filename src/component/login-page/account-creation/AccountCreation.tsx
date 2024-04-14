@@ -26,13 +26,17 @@ const AccountCreation = (props: AccountCreationProps) => {
     };
 
     const createAccount = async (): Promise<void> => {
+        setVerifyError('');
         const userExists = await checkUserExists(email);
+
         if (!userExists) {
             if (isFormValid()) {
-                await createUserAccount(pseudo, email, password);
+                try {
+                    await createUserAccount(pseudo, email, password);
+                } catch (error: any) {
+                    setVerifyError("Une erreur s'est produite.");
+                }
                 onSignUpClick();
-            } else {
-                setVerifyError("Une erreur s'est produite.");
             }
         } else {
             setVerifyError('Un compte existe déjà avec cette adresse email.');

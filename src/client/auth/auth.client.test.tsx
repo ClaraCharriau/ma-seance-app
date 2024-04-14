@@ -21,7 +21,7 @@ describe('AuthClient tests', () => {
         // Given
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPost('/registrations').reply(200, mockUser);
+        axiosMock.onPost('/login').reply(200, mockUser);
 
         // When
         const response = await loginUser(email, password);
@@ -32,7 +32,7 @@ describe('AuthClient tests', () => {
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
-        expect(axiosPost).toHaveBeenCalledWith('/registrations', {
+        expect(axiosPost).toHaveBeenCalledWith('/login', {
             email: 'test@mail.com',
             password: 'password'
         });
@@ -42,7 +42,7 @@ describe('AuthClient tests', () => {
         // Given
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPost('/registrations').reply(500);
+        axiosMock.onPost('/login').reply(500);
         let response = {};
 
         // When
@@ -53,7 +53,7 @@ describe('AuthClient tests', () => {
             expect(error.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosPost).toHaveBeenCalledWith('/registrations', {
+        expect(axiosPost).toHaveBeenCalledWith('/login', {
             email: 'test@mail.com',
             password: 'password'
         });
@@ -62,18 +62,15 @@ describe('AuthClient tests', () => {
     it('should check if an account exists', async () => {
         // Given
         const email = 'test@mail.com';
-        axiosMock.onPost('/token').reply(200, {
-            exists: true
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: true
         });
 
         // When
         const response = await checkAccountExists(email);
 
         // Then
-        expect(response).toEqual({
-            exists: true
-        });
-        expect(axiosPost).toHaveBeenCalledWith('/token', {
+        expect(axiosPost).toHaveBeenCalledWith('/verify', {
             email: 'test@mail.com'
         });
     });
@@ -81,7 +78,7 @@ describe('AuthClient tests', () => {
     it('should fail to check account existence', async () => {
         // Given
         const email = 'test@mail.com';
-        axiosMock.onPost('/token').reply(500);
+        axiosMock.onPost('/verify').reply(500);
         let response = {};
 
         // When
@@ -92,7 +89,7 @@ describe('AuthClient tests', () => {
             expect(error.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosPost).toHaveBeenCalledWith('/token', {
+        expect(axiosPost).toHaveBeenCalledWith('/verify', {
             email: 'test@mail.com'
         });
     });
@@ -148,10 +145,10 @@ describe('AuthClient tests', () => {
         const pseudo = 'Jane';
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPatch('/registrations').reply(200, mockUser);
+        axiosMock.onPatch('/registrations/1').reply(200, mockUser);
 
         // When
-        const response = await updateAccount(pseudo, email, password);
+        const response = await updateAccount('1', pseudo, email, password);
 
         // Then
         expect(response).toEqual({
@@ -159,7 +156,8 @@ describe('AuthClient tests', () => {
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
-        expect(axiosPatch).toHaveBeenCalledWith('/registrations', {
+        expect(axiosPatch).toHaveBeenCalledWith('/registrations/1', {
+            id: '1',
             pseudo: 'Jane',
             email: 'test@mail.com',
             password: 'password'
@@ -171,18 +169,19 @@ describe('AuthClient tests', () => {
         const pseudo = 'Jane';
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPatch('/registrations').reply(500);
+        axiosMock.onPatch('/registrations/1').reply(500);
         let response = {};
 
         // When
         try {
-            response = await updateAccount(pseudo, email, password);
+            response = await updateAccount('1', pseudo, email, password);
         } catch (error: any) {
             // Then
             expect(error.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosPatch).toHaveBeenCalledWith('/registrations', {
+        expect(axiosPatch).toHaveBeenCalledWith('/registrations/1', {
+            id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com',
             password: 'password'

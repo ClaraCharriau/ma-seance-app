@@ -5,8 +5,8 @@ import { redirect } from 'react-router-dom';
  * and redirect to login page if the user is not logged
  */
 export const appLoader = async () => {
-    const currentUser = localStorage.getItem('user');
-    if (!currentUser) {
+    const maSeanceId = localStorage.getItem('maSeanceId');
+    if (!maSeanceId) {
         return redirect('/login');
     }
     return null;

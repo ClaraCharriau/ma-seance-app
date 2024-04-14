@@ -1,18 +1,20 @@
 import { useLocalStorage } from '../hook/local-storage-hook/useLocalStorage';
 import { User } from '../models/User';
 import { createContext, useContext, useMemo, useState } from 'react';
+import { UserToken } from '../models/UserToken';
+import { jwtDecode } from 'jwt-decode';
 
 /* eslint-disable */
 interface IAuthContext {
     currentUser: User | null;
-    setCurrentUser: (user: User | null) => void;
-    clearCurrentUser: () => void;
+    setCurrentUserToken: (userToken: UserToken | null) => void;
+    clearCurrentUserToken: () => void;
 }
 
 const defaultContext: IAuthContext = {
     currentUser: null,
-    setCurrentUser: (user: User | null) => {},
-    clearCurrentUser: () => {}
+    setCurrentUserToken: (userToken: UserToken | null) => {},
+    clearCurrentUserToken: () => {}
 };
 /* eslint-enable */
 
@@ -25,29 +27,42 @@ interface AuthProviderProps {
 export const AuthProvider = (props: AuthProviderProps) => {
     const { children } = props;
     const { setItem, removeItem, getItem } = useLocalStorage();
-    const [user, setUser] = useState<User | null>(() => {
-        const storedUser = getItem('user');
-        return storedUser ? JSON.parse(storedUser) : null;
+
+    const [user, setUser] = useState<User | null>(null);
+    const [userToken, setUserToken] = useState<UserToken | null>(() => {
+        const storedUserToken = getItem('maSeanceId');
+        const parsedToken = storedUserToken ? JSON.parse(storedUserToken) : null;
+
+        if (parsedToken) {
+            const decodedToken = jwtDecode(parsedToken.access_token) as { user: User };
+            setUser(decodedToken.user);
+        }
+        return parsedToken;
     });
 
-    const setCurrentUser = (user: User | null) => {
-        setUser(user);
-        setItem('user', JSON.stringify(user));
+    const setCurrentUserToken = (userToken: UserToken | null) => {
+        setUserToken(userToken);
+        setItem('maSeanceId', JSON.stringify(userToken));
+        if (userToken) {
+            const decodedToken = jwtDecode(userToken.access_token) as { user: User };
+            setUser(decodedToken.user);
+        }
     };
 
-    const clearCurrentUser = () => {
-        setUser(null);
-        removeItem('user');
+    const clearCurrentUserToken = () => {
+        setUserToken(null);
+        removeItem('maSeanceId');
     };
 
     const authContext: IAuthContext = useMemo(
         () => ({
+            userToken,
             currentUser: user,
-            setCurrentUser,
-            clearCurrentUser
+            setCurrentUserToken,
+            clearCurrentUserToken
         }),
         // eslint-disable-next-line
-        [user]
+        [user, userToken]
     );
 
     return <AuthContext.Provider value={authContext}>{children}</AuthContext.Provider>;

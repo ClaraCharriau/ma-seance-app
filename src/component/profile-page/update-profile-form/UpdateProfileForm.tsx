@@ -10,7 +10,7 @@ interface UpdateProfileFormProps {
 
 const UpdateProfileForm = (props: UpdateProfileFormProps) => {
     const { user } = props;
-    const { pseudo, email } = user;
+    const { pseudo, email, id } = user;
 
     const { checkUserExists, updateUserAccount, logUser } = useAuth();
 
@@ -31,7 +31,7 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
     const updateProfile = async () => {
         if (await isFormValid()) {
             try {
-                await updateUserAccount(pseudo, email, currentPassword);
+                await updateUserAccount(id, pseudo, email, currentPassword);
                 toast.success('Votre profil a bien été mis à jour');
             } catch (error: any) {
                 console.error('An error occured.');

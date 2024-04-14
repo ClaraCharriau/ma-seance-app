@@ -3,18 +3,14 @@ import { act, render, waitFor } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from '../../context/auth.context';
 import mockTheaters from '../../mocks/users/fav-theaters.json';
+import mockToken from '../../mocks/auth/user-token.json';
 import Home from './Home';
 
 describe('Home Component', () => {
     const favoriteContext = require('../../context/favorite.context');
 
     beforeEach(() => {
-        const mockUser = {
-            id: 1,
-            pseudo: 'Jane',
-            email: 'test@gmail.com'
-        };
-        localStorage.setItem('user', JSON.stringify(mockUser));
+        localStorage.setItem('maSeanceId', JSON.stringify(mockToken));
     });
 
     it('should render home page', async () => {

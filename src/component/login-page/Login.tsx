@@ -6,7 +6,7 @@ import { Navigate } from 'react-router-dom';
 
 const Login = () => {
     const [formType, setFormType] = useState('initial');
-    const currentUser = localStorage.getItem('user');
+    const maSeanceId = localStorage.getItem('maSeanceId');
 
     const setLoginForm = () => {
         setFormType('login');
@@ -20,7 +20,7 @@ const Login = () => {
         setFormType('initial');
     };
 
-    if (currentUser) return <Navigate replace to="/" />;
+    if (maSeanceId) return <Navigate replace to="/" />;
     return (
         <>
             {formType === 'initial' && (

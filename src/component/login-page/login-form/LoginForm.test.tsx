@@ -36,13 +36,8 @@ describe('LoginForm component tests', () => {
 
     it('should login existing user', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: true
-        });
-        axiosMock.onPost('/registrations').reply(200, {
-            id: 678,
-            email: 'toto@mail.it',
-            pseudo: 'tonySoprano'
+        axiosMock.onPost('/login').reply(200, {
+            access_token: "abc123"
         });
         const navigate = jest.spyOn(require('react-router-dom'), 'useNavigate').mockImplementation(() => jest.fn());
         const { getByLabelText, getByRole } = render(
@@ -65,18 +60,16 @@ describe('LoginForm component tests', () => {
         // Then
         await waitFor(() => {
             expect(navigate).toHaveBeenCalled();
-            expect(axiosMock.history.post.length).toBe(2);
-            expect(axiosMock.history.post[0].url).toBe('/token');
-            expect(axiosMock.history.post[0].data).toEqual('{"email":"toto@mail.it"}');
-            expect(axiosMock.history.post[1].url).toBe('/registrations');
-            expect(axiosMock.history.post[1].data).toEqual('{"email":"toto@mail.it","password":"awesomePassword123"}');
+            expect(axiosMock.history.post.length).toBe(1);
+            expect(axiosMock.history.post[0].url).toBe('/login');
+            expect(axiosMock.history.post[0].data).toEqual('{"email":"toto@mail.it","password":"awesomePassword123"}');
         });
     });
 
     it('should set non existing user error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: false
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: false
         });
         const { getByLabelText, getByText, getByRole } = render(
             <Router>
@@ -97,14 +90,14 @@ describe('LoginForm component tests', () => {
 
         // Then
         await waitFor(() => {
-            expect(getByText("Nous n'avons pas trouvé de compte relié à cette adresse mail.")).toBeInTheDocument();
+            expect(getByText("Adresse email et/ou mot de passe incorrect(s).")).toBeInTheDocument();
         });
     });
 
     it('should return false and set missing email error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: true
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: true
         });
         const { getByLabelText, getByText, getByRole } = render(
             <Router>
@@ -129,8 +122,8 @@ describe('LoginForm component tests', () => {
 
     it('should return false and set invalid email error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: true
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: true
         });
         const { getByLabelText, getByText, getByRole } = render(
             <Router>
@@ -155,8 +148,8 @@ describe('LoginForm component tests', () => {
 
     it('should return false and set missing password error', async () => {
         // Given
-        axiosMock.onPost('/token').reply(200, {
-            exists: true
+        axiosMock.onPost('/verify').reply(200, {
+            isExistingAccount: true
         });
         const { getByLabelText, getByText, getByRole } = render(
             <Router>
@@ -181,5 +174,3 @@ describe('LoginForm component tests', () => {
         });
     });
 });
-export { };
-

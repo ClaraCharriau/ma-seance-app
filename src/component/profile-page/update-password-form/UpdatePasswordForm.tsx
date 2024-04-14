@@ -10,7 +10,7 @@ interface UpdatePasswordFormProps {
 
 const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
     const { user } = props;
-    const { pseudo, email } = user;
+    const { pseudo, email, id } = user;
     const { logUser, updateUserAccount } = useAuth();
     const [newPassword, setNewPassword] = useState('');
     const [currentPassword, setCurrentPassword] = useState('');
@@ -28,7 +28,7 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
     const updatePassword = async (): Promise<void> => {
         if (await isFormValid()) {
             try {
-                await updateUserAccount(pseudo, email, newPassword);
+                await updateUserAccount(id, pseudo, email, newPassword);
             } catch (error: any) {
                 console.error('An error occured');
             }
