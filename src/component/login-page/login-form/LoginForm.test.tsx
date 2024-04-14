@@ -36,9 +36,6 @@ describe('LoginForm component tests', () => {
 
     it('should login existing user', async () => {
         // Given
-        axiosMock.onPost('/verify').reply(200, {
-            isExistingAccount: true
-        });
         axiosMock.onPost('/login').reply(200, {
             access_token: "abc123"
         });
@@ -63,11 +60,9 @@ describe('LoginForm component tests', () => {
         // Then
         await waitFor(() => {
             expect(navigate).toHaveBeenCalled();
-            expect(axiosMock.history.post.length).toBe(2);
-            expect(axiosMock.history.post[0].url).toBe('/verify');
-            expect(axiosMock.history.post[0].data).toEqual('{"email":"toto@mail.it"}');
-            expect(axiosMock.history.post[1].url).toBe('/login');
-            expect(axiosMock.history.post[1].data).toEqual('{"email":"toto@mail.it","password":"awesomePassword123"}');
+            expect(axiosMock.history.post.length).toBe(1);
+            expect(axiosMock.history.post[0].url).toBe('/login');
+            expect(axiosMock.history.post[0].data).toEqual('{"email":"toto@mail.it","password":"awesomePassword123"}');
         });
     });
 
@@ -95,7 +90,7 @@ describe('LoginForm component tests', () => {
 
         // Then
         await waitFor(() => {
-            expect(getByText("Nous n'avons pas trouvé de compte relié à cette adresse mail.")).toBeInTheDocument();
+            expect(getByText("Adresse email et/ou mot de passe incorrect(s).")).toBeInTheDocument();
         });
     });
 

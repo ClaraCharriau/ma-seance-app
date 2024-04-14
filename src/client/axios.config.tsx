@@ -12,6 +12,12 @@ axiosInstance.interceptors.response.use(
 );
 
 export const handleError = (error: any) => {
+    if (error.response.status === 401 || error.response.status === 403) {
+        throw new Response(error.response.data, {
+            status: error.response.status,
+            statusText: error.response.statusText
+        });
+    }
     toast.error("Une erreur s'est produite.");
     if (error.response) {
         throw new Response(error.response.data, {

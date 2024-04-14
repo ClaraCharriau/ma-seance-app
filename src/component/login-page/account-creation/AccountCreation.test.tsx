@@ -110,7 +110,6 @@ describe('AccountCreation component tests', () => {
         // Then
         await waitFor(() => {
             expect(getByText('Choisissez un pseudo.')).toBeInTheDocument();
-            expect(getByText("Une erreur s'est produite.")).toBeInTheDocument();
         });
     });
 

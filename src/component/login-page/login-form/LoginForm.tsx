@@ -5,7 +5,7 @@ import style from '../Login.module.css';
 
 const LoginForm = () => {
     const navigate = useNavigate();
-    const { logUser, checkUserExists } = useAuth();
+    const { logUser } = useAuth();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -20,16 +20,13 @@ const LoginForm = () => {
 
     const login = async () => {
         setVerifyError('');
-        const userExists = await checkUserExists(email);
-        if (userExists) {
-            if (isFormValid()) {
+        if (isFormValid()) {
+            try {
                 await logUser(email, password);
                 navigate('/');
-            } else {
-                return;
+            } catch (error: any) {
+                setVerifyError('Adresse email et/ou mot de passe incorrect(s).');
             }
-        } else {
-            setVerifyError("Nous n'avons pas trouvé de compte relié à cette adresse mail.");
         }
     };
 

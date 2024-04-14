@@ -43,6 +43,10 @@ export const AuthProvider = (props: AuthProviderProps) => {
     const setCurrentUserToken = (userToken: UserToken | null) => {
         setUserToken(userToken);
         setItem('maSeanceId', JSON.stringify(userToken));
+        if (userToken) {
+            const decodedToken = jwtDecode(userToken.access_token) as { user: User };
+            setUser(decodedToken.user);
+        }
     };
 
     const clearCurrentUserToken = () => {
@@ -58,7 +62,7 @@ export const AuthProvider = (props: AuthProviderProps) => {
             clearCurrentUserToken
         }),
         // eslint-disable-next-line
-        [user]
+        [user, userToken]
     );
 
     return <AuthContext.Provider value={authContext}>{children}</AuthContext.Provider>;

@@ -5,7 +5,7 @@ import { useAuthContext } from '../../context/auth.context';
  * Custom hook that facilitate authentification handling
  */
 export const useAuth = () => {
-    const { setCurrentUserToken, clearCurrentUserToken: clearCurrentUser } = useAuthContext();
+    const { setCurrentUserToken, clearCurrentUserToken } = useAuthContext();
 
     const logUser = async (email: string, password: string) => {
         const userToken = await loginUser(email, password);
@@ -34,7 +34,7 @@ export const useAuth = () => {
     };
 
     const logout = () => {
-        clearCurrentUser();
+        clearCurrentUserToken();
     };
 
     return { logUser, checkUserExists, createUserAccount, logout, deleteUserAccount, updateUserAccount };
