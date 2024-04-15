@@ -29,10 +29,10 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
         if (await isFormValid()) {
             try {
                 await updateUserAccount(id, pseudo, email, newPassword);
+                toast.success('Votre mot de passe a bien été mis à jour');
             } catch (error: any) {
                 console.error('An error occured');
             }
-            toast.success('Votre mot de passe a bien été mis à jour');
         }
     };
 

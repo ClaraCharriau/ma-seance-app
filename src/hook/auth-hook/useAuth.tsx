@@ -27,6 +27,8 @@ export const useAuth = () => {
 
     const updateUserAccount = async (id: string, pseudo: string, email: string, password: string) => {
         await updateAccount(id, pseudo, email, password);
+        clearCurrentUserToken();
+        await logUser(email, password);
     };
 
     const deleteUserAccount = async (id: string) => {
