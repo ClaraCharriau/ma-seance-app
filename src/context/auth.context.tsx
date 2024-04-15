@@ -34,7 +34,7 @@ export const AuthProvider = (props: AuthProviderProps) => {
         const parsedToken = storedUserToken ? JSON.parse(storedUserToken) : null;
 
         if (parsedToken) {
-            const decodedToken = jwtDecode(parsedToken.access_token) as { user: User };
+            const decodedToken: { user: User } = jwtDecode(parsedToken.access_token);
             setUser(decodedToken.user);
         }
         return parsedToken;
@@ -44,7 +44,7 @@ export const AuthProvider = (props: AuthProviderProps) => {
         setUserToken(userToken);
         setItem('maSeanceId', JSON.stringify(userToken));
         if (userToken) {
-            const decodedToken = jwtDecode(userToken.access_token) as { user: User };
+            const decodedToken: { user: User } = jwtDecode(userToken.access_token);
             setUser(decodedToken.user);
         }
     };

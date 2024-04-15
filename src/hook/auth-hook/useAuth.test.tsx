@@ -11,8 +11,13 @@ describe('useAuth hook tests', () => {
     const axiosPatchSpy = jest.spyOn(axiosInstance, 'patch');
     const axiosDeleteSpy = jest.spyOn(axiosInstance, 'delete');
 
+    const authContext = require('../../context/auth.context');
+    const setCurrentUserToken = jest.fn().mockImplementation();
+    const clearCurrentUserToken = jest.fn().mockImplementation();
+
     beforeEach(() => {
         axiosMock = new MockAdapter(axiosInstance);
+        jest.spyOn(authContext, 'useAuthContext').mockReturnValue({ setCurrentUserToken, clearCurrentUserToken });
     });
     afterEach(() => {
         axiosMock.reset();
@@ -26,9 +31,6 @@ describe('useAuth hook tests', () => {
 
     it('should log user', async () => {
         // Given
-        const authContext = require('../../context/auth.context');
-        const setCurrentUserToken = jest.fn();
-        jest.spyOn(authContext, 'useAuthContext').mockReturnValue({ setCurrentUserToken });
         const { result } = renderHook(useAuth);
         const email = 'test@mail.com';
         const password = 'password';
@@ -105,9 +107,10 @@ describe('useAuth hook tests', () => {
         // Given
         const { result } = renderHook(useAuth);
         const pseudo = 'Jane';
-        const password = 'password';
+        const password = 'newPassword';
         const email = 'test@mail.com';
         axiosMock.onPatch().reply(200, mockUser);
+        axiosMock.onPost().reply(200, mockUser);
 
         // When
         result.current.updateUserAccount('1', pseudo, email, password);
@@ -117,7 +120,7 @@ describe('useAuth hook tests', () => {
             id: '1',
             pseudo: 'Jane',
             email: 'test@mail.com',
-            password: 'password'
+            password: 'newPassword'
         });
     });
 

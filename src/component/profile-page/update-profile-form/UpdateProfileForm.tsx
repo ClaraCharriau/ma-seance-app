@@ -23,15 +23,15 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
     const [verifyError, setVerifyError] = useState('');
     const [currentPasswordError, setCurrentPasswordError] = useState('');
 
-    const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
+    const submitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        await updateProfile();
+        updateProfile();
     };
 
     const updateProfile = async () => {
         if (await isFormValid()) {
             try {
-                await updateUserAccount(id, pseudo, email, currentPassword);
+                await updateUserAccount(id, newPseudo, newEmail, currentPassword);
                 toast.success('Votre profil a bien été mis à jour');
             } catch (error: any) {
                 console.error('An error occured.');
