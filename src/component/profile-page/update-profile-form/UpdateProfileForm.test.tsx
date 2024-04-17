@@ -162,7 +162,7 @@ describe('UpdateProfileForm component tests', () => {
 
     it('should set password error if password is incorrect', async () => {
         // Given
-        axiosMock.onPost('/login').reply(200, null);
+        axiosMock.onPost('/login').reply(401, null);
         const component = render(
             <Router>
                 <UpdateProfileForm user={mockUser} />
