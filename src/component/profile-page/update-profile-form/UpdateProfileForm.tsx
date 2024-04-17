@@ -34,13 +34,10 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
                 await updateUserAccount(id, newPseudo, newEmail, currentPassword);
                 toast.success('Votre profil a bien été mis à jour');
             } catch (error: any) {
+                toast.error('Une erreur a eu lieu. Veuillez réessayer.');
                 console.error('An error occured.');
             }
         }
-    };
-
-    const isCurrentPasswordValid = async (): Promise<boolean> => {
-        return !!(await logUser(email, currentPassword));
     };
 
     const isAlreadyExistingEmail = async (): Promise<boolean> => {
@@ -78,7 +75,9 @@ const UpdateProfileForm = (props: UpdateProfileFormProps) => {
             return false;
         }
 
-        if (!(await isCurrentPasswordValid())) {
+        try {
+            await logUser(email, currentPassword);
+        } catch (error: any) {
             setCurrentPasswordError('Votre mot de passe actuel est erroné');
             return false;
         }
