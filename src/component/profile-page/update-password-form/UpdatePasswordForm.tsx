@@ -26,18 +26,15 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
     };
 
     const updatePassword = async (): Promise<void> => {
-        if (await isFormValid()) {
-            try {
+        try {
+            if (await isFormValid()) {
                 await updateUserAccount(id, pseudo, email, newPassword);
                 toast.success('Votre mot de passe a bien été mis à jour');
-            } catch (error: any) {
-                console.error('An error occured');
             }
+        } catch (error: any) {
+            toast.error('Une erreur a eu lieu. Veuillez réessayer.');
+            console.error('An error occured', error);
         }
-    };
-
-    const isCurrentPasswordValid = async (): Promise<boolean> => {
-        return !!(await logUser(email, currentPassword));
     };
 
     const isNewPasswordValid = (password: string): boolean => {
@@ -50,11 +47,6 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
 
         if ('' === currentPassword) {
             setCurrentPasswordError('Entrez votre mot de passe actuel');
-            return false;
-        }
-
-        if (!(await isCurrentPasswordValid())) {
-            setCurrentPasswordError('Votre mot de passe actuel est erroné');
             return false;
         }
 
@@ -77,6 +69,13 @@ const UpdatePasswordForm = (props: UpdatePasswordFormProps) => {
             setPasswordError(
                 'Le mot de passe doit contenir au moins 12 caractères, 1 majuscule, 1 minuscule et 1 chiffre'
             );
+            return false;
+        }
+
+        try {
+            await logUser(email, currentPassword);
+        } catch (error: any) {
+            setCurrentPasswordError('Votre mot de passe actuel est erroné');
             return false;
         }
 
