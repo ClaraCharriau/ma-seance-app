@@ -3,7 +3,7 @@ import style from './MovieDetailsLayout.module.css';
 import config from '../../config/config.helper';
 import WeekNavigation from '../common/week-navigation/WeekNavigation';
 import MovieDetailsWrapper from './movie-details-wrapper/MovieDetailsWrapper';
-import { Movie } from '../../models/Movie';
+import { Movie } from '../../model/Movie';
 
 const MovieDetailsLayout = () => {
     const movie = useLoaderData() as Movie;

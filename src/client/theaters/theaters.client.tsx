@@ -1,6 +1,6 @@
-import { Movie } from '../../models/Movie';
-import { MovieScreenings } from '../../models/MovieScreenings';
-import { Theater } from '../../models/Theater';
+import { Movie } from '../../model/Movie';
+import { MovieScreenings } from '../../model/MovieScreenings';
+import { Theater } from '../../model/Theater';
 import { axiosInstance } from '../axios.config';
 
 const THEATERS_PATH = '/theaters';

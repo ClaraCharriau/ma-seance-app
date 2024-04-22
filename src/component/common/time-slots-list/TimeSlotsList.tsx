@@ -1,6 +1,6 @@
-import { Movie } from '../../../models/Movie';
-import { ScreeningDate } from '../../../models/ScreeningDate';
-import { Theater } from '../../../models/Theater';
+import { Movie } from '../../../model/Movie';
+import { ScreeningDate } from '../../../model/ScreeningDate';
+import { Theater } from '../../../model/Theater';
 import TimeSlotButton from '../time-slot-button/TimeSlotButton';
 import style from './TimeSlotsList.module.css';
 

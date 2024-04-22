@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import MovieList from './MovieList';
-import mockMovieList from '../../../mocks/movies/current-movies.json';
+import mockMovieList from '../../../mock/movies/current-movies.json';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('Movie list component test', () => {

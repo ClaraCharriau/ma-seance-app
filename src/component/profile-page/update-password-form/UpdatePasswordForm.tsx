@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { useAuth } from '../../../hook/auth-hook/useAuth';
-import { User } from '../../../models/User';
+import { User } from '../../../model/User';
 import style from '../Profile.module.css';
 import { toast } from 'react-toastify';
 

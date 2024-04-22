@@ -3,8 +3,8 @@ import style from './FavoriteButton.module.css';
 import { useFavoriteContext } from '../../../context/favorite.context';
 import { useAuthContext } from '../../../context/auth.context';
 import { updateUserFavMovies, updateUserFavTheaters } from '../../../client/users/user.client';
-import { Movie } from '../../../models/Movie';
-import { Theater } from '../../../models/Theater';
+import { Movie } from '../../../model/Movie';
+import { Theater } from '../../../model/Theater';
 import { Tooltip } from 'react-tooltip';
 import { toast } from 'react-toastify';
 

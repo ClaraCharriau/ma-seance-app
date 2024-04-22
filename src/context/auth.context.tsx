@@ -1,7 +1,7 @@
 import { useLocalStorage } from '../hook/local-storage-hook/useLocalStorage';
-import { User } from '../models/User';
+import { User } from '../model/User';
 import { createContext, useContext, useMemo, useState } from 'react';
-import { UserToken } from '../models/UserToken';
+import { UserToken } from '../model/UserToken';
 import { jwtDecode } from 'jwt-decode';
 
 /* eslint-disable */

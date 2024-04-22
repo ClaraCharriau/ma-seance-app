@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Theater } from '../../../models/Theater';
+import { Theater } from '../../../model/Theater';
 import TheaterCard from '../theater-card/TheaterCard';
 import style from './TheaterList.module.css';
-import ConfirmationModal from '../modals/confirmation-modal/ConfirmationModal';
+import ConfirmationModal from '../modal/confirmation-modal/ConfirmationModal';
 import { deleteUserFavTheater } from '../../../client/users/user.client';
 import { useAuthContext } from '../../../context/auth.context';
 import { toast } from 'react-toastify';

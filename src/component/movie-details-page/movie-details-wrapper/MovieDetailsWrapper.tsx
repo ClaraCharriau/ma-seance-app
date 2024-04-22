@@ -1,7 +1,7 @@
 import config from '../../../config/config.helper';
 import { useTextDate } from '../../../hook/date-hook/date.hook';
 import { useTextDuration, useTextList } from '../../../hook/string-hook/string.hook';
-import { Movie } from '../../../models/Movie';
+import { Movie } from '../../../model/Movie';
 import FavoriteButton from '../../common/favorite-button/FavoriteButton';
 import style from '../MovieDetailsLayout.module.css';
 

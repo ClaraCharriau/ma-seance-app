@@ -2,8 +2,8 @@ import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
 import { BrowserRouter } from 'react-router-dom';
 import { axiosInstance } from '../../client/axios.config';
-import mockFavoriteTheaters from '../../mocks/users/fav-theaters.json';
-import mockUser from '../../mocks/users/users.json';
+import mockFavoriteTheaters from '../../mock/users/fav-theaters.json';
+import mockUser from '../../mock/users/users.json';
 import FavTheaters from './FavTheaterPage';
 
 describe('Favorite theaters Component', () => {

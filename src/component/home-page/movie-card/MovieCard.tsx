@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Movie } from '../../../models/Movie';
+import { Movie } from '../../../model/Movie';
 import style from './MovieCard.module.css';
 import config from '../../../config/config.helper';
 

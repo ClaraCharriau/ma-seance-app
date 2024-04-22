@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import Agenda from './Agenda';
-import mockNextWeekNextMonthScreenings from '../../mocks/users/user-showtimes-next-week-next-month-screenings.json';
-import mockPassedAndNextYearScreenings from '../../mocks/users/user-showtimes-passed-screening-next-year-screening.json';
+import mockNextWeekNextMonthScreenings from '../../mock/users/user-showtimes-next-week-next-month-screenings.json';
+import mockPassedAndNextYearScreenings from '../../mock/users/user-showtimes-passed-screening-next-year-screening.json';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('Agenda page tests', () => {

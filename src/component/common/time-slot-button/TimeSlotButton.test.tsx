@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import TimeSlotButton from './TimeSlotButton';
-import mockMovie from '../../../mocks/movies/movie-1.json';
-import mockTheater from '../../../mocks/theaters/theaters-1.json';
+import mockMovie from '../../../mock/movies/movie-1.json';
+import mockTheater from '../../../mock/theaters/theaters-1.json';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('time slot button component tests', () => {

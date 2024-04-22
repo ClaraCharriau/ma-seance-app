@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
 import { axiosInstance } from '../../client/axios.config';
-import mockVerify from '../../mocks/auth/verify-false.json';
-import mockUser from '../../mocks/users/users.json';
+import mockVerify from '../../mock/auth/verify-false.json';
+import mockUser from '../../mock/users/users.json';
 import { useAuth } from './useAuth';
 
 describe('useAuth hook tests', () => {

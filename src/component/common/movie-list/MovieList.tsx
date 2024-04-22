@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { deleteUserFavMovie } from '../../../client/users/user.client';
 import { useAuthContext } from '../../../context/auth.context';
-import { Movie } from '../../../models/Movie';
-import ConfirmationModal from '../modals/confirmation-modal/ConfirmationModal';
+import { Movie } from '../../../model/Movie';
+import ConfirmationModal from '../modal/confirmation-modal/ConfirmationModal';
 import MovieListCard from '../movie-list-card/MovieListCard';
 import style from './MovieList.module.css';
 

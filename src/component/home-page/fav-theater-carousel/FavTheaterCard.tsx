@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Theater } from '../../../models/Theater';
+import { Theater } from '../../../model/Theater';
 import style from '../fav-theater-carousel/FavTheater.module.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 

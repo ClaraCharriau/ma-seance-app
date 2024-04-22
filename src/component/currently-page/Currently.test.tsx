@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Currently from './Currently';
 import { render, waitFor } from '@testing-library/react';
 import { getCurrentlyMovies } from '../../client/movies/movies.client';
-import mockMovies from '../../mocks/movies/current-movies.json';
+import mockMovies from '../../mock/movies/current-movies.json';
 
 jest.mock('../../client/movies/movies.client', () => ({
     getCurrentlyMovies: jest.fn()

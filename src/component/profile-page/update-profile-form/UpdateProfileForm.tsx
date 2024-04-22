@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useAuth } from '../../../hook/auth-hook/useAuth';
-import { User } from '../../../models/User';
+import { User } from '../../../model/User';
 import style from '../Profile.module.css';
 
 interface UpdateProfileFormProps {

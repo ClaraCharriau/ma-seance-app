@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import mockMovie from '../../mocks/movies/movie-1.json';
+import mockMovie from '../../mock/movies/movie-1.json';
 import MovieDetailsLayout from './MovieDetailsLayout';
 import { BrowserRouter } from 'react-router-dom';
 

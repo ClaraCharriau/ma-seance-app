@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Theater } from '../../../models/Theater';
+import { Theater } from '../../../model/Theater';
 import style from './TheaterCard.module.css';
 
 type TheaterCardProps = {

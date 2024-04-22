@@ -4,7 +4,7 @@ import Spinner from '../../common/spinner/Spinner';
 import ErrorPage from '../../error-page/Error';
 import MovieSummary from '../movie-summary/MovieSummary';
 import style from './MoviesScreeningsList.module.css';
-import { MovieScreenings } from '../../../models/MovieScreenings';
+import { MovieScreenings } from '../../../model/MovieScreenings';
 
 const MoviesScreeningsList = () => {
     const data = useLoaderData() as { movieScreenings: MovieScreenings[] };

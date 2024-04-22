@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Movie } from '../../../models/Movie';
+import { Movie } from '../../../model/Movie';
 import { getTheaterMoviesByTheaterId } from '../../../client/theaters/theaters.client';
 import { useMediaQuery } from 'react-responsive';
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';

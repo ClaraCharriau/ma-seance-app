@@ -4,7 +4,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from '../../context/auth.context';
-import mockToken from '../../mocks/auth/user-token.json';
+import mockToken from '../../mock/auth/user-token.json';
 import Profile from './Profile';
 
 jest.mock('react-router-dom', () => ({

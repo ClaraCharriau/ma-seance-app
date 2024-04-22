@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { Movie } from '../../../models/Movie';
-import { Theater } from '../../../models/Theater';
+import { Movie } from '../../../model/Movie';
+import { Theater } from '../../../model/Theater';
 import style from './SeeDetails.module.css';
 
 interface SeeDetailsBtnProps {

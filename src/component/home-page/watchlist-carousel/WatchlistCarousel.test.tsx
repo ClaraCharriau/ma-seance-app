@@ -1,7 +1,7 @@
 import { act, render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { getUserFavMovies } from '../../../client/users/user.client';
-import mockMovies from '../../../mocks/users/fav-movies.json';
+import mockMovies from '../../../mock/users/fav-movies.json';
 import WatchlistCarousel from './WatchlistCarousel';
 
 jest.mock('../../../client/users/user.client', () => ({

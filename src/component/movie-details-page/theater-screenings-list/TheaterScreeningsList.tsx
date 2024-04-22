@@ -1,5 +1,5 @@
 import { useLoaderData, useLocation } from 'react-router-dom';
-import { TheaterScreenings } from '../../../models/TheaterScreenings';
+import { TheaterScreenings } from '../../../model/TheaterScreenings';
 import TimeSlotsList from '../../common/time-slots-list/TimeSlotsList';
 import style from './TheaterScreeningsList.module.css';
 

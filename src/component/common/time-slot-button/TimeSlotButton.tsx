@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Movie } from '../../../models/Movie';
-import { ScreeningDate } from '../../../models/ScreeningDate';
-import { Theater } from '../../../models/Theater';
-import ShowtimeModal from '../modals/showtime-modal/ShowtimeModal';
+import { Movie } from '../../../model/Movie';
+import { ScreeningDate } from '../../../model/ScreeningDate';
+import { Theater } from '../../../model/Theater';
+import ShowtimeModal from '../modal/showtime-modal/ShowtimeModal';
 import style from './TimeSlotButton.module.css';
 
 interface TimeSlotButtonProps {

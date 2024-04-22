@@ -1,6 +1,6 @@
-import { PaginatedMovieResponse } from '../../models/PaginatedResponse';
-import { Showtime } from '../../models/Showtime';
-import { Theater } from '../../models/Theater';
+import { PaginatedMovieResponse } from '../../model/PaginatedResponse';
+import { Showtime } from '../../model/Showtime';
+import { Theater } from '../../model/Theater';
 import { axiosInstance } from '../axios.config';
 
 const USERS_PATH = '/users/';

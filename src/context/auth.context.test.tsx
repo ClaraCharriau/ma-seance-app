@@ -1,6 +1,6 @@
 import { act, render, renderHook, waitFor } from '@testing-library/react';
-import mockUser from '../mocks/users/users.json';
-import mockUserToken from '../mocks/auth/user-token.json';
+import mockUser from '../mock/users/users.json';
+import mockUserToken from '../mock/auth/user-token.json';
 import { AuthProvider, useAuthContext } from './auth.context';
 
 const { result } = renderHook(useAuthContext);

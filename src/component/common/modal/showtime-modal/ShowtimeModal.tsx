@@ -1,10 +1,10 @@
 import ReactModal from 'react-modal';
 import { toast } from 'react-toastify';
 import { useAgendaContext } from '../../../../context/agenda.context';
-import { Movie } from '../../../../models/Movie';
-import { ScreeningDate } from '../../../../models/ScreeningDate';
-import { Showtime } from '../../../../models/Showtime';
-import { Theater } from '../../../../models/Theater';
+import { Movie } from '../../../../model/Movie';
+import { ScreeningDate } from '../../../../model/ScreeningDate';
+import { Showtime } from '../../../../model/Showtime';
+import { Theater } from '../../../../model/Theater';
 import { ShowtimeDetails } from '../../showtime-details/ShowtimeDetails';
 import styleModal from '../Modal.module.css';
 import style from './ShowtimeModale.module.css';

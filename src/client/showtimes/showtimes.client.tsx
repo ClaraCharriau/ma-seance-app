@@ -1,4 +1,4 @@
-import { Showtime } from '../../models/Showtime';
+import { Showtime } from '../../model/Showtime';
 import { axiosInstance } from '../axios.config';
 
 const SHOWTIMES_PATH = '/showtimes';

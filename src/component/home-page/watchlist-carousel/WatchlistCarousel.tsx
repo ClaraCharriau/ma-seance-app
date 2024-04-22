@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { User } from '../../../models/User';
-import { Movie } from '../../../models/Movie';
+import { User } from '../../../model/User';
+import { Movie } from '../../../model/Movie';
 import { getUserFavMovies } from '../../../client/users/user.client';
 import { useMediaQuery } from 'react-responsive';
 import { CarouselProvider, Slide, Slider } from 'pure-react-carousel';

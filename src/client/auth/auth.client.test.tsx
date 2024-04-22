@@ -1,6 +1,6 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import MockAdapter from 'axios-mock-adapter';
-import mockUser from '../../mocks/users/users.json';
+import mockUser from '../../mock/users/users.json';
 import { axiosInstance } from '../axios.config';
 import { checkAccountExists, deleteAccount, loginUser, signIn, updateAccount } from './auth.client';
 

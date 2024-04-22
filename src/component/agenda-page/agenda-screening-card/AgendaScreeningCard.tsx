@@ -1,4 +1,4 @@
-import { Showtime } from '../../../models/Showtime';
+import { Showtime } from '../../../model/Showtime';
 import MovieListCard from '../../common/movie-list-card/MovieListCard';
 import SeeDetailsBtn from '../../common/see-details-btn/SeeDetailsBtn';
 import style from './AgendaScreeningCard.module.css';

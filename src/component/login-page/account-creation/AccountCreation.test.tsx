@@ -1,7 +1,7 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
 import { axiosInstance } from '../../../client/axios.config';
-import mockUser from '../../../mocks/users/users.json';
+import mockUser from '../../../mock/users/users.json';
 import AccountCreation from './AccountCreation';
 
 describe('AccountCreation component tests', () => {

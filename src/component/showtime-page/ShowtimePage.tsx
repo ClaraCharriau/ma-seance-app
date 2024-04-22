@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { deleteUserShowtime } from '../../client/users/user.client';
 import config from '../../config/config.helper';
 import { useAuthContext } from '../../context/auth.context';
-import { Showtime } from '../../models/Showtime';
-import ConfirmationModal from '../common/modals/confirmation-modal/ConfirmationModal';
+import { Showtime } from '../../model/Showtime';
+import ConfirmationModal from '../common/modal/confirmation-modal/ConfirmationModal';
 import { ShowtimeDetails } from '../common/showtime-details/ShowtimeDetails';
 import style from './ShowtimePage.module.css';
 

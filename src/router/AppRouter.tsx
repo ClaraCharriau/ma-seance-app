@@ -14,12 +14,12 @@ import TheaterDetailsLayout from '../component/theater-details-page/TheaterDetai
 import MoviesScreeningsList from '../component/theater-details-page/movies-screenings-list/MoviesScreeningsList';
 import WatchList from '../component/watchlist-page/WatchList';
 import AppLayout from './AppLayout';
-import { appLoader } from './loaders/AppLoader';
-import { movieLoader } from './loaders/movie-loader/MovieLoader';
-import { movieScreeningsLoader } from './loaders/movie-screenings-loader/MovieScreeningsLoader';
-import { theaterLoader } from './loaders/theater-loader/TheaterLoader';
-import { theaterScreeningsLoader } from './loaders/theater-screenings-loader/TheaterScreeningsLoader';
-import { showtimeLoader } from './loaders/showtime-loader/ShowtimeLoader';
+import { appLoader } from './loader/AppLoader';
+import { movieLoader } from './loader/movie-loader/MovieLoader';
+import { movieScreeningsLoader } from './loader/movie-screenings-loader/MovieScreeningsLoader';
+import { theaterLoader } from './loader/theater-loader/TheaterLoader';
+import { theaterScreeningsLoader } from './loader/theater-screenings-loader/TheaterScreeningsLoader';
+import { showtimeLoader } from './loader/showtime-loader/ShowtimeLoader';
 import { SearchPage } from '../component/search-page/SearchPage';
 
 const AppRouter = () => {

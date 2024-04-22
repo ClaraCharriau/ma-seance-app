@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 import config from '../config/config.helper';
-import { UserToken } from '../models/UserToken';
+import { UserToken } from '../model/UserToken';
 
 /**
  * Set axios global configuration

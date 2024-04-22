@@ -1,9 +1,9 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import mockMovies from '../../../mocks/users/fav-movies.json';
-import mockTheaters from '../../../mocks/users/fav-theaters.json';
-import mockUser from '../../../mocks/users/users.json';
+import mockMovies from '../../../mock/users/fav-movies.json';
+import mockTheaters from '../../../mock/users/fav-theaters.json';
+import mockUser from '../../../mock/users/users.json';
 import FavoriteButton from './FavoriteButton';
 
 describe('Favorite button component tests', () => {

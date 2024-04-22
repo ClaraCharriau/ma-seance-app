@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Showtime } from '../../../models/Showtime';
+import { Showtime } from '../../../model/Showtime';
 import style from './ShowtimeCard.module.css';
 
 type ShowtimeCardProps = {

@@ -1,8 +1,8 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import MockAdapter from 'axios-mock-adapter';
-import mockMovies from '../../mocks/movies/current-movies.json';
-import mockMovie from '../../mocks/movies/movie-1.json';
-import mockTheaterScreenings from '../../mocks/movies/theaters-screenings-by-movie-id-and-day-1.json';
+import mockMovies from '../../mock/movies/current-movies.json';
+import mockMovie from '../../mock/movies/movie-1.json';
+import mockTheaterScreenings from '../../mock/movies/theaters-screenings-by-movie-id-and-day-1.json';
 import { axiosInstance } from '../axios.config';
 import { getCurrentlyMovies, getMovieById, getTheaterScreeningsByMovieIdAndDay } from './movies.client';
 

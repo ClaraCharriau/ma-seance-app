@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import config from '../../../config/config.helper';
 import { useYearFromDate } from '../../../hook/date-hook/date.hook';
 import { useTextDuration } from '../../../hook/string-hook/string.hook';
-import { Movie } from '../../../models/Movie';
-import { ScreeningDate } from '../../../models/ScreeningDate';
-import { Theater } from '../../../models/Theater';
+import { Movie } from '../../../model/Movie';
+import { ScreeningDate } from '../../../model/ScreeningDate';
+import { Theater } from '../../../model/Theater';
 import pageStyle from '../../showtime-page/ShowtimePage.module.css';
 import modaleStyle from './ShowtimeDetails.module.css';
 

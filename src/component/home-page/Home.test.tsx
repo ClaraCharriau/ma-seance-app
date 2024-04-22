@@ -2,8 +2,8 @@
 import { act, render, waitFor } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from '../../context/auth.context';
-import mockTheaters from '../../mocks/users/fav-theaters.json';
-import mockToken from '../../mocks/auth/user-token.json';
+import mockTheaters from '../../mock/users/fav-theaters.json';
+import mockToken from '../../mock/auth/user-token.json';
 import Home from './Home';
 
 describe('Home Component', () => {

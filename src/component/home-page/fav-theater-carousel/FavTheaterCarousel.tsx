@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getUserFavTheaters } from '../../../client/users/user.client';
-import { Theater } from '../../../models/Theater';
-import { User } from '../../../models/User';
+import { Theater } from '../../../model/Theater';
+import { User } from '../../../model/User';
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import { useMediaQuery } from 'react-responsive';
 import FavTheaterCard from './FavTheaterCard';

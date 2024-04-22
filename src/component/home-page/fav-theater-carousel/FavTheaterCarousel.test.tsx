@@ -2,7 +2,7 @@ import { render, waitFor } from '@testing-library/react';
 import FavTheaterCarousel from './FavTheaterCarousel';
 import { getUserFavTheaters } from '../../../client/users/user.client';
 import { BrowserRouter } from 'react-router-dom';
-import { Theater } from '../../../models/Theater';
+import { Theater } from '../../../model/Theater';
 
 jest.mock('../../../client/users/user.client', () => ({
     getUserFavTheaters: jest.fn()

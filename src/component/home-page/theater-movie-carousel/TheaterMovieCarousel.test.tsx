@@ -1,7 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import TheaterMovieCarousel from './TheaterMovieCarousel';
-import mockMovies from '../../../mocks/theaters/theater-movies.json';
+import mockMovies from '../../../mock/theaters/theater-movies.json';
 import { getTheaterMoviesByTheaterId } from '../../../client/theaters/theaters.client';
 
 jest.mock('../../../client/theaters/theaters.client', () => ({

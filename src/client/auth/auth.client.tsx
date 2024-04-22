@@ -1,8 +1,8 @@
 import { AxiosResponse } from 'axios';
-import { User } from '../../models/User';
+import { User } from '../../model/User';
 import { axiosInstance } from '../axios.config';
 import config from '../../config/config.helper';
-import { UserToken } from '../../models/UserToken';
+import { UserToken } from '../../model/UserToken';
 
 const AUTH_VERIFY_PATH = config.services.auth.verify;
 const AUTH_LOGIN_PATH = config.services.auth.login;

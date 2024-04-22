@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import config from '../../../config/config.helper';
 import { useYearFromDate } from '../../../hook/date-hook/date.hook';
 import { useTextDuration, useTextList } from '../../../hook/string-hook/string.hook';
-import { Movie } from '../../../models/Movie';
+import { Movie } from '../../../model/Movie';
 import style from './MovieListCard.module.css';
 
 interface MovieListCardProps {

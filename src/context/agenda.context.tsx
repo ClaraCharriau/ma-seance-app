@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { getUserShowtimes, updateUserShowtimes } from '../client/users/user.client';
-import { Showtime } from '../models/Showtime';
+import { Showtime } from '../model/Showtime';
 import { useAuthContext } from './auth.context';
 
 /* eslint-disable */

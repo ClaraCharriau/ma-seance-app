@@ -1,10 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
 import config from '../../../config/config.helper';
-import { Movie } from '../../../models/Movie';
+import { Movie } from '../../../model/Movie';
 import style from './MovieSummary.module.css';
 import TimeSlotsList from '../../common/time-slots-list/TimeSlotsList';
-import { ScreeningDate } from '../../../models/ScreeningDate';
-import { Theater } from '../../../models/Theater';
+import { ScreeningDate } from '../../../model/ScreeningDate';
+import { Theater } from '../../../model/Theater';
 import { useTextDuration, useTextList } from '../../../hook/string-hook/string.hook';
 import { useTextDate } from '../../../hook/date-hook/date.hook';
 

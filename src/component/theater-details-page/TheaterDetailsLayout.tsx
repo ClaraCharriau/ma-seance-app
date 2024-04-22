@@ -4,7 +4,7 @@ import FavoriteButton from '../common/favorite-button/FavoriteButton';
 import WeekNavigation from '../common/week-navigation/WeekNavigation';
 import ErrorPage from '../error-page/Error';
 import Spinner from '../common/spinner/Spinner';
-import { Theater } from '../../models/Theater';
+import { Theater } from '../../model/Theater';
 import { Suspense } from 'react';
 
 const TheaterDetailsLayout = () => {

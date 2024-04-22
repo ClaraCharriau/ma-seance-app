@@ -1,6 +1,6 @@
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import { useEffect, useState } from 'react';
-import { Movie } from '../../../models/Movie';
+import { Movie } from '../../../model/Movie';
 import style from './CurrentlyCarousel.module.css';
 import { useMediaQuery } from 'react-responsive';
 import { getCurrentlyMovies } from '../../../client/movies/movies.client';

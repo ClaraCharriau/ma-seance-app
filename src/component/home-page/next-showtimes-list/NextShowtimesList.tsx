@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAgendaContext } from '../../../context/agenda.context';
-import { Showtime } from '../../../models/Showtime';
+import { Showtime } from '../../../model/Showtime';
 import ShowtimeCard from '../../common/showtime-card/ShowtimeCard';
 import style from './NextShowtimesList.module.css';
 import Spinner from '../../common/spinner/Spinner';
