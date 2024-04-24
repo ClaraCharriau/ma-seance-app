@@ -228,12 +228,6 @@ exports[`Fav Theater Carousel Component renders Fav Theater Carousel component w
       <p>
         Vous n'avez pas encore de cinémas favoris
       </p>
-      <button
-        class="button"
-      >
-        Rechercher un 
-        cinéma
-      </button>
     </div>
   </div>
 </div>

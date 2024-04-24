@@ -1,4 +1,3 @@
-import { redirect } from 'react-router-dom';
 import style from './EmptySection.module.css';
 
 interface EmptySectionProps {
@@ -15,9 +14,6 @@ const EmptySection = (props: EmptySectionProps) => {
             ) : (
                 <p>Vous n'avez pas encore de cinémas favoris</p>
             )}
-            <button onClick={() => redirect('/search')} className={style.button}>
-                Rechercher un {itemType === 'movie' ? 'film' : 'cinéma'}
-            </button>
         </div>
     );
 };

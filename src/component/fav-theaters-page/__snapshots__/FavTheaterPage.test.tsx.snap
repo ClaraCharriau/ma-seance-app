@@ -1687,12 +1687,6 @@ exports[`Favorite theaters Component should render favorite theaters component w
       <p>
         Vous n'avez pas encore de cinémas favoris
       </p>
-      <button
-        class="button"
-      >
-        Rechercher un 
-        cinéma
-      </button>
     </div>
   </main>
 </div>

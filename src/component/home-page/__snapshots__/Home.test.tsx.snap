@@ -526,12 +526,6 @@ exports[`Home Component should render home page 1`] = `
             class="spinner"
           />
         </div>
-        <a
-          class="seeDetailsBtn"
-          href="/watchlist"
-        >
-          Voir les 0 films &gt;
-        </a>
       </section>
     </div>
   </main>
