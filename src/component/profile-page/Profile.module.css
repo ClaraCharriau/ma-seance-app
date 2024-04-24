@@ -84,6 +84,7 @@
 .error {
     color: var(--red);
     text-wrap: wrap;
+    max-width: 300px;
 }
 
 .inputContainer .errorInput {
