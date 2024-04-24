@@ -53,7 +53,7 @@
         "coverage": "jest --coverage",
         "make-badges": "istanbul-badges-readme",
         "make-badges:ci": "npm run make-badges -- --ci",
-        "apimocker": "apimocker --config src/mocks/apimocker.config.json",
+        "apimocker": "apimocker --config src/mock/apimocker.config.json",
         "lint": "eslint  --fix src/**/*.{ts,tsx}",
         "lint:fix": "npm run lint -- --fix",
         "check": "npm run lint:fix && npm run test:ci && npm run make-badges"

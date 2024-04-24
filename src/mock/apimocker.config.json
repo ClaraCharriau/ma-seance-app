@@ -1,10 +1,10 @@
 {
-    "mockDirectory": "src/mocks",
+    "mockDirectory": "src/mock",
     "quiet": false,
     "port": "7878",
     "latency": 50,
     "logRequestHeaders": false,
-    "allowedDomains": ["*"],
+    "allowedHeaders": ["Content-Type", "Authorization"],
     "webServices": {
         "login": {
             "httpStatus": 200,
