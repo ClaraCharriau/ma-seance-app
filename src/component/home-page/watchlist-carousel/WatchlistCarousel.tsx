@@ -80,7 +80,9 @@ const WatchlistCarousel = (props: FavMoviesCarouselProps) => {
                     <EmptySection itemType="movie" />
                 )}
             </CarouselProvider>
-            <SeeDetailsBtn text={`Voir les ${favMoviesTotal} films >`} navigatePath="/watchlist" showIcon={false} />
+            {favMoviesTotal > 0 && (
+                <SeeDetailsBtn text={`Voir les ${favMoviesTotal} films >`} navigatePath="/watchlist" showIcon={false} />
+            )}
         </>
     );
 };

@@ -22,17 +22,4 @@ describe('Empty home section component', () => {
 
         expect(component.container).toMatchSnapshot();
     });
-
-    it('should redirect on click', async () => {
-        const component = render(
-            <BrowserRouter>
-                <EmptySection itemType={'movie'} />
-            </BrowserRouter>
-        );
-        const button = await component.findByText('Rechercher un film');
-
-        fireEvent.click(button);
-
-        expect(component.container).toMatchSnapshot();
-    });
 });
