@@ -1,12 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
 import config from '../../../config/config.helper';
+import { useTextDate } from '../../../hook/date-hook/date.hook';
+import { useTextDuration, useTextList } from '../../../hook/string-hook/string.hook';
 import { Movie } from '../../../model/Movie';
-import style from './MovieSummary.module.css';
-import TimeSlotsList from '../../common/time-slots-list/TimeSlotsList';
 import { ScreeningDate } from '../../../model/ScreeningDate';
 import { Theater } from '../../../model/Theater';
-import { useTextDuration, useTextList } from '../../../hook/string-hook/string.hook';
-import { useTextDate } from '../../../hook/date-hook/date.hook';
+import TimeSlotsList from '../../common/time-slots-list/TimeSlotsList';
+import style from './MovieSummary.module.css';
 
 interface MovieSummaryProps {
     movie: Movie;
@@ -48,7 +48,9 @@ const MovieSummary = (props: MovieSummaryProps) => {
                 <div className={style.timeSlotColumn}>
                     <p className={style.timeSlotTitle}>Horaires</p>
                     <TimeSlotsList screeningDateList={schedule} theater={theater} movie={movie} />
-                    <NavLink to={movieLink} state={{ movie }}>{"Voir d'autres séances pour ce film >"}</NavLink>
+                    <NavLink to={movieLink} state={{ movie }}>
+                        {"Voir d'autres séances pour ce film >"}
+                    </NavLink>
                 </div>
             </div>
         </div>
