@@ -26,14 +26,14 @@ const MovieSummary = (props: MovieSummaryProps) => {
     return (
         <div className={style.movieSummaryWrapper}>
             {/* Movie poster */}
-            <Link to={movieLink}>
+            <Link to={movieLink} state={{ movie }}>
                 <img src={TMDB_PATH + movie.posterLink} alt={'photo de ' + movie.title} />
             </Link>
 
             {/* Movie infos */}
             <div className={style.movieInfosWrapper}>
                 <div className={style.movieInfos}>
-                    <Link to={movieLink}>
+                    <Link to={movieLink} state={{ movie }}>
                         <p className={style.movieTitle}>{movie.title}</p>
                     </Link>
                     <p className={style.movieDirectors}>De {directors}</p>
@@ -48,7 +48,7 @@ const MovieSummary = (props: MovieSummaryProps) => {
                 <div className={style.timeSlotColumn}>
                     <p className={style.timeSlotTitle}>Horaires</p>
                     <TimeSlotsList screeningDateList={schedule} theater={theater} movie={movie} />
-                    <NavLink to={movieLink}>{"Voir d'autres séances pour ce film >"}</NavLink>
+                    <NavLink to={movieLink} state={{ movie }}>{"Voir d'autres séances pour ce film >"}</NavLink>
                 </div>
             </div>
         </div>
