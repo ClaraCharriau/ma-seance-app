@@ -16,11 +16,15 @@ const WatchList = () => {
     return (
         <main className={style.mainWatchlistPage}>
             <h2>Mes films à voir</h2>
-            <UpdateListButton callBack={toggleUpdate} />
 
-            <MovieList movieList={favoriteMovies} isUpdate={isUpdate} />
-
-            {favoriteMovies.length === 0 && <EmptySection itemType="movie" />}
+            {favoriteMovies.length > 0 ? (
+                <>
+                    <UpdateListButton callBack={toggleUpdate} />
+                    <MovieList movieList={favoriteMovies} isUpdate={isUpdate} />
+                </>
+            ) : (
+                <EmptySection itemType="movie" />
+            )}
         </main>
     );
 };

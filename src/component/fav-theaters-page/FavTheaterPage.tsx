@@ -18,11 +18,14 @@ const FavTheaters = () => {
         <main className={style.mainFavTheaterPage}>
             <h2>Mes cinémas favoris</h2>
 
-            <UpdateListButton callBack={toggleUpdate} />
-
-            <TheatersList theaters={favoriteTheaters} isUpdate={isUpdate} />
-
-            {favoriteTheaters.length === 0 && <EmptySection itemType="theater" />}
+            {favoriteTheaters.length > 0 ? (
+                <>
+                    <UpdateListButton callBack={toggleUpdate} />
+                    <TheatersList theaters={favoriteTheaters} isUpdate={isUpdate} />
+                </>
+            ) : (
+                <EmptySection itemType="theater" />
+            )}
         </main>
     );
 };
