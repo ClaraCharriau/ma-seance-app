@@ -59,7 +59,7 @@ describe('Favorite button component tests', () => {
                 id: '1',
                 name: 'C2L Saint-Germain',
                 address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
-                imgPath: '/c2l-saint-germain'
+                imagePath: '/c2l-saint-germain'
             }
         ]);
         axiosMock.onGet('users/1/fav-theaters').reply(200, [
@@ -67,13 +67,13 @@ describe('Favorite button component tests', () => {
                 id: '1',
                 name: 'C2L Saint-Germain',
                 address: '25-27-29, rue du Vieux-Marche 78100 Saint-Germain-en-Laye',
-                imgPath: '/c2l-saint-germain'
+                imagePath: '/c2l-saint-germain'
             },
             {
                 id: '4',
                 name: 'C2L Poissy',
                 address: '112 Rue du Général de Gaulle 78300 Poissy',
-                imgPath: '/c2l-poissy'
+                imagePath: '/c2l-poissy'
             }
         ]);
         const component = render(<FavoriteButton itemId={'4'} itemType={'theater'} />);

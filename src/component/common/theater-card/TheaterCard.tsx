@@ -16,7 +16,7 @@ const TheaterCard = (props: TheaterCardProps) => {
         <NavLink to={`/theaters/${theater.id}/day-1`} state={{ theater }} className={style.theaterCardWrapper}>
             <img
                 className={style.theaterImg}
-                src={IMG_PATH + theater.imgPath + IMG_SUFFIX}
+                src={IMG_PATH + theater.imagePath + IMG_SUFFIX}
                 alt={'photo de ' + theater.name}
             />
             <div className={style.theaterCardInfos}>

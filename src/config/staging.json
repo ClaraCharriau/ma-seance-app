@@ -1,10 +1,28 @@
 {
     "services": {
-        "prefix": "http://localhost:3030/maseance/api/",
+        "prefix": "http://localhost",
         "auth": {
-            "verify": "v1/auth/verify",
-            "login": "v1/auth/login",
-            "registrations": "v1/auth/registrations"
+            "verify": "http://localhost:3030/maseance/api/v1/auth/verify",
+            "login": "http://localhost:3030/maseance/api/v1/auth/login",
+            "registrations": "http://localhost:3030/maseance/api/v1/auth/registrations"
+        },
+        "users": {
+            "users": "http://localhost:3030/maseance/api/v1/users/",
+            "favTheaters": "/favorite-theaters",
+            "favMovies": "/watchlist-movies",
+            "screenings": "/screenings"
+        },
+        "theaters": {
+            "theaters": "http://localhost:8080/maseance/api/v1/theaters",
+            "screenings": "/screenings"
+        },
+        "screenings": {
+            "screenings": "/screenings"
+        },
+        "movies": {
+            "movies": "http://localhost:8080/maseance/api/v1/movies",
+            "currently": "/currently",
+            "screenings": "/screenings"
         }
     }
 }

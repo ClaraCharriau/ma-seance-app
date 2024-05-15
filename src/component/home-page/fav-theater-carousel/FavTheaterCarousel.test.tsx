@@ -21,21 +21,21 @@ describe('Fav Theater Carousel Component', () => {
                 id: '1',
                 name: 'Le Grand Rex',
                 address: '',
-                imgPath: '',
+                imagePath: '',
                 bookingPath: ''
             },
             {
                 id: '2',
                 name: 'Pathé Levallois',
                 address: '',
-                imgPath: '',
+                imagePath: '',
                 bookingPath: ''
             },
             {
                 id: '3',
                 name: 'Super cinoche',
                 address: '',
-                imgPath: '',
+                imagePath: '',
                 bookingPath: ''
             }
         ];

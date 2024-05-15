@@ -1,8 +1,9 @@
 import { Showtime } from '../../model/Showtime';
 import { axiosInstance } from '../axios.config';
+import config from '../../config/config.helper';
 
-const SHOWTIMES_PATH = '/showtimes';
+const SCREENINGS_PATH = config.services.screenings.screenings;
 
 export const getShowtimeById = async (showtimeId: string): Promise<Showtime> => {
-    return await axiosInstance.get(SHOWTIMES_PATH + '/' + showtimeId);
+    return await axiosInstance.get(SCREENINGS_PATH + '/' + showtimeId);
 };

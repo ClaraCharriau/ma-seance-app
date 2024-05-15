@@ -5,9 +5,27 @@
             "verify": "/verify",
             "login": "/login",
             "registrations": "/registrations"
+        },
+        "users": {
+            "users": "/users/",
+            "favTheaters": "/fav-theaters",
+            "favMovies": "/fav-movies",
+            "screenings": "/showtimes"
+        },
+        "theaters": {
+            "theaters": "/theaters",
+            "screenings": "/screenings"
+        },
+        "screenings": {
+            "screenings": "/showtimes"
+        },
+        "movies": {
+            "movies": "/movies",
+            "currently": "/currently",
+            "screenings": "/screenings"
         }
     },
-    "tmdbImgPath" : {
+    "tmdbimagePath" : {
         "medium": "https://image.tmdb.org/t/p/w500",
         "large": "https://image.tmdb.org/t/p/w1280"
     }

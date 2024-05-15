@@ -17,7 +17,7 @@ const FavTheaterCard = (props: FavTheaterCardProps) => {
         <Link to={`/theaters/${theater.id}/day-1`} state={{ theater }} className={style.card}>
             <img
                 className={style.theaterCardImg}
-                src={IMG_PATH + theater.imgPath + IMG_SUFFIX}
+                src={IMG_PATH + theater.imagePath + IMG_SUFFIX}
                 alt={'photo de ' + theater.name}
             />
             <div className={style.theaterName}>

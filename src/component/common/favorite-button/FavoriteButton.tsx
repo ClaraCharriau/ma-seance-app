@@ -27,13 +27,19 @@ const FavoriteButton = (props: FavoriteButtonProps) => {
 
     const setFavoriteValue = (favorites: Movie[] | Theater[]): void => {
         const value = favorites.some(item => item.id === itemId);
+        console.log(favorites);
+
         setIsFavorite(value);
     };
 
     const checkForFavorite = () => {
         if (itemType === 'movie') {
+            console.log(favoriteMovies);
+
             setFavoriteValue(favoriteMovies);
         } else if (itemType === 'theater') {
+            console.log(favoriteTheaters);
+
             setFavoriteValue(favoriteTheaters);
         }
     };

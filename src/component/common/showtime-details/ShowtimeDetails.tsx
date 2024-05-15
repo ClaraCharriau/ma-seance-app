@@ -17,7 +17,7 @@ interface ShowtimeDetailsProps {
 
 export const ShowtimeDetails = (props: ShowtimeDetailsProps) => {
     const { screeningDate, movie, theater, isBooked = false } = props;
-    const TMDB_PATH = config.tmdbImgPath.medium;
+    const TMDB_PATH = config.tmdbimagePath.medium;
     const IMG_PATH = '/assets/img/theaters';
     const IMG_SUFFIX = '.jpg';
     const MAPS_PATH = 'https://maps.google.com/?q=';
@@ -110,7 +110,7 @@ export const ShowtimeDetails = (props: ShowtimeDetailsProps) => {
 
             {/* THEATER */}
             <div className={style.theaterBox}>
-                <img src={IMG_PATH + theater.imgPath + IMG_SUFFIX} alt={'photo de ' + theater.name} />
+                <img src={IMG_PATH + theater.imagePath + IMG_SUFFIX} alt={'photo de ' + theater.name} />
                 <div className={style.theaterDetails}>
                     <div>
                         <p className={style.theaterName}>{theater.name}</p>

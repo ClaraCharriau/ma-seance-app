@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { getUserFavMovies, getUserFavTheaters } from '../client/users/user.client';
 import { Movie } from '../model/Movie';
 import { Theater } from '../model/Theater';
@@ -40,10 +40,10 @@ export const FavoriteProvider = (props: FavoriteProviderProps) => {
         getFavorites();
     }, [currentUser]);
 
-    const favoriteContext: IFavoriteContext = useMemo(
-        () => ({ favoriteTheaters, favoriteMovies }),
-        [favoriteMovies, favoriteTheaters]
-    );
+    const favoriteContext: IFavoriteContext = {
+        favoriteTheaters,
+        favoriteMovies
+    };
 
     return <FavoriteContext.Provider value={favoriteContext}>{children}</FavoriteContext.Provider>;
 };

@@ -23,7 +23,7 @@ const TheaterDetailsLayout = () => {
                         <div className={style.backgroundWrapper}>
                             <img
                                 className={style.theaterBackground}
-                                src={IMG_PATH + theater.imgPath + IMG_SUFFIX}
+                                src={IMG_PATH + theater.imagePath + IMG_SUFFIX}
                                 alt={'photo de ' + theater.name}
                             />
                             <div className={style.fading}></div>

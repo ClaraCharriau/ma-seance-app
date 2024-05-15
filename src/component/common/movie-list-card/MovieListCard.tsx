@@ -11,7 +11,7 @@ interface MovieListCardProps {
 
 const MovieListCard = (props: MovieListCardProps) => {
     const { movie } = props;
-    const TMDB_PATH = config.tmdbImgPath.medium;
+    const TMDB_PATH = config.tmdbimagePath.medium;
     const duration = useTextDuration(movie.duration);
     const releaseDate = useYearFromDate(movie.releaseDate);
     const directors = useTextList(movie.directors);

@@ -11,7 +11,7 @@ interface MovieDetailsWrapperProps {
 
 const MovieDetailsWrapper = (props: MovieDetailsWrapperProps) => {
     const { movie } = props;
-    const TMDB_PATH = config.tmdbImgPath.medium;
+    const TMDB_PATH = config.tmdbimagePath.medium;
 
     const duration = useTextDuration(movie.duration);
     const releaseDate = useTextDate(movie.releaseDate);

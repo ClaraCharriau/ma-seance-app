@@ -22,7 +22,7 @@ const ShowtimePage = () => {
     const pageTitle = showtimeDate > today ? 'Séance à venir' : 'Séance passée';
 
     const { schedule, movie, theater } = showtime;
-    const TMDB_PATH = config.tmdbImgPath.medium;
+    const TMDB_PATH = config.tmdbimagePath.medium;
 
     const deleteShowtime = async () => {
         try {
