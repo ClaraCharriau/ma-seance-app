@@ -11,7 +11,7 @@ import {
     getUserFavMovies,
     getUserFavTheaters,
     updateUserShowtimes,
-    updateUserFavMovies,
+    addToUserFavMovies,
     updateUserFavTheaters
 } from './user.client';
 
@@ -170,7 +170,7 @@ describe('User client tests', () => {
         axiosMock.onPatch('/users/2/fav-movies/3').reply(200);
 
         // When
-        await updateUserFavMovies('2', '3');
+        await addToUserFavMovies('2', '3');
 
         // Then
         expect(axiosPatch).toHaveBeenCalledWith('/users/2/fav-movies/3');
@@ -182,7 +182,7 @@ describe('User client tests', () => {
 
         // When
         try {
-            await updateUserFavMovies('2', '2');
+            await addToUserFavMovies('2', '2');
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);

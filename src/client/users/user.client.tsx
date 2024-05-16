@@ -25,7 +25,7 @@ export const getUserFavMovies = async (userId: string): Promise<PaginatedMovieRe
     return await axiosInstance.get(USERS_PATH + userId + FAV_MOVIES_PATH);
 };
 
-export const updateUserFavMovies = async (userId: string, movieId: string): Promise<void> => {
+export const addToUserFavMovies = async (userId: string, movieId: string): Promise<void> => {
     return await axiosInstance.post(USERS_PATH + userId + FAV_MOVIES_PATH + '/' + movieId);
 };
 
@@ -38,7 +38,7 @@ export const getUserShowtimes = async (userId: string): Promise<Showtime[]> => {
 };
 
 export const updateUserShowtimes = async (userId: string, showtime: Showtime): Promise<Showtime[]> => {
-    return await axiosInstance.post(USERS_PATH + userId + SCREENINGS_PATH, showtime);
+    return await axiosInstance.post(USERS_PATH + userId + SCREENINGS_PATH + '/' + showtime.id);
 };
 
 export const deleteUserShowtime = async (userId: string, showtimeId: string): Promise<void> => {

@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react';
 import style from './FavoriteButton.module.css';
 import { useFavoriteContext } from '../../../context/favorite.context';
 import { useAuthContext } from '../../../context/auth.context';
-import { updateUserFavMovies, updateUserFavTheaters } from '../../../client/users/user.client';
+import {
+    addToUserFavMovies,
+    deleteUserFavMovie,
+    deleteUserFavTheater,
+    updateUserFavTheaters as addToUserFavTheaters
+} from '../../../client/users/user.client';
 import { Movie } from '../../../model/Movie';
 import { Theater } from '../../../model/Theater';
 import { Tooltip } from 'react-tooltip';
@@ -16,41 +21,36 @@ interface FavoriteButtonProps {
 const FavoriteButton = (props: FavoriteButtonProps) => {
     const { itemId, itemType } = props;
     const { currentUser } = useAuthContext();
-    const { favoriteTheaters, favoriteMovies } = useFavoriteContext();
+    const { favoriteTheaters, favoriteMovies, refreshFavoriteMovies, refreshFavoriteTheaters } = useFavoriteContext();
 
     const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
     useEffect(() => {
         checkForFavorite();
         // eslint-disable-next-line
-    }, []);
+    }, [favoriteMovies, favoriteTheaters]);
 
     const setFavoriteValue = (favorites: Movie[] | Theater[]): void => {
         const value = favorites.some(item => item.id === itemId);
-        console.log(favorites);
-
         setIsFavorite(value);
     };
 
     const checkForFavorite = () => {
         if (itemType === 'movie') {
-            console.log(favoriteMovies);
-
             setFavoriteValue(favoriteMovies);
         } else if (itemType === 'theater') {
-            console.log(favoriteTheaters);
-
             setFavoriteValue(favoriteTheaters);
         }
     };
 
-    const toggleFavorite = async () => {
+    const addToFavorites = async () => {
         if (itemType === 'movie') {
             try {
                 currentUser &&
-                    (await updateUserFavMovies(currentUser.id, itemId).then(() => {
-                        toast.success(isFavorite ? 'Retiré de la watchlist' : 'Ajouté à la watchlist');
+                    (await addToUserFavMovies(currentUser.id, itemId).then(() => {
+                        refreshFavoriteMovies();
                         setFavoriteValue(favoriteMovies);
+                        toast.success('Ajouté à la watchlist');
                     }));
             } catch (error: any) {
                 console.error('An error occured');
@@ -58,13 +58,48 @@ const FavoriteButton = (props: FavoriteButtonProps) => {
         } else if (itemType === 'theater') {
             try {
                 currentUser &&
-                    (await updateUserFavTheaters(currentUser.id, itemId).then(() => {
-                        toast.success(isFavorite ? 'Retiré des favoris' : 'Ajouté aux favoris');
+                    (await addToUserFavTheaters(currentUser.id, itemId).then(() => {
+                        refreshFavoriteTheaters();
                         setFavoriteValue(favoriteTheaters);
+                        toast.success('Ajouté aux favoris');
                     }));
             } catch (error: any) {
                 console.error('An error occured');
             }
+        }
+    };
+
+    const removeFromFavorites = async () => {
+        if (itemType === 'movie') {
+            try {
+                currentUser &&
+                    (await deleteUserFavMovie(currentUser.id, itemId).then(() => {
+                        refreshFavoriteMovies();
+                        setFavoriteValue(favoriteMovies);
+                        toast.success('Retiré de la watchlist');
+                    }));
+            } catch (error: any) {
+                console.error('An error occured');
+            }
+        } else if (itemType === 'theater') {
+            try {
+                currentUser &&
+                    (await deleteUserFavTheater(currentUser.id, itemId).then(() => {
+                        refreshFavoriteTheaters();
+                        setFavoriteValue(favoriteTheaters);
+                        toast.success('Retiré des favoris');
+                    }));
+            } catch (error: any) {
+                console.error('An error occured');
+            }
+        }
+    };
+
+    const toggleFavorite = async () => {
+        if (isFavorite) {
+            removeFromFavorites();
+        } else {
+            addToFavorites();
         }
     };
 
