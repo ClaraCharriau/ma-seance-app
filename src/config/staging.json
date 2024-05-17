@@ -1,6 +1,5 @@
 {
     "services": {
-        "prefix": "http://localhost",
         "auth": {
             "verify": "http://localhost:3030/maseance/api/v1/auth/verify",
             "login": "http://localhost:3030/maseance/api/v1/auth/login",

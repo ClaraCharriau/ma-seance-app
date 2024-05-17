@@ -141,7 +141,7 @@
                 "day3": { "httpStatus": 200, "mockFile": "movies/theaters-screenings-by-movie-id-and-day-3.json" }
             }
         },
-        "showtimes/:id": {
+        "screenings/:id": {
             "httpStatus": 200,
             "verbs": ["get"],
             "latency": 200,

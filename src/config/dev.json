@@ -1,26 +1,25 @@
 {
     "services" : {
-        "prefix": "http://localhost:7878",
         "auth": {
-            "verify": "/verify",
-            "login": "/login",
-            "registrations": "/registrations"
+            "verify": "http://localhost:7878/verify",
+            "login": "http://localhost:7878/login",
+            "registrations": "http://localhost:7878/registrations"
         },
         "users": {
-            "users": "/users/",
+            "users": "http://localhost:7878/users/",
             "favTheaters": "/fav-theaters",
             "favMovies": "/fav-movies",
             "screenings": "/showtimes"
         },
         "theaters": {
-            "theaters": "/theaters",
+            "theaters": "http://localhost:7878/theaters",
             "screenings": "/screenings"
         },
         "screenings": {
             "screenings": "/showtimes"
         },
         "movies": {
-            "movies": "/movies",
+            "movies": "http://localhost:7878/movies",
             "currently": "/currently",
             "screenings": "/screenings"
         }
