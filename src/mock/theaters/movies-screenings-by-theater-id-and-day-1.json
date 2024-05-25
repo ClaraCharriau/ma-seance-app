@@ -13,7 +13,7 @@
             "cast": ["Emma Stone", "Mark Ruffalo", "Willem Dafoe"],
             "genres": ["Science-Fiction", "Comédie"]
         },
-        "schedule": [
+        "showtimes": [
             {
                 "date": "2024-02-17T09:45:00",
                 "dayName": "mercredi",
@@ -102,7 +102,7 @@
             "cast": ["Eden Dambrine", "Gustav de Waele", "Emilie Dequenne"],
             "genres": ["Drame"]
         },
-        "schedule": [
+        "showtimes": [
             {
                 "date": "2024-02-17T09:45:00",
                 "dayName": "mercredi",
@@ -191,7 +191,7 @@
             "cast": ["Adèle Haenel"],
             "genres": ["Drame", "Romance"]
         },
-        "schedule": [
+        "showtimes": [
             {
                 "date": "2024-02-17T11:45:00",
                 "dayName": "mercredi",

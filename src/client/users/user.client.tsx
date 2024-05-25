@@ -1,5 +1,5 @@
 import { PaginatedMovieResponse } from '../../model/PaginatedResponse';
-import { Showtime } from '../../model/Showtime';
+import { Screening } from '../../model/Screening';
 import { Theater } from '../../model/Theater';
 import { axiosInstance } from '../axios.config';
 import config from '../../config/config.helper';
@@ -33,14 +33,14 @@ export const deleteUserFavMovie = async (userId: string, movieId: string): Promi
     return await axiosInstance.delete(USERS_PATH + userId + FAV_MOVIES_PATH + '/' + movieId);
 };
 
-export const getUserShowtimes = async (userId: string): Promise<Showtime[]> => {
+export const getUserScreenings = async (userId: string): Promise<Screening[]> => {
     return await axiosInstance.get(USERS_PATH + userId + SCREENINGS_PATH);
 };
 
-export const updateUserShowtimes = async (userId: string, showtime: Showtime): Promise<Showtime[]> => {
-    return await axiosInstance.post(USERS_PATH + userId + SCREENINGS_PATH + '/' + showtime.id);
+export const updateUserScreenings = async (userId: string, screening: Screening): Promise<Screening[]> => {
+    return await axiosInstance.post(USERS_PATH + userId + SCREENINGS_PATH + '/' + screening.id);
 };
 
-export const deleteUserShowtime = async (userId: string, showtimeId: string): Promise<void> => {
-    return await axiosInstance.delete(USERS_PATH + userId + SCREENINGS_PATH + '/' + showtimeId);
+export const deleteUserScreeningById = async (userId: string, screeningId: string): Promise<void> => {
+    return await axiosInstance.delete(USERS_PATH + userId + SCREENINGS_PATH + '/' + screeningId);
 };

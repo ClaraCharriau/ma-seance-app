@@ -1,7 +1,7 @@
-import { ScreeningDate } from './ScreeningDate';
+import { Showtime } from './Showtime';
 import { Theater } from './Theater';
 
 export interface TheaterScreenings {
     theater: Theater;
-    schedule: ScreeningDate[];
+    showtimes: Showtime[];
 }

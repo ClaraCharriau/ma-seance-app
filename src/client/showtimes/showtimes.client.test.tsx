@@ -1,6 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
 import { axiosInstance } from '../axios.config';
-import { getShowtimeById } from './showtimes.client';
+import { getScreeningById } from './showtimes.client';
 import mockShowtimes from '../../mock/showtimes/showtimes.json';
 
 describe('showtimes client tests', () => {
@@ -19,7 +19,7 @@ describe('showtimes client tests', () => {
         axiosMock.onGet('/showtimes/1').reply(200, mockShowtimes);
 
         // When
-        const response = await getShowtimeById('1');
+        const response = await getScreeningById('1');
 
         // Then
         expect(response).toEqual(mockShowtimes);
@@ -32,7 +32,7 @@ describe('showtimes client tests', () => {
 
         // When
         try {
-            await getShowtimeById('1');
+            await getScreeningById('1');
         } catch (e: any) {
             // Then
             expect(e.status).toBe(500);

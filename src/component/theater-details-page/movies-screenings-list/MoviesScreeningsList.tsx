@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import { Await, useLoaderData, useLocation } from 'react-router-dom';
+import { MovieScreenings } from '../../../model/MovieScreenings';
 import Spinner from '../../common/spinner/Spinner';
 import ErrorPage from '../../error-page/Error';
 import MovieSummary from '../movie-summary/MovieSummary';
 import style from './MoviesScreeningsList.module.css';
-import { MovieScreenings } from '../../../model/MovieScreenings';
 
 const MoviesScreeningsList = () => {
     const data = useLoaderData() as { movieScreenings: MovieScreenings[] };
@@ -21,7 +21,7 @@ const MoviesScreeningsList = () => {
                                     <MovieSummary
                                         key={showtimes.movie.id}
                                         movie={showtimes.movie}
-                                        schedule={showtimes.schedule}
+                                        showtimes={showtimes.showtimes}
                                         theater={location.state.theater}
                                     />
                                 ))}

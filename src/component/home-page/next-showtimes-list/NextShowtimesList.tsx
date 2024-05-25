@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useAgendaContext } from '../../../context/agenda.context';
-import { Showtime } from '../../../model/Showtime';
+import { Screening } from '../../../model/Screening';
 import ShowtimeCard from '../../common/showtime-card/ShowtimeCard';
-import style from './NextShowtimesList.module.css';
 import Spinner from '../../common/spinner/Spinner';
+import style from './NextShowtimesList.module.css';
 
 const NextShowtimesList = () => {
-    const { showtimes } = useAgendaContext();
-    const [nextShowtimes, setNextShowtimes] = useState<Showtime[]>([]);
+    const { screenings } = useAgendaContext();
+    const [nextShowtimes, setNextShowtimes] = useState<Screening[]>([]);
     const today = new Date();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
@@ -19,16 +19,16 @@ const NextShowtimesList = () => {
             setLoading(false);
         }, 5000);
 
-        const userNextShowtimes = getUserNextShowtimes();
+        const userNextShowtimes = getUserNextScreenings();
 
         setNextShowtimes(userNextShowtimes);
         setLoading(false);
         clearTimeout(timeout);
         // eslint-disable-next-line
-    }, [showtimes]);
+    }, [screenings]);
 
-    const getUserNextShowtimes = (): Showtime[] => {
-        return showtimes.filter(showtime => new Date(showtime.schedule.date) > today);
+    const getUserNextScreenings = (): Screening[] => {
+        return screenings.filter(screening => new Date(screening.schedule.date) > today);
     };
 
     return loading ? (
@@ -38,7 +38,7 @@ const NextShowtimesList = () => {
     ) : (
         <div className={style.showtimesList}>
             {nextShowtimes.slice(0, 3).map(show => (
-                <ShowtimeCard showtime={show} key={show.id} />
+                <ShowtimeCard screening={show} key={show.id} />
             ))}
         </div>
     );

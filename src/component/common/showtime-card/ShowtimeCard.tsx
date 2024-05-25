@@ -1,18 +1,18 @@
 import { NavLink } from 'react-router-dom';
-import { Showtime } from '../../../model/Showtime';
+import { Screening } from '../../../model/Screening';
 import style from './ShowtimeCard.module.css';
 
 type ShowtimeCardProps = {
-    showtime: Showtime;
+    screening: Screening;
 };
 
 const ShowtimeCard = (props: ShowtimeCardProps) => {
-    const { showtime } = props;
-    const { schedule, theater, movie } = showtime;
+    const { screening } = props;
+    const { schedule, theater, movie } = screening;
     const { dayName, dayNumber, month, hourly } = schedule;
 
     return (
-        <NavLink className={style.showtimeCardWrapper} to={`/showtimes/${showtime.id}`}>
+        <NavLink className={style.showtimeCardWrapper} to={`/showtimes/${screening.id}`}>
             <p className={style.calendarDate}>
                 <svg
                     className={style.calendarFrame}

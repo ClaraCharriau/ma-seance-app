@@ -1,17 +1,19 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { getUserShowtimes, updateUserShowtimes } from '../client/users/user.client';
-import { Showtime } from '../model/Showtime';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { getUserScreenings, updateUserScreenings } from '../client/users/user.client';
+import { Screening } from '../model/Screening';
 import { useAuthContext } from './auth.context';
 
 /* eslint-disable */
 interface IAgendaContext {
-    showtimes: Showtime[] | [];
-    updateAgenda: (showtime: Showtime) => Promise<void>
+    screenings: Screening[] | [];
+    updateAgenda: (showtime: Screening) => Promise<void>;
+    refreshAgenda: () => Promise<void>;
 }
 
 const defaultContext: IAgendaContext = {
-    showtimes: [],
-    updateAgenda: async () => {}
+    screenings: [],
+    updateAgenda: async () => {},
+    refreshAgenda: async () => {}
 };
 /* eslint-enable */
 
@@ -24,31 +26,34 @@ interface AgendaProviderProps {
 export const AgendaProvider = (props: AgendaProviderProps) => {
     const { children } = props;
     const { currentUser } = useAuthContext();
-    const [showtimes, setShowtimes] = useState<Showtime[]>([]);
+    const [screenings, setScreenings] = useState<Screening[]>([]);
 
     useEffect(() => {
         const getAgenda = async () => {
             if (currentUser) {
-                await getUserShowtimes(currentUser.id).then(response => setShowtimes(response));
+                await getUserScreenings(currentUser.id).then(response => setScreenings(response));
             }
         };
         getAgenda();
     }, [currentUser]);
 
-    const updateAgenda = async (showtime: Showtime) => {
+    const updateAgenda = async (showtime: Screening) => {
         if (currentUser) {
-            await updateUserShowtimes(currentUser.id, showtime).then(response => setShowtimes(response));
+            await updateUserScreenings(currentUser.id, showtime).then(response => setScreenings(response));
         }
     };
 
-    const agendaContext: IAgendaContext = useMemo(
-        () => ({
-            showtimes,
-            updateAgenda
-        }),
-        // eslint-disable-next-line
-        [showtimes]
-    );
+    const refreshAgenda = async () => {
+        if (currentUser) {
+            await getUserScreenings(currentUser.id).then(response => setScreenings(response));
+        }
+    };
+
+    const agendaContext: IAgendaContext = {
+        screenings: screenings,
+        updateAgenda,
+        refreshAgenda
+    };
 
     return <AgendaContext.Provider value={agendaContext}>{children}</AgendaContext.Provider>;
 };

@@ -6,13 +6,14 @@ import ShowtimeModal from '../modal/showtime-modal/ShowtimeModal';
 import style from './TimeSlotButton.module.css';
 
 interface TimeSlotButtonProps {
+    screeningId: string;
     screeningDate: ScreeningDate;
     theater: Theater;
     movie: Movie;
 }
 
 const TimeSlotButton = (props: TimeSlotButtonProps) => {
-    const { screeningDate, theater, movie } = props;
+    const { screeningId, screeningDate, theater, movie } = props;
 
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
@@ -30,6 +31,7 @@ const TimeSlotButton = (props: TimeSlotButtonProps) => {
                 {screeningDate.hourly}
             </button>
             <ShowtimeModal
+                screeningId={screeningId}
                 movie={movie}
                 theater={theater}
                 screeningDate={screeningDate}

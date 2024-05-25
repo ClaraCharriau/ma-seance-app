@@ -13,7 +13,7 @@
             "cast": ["Dakota Johnson", "Sydney Sweeney", "Isabela Merced"],
             "genres": ["Action", "Science-Fiction"]
         },
-        "schedule": [
+        "showtimes": [
             {
                 "date": "2024-02-17T11:45:00",
                 "dayName": "mercredi",
@@ -70,7 +70,7 @@
             "cast": ["Sandra Hüller", "Swann Arlaud", "Samuel Theis"],
             "genres": ["Drame", "Mystère", "Crime"]
         },
-        "schedule": [
+        "showtimes": [
             {
                 "date": "2024-02-17T09:45:00",
                 "dayName": "mercredi",
@@ -159,7 +159,7 @@
             "cast": ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
             "genres": ["Drame", "Science-Fiction"]
         },
-        "schedule": [
+        "showtimes": [
             {
                 "date": "2024-02-17T11:45:00",
                 "dayName": "mercredi",

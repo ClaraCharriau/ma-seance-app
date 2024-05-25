@@ -3,7 +3,7 @@ import config from '../../../config/config.helper';
 import { useTextDate } from '../../../hook/date-hook/date.hook';
 import { useTextDuration, useTextList } from '../../../hook/string-hook/string.hook';
 import { Movie } from '../../../model/Movie';
-import { ScreeningDate } from '../../../model/ScreeningDate';
+import { Showtime } from '../../../model/Showtime';
 import { Theater } from '../../../model/Theater';
 import TimeSlotsList from '../../common/time-slots-list/TimeSlotsList';
 import style from './MovieSummary.module.css';
@@ -11,11 +11,11 @@ import style from './MovieSummary.module.css';
 interface MovieSummaryProps {
     movie: Movie;
     theater: Theater;
-    schedule: ScreeningDate[];
+    showtimes: Showtime[];
 }
 
 const MovieSummary = (props: MovieSummaryProps) => {
-    const { movie, schedule, theater } = props;
+    const { movie, showtimes, theater } = props;
     const TMDB_PATH = config.tmdbimagePath.medium;
     const duration = useTextDuration(movie.duration);
     const releaseDate = useTextDate(movie.releaseDate);
@@ -47,7 +47,7 @@ const MovieSummary = (props: MovieSummaryProps) => {
                 {/* Movie schedule */}
                 <div className={style.timeSlotColumn}>
                     <p className={style.timeSlotTitle}>Horaires</p>
-                    <TimeSlotsList screeningDateList={schedule} theater={theater} movie={movie} />
+                    <TimeSlotsList showtimes={showtimes} theater={theater} movie={movie} />
                     <NavLink to={movieLink} state={{ movie }}>
                         {"Voir d'autres séances pour ce film >"}
                     </NavLink>

@@ -1,5 +1,5 @@
 import { ActionFunctionArgs } from 'react-router-dom';
-import { getShowtimeById } from '../../../client/showtimes/showtimes.client';
+import { getScreeningById } from '../../../client/showtimes/showtimes.client';
 
 /**
  * Loader that provide the showtime infos before the page renders
@@ -12,5 +12,5 @@ export const showtimeLoader = async (args: ActionFunctionArgs) => {
         throw new Error();
     }
 
-    return await getShowtimeById(id);
+    return await getScreeningById(id);
 };

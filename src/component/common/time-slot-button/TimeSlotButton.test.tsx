@@ -17,7 +17,12 @@ describe('time slot button component tests', () => {
     it('should render time slot button', () => {
         const component = render(
             <BrowserRouter>
-                <TimeSlotButton screeningDate={mockScreeningDate} theater={mockTheater} movie={mockMovie} />
+                <TimeSlotButton
+                    screeningId={'1'}
+                    screeningDate={mockScreeningDate}
+                    theater={mockTheater}
+                    movie={mockMovie}
+                />
             </BrowserRouter>
         );
 
@@ -28,7 +33,12 @@ describe('time slot button component tests', () => {
         // Given
         const component = render(
             <BrowserRouter>
-                <TimeSlotButton screeningDate={mockScreeningDate} theater={mockTheater} movie={mockMovie} />
+                <TimeSlotButton
+                    screeningId={'1'}
+                    screeningDate={mockScreeningDate}
+                    theater={mockTheater}
+                    movie={mockMovie}
+                />
             </BrowserRouter>
         );
         const button = component.getByText('11:45');
@@ -45,7 +55,12 @@ describe('time slot button component tests', () => {
         // Given
         const component = render(
             <BrowserRouter>
-                <TimeSlotButton screeningDate={mockScreeningDate} theater={mockTheater} movie={mockMovie} />
+                <TimeSlotButton
+                    screeningId={'1'}
+                    screeningDate={mockScreeningDate}
+                    theater={mockTheater}
+                    movie={mockMovie}
+                />
             </BrowserRouter>
         );
         const openButton = component.getByText('11:45');

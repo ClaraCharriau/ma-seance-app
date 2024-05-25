@@ -13,7 +13,7 @@
             "cast": ["Sandra Hüller", "Swann Arlaud", "Samuel Theis"],
             "genres": ["Drame", "Mystère", "Crime"]
         },
-        "schedule": [
+        "showtimes": [
             {
                 "date": "2024-02-17T11:45:00",
                 "dayName": "mercredi",
@@ -54,7 +54,7 @@
             "cast": ["Eden Dambrine", "Gustav de Waele", "Emilie Dequenne"],
             "genres": ["Drame"]
         },
-        "schedule": [
+        "showtimes": [
             {
                 "date": "2024-02-17T09:45:00",
                 "dayName": "mercredi",
@@ -143,7 +143,7 @@
             "cast": ["Adèle Haenel"],
             "genres": ["Drame", "Romance"]
         },
-        "schedule": [
+        "showtimes": [
             {
                 "date": "2024-02-17T11:45:00",
                 "dayName": "mercredi",

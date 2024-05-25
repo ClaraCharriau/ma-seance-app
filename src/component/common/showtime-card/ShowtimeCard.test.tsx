@@ -40,7 +40,7 @@ describe('Showtime card component tests', () => {
         // When
         const component = render(
             <BrowserRouter>
-                <ShowtimeCard showtime={showtimeMock} />
+                <ShowtimeCard screening={showtimeMock} />
             </BrowserRouter>
         );
 

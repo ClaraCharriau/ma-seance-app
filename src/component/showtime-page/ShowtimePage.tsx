@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
-import { deleteUserShowtime } from '../../client/users/user.client';
+import { deleteUserScreeningById } from '../../client/users/user.client';
 import config from '../../config/config.helper';
 import { useAuthContext } from '../../context/auth.context';
-import { Showtime } from '../../model/Showtime';
+import { Screening } from '../../model/Screening';
 import ConfirmationModal from '../common/modal/confirmation-modal/ConfirmationModal';
 import { ShowtimeDetails } from '../common/showtime-details/ShowtimeDetails';
 import style from './ShowtimePage.module.css';
@@ -13,22 +12,22 @@ import style from './ShowtimePage.module.css';
 const ShowtimePage = () => {
     const { currentUser } = useAuthContext();
     const [showModale, setShowModale] = useState<boolean>(false);
-    const showtime = useLoaderData() as Showtime;
+    const screening = useLoaderData() as Screening;
     const navigate = useNavigate();
 
-    // Calculate if the showtime is upcoming or not to set the correct page title
+    // Calculate if the screening is upcoming or not to set the correct page title
     const today = new Date();
-    const showtimeDate = new Date(showtime.schedule.date);
-    const pageTitle = showtimeDate > today ? 'Séance à venir' : 'Séance passée';
+    const screeningDate = new Date(screening.schedule.date);
+    const pageTitle = screeningDate > today ? 'Séance à venir' : 'Séance passée';
 
-    const { schedule, movie, theater } = showtime;
+    const { schedule, movie, theater } = screening;
     const TMDB_PATH = config.tmdbimagePath.medium;
 
     const deleteShowtime = async () => {
         try {
             currentUser &&
-                showtime.id &&
-                (await deleteUserShowtime(currentUser.id, showtime.id).then(() =>
+                screening.id &&
+                (await deleteUserScreeningById(currentUser.id, screening.id).then(() =>
                     toast.info(`La séance de ${movie.title} a été supprimée de votre agenda`, {
                         icon: () => (
                             <svg

@@ -1,33 +1,33 @@
 import { endOfMonth, endOfWeek, isAfter, isBefore } from 'date-fns';
+import { Link } from 'react-router-dom';
 import { useAgendaContext } from '../../../context/agenda.context';
 import style from '../Agenda.module.css';
 import AgendaScreeningCard from '../agenda-screening-card/AgendaScreeningCard';
-import { Link } from 'react-router-dom';
 
 const AgendaScreeningList = () => {
-    const { showtimes } = useAgendaContext();
+    const { screenings } = useAgendaContext();
 
     const today = new Date();
     const endOfThisWeek = endOfWeek(today, { weekStartsOn: 1 });
     const endOfThisMonth = endOfMonth(today);
 
-    const thisWeekScreenings = showtimes.filter(show => {
-        const showDate = new Date(show.schedule.date);
+    const thisWeekScreenings = screenings.filter(screening => {
+        const showDate = new Date(screening.schedule.date);
         return isAfter(showDate, today) && isBefore(showDate, endOfThisWeek);
     });
 
-    const thisMonthScreenings = showtimes.filter(show => {
-        const showDate = new Date(show.schedule.date);
+    const thisMonthScreenings = screenings.filter(screening => {
+        const showDate = new Date(screening.schedule.date);
         return isAfter(showDate, endOfThisWeek) && isBefore(showDate, endOfThisMonth);
     });
 
-    const afterThisMonthScreenings = showtimes.filter(show => {
-        const showDate = new Date(show.schedule.date);
+    const afterThisMonthScreenings = screenings.filter(screening => {
+        const showDate = new Date(screening.schedule.date);
         return isAfter(showDate, endOfThisMonth);
     });
 
-    const pastScreenings = showtimes.filter(show => {
-        const showDate = new Date(show.schedule.date);
+    const pastScreenings = screenings.filter(screening => {
+        const showDate = new Date(screening.schedule.date);
         return isBefore(showDate, today);
     });
 
@@ -35,17 +35,17 @@ const AgendaScreeningList = () => {
         <section className={style.agendaPageSection}>
             {thisWeekScreenings.length > 0 && <p>Cette semaine</p>}
             {thisWeekScreenings.map(show => (
-                <AgendaScreeningCard showtime={show} key={show.id} />
+                <AgendaScreeningCard screening={show} key={show.id} />
             ))}
 
             {thisMonthScreenings.length > 0 && <p>Ce mois-ci</p>}
             {thisMonthScreenings.map(show => (
-                <AgendaScreeningCard showtime={show} key={show.id} />
+                <AgendaScreeningCard screening={show} key={show.id} />
             ))}
 
             {afterThisMonthScreenings.length > 0 && <p>À venir</p>}
             {afterThisMonthScreenings.map(show => (
-                <AgendaScreeningCard showtime={show} key={show.id} />
+                <AgendaScreeningCard screening={show} key={show.id} />
             ))}
 
             {pastScreenings.length > 0 && (
@@ -65,11 +65,11 @@ const AgendaScreeningList = () => {
             )}
             <div className={style.pastScreeningsWrapper}>
                 {pastScreenings.map(show => (
-                    <AgendaScreeningCard showtime={show} key={show.id} />
+                    <AgendaScreeningCard screening={show} key={show.id} />
                 ))}
             </div>
 
-            {showtimes.length <= 0 && (
+            {screenings.length <= 0 && (
                 <div className={style.emptyAgendaMessage}>
                     <p>Rien de prévu...</p>
                     <Link to="/currently">CONSULTEZ LES SORTIES DE LA SEMAINE</Link>
