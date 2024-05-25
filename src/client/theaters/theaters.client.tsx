@@ -5,7 +5,7 @@ import { axiosInstance } from '../axios.config';
 import config from '../../config/config.helper';
 
 const THEATERS_PATH = config.services.theaters.theaters;
-const SCREENINGS_PATH = config.services.screenings.screenings;
+const SCREENINGS_PATH = config.services.theaters.screenings;
 
 export const getTheaterById = async (theaterId: string): Promise<Theater> => {
     return await axiosInstance.get(THEATERS_PATH + '/' + theaterId);

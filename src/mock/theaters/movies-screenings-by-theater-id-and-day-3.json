@@ -1,6 +1,56 @@
 [
     {
         "movie": {
+            "id": "b88f9510-d302-47d5-9d6b-8b13740f541d",
+            "title": "Madame Web",
+            "releaseDate": "2024-02-14",
+            "duration": 90,
+            "resume": "Cassandra Web est une ambulancière de Manhattan qui serait capable de voir dans le futur. Forcée de faire face à des révélations sur son passé, elle noue une relation avec trois jeunes femmes destinées à un avenir hors du commun... si toutefois elles parviennent à survivre à un présent mortel.",
+            "trailerLink": "",
+            "posterLink": "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
+            "photoLink": "",
+            "directors": ["S. J. Clarkson"],
+            "cast": ["Dakota Johnson", "Sydney Sweeney", "Isabela Merced"],
+            "genres": ["Action", "Science-Fiction"]
+        },
+        "showtimes": [
+            {
+                "id": "7c9e6f42-b3f6-4cfb-bf18-93c1d9b4e917",
+                "schedule": {
+                    "date": "2024-07-17T14:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "14:15"
+                }
+            },
+            {
+                "id": "4f9d83b7-2b7b-4426-8ad1-883e35cb24eb",
+                "schedule": {
+                    "date": "2024-07-17T19:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "19:15"
+                }
+            },
+            {
+                "id": "3c7f2d14-527f-45ed-8c95-9f8a23e8d6c3",
+                "schedule": {
+                    "date": "2024-07-17T21:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:45"
+                }
+            }
+        ]
+    },
+    {
+        "movie": {
             "id": "3d8f1342-15f1-44b1-a48f-4581d654b94a",
             "title": "Anatomie d'une chute",
             "releaseDate": "2023-08-13",
@@ -15,174 +65,131 @@
         },
         "showtimes": [
             {
-                "date": "2024-02-17T11:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "11:45"
+                "id": "e7a1b1d1-2c1e-4e8d-9a68-1f71d5e2b123",
+                "schedule": {
+                    "date": "2024-07-17T09:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "09:45"
+                }
             },
             {
-                "date": "2024-02-17T14:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "14:15"
+                "id": "f9a6b2d2-3c2f-5e9f-0a79-2f82e6f3b234",
+                "schedule": {
+                    "date": "2024-07-17T10:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "10:15"
+                }
             },
             {
-                "date": "2024-02-17T16:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "16:45"
+                "id": "a8b7c3e3-4d3g-6f0g-1b80-3g93f7g4c345",
+                "schedule": {
+                    "date": "2024-07-17T14:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "14:15"
+                }
+            },
+            {
+                "id": "b9c8d4f4-5e4h-7g1h-2c91-4h04g8h5d456",
+                "schedule": {
+                    "date": "2024-07-17T15:05:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "15:05"
+                }
+            },
+            {
+                "id": "e2f1g7i7-8h7k-0j4k-5f24-7k37j1k8g789",
+                "schedule": {
+                    "date": "2024-07-17T16:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "16:45"
+                }
+            },
+            {
+                "id": "f3g2h8j8-9i8l-1k5l-6g35-8l48k2l9h890",
+                "schedule": {
+                    "date": "2024-07-17T19:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "19:15"
+                }
+            },
+            {
+                "id": "g4h3i9k9-0j9m-2l6m-7h46-9m59l3m0i901",
+                "schedule": {
+                    "date": "2024-07-17T21:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:45"
+                }
             }
         ]
     },
     {
         "movie": {
-            "id": "f7e41334-179d-451a-a1d4-e1b9a60ee785",
-            "title": "Close",
-            "releaseDate": "2022-11-01",
-            "duration": 80,
-            "resume": "Léo et Rémi, 13 ans, sont amis depuis toujours. Jusqu'à ce qu'un événement impensable les sépare. Léo se rapproche alors de Sophie, la mère de Rémi, pour essayer de comprendre…",
-            "trailerLink": "null",
-            "posterLink": "/DmixG0Bb1bB3FUbAtq7bt5rjDg.jpg",
-            "photoLink": "/doZEE6CiLM8Q1hu4Hqoxr4Pf2JA.jpg",
-            "directors": ["Lukas Dhont"],
-            "cast": ["Eden Dambrine", "Gustav de Waele", "Emilie Dequenne"],
-            "genres": ["Drame"]
+            "id": "cff01b1b-a943-4bcf-a396-afd80417150a",
+            "title": "Dune",
+            "releaseDate": "2024-01-31",
+            "duration": 166,
+            "resume": "Paul Atréides se rallie à Chani et aux Fremen tout en préparant sa revanche contre ceux qui ont détruit sa famille. Alors qu'il doit faire un choix entre l'amour de sa vie et le destin de la galaxie, il devra néanmoins tout faire pour empêcher un terrible futur que lui seul peut prédire.",
+            "trailerLink": "",
+            "posterLink": "/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg",
+            "photoLink": "",
+            "directors": ["Denis Villeneuve"],
+            "cast": ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
+            "genres": ["Drame", "Science-Fiction"]
         },
         "showtimes": [
             {
-                "date": "2024-02-17T09:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "09:45"
+                "id": "a1d2e3f4-5678-4a9b-bc1d-e2f3g4h5i6j7",
+                "schedule": {
+                    "date": "2024-07-17T11:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "11:45"
+                }
             },
             {
-                "date": "2024-02-17T10:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "10:15"
+                "id": "b2e3f4g5-6789-4b0c-d1e2-f3g4h5i6j7k8",
+                "schedule": {
+                    "date": "2024-07-17T14:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "14:15"
+                }
             },
             {
-                "date": "2024-02-17T14:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "14:15"
-            },
-            {
-                "date": "2024-02-17T15:05:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "15:05"
-            },
-            {
-                "date": "2024-02-17T18:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "18:15"
-            },
-            {
-                "date": "2024-02-17T21:35:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "21:35"
-            },
-            {
-                "date": "2024-02-17T16:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "16:45"
-            },
-            {
-                "date": "2024-02-17T19:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "19:15"
-            },
-            {
-                "date": "2024-02-17T21:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "21:45"
-            }
-        ]
-    },
-    {
-        "movie": {
-            "id": "e301d3db-6aaf-47b6-a003-6a1bb0a3f029",
-            "title": "Portrait de la jeune fille en feu",
-            "releaseDate": "2019-09-18",
-            "duration": 80,
-            "resume": "1770. Marianne est peintre et doit réaliser le portrait de mariage d’Héloïse, une jeune femme qui vient de quitter le couvent. Héloïse résiste à son destin d’épouse en refusant de poser. Marianne va devoir la peindre en secret. Introduite auprès d’elle en tant que dame de compagnie, elle la regarde.",
-            "trailerLink": "null",
-            "posterLink": "/lH2hSK6F1FZmS3ao384kZCMsbCl.jpg",
-            "photoLink": "/foFq1RZWQIgFuCQ0nyYccywjFyX.jpg",
-            "directors": ["Céline Sciamma"],
-            "cast": ["Adèle Haenel"],
-            "genres": ["Drame", "Romance"]
-        },
-        "showtimes": [
-            {
-                "date": "2024-02-17T11:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "11:45"
-            },
-            {
-                "date": "2024-02-17T14:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "14:15"
-            },
-            {
-                "date": "2024-02-17T16:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "16:45"
-            },
-            {
-                "date": "2024-02-17T19:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "19:15"
-            },
-            {
-                "date": "2024-02-17T21:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "21:45"
+                "id": "c3f4g5h6-7890-4c1d-e2f3-g4h5i6j7k8l9",
+                "schedule": {
+                    "date": "2024-07-17T16:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "16:45"
+                }
             }
         ]
     }

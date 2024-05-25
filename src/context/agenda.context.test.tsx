@@ -1,7 +1,7 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
 import { axiosInstance } from '../client/axios.config';
-import mockUserShowtimes from '../mock/showtimes/showtimes.json';
+import mockUserShowtimes from '../mock/screenings/screenings.json';
 import mockUser from '../mock/users/users.json';
 import { AgendaProvider, useAgendaContext } from './agenda.context';
 

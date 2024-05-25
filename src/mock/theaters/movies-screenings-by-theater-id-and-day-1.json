@@ -15,76 +15,103 @@
         },
         "showtimes": [
             {
-                "date": "2024-02-17T09:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "09:45"
+                "id": "8a47cdda-6f0a-4e8e-a876-23e65e6f7b2b",
+                "schedule": {
+                    "date": "2024-07-17T09:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "09:45"
+                }
             },
             {
-                "date": "2024-02-17T10:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "10:15"
+                "id": "ea3a5a56-8195-4b84-8bb5-0f9230e521bb",
+                "schedule": {
+                    "date": "2024-07-17T10:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "10:15"
+                }
             },
             {
-                "date": "2024-02-17T14:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "14:15"
+                "id": "e3d5b96e-33f2-4f8a-87c7-9e8a2b81f8f1",
+                "schedule": {
+                    "date": "2024-07-17T14:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "14:15"
+                }
             },
             {
-                "date": "2024-02-17T15:05:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "15:05"
+                "id": "0d1f53f0-6748-44b5-babe-43c6bcd9628d",
+                "schedule": {
+                    "date": "2024-07-17T15:05:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "15:05"
+                }
             },
             {
-                "date": "2024-02-17T18:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "18:15"
+                "id": "ed4c2f3d-7e47-478b-b6b2-bc0e8c2e38d4",
+                "schedule": {
+                    "date": "2024-07-17T18:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "18:15"
+                }
             },
             {
-                "date": "2024-02-17T21:35:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "21:35"
+                "id": "35b25618-8b5b-4f94-b2a4-5f95be65a8c3",
+                "schedule": {
+                    "date": "2024-07-17T21:35:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:35"
+                }
             },
             {
-                "date": "2024-02-17T16:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "16:45"
+                "id": "5a4d0983-cf43-46a1-b2db-26b4e349aa6d",
+                "schedule": {
+                    "date": "2024-07-17T16:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "16:45"
+                }
             },
             {
-                "date": "2024-02-17T19:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "19:15"
+                "id": "fc5a685b-bb3f-453d-9df9-4cbd6f062fd0",
+                "schedule": {
+                    "date": "2024-07-17T19:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "19:15"
+                }
             },
             {
-                "date": "2024-02-17T21:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "21:45"
+                "id": "e56a12a1-8148-470e-b0c5-1b1ac78cb6ae",
+                "schedule": {
+                    "date": "2024-07-17T21:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:45"
+                }
             }
         ]
     },
@@ -104,76 +131,103 @@
         },
         "showtimes": [
             {
-                "date": "2024-02-17T09:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "09:45"
+                "id": "d3a6a1c3-5bfa-4f0f-9f37-1f30f7e6f4db",
+                "schedule": {
+                    "date": "2024-07-17T09:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "09:45"
+                }
             },
             {
-                "date": "2024-02-17T10:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "10:15"
+                "id": "6a2f11b5-89d1-4d83-bec2-ccfd9f74c7c8",
+                "schedule": {
+                    "date": "2024-07-17T10:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "10:15"
+                }
             },
             {
-                "date": "2024-02-17T14:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "14:15"
+                "id": "f57f842e-46f0-420e-a7d1-fb9f693add18",
+                "schedule": {
+                    "date": "2024-07-17T14:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "14:15"
+                }
             },
             {
-                "date": "2024-02-17T15:05:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "15:05"
+                "id": "0b84707f-29f3-4d07-8bb1-d36889d95cf8",
+                "schedule": {
+                    "date": "2024-07-17T15:05:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "15:05"
+                }
             },
             {
-                "date": "2024-02-17T18:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "18:15"
+                "id": "c184ec88-f6bb-4a5c-9f0b-66da734110db",
+                "schedule": {
+                    "date": "2024-07-17T18:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "18:15"
+                }
             },
             {
-                "date": "2024-02-17T21:35:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "21:35"
+                "id": "ba2f71a1-51b3-4c69-9068-2d0031d61e7e",
+                "schedule": {
+                    "date": "2024-07-17T21:35:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:35"
+                }
             },
             {
-                "date": "2024-02-17T16:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "16:45"
+                "id": "f2710973-f3f0-4f5b-bcf1-0f236c958490",
+                "schedule": {
+                    "date": "2024-07-17T16:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "16:45"
+                }
             },
             {
-                "date": "2024-02-17T19:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "19:15"
+                "id": "920301b5-c289-4c69-abc3-45e5a6a7d3bb",
+                "schedule": {
+                    "date": "2024-07-17T19:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "19:15"
+                }
             },
             {
-                "date": "2024-02-17T21:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "21:45"
+                "id": "4358d86c-5180-4c26-98f2-e02d1f10b08f",
+                "schedule": {
+                    "date": "2024-07-17T21:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:45"
+                }
             }
         ]
     },
@@ -193,44 +247,59 @@
         },
         "showtimes": [
             {
-                "date": "2024-02-17T11:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "11:45"
+                "id": "e4a5c72d-6b7e-41ea-bf16-fc7a96227db3",
+                "schedule": {
+                    "date": "2024-07-17T11:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "11:45"
+                }
             },
             {
-                "date": "2024-02-17T14:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "14:15"
+                "id": "d4a8e947-cc6c-44d2-b1f1-c5f35d3b28f5",
+                "schedule": {
+                    "date": "2024-07-17T14:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "14:15"
+                }
             },
             {
-                "date": "2024-02-17T16:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "16:45"
+                "id": "9b9f19b8-d8c3-405b-86ed-529920f55b17",
+                "schedule": {
+                    "date": "2024-07-17T16:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "16:45"
+                }
             },
             {
-                "date": "2024-02-17T19:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "19:15"
+                "id": "1ad79a9b-2e09-455b-b245-487aa6b8f6f6",
+                "schedule": {
+                    "date": "2024-07-17T19:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "19:15"
+                }
             },
             {
-                "date": "2024-02-17T21:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "21:45"
+                "id": "4c8d7e7e-95e1-4d0c-8263-34a252e8d4d8",
+                "schedule": {
+                    "date": "2024-07-17T21:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:45"
+                }
             }
         ]
     }

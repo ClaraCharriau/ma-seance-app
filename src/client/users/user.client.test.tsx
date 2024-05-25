@@ -1,7 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import MockAdapter from 'axios-mock-adapter';
 import mockFavMoviesList from '../../mock/users/fav-movies.json';
-import mockShowtime from '../../mock/showtimes/showtimes.json';
+import mockShowtime from '../../mock/screenings/screenings.json';
 import mockUserShowtimes from '../../mock/users/user-showtimes.json';
 import { Theater } from '../../model/Theater';
 import { axiosInstance } from '../axios.config';

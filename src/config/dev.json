@@ -9,14 +9,14 @@
             "users": "http://localhost:7878/users/",
             "favTheaters": "/fav-theaters",
             "favMovies": "/fav-movies",
-            "screenings": "/showtimes"
+            "screenings": "/screenings"
         },
         "theaters": {
             "theaters": "http://localhost:7878/theaters",
             "screenings": "/screenings"
         },
         "screenings": {
-            "screenings": "/showtimes"
+            "screenings": "http://localhost:7878/screenings"
         },
         "movies": {
             "movies": "http://localhost:7878/movies",

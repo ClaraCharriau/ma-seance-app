@@ -1,7 +1,7 @@
 import MockAdapter from 'axios-mock-adapter';
 import { axiosInstance } from '../axios.config';
 import { getScreeningById } from './showtimes.client';
-import mockShowtimes from '../../mock/showtimes/showtimes.json';
+import mockShowtimes from '../../mock/screenings/screenings.json';
 
 describe('showtimes client tests', () => {
     let axiosMock: MockAdapter;
