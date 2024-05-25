@@ -8,6 +8,7 @@
 
 .backButton {
     text-transform: uppercase;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +17,7 @@
     letter-spacing: 2.08px;
     height: 55px;
     width: 30vw;
-    min-width: 100px;
+    min-width: 200px;
     border: 1px solid var(--almost-white);
     background-color: var(--secondary);
 }
