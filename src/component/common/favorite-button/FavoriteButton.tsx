@@ -6,7 +6,7 @@ import {
     addToUserFavMovies,
     deleteUserFavMovie,
     deleteUserFavTheater,
-    addToUserFavTheaters as addToUserFavTheaters
+    addToUserFavTheaters
 } from '../../../client/users/user.client';
 import { Movie } from '../../../model/Movie';
 import { Theater } from '../../../model/Theater';
