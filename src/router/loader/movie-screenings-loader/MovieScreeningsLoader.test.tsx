@@ -15,7 +15,7 @@ describe('Movie screenings loader tests', () => {
     it('should get movie screenings successfully', async () => {
         // Given
         const id = '3d8f1342-15f1-44b1-a48f-4581d654b94a';
-        axiosMock.onGet('/theaters/' + id + '/screenings').reply(200, mockScreenings);
+        axiosMock.onGet('http://localhost:7878/theaters/' + id + '/screenings').reply(200, mockScreenings);
         const args: any = {
             params: {
                 id
@@ -32,7 +32,7 @@ describe('Movie screenings loader tests', () => {
     it('should get movie screenings successfully with a defined day', async () => {
         // Given
         const id = '3d8f1342-15f1-44b1-a48f-4581d654b94a';
-        axiosMock.onGet('/theaters/' + id + '/screenings').reply(200, mockScreenings);
+        axiosMock.onGet('http://localhost:7878/theaters/' + id + '/screenings').reply(200, mockScreenings);
         const args: any = {
             params: {
                 id,

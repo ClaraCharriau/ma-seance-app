@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { getUserScreenings, updateUserScreenings } from '../client/users/user.client';
+import { getUserScreenings, addToUserScreenings } from '../client/users/user.client';
 import { Screening } from '../model/Screening';
 import { useAuthContext } from './auth.context';
 
@@ -39,7 +39,7 @@ export const AgendaProvider = (props: AgendaProviderProps) => {
 
     const updateAgenda = async (showtime: Screening) => {
         if (currentUser) {
-            await updateUserScreenings(currentUser.id, showtime).then(response => setScreenings(response));
+            await addToUserScreenings(currentUser.id, showtime).then(response => setScreenings(response));
         }
     };
 

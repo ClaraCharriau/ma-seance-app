@@ -1,9 +1,9 @@
 import MockAdapter from 'axios-mock-adapter';
 import { axiosInstance } from '../axios.config';
-import { getScreeningById } from './showtimes.client';
-import mockShowtimes from '../../mock/screenings/screenings.json';
+import { getScreeningById } from './screenings.client';
+import mockScreenings from '../../mock/screenings/screenings.json';
 
-describe('showtimes client tests', () => {
+describe('screenings client tests', () => {
     let axiosMock: MockAdapter;
     const axiosGet = jest.spyOn(axiosInstance, 'get');
 
@@ -16,19 +16,19 @@ describe('showtimes client tests', () => {
 
     it('should get showtime by id successfully', async () => {
         // Given
-        axiosMock.onGet('/showtimes/1').reply(200, mockShowtimes);
+        axiosMock.onGet('http://localhost:7878/screenings/1').reply(200, mockScreenings);
 
         // When
         const response = await getScreeningById('1');
 
         // Then
-        expect(response).toEqual(mockShowtimes);
-        expect(axiosGet).toHaveBeenCalledWith('/showtimes/1');
+        expect(response).toEqual(mockScreenings);
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/screenings/1');
     });
 
     it('should fail to get showtime', async () => {
         // Given
-        axiosMock.onGet('/showtimes/1').reply(500);
+        axiosMock.onGet('http://localhost:7878/screenings/1').reply(500);
 
         // When
         try {
@@ -37,6 +37,6 @@ describe('showtimes client tests', () => {
             // Then
             expect(e.status).toBe(500);
         }
-        expect(axiosGet).toHaveBeenCalledWith('/showtimes/1');
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/screenings/1');
     });
 });

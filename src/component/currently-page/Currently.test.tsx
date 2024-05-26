@@ -1,19 +1,21 @@
-import { BrowserRouter } from 'react-router-dom';
-import Currently from './Currently';
 import { render, waitFor } from '@testing-library/react';
-import { getCurrentlyMovies } from '../../client/movies/movies.client';
+import { BrowserRouter } from 'react-router-dom';
+import { getCurrentlyMoviesWithDetails } from '../../client/movies/movies.client';
 import mockMovies from '../../mock/movies/current-movies.json';
+import Currently from './Currently';
 
 jest.mock('../../client/movies/movies.client', () => ({
-    getCurrentlyMovies: jest.fn()
+    getCurrentlyMoviesWithDetails: jest.fn()
 }));
-const mockGetCurrentlyMovies = getCurrentlyMovies as jest.MockedFunction<typeof getCurrentlyMovies>;
+const mockGetCurrentlyMoviesWithDetails = getCurrentlyMoviesWithDetails as jest.MockedFunction<
+    typeof getCurrentlyMoviesWithDetails
+>;
 
 describe('Currently component test', () => {
     jest.useFakeTimers().setSystemTime(new Date('2020-01-01'));
     it('should render component with a list of current movies', async () => {
         // Given
-        mockGetCurrentlyMovies.mockResolvedValue(mockMovies);
+        mockGetCurrentlyMoviesWithDetails.mockResolvedValue(mockMovies);
 
         // When
         const component = render(
@@ -24,14 +26,14 @@ describe('Currently component test', () => {
 
         // Then
         await waitFor(() => {
-            expect(component.getByText("Madame Web")).toBeInTheDocument();
+            expect(component.getByText('Madame Web')).toBeInTheDocument();
         });
         expect(component.baseElement).toMatchSnapshot();
     });
 
     it('should fail to render a list of current movies', async () => {
         // Given
-        mockGetCurrentlyMovies.mockRejectedValue(new Error());
+        mockGetCurrentlyMoviesWithDetails.mockRejectedValue(new Error());
 
         // When
         const component = render(

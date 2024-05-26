@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import NextShowtimesList from './NextShowtimesList';
-import mockShowtimes from '../../../mock/users/user-showtimes.json';
+import NextScreeningsList from './NextScreeningsList';
+import mockScreenings from '../../../mock/users/user-showtimes.json';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('Next screenings list component test', () => {
@@ -8,13 +8,13 @@ describe('Next screenings list component test', () => {
     it('should render screenings list component', () => {
         // Given
         jest.spyOn(agendaContext, 'useAgendaContext').mockReturnValue({
-            showtimes: mockShowtimes
+            screenings: mockScreenings
         });
 
         // When
         const component = render(
             <BrowserRouter>
-                <NextShowtimesList />
+                <NextScreeningsList />
             </BrowserRouter>
         );
 

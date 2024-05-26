@@ -28,7 +28,7 @@ describe('Theaters client tests', () => {
 
     it('should get theater successfully', async () => {
         // Given
-        axiosMock.onGet('/theaters/1').reply(200, mockTheaters);
+        axiosMock.onGet('http://localhost:7878/theaters/1').reply(200, mockTheaters);
 
         // When
         const response = await getTheaterById('1');
@@ -43,12 +43,12 @@ describe('Theaters client tests', () => {
                 bookingPath: ''
             }
         ]);
-        expect(axiosGet).toHaveBeenCalledWith('/theaters/1');
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1');
     });
 
     it('should fail to get theater', async () => {
         // Given
-        axiosMock.onGet('/theaters/1').reply(500, {});
+        axiosMock.onGet('http://localhost:7878/theaters/1').reply(500, {});
         let response = {};
 
         // When
@@ -59,24 +59,24 @@ describe('Theaters client tests', () => {
             expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosGet).toHaveBeenCalledWith('/theaters/1');
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1');
     });
 
     it('should get theater movies successfully', async () => {
         // Given
-        axiosMock.onGet('/theaters/1/movies').reply(200, mockMovies);
+        axiosMock.onGet('http://localhost:7878/theaters/1/movies').reply(200, mockMovies);
 
         // When
         const response = await getTheaterMoviesByTheaterId('1');
 
         // Then
         expect(response).toEqual(mockMovies);
-        expect(axiosGet).toHaveBeenCalledWith('/theaters/1/movies');
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1/movies');
     });
 
     it('should fail to get theater movies', async () => {
         // Given
-        axiosMock.onGet('/theaters/1/movies').reply(500);
+        axiosMock.onGet('http://localhost:7878/theaters/1/movies').reply(500);
         let response = {};
 
         // When
@@ -87,26 +87,26 @@ describe('Theaters client tests', () => {
             expect(e.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosGet).toHaveBeenCalledWith('/theaters/1/movies');
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1/movies');
     });
 
     it('should get movie screenings successfully', async () => {
         // Given
-        axiosMock.onGet('/theaters/1/screenings').reply(200, mockMovieScreenings);
+        axiosMock.onGet('http://localhost:7878/theaters/1/screenings').reply(200, mockMovieScreenings);
 
         // When
         const response = await getMovieScreeningsByTheaterIdAndDay('1', '2');
 
         // Then
         expect(response).toEqual(mockMovieScreenings);
-        expect(axiosGet).toHaveBeenCalledWith('/theaters/1/screenings', {
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1/screenings', {
             params: { day: '2' }
         });
     });
 
     it('should fail to get movie screenings', async () => {
         // Given
-        axiosMock.onGet('/theaters/1/screenings').reply(500);
+        axiosMock.onGet('http://localhost:7878/theaters/1/screenings').reply(500);
 
         // When
         try {
@@ -115,7 +115,7 @@ describe('Theaters client tests', () => {
             // Then
             expect(e.status).toBe(500);
         }
-        expect(axiosGet).toHaveBeenCalledWith('/theaters/1/screenings', {
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/theaters/1/screenings', {
             params: { day: '2' }
         });
     });

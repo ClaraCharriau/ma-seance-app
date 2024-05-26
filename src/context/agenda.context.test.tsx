@@ -1,7 +1,7 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
 import { axiosInstance } from '../client/axios.config';
-import mockUserShowtimes from '../mock/screenings/screenings.json';
+import mockUserScreenings from '../mock/screenings/screenings.json';
 import mockUser from '../mock/users/users.json';
 import { AgendaProvider, useAgendaContext } from './agenda.context';
 
@@ -11,7 +11,7 @@ describe('agenda context tests', () => {
         currentUser: mockUser
     });
     let axiosMock: MockAdapter;
-    const axiosPatch = jest.spyOn(axiosInstance, 'patch');
+    const axiosPost = jest.spyOn(axiosInstance, 'post');
 
     beforeEach(() => {
         axiosMock = new MockAdapter(axiosInstance);
@@ -22,11 +22,11 @@ describe('agenda context tests', () => {
 
     it('should update agenda', async () => {
          // Given
-         axiosMock.onPatch('/users/1/showtimes').reply(200, mockUserShowtimes);
-         axiosMock.onGet('/users/1/showtimes').reply(200, mockUserShowtimes);
+         axiosMock.onPost('http://localhost:7878/users/1/screenings/caadad78-7daf-4c49-abe8-2514b43884f6').reply(200, mockUserScreenings);
+         axiosMock.onGet('http://localhost:7878/users/1/screenings').reply(200, mockUserScreenings);
          const TestComponent = () => {
              const { updateAgenda } = useAgendaContext();
-             return <button onClick={() => updateAgenda(mockUserShowtimes)}>test</button>;
+             return <button onClick={() => updateAgenda(mockUserScreenings)}>test</button>;
          };
          const { getByText } = render(
              <AgendaProvider>
@@ -38,7 +38,7 @@ describe('agenda context tests', () => {
          // When
          await act(async () => {
              fireEvent.click(button);
-             await waitFor(() => expect(axiosPatch).toHaveBeenCalledWith('/users/1/showtimes', mockUserShowtimes));
+             await waitFor(() => expect(axiosPost).toHaveBeenCalledWith('http://localhost:7878/users/1/screenings/caadad78-7daf-4c49-abe8-2514b43884f6'));
          });
     });
 });

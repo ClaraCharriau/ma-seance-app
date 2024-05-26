@@ -3,11 +3,11 @@ import { useAgendaContext } from '../../../context/agenda.context';
 import { Screening } from '../../../model/Screening';
 import ShowtimeCard from '../../common/showtime-card/ShowtimeCard';
 import Spinner from '../../common/spinner/Spinner';
-import style from './NextShowtimesList.module.css';
+import style from './NextScreeningsList.module.css';
 
-const NextShowtimesList = () => {
+const NextScreeningsList = () => {
     const { screenings } = useAgendaContext();
-    const [nextShowtimes, setNextShowtimes] = useState<Screening[]>([]);
+    const [nextScreenings, setNextScreenings] = useState<Screening[]>([]);
     const today = new Date();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
@@ -21,7 +21,7 @@ const NextShowtimesList = () => {
 
         const userNextShowtimes = getUserNextScreenings();
 
-        setNextShowtimes(userNextShowtimes);
+        setNextScreenings(userNextShowtimes);
         setLoading(false);
         clearTimeout(timeout);
         // eslint-disable-next-line
@@ -36,12 +36,12 @@ const NextShowtimesList = () => {
     ) : error ? (
         <div className={style.error}>{error}</div>
     ) : (
-        <div className={style.showtimesList}>
-            {nextShowtimes.slice(0, 3).map(show => (
+        <div className={style.screeningsList}>
+            {nextScreenings.slice(0, 3).map(show => (
                 <ShowtimeCard screening={show} key={show.id} />
             ))}
         </div>
     );
 };
 
-export default NextShowtimesList;
+export default NextScreeningsList;

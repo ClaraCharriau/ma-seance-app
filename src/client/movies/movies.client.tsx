@@ -17,7 +17,7 @@ export const getCurrentlyMoviesWithDetails = async (): Promise<Movie[]> => {
 };
 
 export const getMovieById = async (movieId: string): Promise<Movie> => {
-    return await axiosInstance.get(MOVIES_PATH + '/' + movieId + '?extended_infos=true');
+    return await axiosInstance.get(MOVIES_PATH + '/' + movieId + EXTENDED_INFOS_PARAM);
 };
 
 export const getTheaterScreeningsByMovieIdAndDay = async (

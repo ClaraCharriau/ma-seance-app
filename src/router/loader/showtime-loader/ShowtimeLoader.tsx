@@ -1,5 +1,5 @@
 import { ActionFunctionArgs } from 'react-router-dom';
-import { getScreeningById } from '../../../client/showtimes/showtimes.client';
+import { getScreeningById } from '../../../client/screenings/screenings.client';
 
 /**
  * Loader that provide the showtime infos before the page renders

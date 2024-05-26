@@ -25,7 +25,7 @@ describe('Favorite button component tests', () => {
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
             favoriteTheaters: mockTheaters
         });
-        axiosMock.onGet('users/1/fav-theaters').reply(200, mockTheaters);
+        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(200, mockTheaters);
 
         // When
         const component = render(<FavoriteButton itemId={'1'} itemType={'theater'} />);
@@ -39,7 +39,7 @@ describe('Favorite button component tests', () => {
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
             favoriteTheaters: mockTheaters
         });
-        axiosMock.onGet('users/1/fav-theaters').reply(200, mockTheaters);
+        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(200, mockTheaters);
 
         // When
         const component = render(<FavoriteButton itemId={'10'} itemType={'theater'} />);
@@ -50,11 +50,11 @@ describe('Favorite button component tests', () => {
 
     it('should render favorite button with theater and filled heart after clicking button', () => {
         // Given
-        const updateUserFavTheaters = jest.spyOn(require('../../../client/users/user.client'), 'updateUserFavTheaters');
+        const addToUserFavTheaters = jest.spyOn(require('../../../client/users/user.client'), 'addToUserFavTheaters');
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
             favoriteTheaters: mockTheaters
         });
-        axiosMock.onGet('users/1/fav-theaters').replyOnce(200, [
+        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').replyOnce(200, [
             {
                 id: '1',
                 name: 'C2L Saint-Germain',
@@ -62,7 +62,7 @@ describe('Favorite button component tests', () => {
                 imagePath: '/c2l-saint-germain'
             }
         ]);
-        axiosMock.onGet('users/1/fav-theaters').reply(200, [
+        axiosMock.onGet('http://localhost:7878/users/1/fav-theaters').reply(200, [
             {
                 id: '1',
                 name: 'C2L Saint-Germain',
@@ -87,7 +87,9 @@ describe('Favorite button component tests', () => {
         // Then
         waitFor(() => {
             expect(component.baseElement).toMatchSnapshot();
-            expect(updateUserFavTheaters).toHaveBeenCalledWith(1, '4');
+            expect(addToUserFavTheaters
+    
+            ).toHaveBeenCalledWith(1, '4');
         });
     });
 
@@ -122,12 +124,12 @@ describe('Favorite button component tests', () => {
 
     it('should render favorite button with movie and filled heart after clicking button', () => {
         // Given
-        const updateUserFavMovies = jest.spyOn(require('../../../client/users/user.client'), 'updateUserFavMovies');
+        const addToUserFavMovies = jest.spyOn(require('../../../client/users/user.client'), 'addToUserFavMovies');
         jest.spyOn(favoriteContext, 'useFavoriteContext').mockReturnValue({
             favoriteMovies: mockMovies.records
         });
-        axiosMock.onGet('users/1/fav-movies').replyOnce(200, mockMovies);
-        axiosMock.onGet('users/1/fav-movies').reply(200, [
+        axiosMock.onGet('http://localhost:7878/users/1/fav-movies').replyOnce(200, mockMovies);
+        axiosMock.onGet('http://localhost:7878/users/1/fav-movies').reply(200, [
             {
                 id: 'b88f9510-d302-47d5-9d6b-8b13740f541d',
                 title: 'Madame Web',
@@ -153,7 +155,7 @@ describe('Favorite button component tests', () => {
         // Then
         waitFor(() => {
             expect(component.baseElement).toMatchSnapshot();
-            expect(updateUserFavMovies).toHaveBeenCalledWith(1, 'b88f9510-d302-47d5-9d6b-8b13740f541d');
+            expect(addToUserFavMovies).toHaveBeenCalledWith(1, 'b88f9510-d302-47d5-9d6b-8b13740f541d');
         });
     });
 });

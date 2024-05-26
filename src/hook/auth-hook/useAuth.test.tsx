@@ -46,7 +46,7 @@ describe('useAuth hook tests', () => {
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
-        expect(axiosPostSpy).toHaveBeenCalledWith('/login', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('http://localhost:7878/login', {
             email: 'test@mail.com',
             password: 'password'
         });
@@ -65,7 +65,7 @@ describe('useAuth hook tests', () => {
         // Then
         const response = await existsPromise;
         expect(response).toBeFalsy();
-        expect(axiosPostSpy).toHaveBeenCalledWith('/verify', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('http://localhost:7878/verify', {
             email: 'test@mail.com'
         });
     });
@@ -82,7 +82,7 @@ describe('useAuth hook tests', () => {
         result.current.createUserAccount(pseudo, email, password);
 
         // Then
-        expect(axiosPostSpy).toHaveBeenCalledWith('/registrations', {
+        expect(axiosPostSpy).toHaveBeenCalledWith('http://localhost:7878/registrations', {
             pseudo: 'Jane',
             email: 'test@mail.com',
             password: 'password'
@@ -116,7 +116,7 @@ describe('useAuth hook tests', () => {
         result.current.updateUserAccount('1', pseudo, email, password);
 
         // Then
-        expect(axiosPatchSpy).toHaveBeenCalledWith('/registrations/1', {
+        expect(axiosPatchSpy).toHaveBeenCalledWith('http://localhost:7878/registrations/1', {
             id: '1',
             pseudo: 'Jane',
             email: 'test@mail.com',
@@ -134,6 +134,6 @@ describe('useAuth hook tests', () => {
         result.current.deleteUserAccount(id);
 
         // Then
-        expect(axiosDeleteSpy).toHaveBeenCalledWith('/registrations/1');
+        expect(axiosDeleteSpy).toHaveBeenCalledWith('http://localhost:7878/registrations/1');
     });
 });

@@ -5,7 +5,7 @@ import SeeDetailsBtn from '../common/see-details-btn/SeeDetailsBtn';
 import style from './Home.module.css';
 import CurrentlyCarousel from './currently-carousel/CurrentlyCarousel';
 import FavTheaterCarousel from './fav-theater-carousel/FavTheaterCarousel';
-import NextShowtimesList from './next-showtimes-list/NextShowtimesList';
+import NextScreeningsList from './next-showtimes-list/NextScreeningsList';
 import TheaterMovieCarousel from './theater-movie-carousel/TheaterMovieCarousel';
 import WatchlistCarousel from './watchlist-carousel/WatchlistCarousel';
 
@@ -129,7 +129,7 @@ const Home = () => {
                                 </h2>
                             </NavLink>
                         </div>
-                        <NextShowtimesList />
+                        <NextScreeningsList />
                         <Link className={style.seeDetails} to="/agenda">
                             {'Voir les prochaines séances >'}
                         </Link>

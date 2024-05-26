@@ -13,7 +13,7 @@ export const getUserFavTheaters = async (userId: string): Promise<Theater[]> => 
     return await axiosInstance.get(USERS_PATH + userId + FAV_THEATERS_PATH);
 };
 
-export const updateUserFavTheaters = async (userId: string, theaterId: string): Promise<void> => {
+export const addToUserFavTheaters = async (userId: string, theaterId: string): Promise<void> => {
     return await axiosInstance.post(USERS_PATH + userId + FAV_THEATERS_PATH + '/' + theaterId);
 };
 
@@ -37,7 +37,7 @@ export const getUserScreenings = async (userId: string): Promise<Screening[]> =>
     return await axiosInstance.get(USERS_PATH + userId + SCREENINGS_PATH);
 };
 
-export const updateUserScreenings = async (userId: string, screening: Screening): Promise<Screening[]> => {
+export const addToUserScreenings = async (userId: string, screening: Screening): Promise<Screening[]> => {
     return await axiosInstance.post(USERS_PATH + userId + SCREENINGS_PATH + '/' + screening.id);
 };
 

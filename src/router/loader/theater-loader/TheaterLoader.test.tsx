@@ -18,7 +18,7 @@ describe('Theater loader tests', () => {
     });
     it('should load theater successfully', async () => {
         // Given
-        axiosMock.onGet('/theaters/1').reply(200, mockTheater);
+        axiosMock.onGet('http://localhost:7878/theaters/1').reply(200, mockTheater);
         const args: any = {
             params: {
                 id: '1'
