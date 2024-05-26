@@ -59,13 +59,13 @@
             "latency": 200,
             "verbs": ["delete", "patch"]
         },
-        "users/:id/showtimes": {
+        "users/:id/screenings": {
             "httpStatus": 200,
             "latency": 200,
             "verbs": ["get", "patch"],
-            "mockFile": "users/user-showtimes-2.json"
+            "mockFile": "users/user-screenings-2.json"
         },
-        "users/:id/showtimes/:id": {
+        "users/:id/screenings/:id": {
             "httpStatus": 200,
             "latency": 200,
             "verbs": ["delete"]
@@ -141,16 +141,16 @@
                 "day3": { "httpStatus": 200, "mockFile": "movies/theaters-screenings-by-movie-id-and-day-3.json" }
             }
         },
-        "showtimes/:id": {
+        "screenings/:id": {
             "httpStatus": 200,
             "verbs": ["get"],
             "latency": 200,
-            "mockFile": "showtimes/showtimes.json",
+            "mockFile": "screenings/screenings.json",
             "switch": ["id"],
             "switchResponses": {
                 "idbbf24dfe-7788-4084-a6ca-43c3b75df2a4": {
                     "httpStatus": 200,
-                    "mockFile": "showtimes/showtimes-2.json"
+                    "mockFile": "screenings/screenings-2.json"
                 }
             }
         }

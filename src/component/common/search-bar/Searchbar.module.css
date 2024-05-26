@@ -20,6 +20,17 @@
     width: 100%;
 }
 
+/* Change the white to any color */
+.searchInput:-webkit-autofill,
+.searchInput:-webkit-autofill:hover, 
+.searchInput:-webkit-autofill:focus, 
+.searchInput:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--secondary-variant) inset !important;
+}
+.searchInput:-webkit-autofill{
+    -webkit-text-fill-color: var(--primary) !important;
+}
+
 .searchInput::placeholder {
     color: var(--primary);
     font-size: clamp(10px, 3vw, 14px);

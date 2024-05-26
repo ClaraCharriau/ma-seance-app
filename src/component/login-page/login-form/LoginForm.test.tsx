@@ -36,7 +36,7 @@ describe('LoginForm component tests', () => {
 
     it('should login existing user', async () => {
         // Given
-        axiosMock.onPost('/login').reply(200, {
+        axiosMock.onPost('http://localhost:7878/login').reply(200, {
             access_token: "abc123"
         });
         const navigate = jest.spyOn(require('react-router-dom'), 'useNavigate').mockImplementation(() => jest.fn());
@@ -61,14 +61,14 @@ describe('LoginForm component tests', () => {
         await waitFor(() => {
             expect(navigate).toHaveBeenCalled();
             expect(axiosMock.history.post.length).toBe(1);
-            expect(axiosMock.history.post[0].url).toBe('/login');
+            expect(axiosMock.history.post[0].url).toBe('http://localhost:7878/login');
             expect(axiosMock.history.post[0].data).toEqual('{"email":"toto@mail.it","password":"awesomePassword123"}');
         });
     });
 
     it('should set non existing user error', async () => {
         // Given
-        axiosMock.onPost('/verify').reply(200, {
+        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
             isExistingAccount: false
         });
         const { getByLabelText, getByText, getByRole } = render(
@@ -96,7 +96,7 @@ describe('LoginForm component tests', () => {
 
     it('should return false and set missing email error', async () => {
         // Given
-        axiosMock.onPost('/verify').reply(200, {
+        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
             isExistingAccount: true
         });
         const { getByLabelText, getByText, getByRole } = render(
@@ -122,7 +122,7 @@ describe('LoginForm component tests', () => {
 
     it('should return false and set invalid email error', async () => {
         // Given
-        axiosMock.onPost('/verify').reply(200, {
+        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
             isExistingAccount: true
         });
         const { getByLabelText, getByText, getByRole } = render(
@@ -148,7 +148,7 @@ describe('LoginForm component tests', () => {
 
     it('should return false and set missing password error', async () => {
         // Given
-        axiosMock.onPost('/verify').reply(200, {
+        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
             isExistingAccount: true
         });
         const { getByLabelText, getByText, getByRole } = render(

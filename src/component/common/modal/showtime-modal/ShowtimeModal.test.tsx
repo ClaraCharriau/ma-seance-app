@@ -26,6 +26,7 @@ describe('showtime modal component test', () => {
         const component = render(
             <BrowserRouter>
                 <ShowtimeModal
+                    screeningId={'1'}
                     theater={mockTheater}
                     movie={mockMovie}
                     screeningDate={mockScreeningDate}

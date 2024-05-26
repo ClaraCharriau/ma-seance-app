@@ -4,18 +4,18 @@ import TimeSlotsList from '../../common/time-slots-list/TimeSlotsList';
 import style from './TheaterScreeningsList.module.css';
 
 const TheaterScreeningsList = () => {
-    const showtimes = useLoaderData() as TheaterScreenings[];
+    const screenings = useLoaderData() as TheaterScreenings[];
     const location = useLocation();
 
     return (
         <section className={style.showtimesSection}>
             <h3 className={style.sectionTitle}>Dans vos cinémas favoris :</h3>
-            {showtimes.map(showtimes => (
-                <div key={showtimes.theater.id} className={style.theaterSchedule}>
-                    <p className={style.theaterName}>{showtimes.theater.name}</p>
+            {screenings.map(screening => (
+                <div key={screening.theater.id} className={style.theaterSchedule}>
+                    <p className={style.theaterName}>{screening.theater.name}</p>
                     <TimeSlotsList
-                        screeningDateList={showtimes.schedule}
-                        theater={showtimes.theater}
+                        showtimes={screening.showtimes}
+                        theater={screening.theater}
                         movie={location.state.movie}
                     />
                 </div>

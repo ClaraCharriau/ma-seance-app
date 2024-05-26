@@ -10,7 +10,7 @@ jest.mock('react-router-dom', () => ({
                 id: 1,
                 name: 'UGC Normandie',
                 address: '116 bis Av. des Champs-Élysées 75008 Paris',
-                imgPath: '/ugc-normandie-paris'
+                imagePath: '/ugc-normandie-paris'
             }
         };
     }

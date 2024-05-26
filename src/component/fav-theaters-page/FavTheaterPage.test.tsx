@@ -81,12 +81,12 @@ describe('Favorite theaters Component', () => {
                 <FavTheaters />
             </BrowserRouter>
         );
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getByText('modifier'));
         });
 
         // When
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getAllByTestId('delete-button')[0]);
         });
 
@@ -116,22 +116,22 @@ describe('Favorite theaters Component', () => {
                 <FavTheaters />
             </BrowserRouter>
         );
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getByText('modifier'));
         });
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getAllByTestId('delete-button')[0]);
         });
 
         // When
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getByText('confirmer'));
         });
 
         // Then
         await waitFor(() => {
             expect(component.container).toMatchSnapshot();
-            expect(axiosDelete).toHaveBeenCalledWith('/users/1/fav-theaters/1');
+            expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-theaters/1');
         });
     });
 
@@ -145,15 +145,15 @@ describe('Favorite theaters Component', () => {
                 <FavTheaters />
             </BrowserRouter>
         );
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getByText('modifier'));
         });
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getAllByTestId('delete-button')[0]);
         });
 
         // When
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getByText('annuler'));
         });
 

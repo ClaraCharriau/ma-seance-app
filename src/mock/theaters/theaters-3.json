@@ -2,6 +2,6 @@
     "id": "3",
     "name": "UGC Ciné Cité La Défense",
     "address": "Le Dôme - Centre commercial Westfield - Les 4 Temps 92092 Puteaux",
-    "imgPath": "/ugc-defense-puteaux",
+    "imagePath": "/ugc-defense-puteaux",
     "bookingPath" : "https://www.ugc.fr"
 }

@@ -1,15 +1,15 @@
-import { Showtime } from '../../../model/Showtime';
+import { Screening } from '../../../model/Screening';
 import MovieListCard from '../../common/movie-list-card/MovieListCard';
 import SeeDetailsBtn from '../../common/see-details-btn/SeeDetailsBtn';
 import style from './AgendaScreeningCard.module.css';
 
 type AgendaScreeningCardProps = {
-    showtime: Showtime;
+    screening: Screening;
 };
 
 const AgendaScreeningCard = (props: AgendaScreeningCardProps) => {
-    const { showtime } = props;
-    const { schedule, theater, movie } = showtime;
+    const { screening } = props;
+    const { id, schedule, theater, movie } = screening;
     const { dayName, dayNumber, month, hourly } = schedule;
 
     return (
@@ -49,7 +49,7 @@ const AgendaScreeningCard = (props: AgendaScreeningCardProps) => {
                 <div className={style.movieCard}>
                     <MovieListCard movie={movie} />
                 </div>
-                <SeeDetailsBtn navigatePath={`/showtimes/${showtime.id}`} text="détails" showIcon={true} item={movie} />
+                <SeeDetailsBtn navigatePath={`/showtimes/${id}`} text="détails" showIcon={true} item={movie} />
             </div>
         </div>
     );

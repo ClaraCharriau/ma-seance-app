@@ -481,7 +481,7 @@ exports[`Home Component should render home page 1`] = `
           </a>
         </div>
         <div
-          class="showtimesList"
+          class="screeningsList"
         />
         <a
           class="seeDetails"

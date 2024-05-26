@@ -21,7 +21,7 @@ describe('AuthClient tests', () => {
         // Given
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPost('/login').reply(200, mockUser);
+        axiosMock.onPost('http://localhost:7878/login').reply(200, mockUser);
 
         // When
         const response = await loginUser(email, password);
@@ -32,7 +32,7 @@ describe('AuthClient tests', () => {
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
-        expect(axiosPost).toHaveBeenCalledWith('/login', {
+        expect(axiosPost).toHaveBeenCalledWith('http://localhost:7878/login', {
             email: 'test@mail.com',
             password: 'password'
         });
@@ -42,7 +42,7 @@ describe('AuthClient tests', () => {
         // Given
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPost('/login').reply(500);
+        axiosMock.onPost('http://localhost:7878/login').reply(500);
         let response = {};
 
         // When
@@ -53,7 +53,7 @@ describe('AuthClient tests', () => {
             expect(error.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosPost).toHaveBeenCalledWith('/login', {
+        expect(axiosPost).toHaveBeenCalledWith('http://localhost:7878/login', {
             email: 'test@mail.com',
             password: 'password'
         });
@@ -62,15 +62,15 @@ describe('AuthClient tests', () => {
     it('should check if an account exists', async () => {
         // Given
         const email = 'test@mail.com';
-        axiosMock.onPost('/verify').reply(200, {
+        axiosMock.onPost('http://localhost:7878/verify').reply(200, {
             isExistingAccount: true
         });
 
         // When
-        const response = await checkAccountExists(email);
+        await checkAccountExists(email);
 
         // Then
-        expect(axiosPost).toHaveBeenCalledWith('/verify', {
+        expect(axiosPost).toHaveBeenCalledWith('http://localhost:7878/verify', {
             email: 'test@mail.com'
         });
     });
@@ -78,7 +78,7 @@ describe('AuthClient tests', () => {
     it('should fail to check account existence', async () => {
         // Given
         const email = 'test@mail.com';
-        axiosMock.onPost('/verify').reply(500);
+        axiosMock.onPost('http://localhost:7878/verify').reply(500);
         let response = {};
 
         // When
@@ -89,7 +89,7 @@ describe('AuthClient tests', () => {
             expect(error.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosPost).toHaveBeenCalledWith('/verify', {
+        expect(axiosPost).toHaveBeenCalledWith('http://localhost:7878/verify', {
             email: 'test@mail.com'
         });
     });
@@ -99,7 +99,7 @@ describe('AuthClient tests', () => {
         const pseudo = 'Jane';
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPost('/registrations').reply(200, mockUser);
+        axiosMock.onPost('http://localhost:7878/registrations').reply(200, mockUser);
 
         // When
         const response = await signIn(pseudo, email, password);
@@ -110,7 +110,7 @@ describe('AuthClient tests', () => {
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
-        expect(axiosPost).toHaveBeenCalledWith('/registrations', {
+        expect(axiosPost).toHaveBeenCalledWith('http://localhost:7878/registrations', {
             pseudo: 'Jane',
             email: 'test@mail.com',
             password: 'password'
@@ -122,7 +122,7 @@ describe('AuthClient tests', () => {
         const pseudo = 'Jane';
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPost('/registrations').reply(500);
+        axiosMock.onPost('http://localhost:7878/registrations').reply(500);
         let response = {};
 
         // When
@@ -133,7 +133,7 @@ describe('AuthClient tests', () => {
             expect(error.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosPost).toHaveBeenCalledWith('/registrations', {
+        expect(axiosPost).toHaveBeenCalledWith('http://localhost:7878/registrations', {
             pseudo: 'Jane',
             email: 'test@mail.com',
             password: 'password'
@@ -145,7 +145,7 @@ describe('AuthClient tests', () => {
         const pseudo = 'Jane';
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPatch('/registrations/1').reply(200, mockUser);
+        axiosMock.onPatch('http://localhost:7878/registrations/1').reply(200, mockUser);
 
         // When
         const response = await updateAccount('1', pseudo, email, password);
@@ -156,7 +156,7 @@ describe('AuthClient tests', () => {
             pseudo: 'Jane',
             email: 'test@mail.com'
         });
-        expect(axiosPatch).toHaveBeenCalledWith('/registrations/1', {
+        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/registrations/1', {
             id: '1',
             pseudo: 'Jane',
             email: 'test@mail.com',
@@ -169,7 +169,7 @@ describe('AuthClient tests', () => {
         const pseudo = 'Jane';
         const email = 'test@mail.com';
         const password = 'password';
-        axiosMock.onPatch('/registrations/1').reply(500);
+        axiosMock.onPatch('http://localhost:7878/registrations/1').reply(500);
         let response = {};
 
         // When
@@ -180,7 +180,7 @@ describe('AuthClient tests', () => {
             expect(error.status).toBe(500);
             expect(response).toEqual({});
         }
-        expect(axiosPatch).toHaveBeenCalledWith('/registrations/1', {
+        expect(axiosPatch).toHaveBeenCalledWith('http://localhost:7878/registrations/1', {
             id: "1",
             pseudo: 'Jane',
             email: 'test@mail.com',
@@ -191,19 +191,19 @@ describe('AuthClient tests', () => {
     it('should delete user', async () => {
         // Given
         const id = '1';
-        axiosMock.onDelete('/registrations/1').reply(200);
+        axiosMock.onDelete('http://localhost:7878/registrations/1').reply(200);
 
         // When
         await deleteAccount(id);
 
         // Then
-        expect(axiosDelete).toHaveBeenCalledWith('/registrations/1');
+        expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/registrations/1');
     });
 
     it('should fail to delete user', async () => {
         // Given
         const id = '1';
-        axiosMock.onDelete('/registrations/1').reply(500);
+        axiosMock.onDelete('http://localhost:7878/registrations/1').reply(500);
 
         // When
         try {
@@ -212,6 +212,6 @@ describe('AuthClient tests', () => {
             // Then
             expect(error.status).toBe(500);
         }
-        expect(axiosDelete).toHaveBeenCalledWith('/registrations/1');
+        expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/registrations/1');
     });
 });

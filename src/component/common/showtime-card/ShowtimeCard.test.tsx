@@ -32,7 +32,7 @@ describe('Showtime card component tests', () => {
                 id: '18',
                 name: 'UGC Ciné Cité Strasbourg Etoile',
                 address: '25, avenue du Rhin 67100 Strasbourg',
-                imgPath: '/ugc-etoile-strasbourg',
+                imagePath: '/ugc-etoile-strasbourg',
                 bookingPath: ''
             }
         };
@@ -40,7 +40,7 @@ describe('Showtime card component tests', () => {
         // When
         const component = render(
             <BrowserRouter>
-                <ShowtimeCard showtime={showtimeMock} />
+                <ShowtimeCard screening={showtimeMock} />
             </BrowserRouter>
         );
 

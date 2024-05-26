@@ -81,12 +81,12 @@ describe('Favorite theaters Component', () => {
                 <WatchList />
             </BrowserRouter>
         );
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getByText('modifier'));
         });
 
         // When
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getAllByTestId('delete-button')[0]);
         });
 
@@ -109,17 +109,17 @@ describe('Favorite theaters Component', () => {
         jest.spyOn(authContext, 'useAuthContext').mockReturnValue({
             currentUser: mockUser
         });
-        axiosMock.onDelete('/users/1/fav-movies/3d8f1342-15f1-44b1-a48f-4581d654b94a').reply(200);
+        axiosMock.onDelete('http://localhost:7878/users/1/fav-movies/3d8f1342-15f1-44b1-a48f-4581d654b94a').reply(200);
         const axiosDelete = jest.spyOn(axiosInstance, 'delete');
         const component = render(
             <BrowserRouter>
                 <WatchList />
             </BrowserRouter>
         );
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getByText('modifier'));
         });
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getAllByTestId('delete-button')[0]);
         });
 
@@ -130,7 +130,7 @@ describe('Favorite theaters Component', () => {
 
         // Then
         await waitFor(() => {
-            expect(axiosDelete).toHaveBeenCalledWith('/users/1/fav-movies/3d8f1342-15f1-44b1-a48f-4581d654b94a');
+            expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/users/1/fav-movies/3d8f1342-15f1-44b1-a48f-4581d654b94a');
         });
         expect(component.container).toMatchSnapshot();
     });
@@ -145,21 +145,21 @@ describe('Favorite theaters Component', () => {
                 <WatchList />
             </BrowserRouter>
         );
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getByText('modifier'));
         });
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getAllByTestId('delete-button')[0]);
         });
 
         // When
-        await act(() => {
+        act(() => {
             fireEvent.click(component.getByText('annuler'));
         });
 
         // Then
         await waitFor(() => {
-            expect(component.getByText("Argylle")).toBeInTheDocument();
+            expect(component.getByText('Argylle')).toBeInTheDocument();
             expect(component.container).toMatchSnapshot();
         });
     });

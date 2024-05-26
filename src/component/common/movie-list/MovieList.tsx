@@ -6,6 +6,7 @@ import { Movie } from '../../../model/Movie';
 import ConfirmationModal from '../modal/confirmation-modal/ConfirmationModal';
 import MovieListCard from '../movie-list-card/MovieListCard';
 import style from './MovieList.module.css';
+import { useFavoriteContext } from '../../../context/favorite.context';
 
 interface MovieListProps {
     movieList: Movie[];
@@ -15,6 +16,7 @@ interface MovieListProps {
 const MovieList = (props: MovieListProps) => {
     const { movieList, isUpdate = false } = props;
     const { currentUser } = useAuthContext();
+    const { refreshFavoriteMovies } = useFavoriteContext();
 
     const [showModale, setShowModale] = useState<boolean>(false);
     const [movieToDelete, setMovieToDelete] = useState<Movie | null>(null);
@@ -27,7 +29,7 @@ const MovieList = (props: MovieListProps) => {
     const deleteMovie = async () => {
         try {
             if (currentUser && movieToDelete) {
-                await deleteUserFavMovie(currentUser.id, movieToDelete.id);
+                await deleteUserFavMovie(currentUser.id, movieToDelete.id).then(() => refreshFavoriteMovies());
                 toast.info(movieToDelete.title + ' a bien été supprimé de votre watchlist', {
                     icon: () => (
                         <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">

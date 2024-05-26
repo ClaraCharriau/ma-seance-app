@@ -26,7 +26,7 @@
             "id": "18",
             "name": "UGC Ciné Cité Strasbourg Etoile",
             "address": "25, avenue du Rhin 67100 Strasbourg",
-            "imgPath": "/ugc-etoile-strasbourg",
+            "imagePath": "/ugc-etoile-strasbourg",
             "bookingPath": ""
         }
     },
@@ -57,7 +57,7 @@
             "id": "16",
             "name": "Pathé Angers",
             "address": "1, avenue des Droits de l'Homme 49000 Angers",
-            "imgPath": "/pathe-angers",
+            "imagePath": "/pathe-angers",
             "bookingPath": ""
         }
     }

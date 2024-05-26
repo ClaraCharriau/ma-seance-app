@@ -10,7 +10,7 @@ describe('Agenda page tests', () => {
 
     it('should render agenda page with next week and next month screenings', () => {
         jest.spyOn(agendaContext, 'useAgendaContext').mockReturnValue({
-            showtimes: mockNextWeekNextMonthScreenings
+            screenings: mockNextWeekNextMonthScreenings
         });
         const component = render(
             <BrowserRouter>
@@ -23,7 +23,7 @@ describe('Agenda page tests', () => {
 
     it('should render agenda page with passed screenings and next year screenings', () => {
         jest.spyOn(agendaContext, 'useAgendaContext').mockReturnValue({
-            showtimes: mockPassedAndNextYearScreenings
+            screenings: mockPassedAndNextYearScreenings
         });
         const component = render(
             <BrowserRouter>
@@ -36,7 +36,7 @@ describe('Agenda page tests', () => {
 
     it('should render agenda page without any screenings', () => {
         jest.spyOn(agendaContext, 'useAgendaContext').mockReturnValue({
-            showtimes: []
+            screenings: []
         });
         const component = render(
             <BrowserRouter>

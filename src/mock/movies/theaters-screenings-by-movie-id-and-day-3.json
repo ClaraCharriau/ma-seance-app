@@ -4,33 +4,108 @@
             "id": "18",
             "name": "UGC Ciné Cité Strasbourg Etoile",
             "address": "25, avenue du Rhin 67100 Strasbourg",
-            "imgPath": "/ugc-etoile-strasbourg",
-            "bookingPath" : "https://www.ugc.fr"
+            "imagePath": "/ugc-etoile-strasbourg",
+            "bookingPath": "https://www.ugc.fr"
         },
-        "schedule": [
+        "showtimes": [
             {
-                "date": "2024-02-17T11:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "11:45"
+                "id": "e7a1b1d1-2c1e-4e8d-9a68-1f71d5e2b123",
+                "schedule": {
+                    "date": "2024-07-17T09:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "09:45"
+                }
             },
             {
-                "date": "2024-02-17T14:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "14:15"
+                "id": "f9a6b2d2-3c2f-5e9f-0a79-2f82e6f3b234",
+                "schedule": {
+                    "date": "2024-07-17T10:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "10:15"
+                }
             },
             {
-                "date": "2024-02-17T16:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "16:45"
+                "id": "a8b7c3e3-4d3g-6f0g-1b80-3g93f7g4c345",
+                "schedule": {
+                    "date": "2024-07-17T14:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "14:15"
+                }
+            },
+            {
+                "id": "b9c8d4f4-5e4h-7g1h-2c91-4h04g8h5d456",
+                "schedule": {
+                    "date": "2024-07-17T15:05:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "15:05"
+                }
+            },
+            {
+                "id": "c0d9e5g5-6f5i-8h2i-3d02-5i15h9i6e567",
+                "schedule": {
+                    "date": "2024-07-17T18:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "18:15"
+                }
+            },
+            {
+                "id": "d1e0f6h6-7g6j-9i3j-4e13-6j26i0j7f678",
+                "schedule": {
+                    "date": "2024-07-17T21:35:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:35"
+                }
+            },
+            {
+                "id": "e2f1g7i7-8h7k-0j4k-5f24-7k37j1k8g789",
+                "schedule": {
+                    "date": "2024-07-17T16:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "16:45"
+                }
+            },
+            {
+                "id": "f3g2h8j8-9i8l-1k5l-6g35-8l48k2l9h890",
+                "schedule": {
+                    "date": "2024-07-17T19:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "19:15"
+                }
+            },
+            {
+                "id": "g4h3i9k9-0j9m-2l6m-7h46-9m59l3m0i901",
+                "schedule": {
+                    "date": "2024-07-17T21:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:45"
+                }
             }
         ]
     },
@@ -39,84 +114,108 @@
             "id": "21",
             "name": "Star Saint-Exupery",
             "address": "18, rue du 22-Novembre 67000 Strasbourg",
-            "imgPath": "/star-st-ex-strasbourg",
-            "bookingPath" : "https://www.ugc.fr"
+            "imagePath": "/star-st-ex-strasbourg",
+            "bookingPath": "https://www.ugc.fr"
         },
-        "schedule": [
+        "showtimes": [
             {
-                "date": "2024-02-17T11:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "11:45"
+                "id": "e7a1b1d1-2c1e-4e8d-9a68-1f71d5e2b123",
+                "schedule": {
+                    "date": "2024-07-17T09:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "09:45"
+                }
             },
             {
-                "date": "2024-02-17T14:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "14:15"
+                "id": "f9a6b2d2-3c2f-5e9f-0a79-2f82e6f3b234",
+                "schedule": {
+                    "date": "2024-07-17T10:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "10:15"
+                }
             },
             {
-                "date": "2024-02-17T16:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "16:45"
-            }
-        ]
-    },
-    {
-        "theater": {
-            "id": "23",
-            "name": "Cinéma Vox",
-            "address": "17, rue des Francs-Bourgeois 67000 Strasbourg",
-            "imgPath": "/vox-strasbourg",
-            "bookingPath" : "https://www.ugc.fr"
-        },
-        "schedule": [
-            {
-                "date": "2024-02-17T11:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "11:45"
+                "id": "a8b7c3e3-4d3g-6f0g-1b80-3g93f7g4c345",
+                "schedule": {
+                    "date": "2024-07-17T14:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "14:15"
+                }
             },
             {
-                "date": "2024-02-17T14:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "14:15"
+                "id": "b9c8d4f4-5e4h-7g1h-2c91-4h04g8h5d456",
+                "schedule": {
+                    "date": "2024-07-17T15:05:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "15:05"
+                }
             },
             {
-                "date": "2024-02-17T16:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "16:45"
+                "id": "c0d9e5g5-6f5i-8h2i-3d02-5i15h9i6e567",
+                "schedule": {
+                    "date": "2024-07-17T18:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "18:15"
+                }
             },
             {
-                "date": "2024-02-17T19:15:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "19:15"
+                "id": "d1e0f6h6-7g6j-9i3j-4e13-6j26i0j7f678",
+                "schedule": {
+                    "date": "2024-07-17T21:35:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:35"
+                }
             },
             {
-                "date": "2024-02-17T21:45:00",
-                "dayName": "mercredi",
-                "dayNumber": "17",
-                "month": "février",
-                "year": "2024",
-                "hourly": "21:45"
+                "id": "e2f1g7i7-8h7k-0j4k-5f24-7k37j1k8g789",
+                "schedule": {
+                    "date": "2024-07-17T16:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "16:45"
+                }
+            },
+            {
+                "id": "f3g2h8j8-9i8l-1k5l-6g35-8l48k2l9h890",
+                "schedule": {
+                    "date": "2024-07-17T19:15:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "19:15"
+                }
+            },
+            {
+                "id": "g4h3i9k9-0j9m-2l6m-7h46-9m59l3m0i901",
+                "schedule": {
+                    "date": "2024-07-17T21:45:00",
+                    "dayName": "mercredi",
+                    "dayNumber": "17",
+                    "month": "juillet",
+                    "year": "2024",
+                    "hourly": "21:45"
+                }
             }
         ]
     }

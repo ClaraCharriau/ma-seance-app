@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import ShowtimePage from './ShowtimePage';
 import { BrowserRouter } from 'react-router-dom';
-import mockShowtime from '../../mock/showtimes/showtimes.json';
+import mockShowtime from '../../mock/screenings/screenings.json';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),

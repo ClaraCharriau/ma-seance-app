@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import MovieList from '../common/movie-list/MovieList';
-import { getCurrentlyMovies } from '../../client/movies/movies.client';
-import Spinner from '../common/spinner/Spinner';
-import { Movie } from '../../model/Movie';
-import style from './Currently.module.css';
+import { getCurrentlyMoviesWithDetails } from '../../client/movies/movies.client';
 import { useCurrentTheaterWeek } from '../../hook/date-hook/date.hook';
+import { Movie } from '../../model/Movie';
+import MovieList from '../common/movie-list/MovieList';
+import Spinner from '../common/spinner/Spinner';
+import style from './Currently.module.css';
 
 const Currently = () => {
     const [currentMovies, setCurrentMovies] = useState<Movie[]>([]);
@@ -19,7 +19,7 @@ const Currently = () => {
             setLoading(false);
         }, 5000); // 5s
 
-        getCurrentlyMovies()
+        getCurrentlyMoviesWithDetails()
             .then(movies => {
                 setCurrentMovies(movies);
                 setLoading(false);

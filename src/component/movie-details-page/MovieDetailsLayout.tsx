@@ -7,7 +7,7 @@ import { Movie } from '../../model/Movie';
 
 const MovieDetailsLayout = () => {
     const movie = useLoaderData() as Movie;
-    const TMDB_PATH = config.tmdbImgPath.large;
+    const TMDB_PATH = config.tmdbimagePath.large;
 
     return (
         <>

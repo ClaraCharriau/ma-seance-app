@@ -16,7 +16,7 @@ describe('Movie loader tests', () => {
     it('should get movie successfully', async () => {
         // Given
         const movieId = '3d8f1342-15f1-44b1-a48f-4581d654b94a';
-        axiosMock.onGet('/movies/' + movieId).reply(200, mockMovie);
+        axiosMock.onGet('http://localhost:7878/movies/' + movieId + '?extended_infos=true').reply(200, mockMovie);
         const args: any = {
             params: {
                 id: movieId
@@ -28,13 +28,13 @@ describe('Movie loader tests', () => {
 
         // Then
         expect(response).toEqual(mockMovie);
-        expect(axiosGet).toHaveBeenCalledWith('/movies/' + movieId);
+        expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/movies/' + movieId + '?extended_infos=true');
     });
 
     it('should throw error ', async () => {
         // Given
         const movieId = undefined;
-        axiosMock.onGet('/movies/' + movieId).reply(200, mockMovie);
+        axiosMock.onGet('http://localhost:7878/movies/' + movieId).reply(200, mockMovie);
         const args: any = {
             params: {
                 id: movieId
@@ -48,6 +48,6 @@ describe('Movie loader tests', () => {
             // Then
             expect(e).toEqual(Error());
         }
-        expect(axiosGet).not.toHaveBeenCalledWith('/movies/' + movieId);
+        expect(axiosGet).not.toHaveBeenCalledWith('http://localhost:7878/movies/' + movieId + '?extended_infos=true');
     });
 });
