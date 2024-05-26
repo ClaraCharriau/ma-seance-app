@@ -46,7 +46,7 @@
         "users/:id/fav-theaters/:id": {
             "httpStatus": 200,
             "latency": 200,
-            "verbs": ["delete", "patch"]
+            "verbs": ["delete", "post"]
         },
         "users/:id/fav-movies": {
             "httpStatus": 200,
@@ -57,18 +57,18 @@
         "users/:id/fav-movies/:id": {
             "httpStatus": 200,
             "latency": 200,
-            "verbs": ["delete", "patch"]
+            "verbs": ["delete", "post"]
         },
         "users/:id/screenings": {
             "httpStatus": 200,
             "latency": 200,
-            "verbs": ["get", "patch"],
+            "verbs": ["get"],
             "mockFile": "users/user-screenings-2.json"
         },
         "users/:id/screenings/:id": {
             "httpStatus": 200,
             "latency": 200,
-            "verbs": ["delete"]
+            "verbs": ["delete", "post"]
         },
         "theaters/search": {
             "httpStatus": 200,
