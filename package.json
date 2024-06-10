@@ -17,6 +17,7 @@
         "apimocker": "^1.1.5",
         "axios": "^1.7.2",
         "axios-mock-adapter": "1.22.0",
+        "cross-env": "^7.0.3",
         "date-fns": "^3.6.0",
         "jest": "^27.5.1",
         "jwt-decode": "^4.0.0",
@@ -46,7 +47,7 @@
     },
     "scripts": {
         "start": "react-scripts start & npm run apimocker",
-        "start:staging": "REACT_APP_ENV=staging react-scripts start",
+        "start:staging": "cross-env REACT_APP_ENV=staging react-scripts start",
         "build": "react-scripts build",
         "test": "jest",
         "test:ci": "npm run coverage",
