@@ -38,7 +38,7 @@ export const AgendaProvider = (props: AgendaProviderProps) => {
         };
         getAgenda();
         // eslint-disable-next-line
-    }, []);
+    }, [currentUser]);
 
     const addToAgenda = useCallback((screening: Screening) => {
         if (currentUser) {
