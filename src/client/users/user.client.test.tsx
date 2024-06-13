@@ -12,7 +12,8 @@ import {
     getUserFavTheaters,
     addToUserScreenings,
     addToUserFavMovies,
-    addToUserFavTheaters
+    addToUserFavTheaters,
+    deleteUserScreeningById
 } from './user.client';
 
 describe('User client tests', () => {
@@ -240,5 +241,30 @@ describe('User client tests', () => {
             expect(e.status).toBe(500);
         }
         expect(axiosPost).toHaveBeenCalledWith('http://localhost:7878/users/2/screenings/caadad78-7daf-4c49-abe8-2514b43884f6');
+    });
+
+    it('should delete screening in user agenda successfully', async () => {
+        // Given
+        axiosMock.onDelete('http://localhost:7878/users/2/screenings/3').reply(200);
+
+        // When
+        await deleteUserScreeningById('2', '3');
+
+        // Then
+        expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/users/2/screenings/3');
+    });
+
+    it('should fail to delete screening in user agenda', async () => {
+        // Given
+        axiosMock.onDelete('http://localhost:7878/users/2/screenings/2').reply(500);
+
+        // When
+        try {
+            await deleteUserScreeningById('2', '2');
+        } catch (e: any) {
+            // Then
+            expect(e.status).toBe(500);
+        }
+        expect(axiosDelete).toHaveBeenCalledWith('http://localhost:7878/users/2/screenings/2');
     });
 });

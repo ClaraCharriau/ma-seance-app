@@ -7,7 +7,6 @@
         "@babel/plugin-transform-private-property-in-object": "7.23.4",
         "@remix-run/web-fetch": "^4.4.2",
         "@testing-library/jest-dom": "^5.17.0",
-        "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
         "@types/jest": "^27.5.2",
         "@types/node": "^16.18.97",
@@ -34,6 +33,7 @@
         "web-vitals": "^2.1.4"
     },
     "devDependencies": {
+        "@testing-library/react": "^16.0.0",
         "@typescript-eslint/eslint-plugin": "^5.62.0",
         "@typescript-eslint/parser": "^5.62.0",
         "eslint": "^8.57.0",
