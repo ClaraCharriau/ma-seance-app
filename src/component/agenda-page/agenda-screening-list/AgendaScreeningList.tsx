@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useAgendaContext } from '../../../context/agenda.context';
 import style from '../Agenda.module.css';
 import AgendaScreeningCard from '../agenda-screening-card/AgendaScreeningCard';
+import { useEffect, useState } from 'react';
+import { Screening } from '../../../model/Screening';
 
 const AgendaScreeningList = () => {
     const { screenings } = useAgendaContext();
@@ -10,26 +12,46 @@ const AgendaScreeningList = () => {
     const today = new Date();
     const endOfThisWeek = endOfWeek(today, { weekStartsOn: 1 });
     const endOfThisMonth = endOfMonth(today);
+    const [thisWeekScreenings, setThisWeekScreenings] = useState<Screening[]>([]);
+    const [thisMonthScreenings, setThisMonthScreenings] = useState<Screening[]>([]);
+    const [afterThisMonthScreenings, setAfterThisMonthScreenings] = useState<Screening[]>([]);
+    const [pastScreenings, setPastScreenings] = useState<Screening[]>([]);
 
-    const thisWeekScreenings = screenings.filter(screening => {
-        const showDate = new Date(screening.schedule.date);
-        return isAfter(showDate, today) && isBefore(showDate, endOfThisWeek);
-    });
+    useEffect(() => {
+        setThisWeekScreenings(filterThisWeekScreenings());
+        setThisMonthScreenings(filterThisMonthScreenings());
+        setAfterThisMonthScreenings(filterAfterThisMonthScreenings());
+        setPastScreenings(filterPastScreenings());
+        // eslint-disable-next-line
+    }, [screenings]);
 
-    const thisMonthScreenings = screenings.filter(screening => {
-        const showDate = new Date(screening.schedule.date);
-        return isAfter(showDate, endOfThisWeek) && isBefore(showDate, endOfThisMonth);
-    });
+    const filterThisWeekScreenings = (): Screening[] => {
+        return screenings.filter(screening => {
+            const showDate = new Date(screening.schedule.date);
+            return isAfter(showDate, today) && isBefore(showDate, endOfThisWeek);
+        });
+    };
 
-    const afterThisMonthScreenings = screenings.filter(screening => {
-        const showDate = new Date(screening.schedule.date);
-        return isAfter(showDate, endOfThisMonth);
-    });
+    const filterThisMonthScreenings = (): Screening[] => {
+        return screenings.filter(screening => {
+            const showDate = new Date(screening.schedule.date);
+            return isAfter(showDate, endOfThisWeek) && isBefore(showDate, endOfThisMonth);
+        });
+    };
 
-    const pastScreenings = screenings.filter(screening => {
-        const showDate = new Date(screening.schedule.date);
-        return isBefore(showDate, today);
-    });
+    const filterAfterThisMonthScreenings = (): Screening[] => {
+        return screenings.filter(screening => {
+            const showDate = new Date(screening.schedule.date);
+            return isAfter(showDate, endOfThisMonth);
+        });
+    };
+
+    const filterPastScreenings = (): Screening[] => {
+        return screenings.filter(screening => {
+            const showDate = new Date(screening.schedule.date);
+            return isBefore(showDate, today);
+        });
+    };
 
     return (
         <section className={style.agendaPageSection}>

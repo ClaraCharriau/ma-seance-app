@@ -19,9 +19,7 @@ export const getMovieScreeningsByTheaterIdAndDay = async (
     theaterId: string,
     day: string
 ): Promise<MovieScreenings[]> => {
-    const params = {
-        day
-    };
+    const params = { day };
     return await axiosInstance.get(THEATERS_PATH + '/' + theaterId + SCREENINGS_PATH, { params });
 };
 

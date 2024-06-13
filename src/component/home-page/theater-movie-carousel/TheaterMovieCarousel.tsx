@@ -13,7 +13,7 @@ interface TheaterMovieCarouselProps {
 
 const TheaterMovieCarousel = (props: TheaterMovieCarouselProps) => {
     const { theaterId } = props;
-    const [theaterMovies, setTheatertMovies] = useState<Movie[]>([]);
+    const [theaterMovies, setTheaterMovies] = useState<Movie[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const ERROR_MESSAGE = "Une erreur s'est produite lors du chargement des films.";
@@ -22,11 +22,12 @@ const TheaterMovieCarousel = (props: TheaterMovieCarouselProps) => {
         const timeoutId = setTimeout(() => {
             setError(ERROR_MESSAGE);
             setLoading(false);
-        }, 5000); // 5s
+            // TODO : caching movies and paged response to set a shorter timeout
+        }, 10000); // 10s
 
         getTheaterMoviesByTheaterId(theaterId)
             .then(movies => {
-                setTheatertMovies(movies);
+                setTheaterMovies(movies);
                 setLoading(false);
                 clearTimeout(timeoutId);
             })

@@ -25,8 +25,8 @@ describe('agenda context tests', () => {
          axiosMock.onPost('http://localhost:7878/users/1/screenings/caadad78-7daf-4c49-abe8-2514b43884f6').reply(200, mockUserScreenings);
          axiosMock.onGet('http://localhost:7878/users/1/screenings').reply(200, mockUserScreenings);
          const TestComponent = () => {
-             const { updateAgenda } = useAgendaContext();
-             return <button onClick={() => updateAgenda(mockUserScreenings)}>test</button>;
+             const { addToAgenda } = useAgendaContext();
+             return <button onClick={() => addToAgenda(mockUserScreenings)}>test</button>;
          };
          const { getByText } = render(
              <AgendaProvider>

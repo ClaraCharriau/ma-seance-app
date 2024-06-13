@@ -22,7 +22,7 @@ interface ShowtimeModalProps {
 
 const ShowtimeModal = (props: ShowtimeModalProps) => {
     const { screeningId, openModal, theater, movie, screeningDate, closeModal } = props;
-    const { updateAgenda, refreshAgenda } = useAgendaContext();
+    const { addToAgenda } = useAgendaContext();
 
     const buildScreening = (id: string, screeningDate: ScreeningDate, movie: Movie, theater: Theater): Screening => {
         return new Screening(id, screeningDate, movie, theater);
@@ -36,9 +36,8 @@ const ShowtimeModal = (props: ShowtimeModalProps) => {
     ) => {
         const screening = buildScreening(id, screeningDate, movie, theater);
         try {
-            updateAgenda(screening);
+            addToAgenda(screening);
             toast.success(`La séance de ${screening.movie.title} a été ajoutée à l'agenda`);
-            refreshAgenda();
         } catch (error: any) {
             console.error('An error occured');
         }
