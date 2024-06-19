@@ -128,11 +128,6 @@ exports[`Favorite theaters Component should call delete movies when user confirm
             >
               Réalisé par 
             </p>
-            <p
-              class="movieCast"
-            >
-              Avec 
-            </p>
           </div>
         </a>
         <button
@@ -424,11 +419,6 @@ exports[`Favorite theaters Component should close modal 1`] = `
             >
               Réalisé par 
             </p>
-            <p
-              class="movieCast"
-            >
-              Avec 
-            </p>
           </div>
         </a>
         <button
@@ -719,11 +709,6 @@ exports[`Favorite theaters Component should render confirmation modale when clic
               class="movieDirector"
             >
               Réalisé par 
-            </p>
-            <p
-              class="movieCast"
-            >
-              Avec 
             </p>
           </div>
         </a>
@@ -1035,11 +1020,6 @@ exports[`Favorite theaters Component should render favorite theaters delete butt
             >
               Réalisé par 
             </p>
-            <p
-              class="movieCast"
-            >
-              Avec 
-            </p>
           </div>
         </a>
         <button
@@ -1305,11 +1285,6 @@ exports[`Favorite theaters Component should render watchlist page 1`] = `
               class="movieDirector"
             >
               Réalisé par 
-            </p>
-            <p
-              class="movieCast"
-            >
-              Avec 
             </p>
           </div>
         </a>
