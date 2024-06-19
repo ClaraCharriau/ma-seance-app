@@ -4,6 +4,7 @@ exports[`Favorite button component tests should render favorite button with movi
 <body>
   <div>
     <button
+      aria-label="Ce film n’est pas dans votre watchlist"
       class="favoriteButtonWrapper"
       data-testid="button"
       id="favorite-button"
@@ -20,13 +21,7 @@ exports[`Favorite button component tests should render favorite button with movi
       <p
         class="favoriteButtonText"
       >
-        Ce 
-        film
-         
-        n’est pas
-         dans
-         
-        votre watchlist
+        Ce film n’est pas dans votre watchlist
       </p>
     </button>
   </div>
@@ -37,6 +32,7 @@ exports[`Favorite button component tests should render favorite button with movi
 <body>
   <div>
     <button
+      aria-label="Ce film n’est pas dans votre watchlist"
       class="favoriteButtonWrapper"
       data-testid="button"
       id="favorite-button"
@@ -53,13 +49,7 @@ exports[`Favorite button component tests should render favorite button with movi
       <p
         class="favoriteButtonText"
       >
-        Ce 
-        film
-         
-        n’est pas
-         dans
-         
-        votre watchlist
+        Ce film n’est pas dans votre watchlist
       </p>
     </button>
   </div>
@@ -74,6 +64,7 @@ exports[`Favorite button component tests should render favorite button with thea
 <body>
   <div>
     <button
+      aria-label="Ce cinéma n’est pas dans vos favoris"
       class="favoriteButtonWrapper"
       data-testid="button"
       id="favorite-button"
@@ -90,13 +81,7 @@ exports[`Favorite button component tests should render favorite button with thea
       <p
         class="favoriteButtonText"
       >
-        Ce 
-        cinéma
-         
-        n’est pas
-         dans
-         
-        vos favoris
+        Ce cinéma n’est pas dans vos favoris
       </p>
     </button>
   </div>
@@ -107,6 +92,7 @@ exports[`Favorite button component tests should render favorite button with thea
 <body>
   <div>
     <button
+      aria-label="Ce cinéma est dans vos favoris"
       class="favoriteButtonWrapper"
       data-testid="button"
       id="favorite-button"
@@ -123,13 +109,7 @@ exports[`Favorite button component tests should render favorite button with thea
       <p
         class="favoriteButtonText"
       >
-        Ce 
-        cinéma
-         
-        est
-         dans
-         
-        vos favoris
+        Ce cinéma est dans vos favoris
       </p>
     </button>
   </div>
@@ -140,6 +120,7 @@ exports[`Favorite button component tests should render favorite button with thea
 <body>
   <div>
     <button
+      aria-label="Ce cinéma est dans vos favoris"
       class="favoriteButtonWrapper"
       data-testid="button"
       id="favorite-button"
@@ -156,13 +137,7 @@ exports[`Favorite button component tests should render favorite button with thea
       <p
         class="favoriteButtonText"
       >
-        Ce 
-        cinéma
-         
-        est
-         dans
-         
-        vos favoris
+        Ce cinéma est dans vos favoris
       </p>
     </button>
   </div>
@@ -175,6 +150,7 @@ exports[`Favorite button component tests shows correct text for movie in watchli
 <body>
   <div>
     <button
+      aria-label="Ce film est dans votre watchlist"
       class="favoriteButtonWrapper"
       data-testid="button"
       id="favorite-button"
@@ -191,13 +167,7 @@ exports[`Favorite button component tests shows correct text for movie in watchli
       <p
         class="favoriteButtonText"
       >
-        Ce 
-        film
-         
-        est
-         dans
-         
-        votre watchlist
+        Ce film est dans votre watchlist
       </p>
     </button>
   </div>
@@ -210,6 +180,7 @@ exports[`Favorite button component tests shows correct text for movie not in wat
 <body>
   <div>
     <button
+      aria-label="Ce film n’est pas dans votre watchlist"
       class="favoriteButtonWrapper"
       data-testid="button"
       id="favorite-button"
@@ -226,13 +197,7 @@ exports[`Favorite button component tests shows correct text for movie not in wat
       <p
         class="favoriteButtonText"
       >
-        Ce 
-        film
-         
-        n’est pas
-         dans
-         
-        votre watchlist
+        Ce film n’est pas dans votre watchlist
       </p>
     </button>
   </div>

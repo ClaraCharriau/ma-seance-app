@@ -21,6 +21,7 @@ exports[`Movie Details Component renders movie details component 1`] = `
       class="movieInformations"
     >
       <button
+        aria-label="Ce film n’est pas dans votre watchlist"
         class="favoriteButtonWrapper"
         data-testid="button"
         id="favorite-button"
@@ -37,13 +38,7 @@ exports[`Movie Details Component renders movie details component 1`] = `
         <p
           class="favoriteButtonText"
         >
-          Ce 
-          film
-           
-          n’est pas
-           dans
-           
-          votre watchlist
+          Ce film n’est pas dans votre watchlist
         </p>
       </button>
       <img

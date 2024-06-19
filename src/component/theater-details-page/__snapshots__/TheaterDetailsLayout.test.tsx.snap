@@ -31,6 +31,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
         </p>
       </div>
       <button
+        aria-label="Ce cinéma n’est pas dans vos favoris"
         class="favoriteButtonWrapper"
         data-testid="button"
         id="favorite-button"
@@ -47,13 +48,7 @@ exports[`Theater Details Component renders theater details component 1`] = `
         <p
           class="favoriteButtonText"
         >
-          Ce 
-          cinéma
-           
-          n’est pas
-           dans
-           
-          vos favoris
+          Ce cinéma n’est pas dans vos favoris
         </p>
       </button>
     </div>
