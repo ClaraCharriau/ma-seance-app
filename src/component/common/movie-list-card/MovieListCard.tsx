@@ -30,7 +30,7 @@ const MovieListCard = (props: MovieListCardProps) => {
                     {releaseDate} - {duration}
                 </p>
                 <p className={style.movieDirector}>Réalisé par {directors}</p>
-                <p className={style.movieCast}>Avec {cast}</p>
+                {cast.length > 0 && <p className={style.movieCast}>Avec {cast}</p>}
             </div>
         </NavLink>
     );

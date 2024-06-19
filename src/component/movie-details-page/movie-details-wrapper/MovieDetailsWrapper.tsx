@@ -31,7 +31,7 @@ const MovieDetailsWrapper = (props: MovieDetailsWrapperProps) => {
                     </p>
 
                     <p className={style.directorText}>Réalisé par {directors}</p>
-                    <p className={style.castText}>Avec {cast}...</p>
+                    {cast.length > 0 && <p className={style.castText}>Avec {cast}...</p>}
                     <p className={style.resume}>{movie.resume}</p>
                 </div>
                 <a href={movie.trailerLink} className={style.trailerLink} target="_blank" rel="noreferrer">
