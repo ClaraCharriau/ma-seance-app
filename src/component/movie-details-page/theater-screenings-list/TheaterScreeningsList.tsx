@@ -9,7 +9,11 @@ const TheaterScreeningsList = () => {
 
     return (
         <section className={style.showtimesSection}>
-            <h3 className={style.sectionTitle}>Dans vos cinémas favoris :</h3>
+            {screenings.length > 0 ? (
+                <h3 className={style.sectionTitle}>Dans vos cinémas favoris :</h3>
+            ) : (
+                <p>Pas de séances prévues ce jour-là dans vos cinémas favoris.</p>
+            )}
             {screenings.map(screening => (
                 <div key={screening.theater.id} className={style.theaterSchedule}>
                     <p className={style.theaterName}>{screening.theater.name}</p>
