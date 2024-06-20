@@ -1,4 +1,4 @@
-# Ma Seance App
+# maSéance
 
 ![github-cover](https://github.com/ClaraCharriau/ma-seance-app/assets/101406252/d996669e-6913-4d72-a53f-650a3dccc279)
 
