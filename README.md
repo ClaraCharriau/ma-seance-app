@@ -1,6 +1,6 @@
 # Ma Seance App
 
-![github-cover](https://github.com/ClaraCharriau/ma-seance-app/assets/101406252/5a34bc14-f1c9-431f-9b88-abb2521ceb30)
+![github-cover](https://github.com/ClaraCharriau/ma-seance-app/assets/101406252/d996669e-6913-4d72-a53f-650a3dccc279)
 
 MaSéance app aims to simplify movie-going planning by centralizing movie schedules and details for moviegoers. The app will enable users to easily and simply find schedules for their favorite cinemas. The project also features the creation of film wishlists and personalized agendas, transforming the organization of cinema outings into a smooth and enjoyable experience. 
 
