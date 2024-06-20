@@ -9,20 +9,23 @@ import Login from '../component/login-page/Login';
 import MovieDetailsLayout from '../component/movie-details-page/MovieDetailsLayout';
 import TheaterScreeningsList from '../component/movie-details-page/theater-screenings-list/TheaterScreeningsList';
 import Profile from '../component/profile-page/Profile';
+import { SearchPage } from '../component/search-page/SearchPage';
 import ShowtimePage from '../component/showtime-page/ShowtimePage';
 import TheaterDetailsLayout from '../component/theater-details-page/TheaterDetailsLayout';
 import MoviesScreeningsList from '../component/theater-details-page/movies-screenings-list/MoviesScreeningsList';
 import WatchList from '../component/watchlist-page/WatchList';
+import { useAuthContext } from '../context/auth.context';
 import AppLayout from './AppLayout';
 import { appLoader } from './loader/AppLoader';
 import { movieLoader } from './loader/movie-loader/MovieLoader';
 import { movieScreeningsLoader } from './loader/movie-screenings-loader/MovieScreeningsLoader';
+import { showtimeLoader } from './loader/showtime-loader/ShowtimeLoader';
 import { theaterLoader } from './loader/theater-loader/TheaterLoader';
 import { theaterScreeningsLoader } from './loader/theater-screenings-loader/TheaterScreeningsLoader';
-import { showtimeLoader } from './loader/showtime-loader/ShowtimeLoader';
-import { SearchPage } from '../component/search-page/SearchPage';
 
 const AppRouter = () => {
+    const { currentUser } = useAuthContext();
+
     const router = createBrowserRouter([
         {
             path: '/login',
@@ -51,7 +54,7 @@ const AppRouter = () => {
                     children: [
                         {
                             path: '/movies/:id/:day?',
-                            loader: theaterScreeningsLoader,
+                            loader: theaterScreeningsLoader(currentUser),
                             element: <TheaterScreeningsList />
                         }
                     ]

@@ -1,10 +1,11 @@
-import { ActionFunctionArgs } from 'react-router-dom';
-import { getTheaterScreeningsByMovieIdAndDay } from '../../../client/movies/movies.client';
+import { LoaderFunctionArgs } from 'react-router-dom';
+import { getTheaterScreeningsByMovieIdAndDayAndUserId } from '../../../client/movies/movies.client';
+import { User } from '../../../model/User';
 
 /**
  * Loader that provide the theater screenings before the page renders
  */
-export const theaterScreeningsLoader = async (args: ActionFunctionArgs) => {
+export const theaterScreeningsLoader = (currentUser: User | null) => async (args: LoaderFunctionArgs) => {
     const { params } = args;
     let { id, day } = params;
 
@@ -21,5 +22,6 @@ export const theaterScreeningsLoader = async (args: ActionFunctionArgs) => {
     // remove "day"
     day = day.split('-')[1];
 
-    return await getTheaterScreeningsByMovieIdAndDay(id, day);
+    // eslint-disable-next-line
+    return await getTheaterScreeningsByMovieIdAndDayAndUserId(id, day, currentUser!.id);
 };

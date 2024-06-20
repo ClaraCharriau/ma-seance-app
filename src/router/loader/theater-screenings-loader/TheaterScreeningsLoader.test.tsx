@@ -2,6 +2,7 @@ import MockAdapter from 'axios-mock-adapter';
 import { axiosInstance } from '../../../client/axios.config';
 import mockScreenings from '../../../mock/theaters/movies-screenings-by-theater-id-and-day-1.json';
 import { theaterScreeningsLoader } from './TheaterScreeningsLoader';
+import mockUser from '../../../mock/users/users.json';
 
 describe('Theater screenings loader tests', () => {
     let axiosMock: MockAdapter;
@@ -25,13 +26,14 @@ describe('Theater screenings loader tests', () => {
         };
 
         // When
-        const response = await theaterScreeningsLoader(args);
+        const loaderFunction = theaterScreeningsLoader(mockUser);
+        const response = await loaderFunction(args);
 
         // Then
         expect(response).toEqual(mockScreenings);
         expect(axiosGet).toHaveBeenCalledWith(
             'http://localhost:7878/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/screenings',
-            { params: { day: '4' } }
+            { params: { day: '4', userId: '1' } }
         );
     });
 
@@ -47,7 +49,8 @@ describe('Theater screenings loader tests', () => {
         };
 
         // When
-        const response = await theaterScreeningsLoader(args);
+        const loaderFunction = theaterScreeningsLoader(mockUser);
+        const response = await loaderFunction(args);
 
         // Then
         expect(response).toEqual(mockScreenings);
