@@ -11,7 +11,7 @@ describe('time slot button component tests', () => {
         dayNumber: '17',
         month: 'février',
         year: '2024',
-        hourly: '11:45'
+        hourly: '21:45'
     };
 
     it('should render time slot button', () => {
@@ -26,7 +26,7 @@ describe('time slot button component tests', () => {
             </BrowserRouter>
         );
 
-        expect(component.getByText('11:45')).toBeInTheDocument();
+        expect(component.getByText('21:45')).toBeInTheDocument();
     });
 
     it('should open showtime modale confirmation on click', () => {
@@ -41,7 +41,7 @@ describe('time slot button component tests', () => {
                 />
             </BrowserRouter>
         );
-        const button = component.getByText('11:45');
+        const button = component.getByText('21:45');
 
         // When
         fireEvent.click(button);
@@ -63,7 +63,7 @@ describe('time slot button component tests', () => {
                 />
             </BrowserRouter>
         );
-        const openButton = component.getByText('11:45');
+        const openButton = component.getByText('21:45');
         fireEvent.click(openButton);
         const closeButton = component.getByText('Annuler');
 
