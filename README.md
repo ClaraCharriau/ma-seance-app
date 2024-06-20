@@ -1,6 +1,20 @@
-# Ma Seance App
+# maSéance
 
-Front side of Ma-seance
+![github-cover](https://github.com/ClaraCharriau/ma-seance-app/assets/101406252/d996669e-6913-4d72-a53f-650a3dccc279)
+
+MaSéance app aims to simplify movie-going planning by centralizing movie schedules and details for moviegoers. The app will enable users to easily and simply find schedules for their favorite cinemas. The project also features the creation of film wishlists and personalized agendas, transforming the organization of cinema outings into a smooth and enjoyable experience. 
+
+### Features
+
+- User profile creation
+- Modify user's personal data
+- Add/delete favorite movies
+- Add/remove favorite theaters
+- Search for films and cinemas
+- View movie showtimes
+- Add/remove screenings from user's calendar
+
+## Test coverage
 
 | Statements                  | Branches                | Functions                 | Lines             |
 | --------------------------- | ----------------------- | ------------------------- | ----------------- |
@@ -10,7 +24,7 @@ Front side of Ma-seance
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start:dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -33,12 +47,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
