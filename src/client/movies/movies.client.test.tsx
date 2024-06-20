@@ -4,7 +4,7 @@ import mockMovies from '../../mock/movies/current-movies.json';
 import mockMovie from '../../mock/movies/movie-1.json';
 import mockTheaterScreenings from '../../mock/movies/theaters-screenings-by-movie-id-and-day-1.json';
 import { axiosInstance } from '../axios.config';
-import { getCurrentlyMovies, getMovieById, getTheaterScreeningsByMovieIdAndDay } from './movies.client';
+import { getCurrentlyMovies, getMovieById, getTheaterScreeningsByMovieIdAndDayAndUserId } from './movies.client';
 
 describe('Movies client tests', () => {
     let axiosMock: MockAdapter;
@@ -80,12 +80,12 @@ describe('Movies client tests', () => {
         axiosMock.onGet('http://localhost:7878/movies/1/screenings').reply(200, mockTheaterScreenings);
 
         // When
-        const response = await getTheaterScreeningsByMovieIdAndDay('1', '2');
+        const response = await getTheaterScreeningsByMovieIdAndDayAndUserId('1', '2', '1');
 
         // Then
         expect(response).toEqual(mockTheaterScreenings);
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/movies/1/screenings', {
-            params: { day: '2' }
+            params: { day: '2', userId: '1' }
         });
     });
 
@@ -95,13 +95,13 @@ describe('Movies client tests', () => {
 
         // When
         try {
-            await getTheaterScreeningsByMovieIdAndDay('1', '2');
+            await getTheaterScreeningsByMovieIdAndDayAndUserId('1', '2', '1');
         } catch (error: any) {
             // Then
             expect(error.status).toBe(500);
         }
         expect(axiosGet).toHaveBeenCalledWith('http://localhost:7878/movies/1/screenings', {
-            params: { day: '2' }
+            params: { day: '2', userId: '1' }
         });
     });
 });
