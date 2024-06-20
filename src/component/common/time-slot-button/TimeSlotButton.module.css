@@ -13,3 +13,8 @@
 .timeSlot:hover {
     cursor: pointer;
 }
+
+.timeSlot:disabled {
+    opacity: 0.5;
+    cursor: initial;
+}

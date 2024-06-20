@@ -8,7 +8,7 @@ exports[`time slot button component tests should close showtime modale confirmat
     <button
       class="timeSlot"
     >
-      11:45
+      21:45
     </button>
   </div>
   <div
@@ -30,7 +30,7 @@ exports[`time slot button component tests should open showtime modale confirmati
     <button
       class="timeSlot"
     >
-      11:45
+      21:45
     </button>
   </div>
   <div
@@ -148,7 +148,7 @@ exports[`time slot button component tests should open showtime modale confirmati
                 <p
                   class="screeningHourly"
                 >
-                  11:45
+                  21:45
                 </p>
               </div>
             </div>
