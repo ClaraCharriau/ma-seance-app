@@ -1,10 +1,10 @@
+import { isBefore } from 'date-fns';
 import { useState } from 'react';
 import { Movie } from '../../../model/Movie';
 import { ScreeningDate } from '../../../model/ScreeningDate';
 import { Theater } from '../../../model/Theater';
 import ShowtimeModal from '../modal/showtime-modal/ShowtimeModal';
 import style from './TimeSlotButton.module.css';
-import { isBefore, parse } from 'date-fns';
 
 interface TimeSlotButtonProps {
     screeningId: string;
@@ -18,7 +18,6 @@ const TimeSlotButton = (props: TimeSlotButtonProps) => {
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
     const now = new Date();
-    const parsedHourly = parse(screeningDate.hourly, 'HH:mm', now);
 
     const openModal = () => {
         setIsOpenModal(true);
@@ -30,7 +29,7 @@ const TimeSlotButton = (props: TimeSlotButtonProps) => {
 
     return (
         <>
-            <button className={style.timeSlot} onClick={openModal} disabled={isBefore(parsedHourly, now)}>
+            <button className={style.timeSlot} onClick={openModal} disabled={isBefore(screeningDate.date, now)}>
                 {screeningDate.hourly}
             </button>
             <ShowtimeModal

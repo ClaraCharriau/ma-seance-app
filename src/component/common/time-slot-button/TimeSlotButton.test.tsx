@@ -5,8 +5,10 @@ import mockTheater from '../../../mock/theaters/theaters-1.json';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('time slot button component tests', () => {
+    jest.useFakeTimers().setSystemTime(new Date('2024-01-20'));
+
     const mockScreeningDate = {
-        date: '2024-02-17T11:45:00',
+        date: '2024-02-17T21:45:00',
         dayName: 'mercredi',
         dayNumber: '17',
         month: 'février',
