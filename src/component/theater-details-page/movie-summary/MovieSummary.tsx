@@ -37,7 +37,7 @@ const MovieSummary = (props: MovieSummaryProps) => {
                         <p className={style.movieTitle}>{movie.title}</p>
                     </Link>
                     <p className={style.movieDirectors}>De {directors}</p>
-                    <p className={style.movieCast}>Avec {cast}</p>
+                    {cast.length > 0 && <p className={style.movieCast}>Avec {cast}</p>}
                     <p className={style.movieDuration}>
                         {duration} ● Sorti le {releaseDate}
                     </p>

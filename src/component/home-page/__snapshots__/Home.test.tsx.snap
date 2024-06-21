@@ -107,7 +107,7 @@ exports[`Home Component should render home page 1`] = `
         >
           <a
             class=""
-            href="/theaters/1"
+            href="/theaters/1/day-1"
           >
             <h2
               class="homeSectionTitle"
@@ -129,7 +129,7 @@ exports[`Home Component should render home page 1`] = `
           </a>
           <a
             class="seeDetailsBtn"
-            href="/theaters/1"
+            href="/theaters/1/day-1"
           >
             Voir plus &gt;
           </a>
@@ -150,7 +150,7 @@ exports[`Home Component should render home page 1`] = `
         >
           <a
             class=""
-            href="/theaters/2"
+            href="/theaters/2/day-1"
           >
             <h2
               class="homeSectionTitle"
@@ -172,7 +172,7 @@ exports[`Home Component should render home page 1`] = `
           </a>
           <a
             class="seeDetailsBtn"
-            href="/theaters/2"
+            href="/theaters/2/day-1"
           >
             Voir plus &gt;
           </a>
@@ -193,7 +193,7 @@ exports[`Home Component should render home page 1`] = `
         >
           <a
             class=""
-            href="/theaters/3"
+            href="/theaters/3/day-1"
           >
             <h2
               class="homeSectionTitle"
@@ -215,7 +215,7 @@ exports[`Home Component should render home page 1`] = `
           </a>
           <a
             class="seeDetailsBtn"
-            href="/theaters/3"
+            href="/theaters/3/day-1"
           >
             Voir plus &gt;
           </a>
@@ -236,7 +236,7 @@ exports[`Home Component should render home page 1`] = `
         >
           <a
             class=""
-            href="/theaters/4"
+            href="/theaters/4/day-1"
           >
             <h2
               class="homeSectionTitle"
@@ -258,7 +258,7 @@ exports[`Home Component should render home page 1`] = `
           </a>
           <a
             class="seeDetailsBtn"
-            href="/theaters/4"
+            href="/theaters/4/day-1"
           >
             Voir plus &gt;
           </a>
@@ -279,7 +279,7 @@ exports[`Home Component should render home page 1`] = `
         >
           <a
             class=""
-            href="/theaters/5"
+            href="/theaters/5/day-1"
           >
             <h2
               class="homeSectionTitle"
@@ -301,7 +301,7 @@ exports[`Home Component should render home page 1`] = `
           </a>
           <a
             class="seeDetailsBtn"
-            href="/theaters/5"
+            href="/theaters/5/day-1"
           >
             Voir plus &gt;
           </a>
@@ -322,7 +322,7 @@ exports[`Home Component should render home page 1`] = `
         >
           <a
             class=""
-            href="/theaters/6"
+            href="/theaters/6/day-1"
           >
             <h2
               class="homeSectionTitle"
@@ -344,7 +344,7 @@ exports[`Home Component should render home page 1`] = `
           </a>
           <a
             class="seeDetailsBtn"
-            href="/theaters/6"
+            href="/theaters/6/day-1"
           >
             Voir plus &gt;
           </a>
@@ -365,7 +365,7 @@ exports[`Home Component should render home page 1`] = `
         >
           <a
             class=""
-            href="/theaters/7"
+            href="/theaters/7/day-1"
           >
             <h2
               class="homeSectionTitle"
@@ -387,7 +387,7 @@ exports[`Home Component should render home page 1`] = `
           </a>
           <a
             class="seeDetailsBtn"
-            href="/theaters/7"
+            href="/theaters/7/day-1"
           >
             Voir plus &gt;
           </a>
@@ -408,7 +408,7 @@ exports[`Home Component should render home page 1`] = `
         >
           <a
             class=""
-            href="/theaters/8"
+            href="/theaters/8/day-1"
           >
             <h2
               class="homeSectionTitle"
@@ -430,7 +430,7 @@ exports[`Home Component should render home page 1`] = `
           </a>
           <a
             class="seeDetailsBtn"
-            href="/theaters/8"
+            href="/theaters/8/day-1"
           >
             Voir plus &gt;
           </a>
