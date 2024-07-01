@@ -7,13 +7,11 @@ import TheaterScreeningsList from './TheaterScreeningsList';
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useLoaderData: () => {
-        return mockScreeningsData;
-    },
-    useLocation: () => ({
-        state: {
+        return {
+            theaterScreenings: mockScreeningsData,
             movie: mockMovie
-        }
-    })
+        };
+    }
 }));
 
 describe('Movie Details Component', () => {

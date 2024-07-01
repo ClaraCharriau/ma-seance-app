@@ -7,12 +7,12 @@ import MovieSummary from '../movie-summary/MovieSummary';
 import style from './MoviesScreeningsList.module.css';
 
 const MoviesScreeningsList = () => {
-    const data = useLoaderData() as { movieScreenings: MovieScreenings[] };
+    const movieLoaderData = useLoaderData() as { movieScreenings: MovieScreenings[] };
     const location = useLocation();
 
     return (
         <Suspense fallback={<Spinner />}>
-            <Await resolve={data.movieScreenings} errorElement={<ErrorPage />}>
+            <Await resolve={movieLoaderData.movieScreenings} errorElement={<ErrorPage />}>
                 {(screenings: MovieScreenings[]) => {
                     if (screenings.length > 0) {
                         return (

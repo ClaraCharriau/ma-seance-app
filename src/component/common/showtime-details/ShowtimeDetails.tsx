@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import config from '../../../config/config.helper';
 import { useYearFromDate } from '../../../hook/date-hook/date.hook';
 import { useTextDuration } from '../../../hook/string-hook/string.hook';
@@ -32,17 +31,13 @@ export const ShowtimeDetails = (props: ShowtimeDetailsProps) => {
             <div className={style.movieAndDateWrapper}>
                 {/* MOVIE */}
                 <div className={style.movieBox}>
-                    <Link to={`/movies/${movie.id}/day-1`} state={{ movie }}>
-                        <img
-                            className={style.movieImg}
-                            src={TMDB_PATH + movie.posterLink}
-                            alt={`affiche du film ${movie.title}`}
-                        />
-                    </Link>
+                    <img
+                        className={style.movieImg}
+                        src={TMDB_PATH + movie.posterLink}
+                        alt={`affiche du film ${movie.title}`}
+                    />
                     <div>
-                        <Link to={`/movies/${movie.id}/day-1`} state={{ movie }} className={style.movieTitle}>
-                            {movie.title}
-                        </Link>
+                        <h3 className={style.movieTitle}>{movie.title}</h3>
                         <p className={style.movieDetails}>
                             {duration} ● {releaseYear}
                         </p>

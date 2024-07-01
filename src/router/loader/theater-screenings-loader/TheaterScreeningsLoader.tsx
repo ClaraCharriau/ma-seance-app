@@ -1,5 +1,5 @@
-import { LoaderFunctionArgs } from 'react-router-dom';
-import { getTheaterScreeningsByMovieIdAndDayAndUserId } from '../../../client/movies/movies.client';
+import { LoaderFunctionArgs, defer } from 'react-router-dom';
+import { getMovieById, getTheaterScreeningsByMovieIdAndDayAndUserId } from '../../../client/movies/movies.client';
 import { User } from '../../../model/User';
 
 /**
@@ -22,6 +22,12 @@ export const theaterScreeningsLoader = (currentUser: User | null) => async (args
     // remove "day"
     day = day.split('-')[1];
 
+    const moviePromise = await getMovieById(id);
     // eslint-disable-next-line
-    return await getTheaterScreeningsByMovieIdAndDayAndUserId(id, day, currentUser!.id);
+    const theaterScreeningsPromise = await getTheaterScreeningsByMovieIdAndDayAndUserId(id, day, currentUser!.id);
+
+    return defer({
+        theaterScreenings: theaterScreeningsPromise,
+        movie: moviePromise
+    });
 };

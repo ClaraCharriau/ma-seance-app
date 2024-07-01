@@ -54,22 +54,17 @@ exports[`time slot button component tests should open showtime modale confirmati
             <div
               class="movieBox"
             >
-              <a
-                href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
-              >
-                <img
-                  alt="affiche du film Pauvres créatures"
-                  class="movieImg"
-                  src="https://image.tmdb.org/t/p/w500/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
-                />
-              </a>
+              <img
+                alt="affiche du film Pauvres créatures"
+                class="movieImg"
+                src="https://image.tmdb.org/t/p/w500/5fT98da9ccWN2xr8VOJrSBp3Cdw.jpg"
+              />
               <div>
-                <a
+                <h3
                   class="movieTitle"
-                  href="/movies/3d8f1342-15f1-44b1-a48f-4581d654b94a/day-1"
                 >
                   Pauvres créatures
-                </a>
+                </h3>
                 <p
                   class="movieDetails"
                 >
